@@ -1,0 +1,2136 @@
+:root {
+  --okfp-bg: #dfdcd5;
+  --okfp-bg-soft: #f4f3ef;
+  --okfp-white: #ffffff;
+  --okfp-ink: #1e2a38;
+  --okfp-ink-soft: #4e5a68;
+  --okfp-blue-900: #4f657c;
+  --okfp-blue-700: #73869b;
+  --okfp-blue-500: #8ea4ba;
+  --okfp-green-700: #7f9a88;
+  --okfp-brown-700: #9f866c;
+  --okfp-line: #c8c5bd;
+  --okfp-shadow: rgba(25, 38, 52, 0.18);
+
+  --okfp-radius-sm: 12px;
+  --okfp-radius-md: 20px;
+  --okfp-radius-lg: 32px;
+
+  --okfp-shell-max: 1100px;
+  --okfp-shell-inline: min(100% - 2rem, var(--okfp-shell-max));
+  --okfp-common-head-bg: rgba(23, 28, 40, 0.88);
+  --okfp-common-head-bg-scrolled: rgba(23, 28, 40, 0.94);
+  --okfp-common-head-text: #ffffff;
+  --okfp-common-head-muted: rgba(255, 255, 255, 0.74);
+  --okfp-common-head-accent: #c5a059;
+  --okfp-common-head-line: rgba(197, 160, 89, 0.34);
+}
+
+html,
+body {
+  overflow-x: clip;
+}
+
+html[lang] {
+  margin-top: 0 !important;
+}
+
+body {
+  margin: 0;
+  padding-top: 0 !important;
+  color: var(--okfp-ink);
+  background: var(--okfp-bg);
+  font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+  line-height: 1.7;
+}
+
+body:not(.front-page):not(.home) {
+  padding-top: 0 !important;
+}
+
+.okfp-shell,
+.container {
+  width: var(--okfp-shell-inline);
+  margin-inline: auto;
+}
+
+.screen-reader-text {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+.skip-link {
+  position: absolute;
+  left: 0.75rem;
+  top: -3rem;
+  z-index: 1200;
+  background: #000;
+  color: #fff;
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.25rem;
+}
+
+.skip-link:focus {
+  top: 0.75rem;
+}
+
+/* Front page header */
+.okfp-header {
+  --okfp-common-head-height: 3rem;
+  --okfp-main-header-height: 4.5rem;
+  --okfp-main-header-bg: #fff;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  margin: 0;
+  border-top: 0;
+  background: #fff;
+}
+
+.okfp-common-head {
+  min-height: var(--okfp-common-head-height);
+  border-bottom: 1px solid var(--okfp-common-head-line);
+  background: var(--okfp-common-head-bg);
+  backdrop-filter: blur(10px) saturate(120%);
+  -webkit-backdrop-filter: blur(10px) saturate(120%);
+  transition: background 0.3s ease, border-color 0.3s ease, backdrop-filter 0.3s ease;
+}
+
+.okfp-header.is-scrolled .okfp-common-head {
+  background: var(--okfp-common-head-bg-scrolled);
+  border-bottom-color: rgba(197, 160, 89, 0.46);
+  backdrop-filter: blur(14px) saturate(130%);
+  -webkit-backdrop-filter: blur(14px) saturate(130%);
+}
+
+.okfp-common-head__inner {
+  min-height: inherit;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.1rem;
+}
+
+.okfp-common-head__brand {
+  flex: 0 0 auto;
+  display: inline-flex;
+  align-items: center;
+  color: var(--okfp-common-head-text);
+  line-height: 1;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: color 0.25s ease, opacity 0.25s ease;
+}
+
+.okfp-common-head__brand-logo {
+  display: block;
+  width: auto;
+  height: clamp(1.65rem, 5.6vw, 2.15rem);
+  max-width: min(60vw, 300px);
+  object-fit: contain;
+}
+
+.okfp-common-head__brand-fallback {
+  display: inline-block;
+  color: var(--okfp-common-head-text);
+  font-size: var(--fs-sm);
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: 0.08em;
+}
+
+.okfp-common-head__brand:hover,
+.okfp-common-head__brand:focus-visible {
+  color: var(--okfp-common-head-accent);
+  opacity: 0.96;
+}
+
+.okfp-common-head__brand:focus-visible {
+  outline: 2px solid var(--okfp-common-head-accent);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+.okfp-common-head__links {
+  flex: 1 1 auto;
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  gap: 0.95rem;
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+  white-space: nowrap;
+  padding-block: 0.2rem;
+}
+
+.okfp-common-head__link {
+  position: relative;
+  flex: 0 0 auto;
+  color: var(--okfp-common-head-muted);
+  font-size: var(--fs-xs);
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: 0.06em;
+  text-decoration: none;
+  padding-bottom: 0.14rem;
+  transition: color 0.25s ease;
+}
+
+.okfp-common-head__link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -0.06rem;
+  height: 1px;
+  background: var(--okfp-common-head-accent);
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 0.25s ease;
+}
+
+.okfp-common-head__link:hover,
+.okfp-common-head__link:focus-visible {
+  color: var(--okfp-common-head-accent);
+}
+
+.okfp-common-head__link:hover::after,
+.okfp-common-head__link:focus-visible::after {
+  transform: scaleX(1);
+}
+
+.okfp-common-head__link:focus-visible {
+  outline: 2px solid var(--okfp-common-head-accent);
+  outline-offset: 4px;
+  border-radius: 3px;
+}
+
+.okfp-common-head__link[aria-current="location"] {
+  color: var(--okfp-common-head-accent);
+  font-weight: 700;
+}
+
+.okfp-common-head__link[aria-current="location"]::after {
+  transform: scaleX(1);
+}
+
+.okfp-header__main {
+  border-bottom: 1px solid #d6dee7;
+  background: var(--okfp-main-header-bg);
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+}
+
+.okfp-header.is-scrolled .okfp-header__main {
+  box-shadow: 0 10px 24px rgba(12, 27, 44, 0.12);
+}
+
+.okfp-header__inner {
+  min-height: var(--okfp-main-header-height);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.1rem;
+}
+
+.okfp-brand {
+  display: inline-flex;
+  align-items: center;
+  align-self: center;
+  flex: 0 0 auto;
+  min-width: 0;
+}
+
+.okfp-logo {
+  display: inline-flex;
+  align-items: center;
+  line-height: 1;
+  text-decoration: none;
+}
+
+.okfp-logo__img {
+  width: clamp(154px, 25vw, 252px);
+  height: auto;
+  max-height: 3.1rem;
+  object-fit: contain;
+  display: block;
+}
+
+.okfp-nav-toggle {
+  width: 2.55rem;
+  height: 2.3rem;
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.3rem;
+  border: 1px solid rgba(16, 42, 67, 0.26);
+  border-radius: var(--okfp-radius-sm);
+  background: #fff;
+  cursor: pointer;
+}
+
+.okfp-nav-toggle__bar {
+  display: block;
+  width: 1.25rem;
+  height: 2px;
+  margin-inline: auto;
+  background: #102033;
+  transition: transform 0.22s ease, opacity 0.22s ease;
+}
+
+.okfp-nav {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: calc(var(--okfp-common-head-height) + var(--okfp-main-header-height));
+  display: grid;
+  gap: 0.25rem;
+  padding: 1rem;
+  border-top: 1px solid rgba(16, 40, 63, 0.14);
+  border-bottom: 1px solid rgba(16, 40, 63, 0.14);
+  background: rgba(255, 255, 255, 0.98);
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-0.6rem);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.okfp-nav a {
+  font-size: var(--fs-sm);
+  letter-spacing: 0.04em;
+  padding: 0.55rem 0.7rem;
+  border-radius: 0.55rem;
+  color: #2b4963;
+  text-decoration: none;
+}
+
+.okfp-nav a:hover,
+.okfp-nav a:focus-visible {
+  background: #ecf2f7;
+  color: #173551;
+}
+
+.okfp-nav__cta {
+  background: linear-gradient(90deg, #a98d6f, #b9a083);
+  color: #fff;
+  text-align: center;
+  font-weight: 700;
+}
+
+body.okfp-nav-open .okfp-nav {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+body.okfp-nav-open .okfp-nav-toggle__bar:nth-child(1) {
+  transform: translateY(6px) rotate(45deg);
+}
+
+body.okfp-nav-open .okfp-nav-toggle__bar:nth-child(2) {
+  opacity: 0;
+}
+
+body.okfp-nav-open .okfp-nav-toggle__bar:nth-child(3) {
+  transform: translateY(-6px) rotate(-45deg);
+}
+
+/* Front page sections */
+.okfp-main {
+  color: var(--okfp-ink);
+}
+
+.okfp-hero {
+  padding: 0;
+  background: linear-gradient(180deg, #a5d3eb 0%, #cbe3ef 34%, #e4ecef 72%, #f1f1f1 100%);
+}
+
+.okfp-hero__inner {
+  width: min(100%, 1366px);
+  margin-inline: auto;
+  min-height: 23rem;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 0;
+  align-items: end;
+}
+
+.okfp-hero__copy {
+  align-self: start;
+  padding: 2.8rem 1.35rem 1rem;
+}
+
+.okfp-hero__lead {
+  margin: 0;
+  max-width: 13.2em;
+  font-family: "Yu Gothic", YuGothic, sans-serif;
+  font-weight: 700;
+  font-size: clamp(1.9rem, 6.8vw, 2.7rem);
+  line-height: 1.35;
+  color: #6e747b;
+}
+
+.okfp-hero__visual {
+  margin: 0;
+  justify-self: end;
+  align-self: end;
+  width: min(100%, 42rem);
+}
+
+.okfp-hero__visual img {
+  width: 100%;
+  height: auto;
+}
+
+.okfp-value {
+  background: #eeeeee;
+}
+
+.okfp-value__grid {
+  width: min(100%, 1366px);
+  margin-inline: auto;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-areas:
+    "title"
+    "left"
+    "right";
+  gap: 0;
+}
+
+.okfp-value__titleline {
+  grid-area: title;
+  position: relative;
+  z-index: 1;
+  margin: 0;
+  padding-top: 2.85rem;
+  padding-bottom: clamp(0.65rem, 2.2vw, 1rem);
+  margin-bottom: 0;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  text-align: center;
+  font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+  font-size: clamp(1.9rem, 7vw, 2.65rem);
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  line-height: 1.15;
+  pointer-events: none;
+}
+
+.okfp-value__title-left {
+  color: #f1f4f8;
+  text-align: right;
+}
+
+.okfp-value__title-cross {
+  margin-inline: clamp(0.5rem, 2.2vw, 1.2rem);
+  color: #f8f9fa;
+  font-size: 1.48em;
+  line-height: 1;
+}
+
+.okfp-value__title-right {
+  color: #73767c;
+  text-align: left;
+}
+
+.okfp-value__left,
+.okfp-value__right {
+  padding: 2.2rem 1.4rem 2.6rem;
+}
+
+.okfp-value__left {
+  grid-area: left;
+  background: #95a3b3;
+  color: #fff;
+  text-align: center;
+}
+
+.okfp-value__desc {
+  margin: 0;
+  font-size: clamp(0.94rem, 2.8vw, 1.55rem);
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+
+.okfp-value__chips {
+  --okfp-chip-gap: clamp(1rem, 2.5vw, 2.35rem);
+  margin-top: 1.6rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0;
+}
+
+.okfp-value__chips li {
+  width: clamp(5.1rem, 24vw, 8.4rem);
+  height: clamp(5.1rem, 24vw, 8.4rem);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(245, 246, 248, 0.96);
+  color: #656a72;
+  font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+  font-style: normal;
+  font-size: 19px;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: 0;
+}
+
+.okfp-value__chips li + li {
+  position: relative;
+  margin-left: var(--okfp-chip-gap);
+}
+
+.okfp-value__chips li + li::before {
+  content: "×";
+  position: absolute;
+  top: 50%;
+  left: calc(var(--okfp-chip-gap) * -0.5);
+  transform: translate(-50%, -50%);
+  color: #4f5359;
+  font-size: clamp(1.75rem, 4.2vw, 2.6rem);
+  font-weight: 700;
+  line-height: 1;
+}
+
+.okfp-value__right {
+  grid-area: right;
+  background: #f2f2f2;
+  color: #1f2226;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.okfp-value__sub {
+  margin: 0;
+  font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+  font-style: normal;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 31px;
+  letter-spacing: 0;
+  color: #1f2226;
+  text-align: center;
+}
+
+.okfp-kpi {
+  margin-top: 1.45rem;
+  width: min(100%, 31rem);
+  display: grid;
+  gap: 1.05rem;
+}
+
+.okfp-kpi__row {
+  display: grid;
+  grid-template-columns: minmax(6.5rem, 1fr) auto;
+  align-items: end;
+  gap: 0.9rem;
+}
+
+.okfp-kpi dt {
+  color: #72767c;
+  font-size: clamp(0.86rem, 2.4vw, 1.2rem);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.okfp-kpi dd {
+  margin: 0;
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.45rem;
+  color: #6c7076;
+}
+
+.okfp-kpi strong {
+  font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+  font-size: clamp(3rem, 15vw, 4.55rem);
+  font-weight: 700;
+  line-height: 0.95;
+  letter-spacing: 0.02em;
+}
+
+.okfp-kpi span {
+  font-size: clamp(1.5rem, 4.8vw, 2.4rem);
+  font-weight: 700;
+  line-height: 1;
+}
+
+.okfp-intro {
+  padding: clamp(2.2rem, 6vw, 4.5rem) 0;
+}
+
+.okfp-intro__head {
+  display: grid;
+  gap: 1.4rem;
+  align-items: start;
+}
+
+.okfp-intro__copy {
+  position: relative;
+  z-index: 0;
+}
+
+.okfp-label {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.2rem 0.6rem;
+  border: 0;
+  border-radius: 0;
+  font-size: var(--fs-xs);
+  letter-spacing: 0.04em;
+  color: #5d7287;
+}
+
+.okfp-intro__copy .okfp-label {
+  position: relative;
+  overflow: visible;
+  margin: 0 0 0.8rem;
+  padding: 0.16rem 0.72rem 0.2rem;
+  background: rgba(255, 255, 255, 0.84);
+  color: #6d8199;
+  font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+  font-size: clamp(1.08rem, 3.8vw, 1.52rem);
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: 0.02em;
+}
+
+.okfp-intro__copy .okfp-label::before {
+  content: "POINT";
+  position: absolute;
+  top: 100%;
+  left: -0.42rem;
+  transform: translateY(-44%);
+  z-index: -1;
+  font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+  font-size: clamp(3.5rem, 14.5vw, 6.2rem);
+  font-weight: 900;
+  line-height: 0.82;
+  letter-spacing: 0.04em;
+  color: #6e829b;
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+.okfp-intro__copy h2 {
+  margin-top: 0.8rem;
+  font-family: "Noto Serif JP", "Hiragino Mincho ProN", serif;
+  line-height: 1.55;
+  font-size: clamp(1.35rem, 4.6vw, 2rem);
+}
+
+.okfp-intro__copy > p:last-child {
+  margin-top: 0.9rem;
+  color: #576674;
+  font-size: var(--fs-sm);
+}
+
+.okfp-intro__image img {
+  width: 100%;
+  border: 10px solid #e7e6df;
+  border-radius: 3px;
+  box-shadow: 0 14px 24px rgba(35, 47, 63, 0.14);
+}
+
+.okfp-merits {
+  margin-top: 1.7rem;
+  display: grid;
+  gap: 1rem;
+}
+
+.okfp-merit {
+  display: grid;
+  grid-template-columns: 4.2rem 1fr;
+  gap: 0.95rem;
+  align-items: center;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #ccc8be;
+}
+
+.okfp-merit__icon {
+  width: 4.2rem;
+  aspect-ratio: 1;
+  border-radius: 999px;
+  object-fit: cover;
+}
+
+.okfp-merit h3 {
+  margin: 0;
+  color: #5f7690;
+  font-family: "Noto Serif JP", serif;
+  font-size: clamp(1rem, 3.6vw, 1.45rem);
+}
+
+.okfp-merit p {
+  margin-top: 0.3rem;
+  color: #5a6674;
+  font-size: 0.87rem;
+}
+
+.okfp-denmoku {
+  position: relative;
+  padding: clamp(3.4rem, 10.5vw, 7.4rem) 0 clamp(3.4rem, 8.5vw, 6.2rem);
+  background: #e8e7e3;
+  text-align: center;
+}
+
+.okfp-denmoku::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: min(100% - 3rem, 1120px);
+  height: 1px;
+  transform: translateX(-50%);
+  background: #cccbc7;
+}
+
+.okfp-denmoku__word {
+  margin: 0;
+  font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+  font-size: clamp(4.1rem, 14.6vw, 7.35rem);
+  font-weight: 900;
+  letter-spacing: 0.04em;
+  line-height: 0.82;
+  color: #6e829b;
+  text-transform: uppercase;
+}
+
+.okfp-denmoku .okfp-shell {
+  --okfp-denmoku-word-size: clamp(4.1rem, 14.6vw, 7.35rem);
+  position: relative;
+  display: grid;
+  justify-items: center;
+  row-gap: 0.95rem;
+}
+
+.okfp-denmoku #okfp-denmoku-title {
+  position: absolute;
+  top: calc(var(--okfp-denmoku-word-size) * 0.41);
+  left: 50%;
+  z-index: 2;
+  margin: 0;
+  width: fit-content;
+  max-width: min(94%, 42rem);
+  transform: translate(-50%, -50%);
+  padding: 0.03em 0.56em 0.08em;
+  font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+  font-size: clamp(0.9rem, 2.2vw, 1.28rem);
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: 0.02em;
+  color: #6d8199;
+}
+
+.okfp-denmoku #okfp-denmoku-title::before {
+  content: "";
+  position: absolute;
+  inset: -0.14em -0.54em;
+  z-index: -1;
+  background: rgba(255, 255, 255, 0.84);
+}
+
+.okfp-denmoku h2:not(#okfp-denmoku-title) {
+  position: relative;
+  margin: clamp(1.9rem, 6vw, 3rem) auto 0;
+  width: min(96%, 62rem);
+  padding: 0 0 0.16em;
+  font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+  font-size: clamp(1.2rem, 3.5vw, 2.2rem);
+  font-weight: 700;
+  line-height: 1.38;
+  letter-spacing: 0.01em;
+  color: #3a3f46;
+  border-bottom: 2px solid #6d92b4;
+}
+
+.okfp-denmoku__title-break {
+  display: none;
+}
+
+.okfp-denmoku__lead {
+  position: relative;
+  z-index: 1;
+  margin: 1.05rem auto 0;
+  max-width: 52rem;
+  color: #455f79;
+  font-size: clamp(0.98rem, 2.2vw, 1.24rem);
+  line-height: 1.72;
+  letter-spacing: 0.015em;
+}
+
+.okfp-pointband {
+  width: min(100%, 1366px);
+  margin-inline: auto;
+  background: #ecebe8;
+}
+
+.okfp-pointband + .okfp-pointband {
+  margin-top: 0;
+  padding-top: clamp(0.75rem, 2vw, 1.3rem);
+}
+
+.okfp-pointband__inner {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  min-height: 0;
+}
+
+.okfp-pointband__image {
+  min-height: clamp(12rem, 44vw, 21rem);
+  padding: 0;
+  background: transparent;
+  overflow: hidden;
+}
+
+.okfp-pointband__image img {
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  max-height: none;
+  aspect-ratio: auto;
+  object-fit: cover;
+  object-position: center;
+}
+
+.okfp-pointband--blue .okfp-pointband__image img,
+.okfp-pointband--brown .okfp-pointband__image img {
+  object-position: center center;
+}
+
+.okfp-pointband--green .okfp-pointband__image img {
+  object-position: right center;
+}
+
+.okfp-pointband__content {
+  min-height: 13rem;
+  padding: clamp(1.45rem, 4.2vw, 2.15rem) clamp(1.2rem, 3.4vw, 1.95rem);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.45rem;
+  color: #fff;
+}
+
+.okfp-pointband--blue .okfp-pointband__content {
+  background: #607a95;
+}
+
+.okfp-pointband--green .okfp-pointband__content {
+  background: #839b86;
+}
+
+.okfp-pointband--brown .okfp-pointband__content {
+  background: #a78b6e;
+}
+
+.okfp-pointband__tag {
+  margin: 0;
+  font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+  letter-spacing: 0.08em;
+  font-size: clamp(1rem, 2.8vw, 1.25rem);
+  font-weight: 700;
+  line-height: 1.15;
+  opacity: 0.74;
+}
+
+.okfp-pointband h3 {
+  margin: 0;
+  font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+  font-size: clamp(1.15rem, 4.2vw, 1.8rem);
+  font-weight: 700;
+  line-height: 1.35;
+  letter-spacing: 0.01em;
+}
+
+.okfp-pointband p:last-child {
+  margin: 0.15rem 0 0;
+  font-size: clamp(0.84rem, 2.25vw, 0.98rem);
+  line-height: 1.78;
+  opacity: 0.96;
+}
+
+.okfp-rent {
+  padding: clamp(2.8rem, 8vw, 5.6rem) 0 clamp(3rem, 8vw, 5.8rem);
+  background: #ecebe8;
+}
+
+.okfp-title-en {
+  margin: 0;
+  text-align: center;
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(2.3rem, 8vw, 5.1rem);
+  letter-spacing: 0.06em;
+  color: rgba(93, 118, 145, 0.36);
+  line-height: 1;
+}
+
+.okfp-rent__hero {
+  --okfp-rent-word-size: clamp(3rem, 16vw, 6.15rem);
+  position: relative;
+  display: grid;
+  justify-items: center;
+  isolation: isolate;
+  text-align: center;
+}
+
+.okfp-rent__word {
+  position: relative;
+  z-index: 0;
+  margin: 0;
+  font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+  font-size: var(--okfp-rent-word-size);
+  font-weight: 900;
+  letter-spacing: 0.04em;
+  line-height: 0.88;
+  color: #7e8fa3;
+}
+
+#okfp-rent-title.okfp-rent__subtitle {
+  position: absolute;
+  top: calc(var(--okfp-rent-word-size) * 0.44);
+  left: 50%;
+  z-index: 2;
+  margin: 0;
+  width: fit-content;
+  max-width: min(92%, 34rem);
+  transform: translate(-50%, -50%);
+  padding: 0.03em 0.56em 0.1em;
+  font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+  font-size: clamp(1.03rem, 3.8vw, 1.42rem);
+  font-weight: 700;
+  line-height: 1.22;
+  letter-spacing: 0.02em;
+  color: #6d8199;
+}
+
+#okfp-rent-title.okfp-rent__subtitle::before {
+  content: "";
+  position: absolute;
+  inset: -0.14em -0.54em;
+  z-index: -1;
+  background: rgba(255, 255, 255, 0.84);
+}
+
+.okfp-rent__lead {
+  margin: 0.55rem auto 0;
+  max-width: 31rem;
+  color: #313940;
+  font-size: clamp(0.82rem, 2.6vw, 0.95rem);
+  line-height: 1.75;
+}
+
+.okfp-rent__compare {
+  margin: 1.1rem auto 0;
+  max-width: 31rem;
+  font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+  font-size: clamp(1rem, 3.2vw, 1.2rem);
+  font-weight: 700;
+  line-height: 1.45;
+  color: #2f3941;
+}
+
+.okfp-rent__grid {
+  margin-top: 1.5rem;
+  display: grid;
+  gap: 1.65rem;
+}
+
+.okfp-rent-card {
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  padding: 0;
+  box-shadow: none;
+}
+
+.okfp-rent-card h3 {
+  margin: 0;
+  text-align: center;
+  color: #3a3f45;
+  font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+  font-size: clamp(1.12rem, 3.6vw, 1.38rem);
+  font-weight: 700;
+  line-height: 1.35;
+}
+
+.okfp-rent-card img {
+  width: 100%;
+  margin-top: 0.65rem;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  object-fit: contain;
+}
+
+.okfp-rent-card dl {
+  margin-top: 0.95rem;
+  display: grid;
+  gap: 0.42rem;
+}
+
+.okfp-rent-card dl > div {
+  display: grid;
+  grid-template-columns: minmax(8.8rem, 1fr) auto;
+  align-items: end;
+  gap: 0.35rem;
+}
+
+.okfp-rent-card dt {
+  font-size: clamp(0.8rem, 2.4vw, 0.9rem);
+  color: #5d636a;
+}
+
+.okfp-rent-card dd {
+  margin: 0;
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.18rem;
+  color: #666a70;
+}
+
+.okfp-rent-card strong {
+  font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+  font-size: clamp(2.5rem, 9vw, 3.2rem);
+  font-weight: 700;
+  line-height: 1;
+}
+
+.okfp-rent-card span {
+  font-size: clamp(1.65rem, 5.5vw, 2.15rem);
+  font-weight: 700;
+  line-height: 1;
+}
+
+.okfp-rent__more {
+  margin: 1.95rem auto 0;
+  width: fit-content;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.42rem 0.45rem 0.42rem 1.45rem;
+  border: 1px solid #8b939b;
+  border-radius: 999px;
+  color: #4b535d;
+  font-size: 0.82rem;
+  font-weight: 500;
+}
+
+.okfp-rent__more-icon {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  display: inline-grid;
+  place-items: center;
+  background: #596673;
+  color: #fff;
+  font-size: var(--fs-base);
+  line-height: 1;
+}
+
+.okfp-rent__more:hover,
+.okfp-rent__more:focus-visible {
+  background: rgba(255, 255, 255, 0.6);
+}
+
+.okfp-reuse {
+  padding: clamp(2.9rem, 8vw, 5.7rem) 0 clamp(3rem, 8vw, 5.4rem);
+  background: #ecebe8;
+}
+
+.okfp-reuse #okfp-reuse-title {
+  position: absolute;
+  top: 49.5%;
+  left: 50%;
+  z-index: 2;
+  margin: 0;
+  width: fit-content;
+  max-width: min(92%, 34rem);
+  transform: translate(-50%, -52%);
+  padding: 0.03em 0.56em 0.1em;
+  text-align: center;
+  font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+  font-size: clamp(1.02rem, 3.5vw, 1.4rem);
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: 0.02em;
+  color: #6d8199;
+}
+
+.okfp-reuse #okfp-reuse-title::before {
+  content: "";
+  position: absolute;
+  inset: -0.14em -0.54em;
+  z-index: -1;
+  background: rgba(255, 255, 255, 0.84);
+}
+
+.okfp-reuse__hero {
+  position: relative;
+  display: grid;
+  justify-items: center;
+  isolation: isolate;
+  text-align: center;
+}
+
+.okfp-reuse__word {
+  position: relative;
+  z-index: 0;
+  margin: 0;
+  font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+  font-size: clamp(3.2rem, 16vw, 6.2rem);
+  font-weight: 900;
+  letter-spacing: 0.04em;
+  line-height: 0.86;
+  color: #7d8ea2;
+}
+
+.okfp-reuse__table-image-wrap {
+  margin: 1.3rem auto 0;
+  max-width: min(100%, 835px);
+}
+
+.okfp-reuse__table-image {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.okfp-cta {
+  padding: clamp(2.2rem, 6vw, 4.2rem) 0 clamp(2.6rem, 8vw, 5rem);
+  text-align: center;
+}
+
+.okfp-cta h2 {
+  margin: 0;
+  font-family: "Noto Serif JP", serif;
+  font-size: clamp(1.2rem, 4.2vw, 1.9rem);
+}
+
+.okfp-cta p {
+  margin: 0.75rem auto 0;
+  max-width: 40rem;
+  font-size: var(--fs-sm);
+  color: #586573;
+}
+
+.okfp-cta__button {
+  margin-top: 1.2rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 3.25rem;
+  border-radius: 999px;
+  padding: 0 1.6rem;
+  font-weight: 700;
+  color: #fff;
+  background: linear-gradient(90deg, #b79c80, #c8b094);
+  box-shadow: 0 12px 22px rgba(143, 112, 79, 0.25);
+}
+
+.okfp-cta__button:hover,
+.okfp-cta__button:focus-visible {
+  filter: brightness(0.96);
+}
+
+.okfp-cta__button::after {
+  content: "→";
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.45rem;
+  height: 1.45rem;
+  margin-left: 0.7rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.9);
+  color: #9f8364;
+  font-size: var(--fs-sm);
+}
+
+.okfp-footer {
+  background: #efece6;
+  border-top: 1px solid #d2cdc2;
+}
+
+.okfp-footer__inner {
+  padding: 1.8rem 0 1.2rem;
+  display: grid;
+  gap: 1.3rem;
+}
+
+.okfp-footer__logo-img {
+  width: auto;
+  height: 2rem;
+  display: block;
+  object-fit: contain;
+}
+
+.okfp-footer__name {
+  margin-top: 0.25rem;
+  font-size: var(--fs-xs);
+  letter-spacing: 0.14em;
+}
+
+.okfp-footer__address {
+  margin-top: 0.85rem;
+  color: #5c6875;
+  font-size: 0.81rem;
+}
+
+.okfp-footer__phone {
+  display: inline-block;
+  font-size: var(--fs-xl);
+  font-family: "Cormorant Garamond", serif;
+  color: #506985;
+}
+
+.okfp-footer__mail {
+  display: inline-block;
+  margin-top: 0.25rem;
+  color: #5a6776;
+  font-size: 0.84rem;
+}
+
+.okfp-footer__nav {
+  margin-top: 0.75rem;
+  display: flex;
+  gap: 0.8rem;
+  flex-wrap: wrap;
+}
+
+.okfp-footer__nav a {
+  font-size: var(--fs-xs);
+  color: #4e6074;
+}
+
+.okfp-footer__copyright {
+  text-align: center;
+  font-size: var(--fs-xs);
+  border-top: 1px solid #d2cdc2;
+  padding: 0.65rem 1rem;
+  color: #6b757f;
+}
+
+/* Non-front page fallback styles */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 900;
+  border-bottom: 1px solid #e3dfd4;
+  background: rgba(250, 248, 243, 0.97);
+}
+
+.site-header__inner {
+  min-height: 4.3rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.site-logo {
+  display: inline-flex;
+  flex-direction: column;
+}
+
+.site-logo__jp {
+  font-family: "Noto Serif JP", serif;
+  font-size: 1.06rem;
+}
+
+.site-logo__en {
+  font-size: var(--fs-xs);
+  letter-spacing: 0.14em;
+  color: #65717e;
+}
+
+.site-nav-toggle {
+  width: 2.5rem;
+  height: 2.3rem;
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.3rem;
+  border: 1px solid #d2cfc7;
+  border-radius: 10px;
+  background: #fff;
+}
+
+.site-nav-toggle__bar {
+  display: block;
+  width: 1.2rem;
+  height: 2px;
+  margin-inline: auto;
+  background: #233547;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.site-nav {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 4.3rem;
+  display: grid;
+  gap: 0.25rem;
+  padding: 1rem;
+  border-top: 1px solid #d8d3c8;
+  border-bottom: 1px solid #d8d3c8;
+  background: #fcfbf8;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-0.5rem);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.site-nav a {
+  padding: 0.55rem 0.75rem;
+  border-radius: 10px;
+  font-size: var(--fs-sm);
+}
+
+.site-nav__cta {
+  color: #fff;
+  font-weight: 700;
+  text-align: center;
+  background: linear-gradient(90deg, #607b97, #7d95ad);
+}
+
+body.nav-open .site-nav {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+body.nav-open .site-nav-toggle__bar:nth-child(1) {
+  transform: translateY(6px) rotate(45deg);
+}
+
+body.nav-open .site-nav-toggle__bar:nth-child(2) {
+  opacity: 0;
+}
+
+body.nav-open .site-nav-toggle__bar:nth-child(3) {
+  transform: translateY(-6px) rotate(-45deg);
+}
+
+.site-footer {
+  background: #fff;
+  border-top: 1px solid #dcd7cd;
+  padding: 2rem 0 1rem;
+}
+
+.site-footer__cta {
+  display: grid;
+  gap: 0.7rem;
+}
+
+.footer-pill {
+  min-height: 3.1rem;
+  border-radius: 999px;
+  padding: 0.45rem 1rem;
+  display: grid;
+  align-content: center;
+  justify-items: center;
+  color: #fff;
+}
+
+.footer-pill span {
+  font-size: 0.72rem;
+}
+
+.footer-pill strong {
+  font-size: var(--fs-base);
+}
+
+.footer-pill--blue {
+  background: linear-gradient(90deg, #5f7a96, #7b94ad);
+}
+
+.footer-pill--brown {
+  background: linear-gradient(90deg, #af8a60, #c39f73);
+}
+
+.site-footer__main {
+  margin-top: 1.2rem;
+  padding-top: 1rem;
+  border-top: 1px dashed #d9d4c9;
+  display: grid;
+  gap: 1rem;
+}
+
+.site-footer__name {
+  font-family: "Noto Serif JP", serif;
+  font-size: 1.05rem;
+}
+
+.site-footer__text {
+  margin-top: 0.35rem;
+  color: #586573;
+  font-size: var(--fs-sm);
+}
+
+.site-footer__nav {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.4rem;
+}
+
+.site-footer__nav a {
+  font-size: 0.8rem;
+  color: #566472;
+}
+
+.site-footer__copyright {
+  margin-top: 0.9rem;
+  padding-top: 0.8rem;
+  border-top: 1px solid #e5e0d7;
+  text-align: center;
+  color: #616d7a;
+  font-size: 0.75rem;
+}
+
+@media (min-width: 768px) {
+  .okfp-header {
+    --okfp-common-head-height: 3.35rem;
+    --okfp-main-header-height: 5rem;
+  }
+
+  .okfp-common-head__brand-logo {
+    height: clamp(1.85rem, 3.2vw, 2.3rem);
+    max-width: min(38vw, 332px);
+  }
+
+  .okfp-common-head__brand-fallback {
+    font-size: 0.98rem;
+  }
+
+  .okfp-common-head__links {
+    justify-content: flex-end;
+    gap: 1.12rem;
+  }
+
+  .okfp-common-head__link {
+    font-size: 0.79rem;
+  }
+
+  .okfp-common-head__link:hover,
+  .okfp-common-head__link:focus-visible {
+    color: var(--okfp-common-head-accent);
+    text-decoration: none;
+  }
+
+  .okfp-common-head__link:hover::after,
+  .okfp-common-head__link:focus-visible::after {
+    transform: scaleX(1);
+  }
+
+  .okfp-header__inner {
+    min-height: var(--okfp-main-header-height);
+  }
+
+  .okfp-nav-toggle {
+    display: none;
+  }
+
+  .okfp-nav {
+    position: static;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 1.15rem;
+    opacity: 1;
+    pointer-events: auto;
+    transform: none;
+    border: 0;
+    background: transparent;
+    padding: 0;
+  }
+
+  .okfp-nav a {
+    font-size: 0.79rem;
+    padding: 0.28rem 0.08rem;
+    border-radius: 0;
+    background: transparent;
+    color: #35536d;
+  }
+
+  .okfp-nav a:hover,
+  .okfp-nav a:focus-visible {
+    background: transparent;
+    color: #183a58;
+  }
+
+  .okfp-logo__img {
+    width: clamp(184px, 20vw, 300px);
+    max-height: 3.45rem;
+  }
+
+  .okfp-nav__cta {
+    margin-left: 0.2rem;
+    padding-inline: 0.85rem;
+  }
+
+  .okfp-hero__inner {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    min-height: 31rem;
+  }
+
+  .okfp-hero__copy {
+    padding: 6.2rem 2.4rem 2.8rem;
+    max-width: min(100%, 44rem);
+  }
+
+  .okfp-hero__lead {
+    max-width: 13.6em;
+    white-space: nowrap;
+    font-size: clamp(2.7rem, 3.45vw, 3.55rem);
+    line-height: 1.38;
+  }
+
+  .okfp-hero__visual {
+    justify-self: end;
+    width: min(100%, 44rem);
+  }
+
+  .okfp-value__grid {
+    position: relative;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    grid-template-areas: "left right";
+  }
+
+  .okfp-value__titleline {
+    position: absolute;
+    top: -0.6rem;
+    left: 50%;
+    z-index: 2;
+    width: 100%;
+    transform: translateX(-50%);
+    padding: 2rem clamp(1.8rem, 4.3vw, 4.5rem) 0;
+    font-size: clamp(2.15rem, 3.8vw, 3.55rem);
+  }
+
+  .okfp-value__left,
+  .okfp-value__right {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 4.8rem clamp(1.8rem, 4.2vw, 3.8rem) 2.7rem;
+    min-height: 24.8rem;
+  }
+
+  .okfp-value__desc {
+    font-size: clamp(1rem, 1.45vw, 1.62rem);
+  }
+
+  .okfp-value__chips {
+    --okfp-chip-gap: clamp(1.8rem, 2.3vw, 2.8rem);
+    margin-top: 2.25rem;
+  }
+
+  .okfp-value__chips li {
+    width: clamp(6rem, 11vw, 8.5rem);
+    height: clamp(6rem, 11vw, 8.5rem);
+    font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+    font-style: normal;
+    font-size: 19px;
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: 0;
+  }
+
+  .okfp-value__chips li + li {
+    margin-left: var(--okfp-chip-gap);
+  }
+
+  .okfp-value__chips li + li::before {
+    left: calc(var(--okfp-chip-gap) * -0.5);
+    transform: translate(-50%, -50%);
+    font-size: clamp(2.2rem, 2.8vw, 3.1rem);
+  }
+
+  .okfp-value__sub {
+    font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+    font-style: normal;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 31px;
+    letter-spacing: 0;
+  }
+
+  .okfp-kpi {
+    margin-top: 1.9rem;
+    width: min(100%, 32rem);
+    gap: 1.35rem;
+  }
+
+  .okfp-kpi__row {
+    grid-template-columns: minmax(9rem, 1fr) auto;
+  }
+
+  .okfp-kpi dt {
+    font-size: clamp(1rem, 1.3vw, 1.35rem);
+  }
+
+  .okfp-kpi strong {
+    font-size: clamp(4rem, 6.6vw, 4.9rem);
+  }
+
+  .okfp-kpi span {
+    font-size: clamp(1.9rem, 2.9vw, 2.85rem);
+  }
+
+  .okfp-denmoku {
+    padding: clamp(4.2rem, 6.7vw, 6.1rem) 0 clamp(4.1rem, 6vw, 5.2rem);
+  }
+
+  .okfp-denmoku__word {
+    font-size: clamp(5rem, 8.4vw, 7.2rem);
+  }
+
+  .okfp-denmoku__title-break {
+    display: none;
+  }
+
+  .okfp-denmoku .okfp-shell {
+    --okfp-denmoku-word-size: clamp(5rem, 8.4vw, 7.2rem);
+  }
+
+  .okfp-denmoku #okfp-denmoku-title {
+    top: calc(var(--okfp-denmoku-word-size) * 0.41);
+    max-width: min(94%, 42rem);
+    font-size: clamp(1.02rem, 1.28vw, 1.34rem);
+  }
+
+  .okfp-denmoku h2:not(#okfp-denmoku-title) {
+    margin-top: 2.55rem;
+    width: min(95%, 68rem);
+    font-size: clamp(1.65rem, 2.35vw, 2.45rem);
+    line-height: 1.33;
+    white-space: nowrap;
+    border-bottom-width: 3px;
+  }
+
+  .okfp-denmoku__lead {
+    margin-top: 1.25rem;
+    max-width: 50rem;
+    font-size: clamp(1.03rem, 1.35vw, 1.28rem);
+  }
+
+  .okfp-intro__copy .okfp-label {
+    margin-bottom: 1rem;
+    padding: 0.18rem 0.8rem 0.22rem;
+    font-size: clamp(1.22rem, 1.95vw, 1.62rem);
+  }
+
+  .okfp-intro__copy .okfp-label::before {
+    left: -0.5rem;
+    font-size: clamp(5.2rem, 8.9vw, 7.15rem);
+  }
+
+  .okfp-intro__head {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 0.9fr);
+    gap: 1.8rem;
+  }
+
+  .okfp-merit {
+    grid-template-columns: 5.2rem 1fr;
+    gap: 1.2rem;
+  }
+
+  .okfp-merit__icon {
+    width: 5.2rem;
+  }
+
+  .okfp-pointband__inner {
+    grid-template-columns: minmax(0, 0.62fr) minmax(0, 0.38fr);
+    min-height: clamp(18rem, 26vw, 23rem);
+    align-items: stretch;
+  }
+
+  .okfp-pointband--reverse .okfp-pointband__inner {
+    grid-template-columns: minmax(0, 0.38fr) minmax(0, 0.62fr);
+  }
+
+  .okfp-pointband--reverse .okfp-pointband__image {
+    order: 2;
+  }
+
+  .okfp-pointband--reverse .okfp-pointband__content {
+    order: 1;
+  }
+
+  .okfp-pointband + .okfp-pointband {
+    padding-top: clamp(0.95rem, 1.8vw, 1.45rem);
+  }
+
+  .okfp-pointband__image {
+    min-height: clamp(16.5rem, 23vw, 21.5rem);
+    padding: 0;
+  }
+
+  .okfp-pointband__image img {
+    min-height: 0;
+    max-height: none;
+  }
+
+  .okfp-pointband__content {
+    min-height: clamp(16.5rem, 23vw, 21.5rem);
+    padding: clamp(1.8rem, 2.8vw, 2.45rem) clamp(1.45rem, 2.2vw, 1.95rem);
+    gap: 0.5rem;
+  }
+
+  .okfp-pointband__tag {
+    font-size: clamp(1.02rem, 1.45vw, 1.24rem);
+  }
+
+  .okfp-pointband h3 {
+    font-size: clamp(1.25rem, 1.9vw, 1.68rem);
+  }
+
+  .okfp-pointband p:last-child {
+    font-size: clamp(0.9rem, 1.08vw, 1.03rem);
+  }
+
+  .okfp-rent {
+    padding: 4.2rem 0 4.9rem;
+  }
+
+  .okfp-rent__word {
+    font-size: clamp(4.9rem, 8.5vw, 6.2rem);
+  }
+
+  .okfp-rent__hero {
+    --okfp-rent-word-size: clamp(4.9rem, 8.5vw, 6.2rem);
+  }
+
+  #okfp-rent-title.okfp-rent__subtitle {
+    top: calc(var(--okfp-rent-word-size) * 0.44);
+    max-width: min(94%, 38rem);
+    font-size: clamp(1.16rem, 2vw, 1.46rem);
+  }
+
+  .okfp-rent__lead {
+    margin-top: 0.8rem;
+    max-width: 46rem;
+    font-size: var(--fs-sm);
+  }
+
+  .okfp-rent__compare {
+    margin-top: 1.35rem;
+    max-width: 46rem;
+    font-size: 1.48rem;
+  }
+
+  .okfp-rent__grid {
+    margin-top: 2.35rem;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 2.45rem 2rem;
+  }
+
+  .okfp-rent-card h3 {
+    font-size: clamp(1.4rem, 1.7vw, 1.62rem);
+  }
+
+  .okfp-rent-card img {
+    margin-top: 0.8rem;
+  }
+
+  .okfp-rent-card dt {
+    font-size: var(--fs-sm);
+  }
+
+  .okfp-rent-card strong {
+    font-size: clamp(2.9rem, 4.3vw, 3.45rem);
+  }
+
+  .okfp-rent-card span {
+    font-size: clamp(1.75rem, 2.4vw, 2.1rem);
+  }
+
+  .okfp-rent__more {
+    margin-top: 2.6rem;
+    font-size: 0.88rem;
+    padding-left: 1.8rem;
+  }
+
+  .okfp-reuse {
+    padding: 4.4rem 0 4.9rem;
+  }
+
+  .okfp-reuse #okfp-reuse-title {
+    top: 49.5%;
+    max-width: min(94%, 38rem);
+    font-size: clamp(1.16rem, 2.05vw, 1.45rem);
+  }
+
+  .okfp-reuse__word {
+    font-size: clamp(5.2rem, 9vw, 6.5rem);
+  }
+
+  .okfp-reuse__table-image-wrap {
+    margin-top: 1.5rem;
+    max-width: min(100%, 835px);
+  }
+
+  .okfp-footer__inner {
+    grid-template-columns: 1fr auto;
+    align-items: end;
+    gap: 2.4rem;
+  }
+
+  .okfp-footer__contact {
+    text-align: right;
+  }
+
+  .okfp-footer__nav {
+    justify-content: flex-end;
+  }
+
+  .site-nav-toggle {
+    display: none;
+  }
+
+  .site-nav {
+    position: static;
+    display: flex;
+    align-items: center;
+    gap: 0.2rem;
+    opacity: 1;
+    pointer-events: auto;
+    transform: none;
+    border: 0;
+    padding: 0;
+    background: transparent;
+  }
+
+  .site-footer__cta {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .site-footer__main {
+    grid-template-columns: 1.5fr 1fr;
+    gap: 2rem;
+  }
+
+  .site-footer__nav {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1200px) {
+  .okfp-header {
+    --okfp-common-head-height: 3.75rem;
+    --okfp-main-header-height: 5.4rem;
+    --okfp-main-header-bg: #fff;
+  }
+
+  .okfp-header__main {
+    border-bottom: 1px solid #d4dde7;
+    background: var(--okfp-main-header-bg);
+    backdrop-filter: none;
+  }
+
+  .okfp-header.is-scrolled .okfp-header__main {
+    box-shadow: 0 8px 20px rgba(12, 27, 44, 0.1);
+  }
+
+  .okfp-header__main .okfp-shell {
+    width: min(100% - 3.4rem, 1268px);
+  }
+
+  .okfp-common-head .okfp-shell {
+    width: min(100% - 3.4rem, 1268px);
+  }
+
+  .okfp-header__inner {
+    min-height: var(--okfp-main-header-height);
+    padding-top: 0;
+    padding-bottom: 0;
+    align-items: center;
+  }
+
+  .okfp-brand {
+    margin-top: 0;
+  }
+
+  .okfp-common-head__inner {
+    min-height: var(--okfp-common-head-height);
+    gap: 1.5rem;
+  }
+
+  .okfp-common-head__brand-logo {
+    height: 2.4rem;
+    max-width: 352px;
+  }
+
+  .okfp-common-head__brand-fallback {
+    font-size: 1.02rem;
+  }
+
+  .okfp-common-head__links {
+    justify-content: flex-end;
+    gap: 1.52rem;
+    overflow-x: visible;
+  }
+
+  .okfp-common-head__link {
+    font-size: var(--fs-sm);
+  }
+
+  .okfp-logo__img {
+    width: clamp(224px, 16vw, 332px);
+    max-height: 3.8rem;
+  }
+
+  .okfp-nav {
+    margin-top: 0;
+    gap: 2.2rem;
+  }
+
+  .okfp-nav a {
+    font-size: var(--fs-sm);
+    padding: 0;
+    letter-spacing: 0;
+    color: #2d4c66;
+  }
+
+  .okfp-nav a:hover,
+  .okfp-nav a:focus-visible {
+    background: transparent;
+    color: #163a58;
+  }
+
+  .okfp-main {
+    margin-top: 0;
+  }
+
+  .okfp-hero {
+    padding-top: 0;
+    background: linear-gradient(180deg, #a7d6ed 0%, #c9e2ef 33%, #e7edf0 74%, #f2f2f2 100%);
+  }
+
+  .okfp-hero__inner {
+    width: min(100% - 0.5rem, 1361px);
+    max-width: 1361px;
+    min-height: 540px;
+    grid-template-columns: minmax(0, 678fr) minmax(0, 683fr);
+  }
+
+  .okfp-hero__copy {
+    padding-top: 6.4rem;
+    padding-left: clamp(2.5rem, 6.2vw, 6.4rem);
+    padding-bottom: 2rem;
+    max-width: min(100%, 48rem);
+  }
+
+  .okfp-hero__lead {
+    max-width: 14em;
+    font-size: 3.65rem;
+    line-height: 1.38;
+    color: #6f767d;
+  }
+
+  .okfp-hero__visual {
+    width: min(100%, 42.9rem);
+    margin-bottom: -0.35rem;
+  }
+
+  .okfp-hero__visual img {
+    display: block;
+  }
+
+  .okfp-value__grid {
+    width: 100%;
+    max-width: none;
+    grid-template-columns: minmax(0, 678fr) minmax(0, 683fr);
+    align-items: start;
+  }
+
+  .okfp-value__titleline {
+    top: -0.85rem;
+    padding-top: 2.2rem;
+  }
+
+  .okfp-value__left,
+  .okfp-value__right {
+    box-sizing: border-box;
+    padding-top: 4.35rem;
+    padding-bottom: 2.1rem;
+  }
+
+  .okfp-value__left {
+    height: 397px;
+  }
+
+  .okfp-value__right {
+    height: 399px;
+  }
+
+  .okfp-kpi {
+    width: min(100%, 34rem);
+  }
+
+  .okfp-denmoku {
+    padding-top: 5.4rem;
+    padding-bottom: 5rem;
+  }
+
+  .okfp-denmoku__word {
+    font-size: 7.5rem;
+  }
+
+  .okfp-denmoku .okfp-shell {
+    --okfp-denmoku-word-size: 7.5rem;
+  }
+
+  .okfp-denmoku #okfp-denmoku-title {
+    top: calc(var(--okfp-denmoku-word-size) * 0.41);
+    font-size: 1.42rem;
+  }
+
+  .okfp-denmoku h2:not(#okfp-denmoku-title) {
+    margin-top: 2.95rem;
+    font-size: 2.6rem;
+  }
+
+  .okfp-denmoku__lead {
+    margin-top: 1.45rem;
+    max-width: 51rem;
+    font-size: 1.28rem;
+  }
+
+  .okfp-intro__copy .okfp-label {
+    margin-bottom: 1.2rem;
+    font-size: 1.64rem;
+  }
+
+  .okfp-rent {
+    padding-top: 5rem;
+    padding-bottom: 5.5rem;
+  }
+
+  .okfp-rent__word {
+    font-size: 6.7rem;
+  }
+
+  .okfp-rent__hero {
+    --okfp-rent-word-size: 6.7rem;
+  }
+
+  #okfp-rent-title.okfp-rent__subtitle {
+    top: calc(var(--okfp-rent-word-size) * 0.44);
+    font-size: 1.58rem;
+  }
+
+  .okfp-rent__lead {
+    margin-top: 0.95rem;
+    max-width: 48rem;
+    font-size: 0.98rem;
+  }
+
+  .okfp-rent__compare {
+    max-width: 54rem;
+    font-size: 1.66rem;
+  }
+
+  .okfp-rent__grid {
+    gap: 2.7rem 2.3rem;
+  }
+
+  .okfp-rent-card h3 {
+    font-size: 1.75rem;
+  }
+
+  .okfp-rent-card dl {
+    margin-top: 1.08rem;
+  }
+
+  .okfp-rent-card strong {
+    font-size: 3.8rem;
+  }
+
+  .okfp-rent-card span {
+    font-size: 2.2rem;
+  }
+
+  .okfp-rent__more {
+    margin-top: 2.85rem;
+    font-size: 0.91rem;
+  }
+
+  .okfp-reuse {
+    padding-top: 4.9rem;
+    padding-bottom: 5.2rem;
+  }
+
+  .okfp-reuse #okfp-reuse-title {
+    top: 49.3%;
+    font-size: 1.54rem;
+  }
+
+  .okfp-reuse__word {
+    font-size: 6.95rem;
+  }
+
+  .okfp-reuse__table-image-wrap {
+    margin-top: 1.7rem;
+  }
+
+  .okfp-pointband__inner {
+    grid-template-columns: minmax(0, 0.7fr) minmax(0, 0.3fr);
+    min-height: 350px;
+  }
+
+  .okfp-pointband--reverse .okfp-pointband__inner {
+    grid-template-columns: minmax(0, 0.3fr) minmax(0, 0.7fr);
+  }
+
+  .okfp-pointband + .okfp-pointband {
+    padding-top: 1.5rem;
+  }
+
+  .okfp-pointband__image {
+    min-height: 350px;
+    padding: 0;
+  }
+
+  .okfp-pointband__image img {
+    min-height: 0;
+    max-height: none;
+  }
+
+  .okfp-pointband__content {
+    min-height: 350px;
+    padding: 2.45rem 2.05rem;
+    gap: 0.6rem;
+  }
+
+  .okfp-pointband__tag {
+    font-size: 1.26rem;
+  }
+
+  .okfp-pointband h3 {
+    font-size: 1.78rem;
+  }
+
+  .okfp-pointband p:last-child {
+    font-size: 1.02rem;
+  }
+}

@@ -1,0 +1,39 @@
+/* ─────────────────────────────────────────────────────────────────────────────
+   Typography Tokens  —  ogawa-corp theme
+   すべての font-size はここで定義したカスタムプロパティを参照する。
+   値は px 固定にすることで、main.css が持つ html { font-size: 62.5% } の
+   有無にかかわらず全ページで同一サイズになる。
+   ───────────────────────────────────────────────────────────────────────────── */
+:root {
+  /* ─── Font Families ─── */
+  --font-ja:       "Noto Sans JP", "Hiragino Kaku Gothic ProN", sans-serif;
+  --font-ja-serif: "Noto Serif JP", "Yu Mincho", "YuMincho", serif;
+  --font-en:       "Oswald", "Roboto", sans-serif;
+
+  /* ─── Type Scale ─── */
+  --fs-2xs:    10px;  /* micro: アイコンラベル、極小マーカー */
+  --fs-xs:     12px;  /* キャプション・注釈・著作権表記 */
+  --fs-sm:     14px;  /* 補足テキスト・セカンダリラベル */
+  --fs-base:   16px;  /* 本文（標準） */
+  --fs-md:     18px;  /* 大きめ本文・リードテキスト */
+  --fs-lg:     20px;  /* 小見出し・強調ラベル */
+  --fs-xl:     24px;  /* サブ見出し */
+  --fs-2xl:    28px;  /* セクションサブタイトル */
+  --fs-3xl:    32px;  /* セクション見出し */
+  --fs-4xl:    40px;  /* 大セクション見出し */
+  --fs-5xl:    48px;  /* ページ見出し */
+  --fs-hero:    clamp(40px, 5.5vw, 72px);   /* フルードヒーロー見出し */
+  --fs-display: clamp(60px, 9vw, 140px);    /* フルードキービジュアル */
+
+  /* ─── Line Heights ─── */
+  --lh-tight:   1.2;
+  --lh-heading: 1.4;
+  --lh-normal:  1.7;
+  --lh-relaxed: 1.9;
+
+  /* ─── Letter Spacing ─── */
+  --ls-tight:  0;
+  --ls-normal: 0.05em;
+  --ls-wide:   0.1em;
+  --ls-wider:  0.2em;
+}

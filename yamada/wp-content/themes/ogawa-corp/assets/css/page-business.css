@@ -1,0 +1,713 @@
+.okg-bizhub {
+  --okg-bg-deep: #0a0d14;
+  --okg-bg-mid: #131824;
+  --okg-bg-soft: #1b2433;
+  --okg-text: #f3f6f8;
+  --okg-text-soft: rgba(243, 246, 248, 0.82);
+  --okg-border-soft: rgba(243, 246, 248, 0.2);
+  --okg-brass: #8e7b4f;
+  --okg-panel-bg: rgba(13, 21, 33, 0.54);
+  --okg-shadow-deep: 0 36px 88px rgba(3, 6, 13, 0.48);
+  --okg-font-serif: "Noto Serif JP", "Shippori Mincho", "Yu Mincho", "YuMincho", serif;
+  --okg-font-sans: "Hiragino Kaku Gothic ProN", "Yu Gothic", "Meiryo", sans-serif;
+  --okg-spot-x: 50%;
+  --okg-spot-y: 35%;
+  --okg-spot-opacity: 1;
+  position: relative;
+  isolation: isolate;
+  overflow-x: hidden;
+  background: #070a10;
+  color: var(--okg-text);
+  font-family: var(--okg-font-sans);
+  font-size: 16px;
+  line-height: 1.9;
+  padding: 0;
+}
+
+.okg-bizhub,
+.okg-bizhub * {
+  box-sizing: border-box;
+}
+
+.okg-bizhub__stage {
+  position: relative;
+  z-index: 1;
+  background: var(--okg-bg-deep);
+}
+
+.okg-bizhub__intro-bg {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 18% 22%, rgba(145, 175, 228, 0.24), transparent 34%),
+    radial-gradient(circle at 72% 48%, rgba(142, 123, 79, 0.16), transparent 36%),
+    radial-gradient(circle at 50% 52%, var(--okg-bg-mid) 0%, var(--okg-bg-deep) 72%, #070a10 100%);
+}
+
+.okg-bizhub__intro-bg::before,
+.okg-bizhub__intro-bg::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.okg-bizhub__intro-bg::before {
+  background-image:
+    linear-gradient(rgba(243, 246, 248, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(243, 246, 248, 0.05) 1px, transparent 1px);
+  background-size: 46px 46px;
+}
+
+.okg-bizhub__intro-bg::after {
+  background: rgba(3, 6, 13, 0);
+  transition: background-color 0.5s ease-out;
+}
+
+.okg-bizhub.is-stage-dimmed .okg-bizhub__intro-bg::after {
+  background: rgba(3, 6, 13, 0.48);
+}
+
+.okg-bizhub__stage-body {
+  position: relative;
+  z-index: 1;
+  padding: 0 100px 50vh;
+}
+
+.okg-bizhub__stage-copy {
+  margin: 0;
+  color: #fff;
+  font-family: var(--okg-font-serif);
+  font-size: 50px;
+  font-weight: 700;
+  line-height: 2;
+  letter-spacing: 0;
+}
+
+.okg-bizhub__content {
+  position: relative;
+  z-index: 2;
+  isolation: isolate;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 22% 18%, var(--okg-bg-soft) 0%, rgba(19, 24, 36, 0.45) 28%, transparent 52%),
+    radial-gradient(circle at 50% 52%, var(--okg-bg-mid) 0%, var(--okg-bg-deep) 70%, #070a10 100%);
+  padding: clamp(82px, 10vw, 144px) 0 clamp(104px, 12vw, 180px);
+}
+
+.okg-bizhub__bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.okg-bizhub__grid,
+.okg-bizhub__spotlight {
+  position: absolute;
+  inset: 0;
+}
+
+.okg-bizhub__grid {
+  background-image:
+    linear-gradient(rgba(243, 246, 248, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(243, 246, 248, 0.05) 1px, transparent 1px);
+  background-size: 46px 46px;
+}
+
+.okg-bizhub__spotlight {
+  background: radial-gradient(
+    440px circle at var(--okg-spot-x) var(--okg-spot-y),
+    rgba(145, 175, 228, 0.25) 0%,
+    rgba(79, 107, 153, 0.2) 27%,
+    rgba(10, 13, 20, 0) 72%
+  );
+  opacity: var(--okg-spot-opacity);
+  transition: opacity 0.4s ease;
+}
+
+.okg-bizhub__container {
+  position: relative;
+  z-index: 1;
+  width: min(1320px, calc(100% - 8vw));
+  margin: 0 auto;
+}
+
+.okg-bizhub__hero {
+  margin-bottom: clamp(108px, 13vw, 192px);
+}
+
+.okg-bizhub__eyebrow {
+  margin: 0;
+  letter-spacing: 0.24em;
+  font-size: 12px;
+  font-family: "Montserrat", var(--okg-font-sans);
+  color: rgba(243, 246, 248, 0.64);
+}
+
+.okg-bizhub__title {
+  margin: 14px 0 0;
+  font-size: clamp(40px, 4.5vw, 72px);
+  line-height: 1.18;
+  font-family: var(--okg-font-serif);
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  color: var(--okg-text);
+}
+
+.okg-bizhub__lead {
+  margin: clamp(28px, 2.6vw, 40px) 0 0;
+  max-width: 760px;
+  font-size: clamp(16px, 1.25vw, 20px);
+  color: var(--okg-text-soft);
+}
+
+.okg-bizhub__section + .okg-bizhub__section {
+  margin-top: clamp(138px, 17vw, 256px);
+}
+
+.okg-bizhub__assembly {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 58%) minmax(0, 42%);
+  align-items: center;
+  gap: clamp(48px, 7vw, 126px);
+}
+
+.okg-bizhub__assembly--wood {
+  grid-template-columns: minmax(0, 42%) minmax(0, 58%);
+}
+
+.okg-bizhub__assembly--exterior {
+  grid-template-columns: minmax(0, 42%) minmax(0, 58%);
+}
+
+.okg-bizhub__assembly--wood .okg-bizhub__media-wrap {
+  grid-column: 2;
+  grid-row: 1;
+}
+
+.okg-bizhub__assembly--exterior .okg-bizhub__media-wrap {
+  grid-column: 2;
+  grid-row: 1;
+}
+
+.okg-bizhub__assembly--wood .okg-bizhub__panel {
+  grid-column: 1;
+  grid-row: 1;
+  margin-left: auto;
+}
+
+.okg-bizhub__assembly--exterior .okg-bizhub__panel {
+  grid-column: 1;
+  grid-row: 1;
+  margin-left: auto;
+}
+
+.okg-bizhub__watermark {
+  position: absolute;
+  top: clamp(-86px, -7vw, -42px);
+  left: 0;
+  margin: 0;
+  font-size: clamp(70px, 9vw, 170px);
+  font-family: var(--okg-font-serif);
+  line-height: 1;
+  letter-spacing: 0.08em;
+  color: rgba(243, 246, 248, 0.075);
+  white-space: nowrap;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.okg-bizhub__assembly--wood .okg-bizhub__watermark {
+  left: auto;
+  right: 0;
+}
+
+.okg-bizhub__assembly--exterior .okg-bizhub__watermark {
+  left: auto;
+  right: 0;
+}
+
+.okg-bizhub__media-wrap {
+  position: relative;
+  z-index: 1;
+}
+
+.okg-bizhub__frame-guide {
+  position: absolute;
+  inset: clamp(-16px, -1.1vw, -10px);
+  border: 1px solid rgba(142, 123, 79, 0.8);
+  transform: translate(clamp(12px, 1.2vw, 18px), clamp(-12px, -1.2vw, -18px));
+  pointer-events: none;
+  z-index: 1;
+}
+
+.okg-bizhub__media {
+  position: relative;
+  isolation: isolate;
+  margin: 0;
+  overflow: hidden;
+  border-radius: 10px;
+  background: #101a2b;
+  box-shadow: var(--okg-shadow-deep);
+  aspect-ratio: 4 / 3;
+}
+
+.okg-bizhub__media img {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  transform: scale(1.01);
+  transition: transform 0.8s ease, filter 0.8s ease;
+}
+
+.okg-bizhub__media--symbol {
+  display: grid;
+  place-items: center;
+  background:
+    radial-gradient(circle at 28% 22%, rgba(145, 175, 228, 0.18), transparent 32%),
+    linear-gradient(135deg, rgba(243, 246, 248, 0.06) 0 1px, transparent 1px 34px),
+    linear-gradient(145deg, rgba(18, 34, 58, 0.98), rgba(7, 12, 22, 0.96));
+}
+
+.okg-bizhub__symbol {
+  position: relative;
+  width: min(56%, 300px);
+  aspect-ratio: 1;
+  border: 1px solid rgba(183, 222, 255, 0.36);
+  box-shadow:
+    0 0 0 1px rgba(183, 222, 255, 0.08) inset,
+    0 28px 72px rgba(3, 6, 13, 0.36);
+}
+
+.okg-bizhub__symbol::before,
+.okg-bizhub__symbol::after {
+  content: "";
+  position: absolute;
+  inset: 18%;
+  border: 1px solid rgba(142, 123, 79, 0.66);
+}
+
+.okg-bizhub__symbol::after {
+  inset: auto 20% 24%;
+  height: 32%;
+  border-top: 0;
+  background: linear-gradient(180deg, rgba(183, 222, 255, 0.1), rgba(183, 222, 255, 0.02));
+}
+
+.okg-bizhub__symbol--real-estate {
+  transform: rotate(45deg);
+}
+
+.okg-bizhub__symbol--real-estate::before,
+.okg-bizhub__symbol--real-estate::after {
+  transform: rotate(-45deg);
+}
+
+.okg-bizhub__symbol--exterior {
+  width: min(62%, 340px);
+  aspect-ratio: 4 / 3;
+}
+
+.okg-bizhub__symbol--exterior::before {
+  inset: 20% 12%;
+  border-left: 0;
+  border-right: 0;
+  box-shadow:
+    0 22px 0 rgba(142, 123, 79, 0.28),
+    0 -22px 0 rgba(142, 123, 79, 0.18);
+}
+
+.okg-bizhub__symbol--exterior::after {
+  inset: 16% 50% 16% auto;
+  width: 1px;
+  height: auto;
+  border: 0;
+  background: rgba(183, 222, 255, 0.46);
+  box-shadow:
+    -48px 0 0 rgba(183, 222, 255, 0.2),
+    48px 0 0 rgba(183, 222, 255, 0.2);
+}
+
+.okg-bizhub__media::before,
+.okg-bizhub__media::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.6s ease;
+}
+
+.okg-bizhub__media::before {
+  z-index: 2;
+  background-image:
+    repeating-linear-gradient(0deg, rgba(180, 220, 255, 0.32) 0, rgba(180, 220, 255, 0.32) 1px, transparent 1px, transparent 22px),
+    repeating-linear-gradient(90deg, rgba(180, 220, 255, 0.28) 0, rgba(180, 220, 255, 0.28) 1px, transparent 1px, transparent 22px),
+    linear-gradient(125deg, rgba(23, 57, 104, 0.6), rgba(8, 17, 32, 0.25));
+  mix-blend-mode: screen;
+}
+
+.okg-bizhub__media::after {
+  z-index: 3;
+  inset: 10%;
+  border: 1px solid rgba(183, 222, 255, 0.54);
+  box-shadow:
+    0 0 0 1px rgba(183, 222, 255, 0.14) inset,
+    0 0 28px rgba(103, 161, 234, 0.35);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .okg-bizhub__media-wrap:hover .okg-bizhub__media img,
+  .okg-bizhub__media:hover img {
+    transform: scale(1.05);
+    filter: saturate(0.5) contrast(1.14) hue-rotate(172deg) brightness(0.82);
+  }
+
+  .okg-bizhub__media-wrap:hover .okg-bizhub__media::before,
+  .okg-bizhub__media-wrap:hover .okg-bizhub__media::after,
+  .okg-bizhub__media:hover::before,
+  .okg-bizhub__media:hover::after {
+    opacity: 1;
+  }
+}
+
+.okg-bizhub__panel {
+  position: relative;
+  z-index: 2;
+  width: min(560px, 100%);
+  padding: clamp(32px, 3.5vw, 54px);
+  border: 1px solid var(--okg-border-soft);
+  background: var(--okg-panel-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 30px 72px rgba(4, 8, 16, 0.34);
+}
+
+.okg-bizhub__assembly--garage .okg-bizhub__panel,
+.okg-bizhub__assembly--real-estate .okg-bizhub__panel {
+  transform: translateX(clamp(-48px, -3.8vw, -72px));
+}
+
+.okg-bizhub__assembly--wood .okg-bizhub__panel,
+.okg-bizhub__assembly--exterior .okg-bizhub__panel {
+  transform: translateX(clamp(48px, 3.8vw, 72px));
+}
+
+.okg-bizhub__number {
+  margin: 0;
+  color: rgba(243, 246, 248, 0.74);
+  font-size: 12px;
+  letter-spacing: 0.28em;
+  font-family: "Montserrat", var(--okg-font-sans);
+}
+
+.okg-bizhub__panel-title {
+  margin: 14px 0 18px;
+  font-family: var(--okg-font-serif);
+  font-size: clamp(34px, 3.3vw, 52px);
+  font-weight: 500;
+  line-height: 1.28;
+  letter-spacing: 0.05em;
+}
+
+.okg-bizhub__panel-copy {
+  margin: 0;
+  font-size: clamp(15px, 1.22vw, 18px);
+  color: var(--okg-text-soft);
+}
+
+.okg-bizhub__vertical-label {
+  position: absolute;
+  top: clamp(18px, 1.8vw, 28px);
+  right: clamp(-62px, -4vw, -42px);
+  font-family: var(--okg-font-serif);
+  font-size: clamp(13px, 1.1vw, 16px);
+  letter-spacing: 0.2em;
+  color: rgba(243, 246, 248, 0.62);
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+}
+
+.okg-bizhub__button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: clamp(24px, 2.2vw, 34px);
+  min-width: 180px;
+  min-height: 52px;
+  padding: 0 28px;
+  border: 1px solid rgba(142, 123, 79, 0.66);
+  background: linear-gradient(130deg, rgba(142, 123, 79, 0.28), rgba(142, 123, 79, 0.12));
+  color: var(--okg-text);
+  text-decoration: none;
+  letter-spacing: 0.08em;
+  font-size: 14px;
+  font-weight: 600;
+  transition: transform 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.okg-bizhub__button:hover,
+.okg-bizhub__button:focus-visible {
+  transform: translateY(-2px);
+  background: linear-gradient(130deg, rgba(142, 123, 79, 0.4), rgba(142, 123, 79, 0.2));
+  border-color: rgba(142, 123, 79, 0.88);
+}
+
+.okg-bizhub__button:focus-visible {
+  outline: 2px solid rgba(243, 246, 248, 0.85);
+  outline-offset: 3px;
+}
+
+.okg-bizhub__button--disabled {
+  background: rgba(243, 246, 248, 0.08);
+  border-color: rgba(243, 246, 248, 0.24);
+  color: rgba(243, 246, 248, 0.64);
+  cursor: default;
+  pointer-events: none;
+}
+
+.okg-bizhub__section--wood .okg-bizhub__media-wrap,
+.okg-bizhub__section--wood .okg-bizhub__panel,
+.okg-bizhub__section--wood .okg-bizhub__frame-guide,
+.okg-bizhub__section--wood .okg-bizhub__vertical-label,
+.okg-bizhub__section--real-estate .okg-bizhub__media-wrap,
+.okg-bizhub__section--real-estate .okg-bizhub__panel,
+.okg-bizhub__section--real-estate .okg-bizhub__frame-guide,
+.okg-bizhub__section--real-estate .okg-bizhub__vertical-label,
+.okg-bizhub__section--exterior .okg-bizhub__media-wrap,
+.okg-bizhub__section--exterior .okg-bizhub__panel,
+.okg-bizhub__section--exterior .okg-bizhub__frame-guide,
+.okg-bizhub__section--exterior .okg-bizhub__vertical-label {
+  opacity: 0;
+}
+
+.okg-bizhub__section--wood .okg-bizhub__media-wrap,
+.okg-bizhub__section--real-estate .okg-bizhub__media-wrap,
+.okg-bizhub__section--exterior .okg-bizhub__media-wrap {
+  transform: translate3d(80px, -36px, 0);
+  transition: transform 0.95s cubic-bezier(0.18, 0.9, 0.25, 1), opacity 0.95s ease;
+}
+
+.okg-bizhub__section--wood .okg-bizhub__panel,
+.okg-bizhub__section--real-estate .okg-bizhub__panel,
+.okg-bizhub__section--exterior .okg-bizhub__panel {
+  transform: translate3d(-92px, 42px, 0);
+  transition: transform 0.95s cubic-bezier(0.18, 0.9, 0.25, 1), opacity 0.95s ease;
+}
+
+.okg-bizhub__section--wood .okg-bizhub__frame-guide,
+.okg-bizhub__section--real-estate .okg-bizhub__frame-guide,
+.okg-bizhub__section--exterior .okg-bizhub__frame-guide {
+  transform: translate(18px, 52px);
+  transition: transform 0.82s cubic-bezier(0.28, 0.85, 0.34, 1.08), opacity 0.82s ease;
+}
+
+.okg-bizhub__section--wood .okg-bizhub__vertical-label,
+.okg-bizhub__section--real-estate .okg-bizhub__vertical-label,
+.okg-bizhub__section--exterior .okg-bizhub__vertical-label {
+  transform: translate3d(24px, -58px, 0);
+  transition: transform 0.8s cubic-bezier(0.28, 0.85, 0.34, 1.08), opacity 0.8s ease;
+}
+
+.okg-bizhub__section--wood.is-assembled .okg-bizhub__media-wrap,
+.okg-bizhub__section--wood.is-assembled .okg-bizhub__panel,
+.okg-bizhub__section--wood.is-assembled .okg-bizhub__frame-guide,
+.okg-bizhub__section--wood.is-assembled .okg-bizhub__vertical-label,
+.okg-bizhub__section--real-estate.is-assembled .okg-bizhub__media-wrap,
+.okg-bizhub__section--real-estate.is-assembled .okg-bizhub__panel,
+.okg-bizhub__section--real-estate.is-assembled .okg-bizhub__frame-guide,
+.okg-bizhub__section--real-estate.is-assembled .okg-bizhub__vertical-label,
+.okg-bizhub__section--exterior.is-assembled .okg-bizhub__media-wrap,
+.okg-bizhub__section--exterior.is-assembled .okg-bizhub__panel,
+.okg-bizhub__section--exterior.is-assembled .okg-bizhub__frame-guide,
+.okg-bizhub__section--exterior.is-assembled .okg-bizhub__vertical-label {
+  opacity: 1;
+  transform: none;
+}
+
+.okg-bizhub__section--wood.is-assembled .okg-bizhub__frame-guide,
+.okg-bizhub__section--real-estate.is-assembled .okg-bizhub__frame-guide,
+.okg-bizhub__section--exterior.is-assembled .okg-bizhub__frame-guide {
+  transform: translate(clamp(12px, 1.2vw, 18px), clamp(-12px, -1.2vw, -18px));
+}
+
+@media (max-width: 1180px) {
+  .okg-bizhub__assembly--garage .okg-bizhub__panel,
+  .okg-bizhub__assembly--wood .okg-bizhub__panel,
+  .okg-bizhub__assembly--real-estate .okg-bizhub__panel,
+  .okg-bizhub__assembly--exterior .okg-bizhub__panel {
+    transform: none;
+  }
+}
+
+@media (max-width: 960px) {
+  .okg-bizhub__content {
+    padding: 72px 0 96px;
+  }
+
+  .okg-bizhub__container {
+    width: min(1320px, calc(100% - 32px));
+  }
+
+  .okg-bizhub__hero {
+    margin-bottom: 72px;
+  }
+
+  .okg-bizhub__title {
+    font-size: clamp(32px, 8vw, 44px);
+  }
+
+  .okg-bizhub__lead {
+    font-size: 15px;
+  }
+
+  .okg-bizhub__section + .okg-bizhub__section {
+    margin-top: 96px;
+  }
+
+  .okg-bizhub__assembly,
+  .okg-bizhub__assembly--wood,
+  .okg-bizhub__assembly--exterior {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 28px;
+  }
+
+  .okg-bizhub__assembly--wood .okg-bizhub__media-wrap,
+  .okg-bizhub__assembly--wood .okg-bizhub__panel,
+  .okg-bizhub__assembly--exterior .okg-bizhub__media-wrap,
+  .okg-bizhub__assembly--exterior .okg-bizhub__panel {
+    grid-column: auto;
+    grid-row: auto;
+    margin-left: 0;
+  }
+
+  .okg-bizhub__watermark,
+  .okg-bizhub__assembly--wood .okg-bizhub__watermark,
+  .okg-bizhub__assembly--exterior .okg-bizhub__watermark {
+    left: 0;
+    right: auto;
+    top: -46px;
+    font-size: clamp(42px, 12vw, 62px);
+  }
+
+  .okg-bizhub__frame-guide {
+    inset: -9px;
+    transform: translate(8px, -8px);
+  }
+
+  .okg-bizhub__panel {
+    width: 100%;
+    padding: 28px 22px;
+  }
+
+  .okg-bizhub__panel-title {
+    font-size: clamp(28px, 8vw, 36px);
+  }
+
+  .okg-bizhub__panel-copy {
+    font-size: 14px;
+  }
+
+  .okg-bizhub__vertical-label {
+    position: static;
+    display: inline-block;
+    margin-bottom: 12px;
+    writing-mode: horizontal-tb;
+    letter-spacing: 0.12em;
+    transform: none;
+  }
+
+  .okg-bizhub__section--wood .okg-bizhub__media-wrap,
+  .okg-bizhub__section--wood .okg-bizhub__panel,
+  .okg-bizhub__section--wood .okg-bizhub__frame-guide,
+  .okg-bizhub__section--wood .okg-bizhub__vertical-label,
+  .okg-bizhub__section--real-estate .okg-bizhub__media-wrap,
+  .okg-bizhub__section--real-estate .okg-bizhub__panel,
+  .okg-bizhub__section--real-estate .okg-bizhub__frame-guide,
+  .okg-bizhub__section--real-estate .okg-bizhub__vertical-label,
+  .okg-bizhub__section--exterior .okg-bizhub__media-wrap,
+  .okg-bizhub__section--exterior .okg-bizhub__panel,
+  .okg-bizhub__section--exterior .okg-bizhub__frame-guide,
+  .okg-bizhub__section--exterior .okg-bizhub__vertical-label {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  .okg-bizhub__media::before,
+  .okg-bizhub__media::after {
+    opacity: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .okg-bizhub__stage-body {
+    padding: 0 5% 50vh;
+  }
+
+  .okg-bizhub__stage-copy {
+    font-size: 27px;
+    line-height: 1.5;
+  }
+}
+
+@media (hover: none), (pointer: coarse) {
+  .okg-bizhub__spotlight {
+    opacity: 0.45;
+  }
+
+  .okg-bizhub__media img {
+    filter: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .okg-bizhub {
+    --okg-spot-opacity: 0;
+  }
+
+  .okg-bizhub__spotlight {
+    display: none;
+  }
+
+  .okg-bizhub__intro-bg::after,
+  .okg-bizhub__media img,
+  .okg-bizhub__button,
+  .okg-bizhub__section--wood .okg-bizhub__media-wrap,
+  .okg-bizhub__section--wood .okg-bizhub__panel,
+  .okg-bizhub__section--wood .okg-bizhub__frame-guide,
+  .okg-bizhub__section--wood .okg-bizhub__vertical-label,
+  .okg-bizhub__section--real-estate .okg-bizhub__media-wrap,
+  .okg-bizhub__section--real-estate .okg-bizhub__panel,
+  .okg-bizhub__section--real-estate .okg-bizhub__frame-guide,
+  .okg-bizhub__section--real-estate .okg-bizhub__vertical-label,
+  .okg-bizhub__section--exterior .okg-bizhub__media-wrap,
+  .okg-bizhub__section--exterior .okg-bizhub__panel,
+  .okg-bizhub__section--exterior .okg-bizhub__frame-guide,
+  .okg-bizhub__section--exterior .okg-bizhub__vertical-label {
+    transition: none;
+  }
+
+  .okg-bizhub__section--wood .okg-bizhub__media-wrap,
+  .okg-bizhub__section--wood .okg-bizhub__panel,
+  .okg-bizhub__section--wood .okg-bizhub__frame-guide,
+  .okg-bizhub__section--wood .okg-bizhub__vertical-label,
+  .okg-bizhub__section--real-estate .okg-bizhub__media-wrap,
+  .okg-bizhub__section--real-estate .okg-bizhub__panel,
+  .okg-bizhub__section--real-estate .okg-bizhub__frame-guide,
+  .okg-bizhub__section--real-estate .okg-bizhub__vertical-label,
+  .okg-bizhub__section--exterior .okg-bizhub__media-wrap,
+  .okg-bizhub__section--exterior .okg-bizhub__panel,
+  .okg-bizhub__section--exterior .okg-bizhub__frame-guide,
+  .okg-bizhub__section--exterior .okg-bizhub__vertical-label {
+    opacity: 1;
+    transform: none;
+  }
+}

@@ -1,0 +1,219 @@
+/* ========================================
+   RECRUIT SLASH HERO
+   ======================================== */
+
+body.home .ogawa-parallax-hero,
+body.front-page .ogawa-parallax-hero {
+    --ogawa-hero-ink: #171c28;
+    --ogawa-hero-navy: #1d2f4f;
+    --ogawa-hero-line: rgba(23, 28, 40, 0.18);
+    --ogawa-hero-panel: rgba(255, 255, 255, 0.78);
+    --ogawa-hero-panel-strong: rgba(255, 255, 255, 0.9);
+    --ogawa-hero-shadow: 0 28px 64px rgba(23, 28, 40, 0.16);
+    position: relative;
+    z-index: 5;
+    width: 100vw;
+    max-width: 100vw;
+    height: clamp(440px, 52vw, 620px);
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
+    overflow: hidden;
+    background:
+        linear-gradient(135deg, #f6f1ea 0%, #ffffff 42%, #f0f3f7 100%);
+    isolation: isolate;
+}
+
+body.home .ogawa-parallax-hero::before,
+body.front-page .ogawa-parallax-hero::before {
+    content: "";
+    position: absolute;
+    top: -8%;
+    bottom: -8%;
+    left: 49.8%;
+    width: clamp(10px, 1vw, 12px);
+    background: rgba(255, 255, 255, 0.96);
+    box-shadow:
+        0 0 0 1px rgba(255, 255, 255, 0.85),
+        18px 0 36px rgba(23, 28, 40, 0.08);
+    transform: rotate(17deg);
+    transform-origin: center;
+    z-index: 4;
+    pointer-events: none;
+}
+
+body.home .ogawa-parallax-hero::after,
+body.front-page .ogawa-parallax-hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(circle at 26% 30%, rgba(255, 255, 255, 0.14), transparent 28%),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.12), transparent 46%, rgba(255, 255, 255, 0.2));
+    z-index: 3;
+    pointer-events: none;
+}
+
+body.home .ogawa-parallax-layer,
+body.front-page .ogawa-parallax-layer {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    will-change: opacity, transform;
+}
+
+body.home .ogawa-parallax-back,
+body.front-page .ogawa-parallax-back {
+    z-index: 1;
+}
+
+body.home .ogawa-parallax-front,
+body.front-page .ogawa-parallax-front {
+    z-index: 2;
+    clip-path: polygon(0 0, 68% 0, 42% 100%, 0 100%);
+    filter:
+        saturate(1.06)
+        contrast(1.02)
+        brightness(1.03)
+        drop-shadow(0 12px 28px rgba(23, 28, 40, 0.12));
+}
+
+body.home .ogawa-parallax-layer img,
+body.front-page .ogawa-parallax-layer img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 24%;
+    display: block;
+}
+
+body.home .ogawa-parallax-back img,
+body.front-page .ogawa-parallax-back img {
+    filter: saturate(0.88) contrast(0.98) brightness(0.9);
+}
+
+body.home .ogawa-parallax-front img,
+body.front-page .ogawa-parallax-front img {
+    filter: saturate(1.02) contrast(1.04) brightness(1.06);
+}
+
+body.home .ogawa-parallax-overlay,
+body.front-page .ogawa-parallax-overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 12;
+    pointer-events: none;
+    background:
+        linear-gradient(90deg, rgba(255, 255, 255, 0.42) 0%, rgba(255, 255, 255, 0.18) 32%, rgba(255, 255, 255, 0) 52%, rgba(255, 255, 255, 0.28) 100%);
+}
+
+body.home .ogawa-parallax-overlay__content,
+body.front-page .ogawa-parallax-overlay__content {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: min(100%, 1480px);
+    height: 100%;
+    margin: 0 auto;
+    padding: 34px clamp(24px, 4vw, 56px);
+    color: var(--ogawa-hero-ink);
+}
+
+body.home .ogawa-parallax-overlay__recruit,
+body.front-page .ogawa-parallax-overlay__recruit {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: min(72vw, 620px);
+    min-height: clamp(120px, 18vw, 220px);
+    padding: clamp(24px, 4vw, 48px);
+    border: 1px solid rgba(255, 255, 255, 0.46);
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.62), rgba(255, 255, 255, 0.26));
+    backdrop-filter: blur(10px);
+}
+
+body.home .ogawa-parallax-overlay__recruit-text,
+body.front-page .ogawa-parallax-overlay__recruit-text {
+    margin: 0;
+    color: var(--ogawa-hero-ink);
+    font-size: clamp(3rem, 9vw, 8rem);
+    font-family: "Futura PT", "Futura", "Montserrat", "Avenir Next", "Century Gothic", sans-serif;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    line-height: 1;
+    text-transform: uppercase;
+}
+
+body.home .ogawa-parallax-hero__link,
+body.front-page .ogawa-parallax-hero__link {
+    position: absolute;
+    inset: 0;
+    z-index: 20;
+    display: block;
+    text-decoration: none;
+}
+
+body.home .ogawa-parallax-hero__link:focus-visible,
+body.front-page .ogawa-parallax-hero__link:focus-visible {
+    outline: 3px solid rgba(29, 47, 79, 0.82);
+    outline-offset: -8px;
+}
+
+@media (min-width: 769px) and (max-width: 1199px) {
+    body.home .ogawa-parallax-hero,
+    body.front-page .ogawa-parallax-hero {
+        height: clamp(360px, 54vw, 520px);
+    }
+}
+
+@media (max-width: 768px) {
+    body.home .ogawa-parallax-hero,
+    body.front-page .ogawa-parallax-hero {
+        height: auto;
+        min-height: 320px;
+        aspect-ratio: 16 / 10;
+    }
+
+    body.home .ogawa-parallax-hero::before,
+    body.front-page .ogawa-parallax-hero::before {
+        left: 52%;
+        width: 8px;
+        transform: rotate(15deg);
+    }
+
+    body.home .ogawa-parallax-front,
+    body.front-page .ogawa-parallax-front {
+        clip-path: polygon(0 0, 76% 0, 46% 100%, 0 100%);
+    }
+
+    body.home .ogawa-parallax-layer img,
+    body.front-page .ogawa-parallax-layer img {
+        object-position: center 18%;
+    }
+
+    body.home .ogawa-parallax-overlay__content,
+    body.front-page .ogawa-parallax-overlay__content {
+        padding: 18px 16px 20px;
+    }
+
+    body.home .ogawa-parallax-overlay__recruit,
+    body.front-page .ogawa-parallax-overlay__recruit {
+        width: min(82vw, 420px);
+        min-height: clamp(92px, 24vw, 150px);
+        padding: 20px 18px;
+    }
+}
+
+@media (max-width: 480px) {
+    body.home .ogawa-parallax-front,
+    body.front-page .ogawa-parallax-front {
+        clip-path: polygon(0 0, 80% 0, 48% 100%, 0 100%);
+    }
+
+    body.home .ogawa-parallax-layer img,
+    body.front-page .ogawa-parallax-layer img {
+        object-position: center 14%;
+    }
+}

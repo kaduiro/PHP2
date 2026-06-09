@@ -1,0 +1,325 @@
+
+/* ==========================================================================
+   OUR BUSINESS Section Redesign (Multi-layer Japandi)
+   Concept: Multilayered / Modern Japanese Modernism
+   ========================================================================== */
+
+/* Overall Section Container */
+.business-section {
+  position: relative;
+  overflow: hidden;
+  padding: 120px 0;
+  background-color: #f5f5f5; /* Fallback */
+}
+
+/* Layer 1: Texture Background (Washi Layer) */
+.layer-texture-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  background-color: #f9f9f9;
+  background-image: 
+    radial-gradient(#e0e0e0 1px, transparent 1px),
+    radial-gradient(#e0e0e0 1px, transparent 1px);
+  background-size: 20px 20px;
+  background-position: 0 0, 10px 10px;
+  opacity: 0.6;
+}
+
+/* Layer 2: Geometric Grid (Structural Lines) */
+.layer-geometric-grid {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  background-image: 
+    linear-gradient(rgba(200, 160, 50, 0.1) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(200, 160, 50, 0.1) 1px, transparent 1px);
+  background-size: 100px 100px;
+  pointer-events: none;
+}
+
+/* Layer Container (Centering) */
+.business-layer-container {
+  position: relative;
+  z-index: 2;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 600px;
+}
+
+/* Layer 3: Visual Image (Left, Back) */
+.layer-visual-image {
+  position: relative;
+  z-index: 1;
+  width: 60%;
+  margin-right: -10%; /* Overlap setup */
+  filter: drop-shadow(10px 10px 20px rgba(0, 0, 0, 0.2));
+}
+
+.business-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  clip-path: polygon(0 0, 100% 0, 100% 85%, 90% 100%, 0 100%); /* Geometric cut */
+}
+
+.image-deco-frame {
+  position: absolute;
+  top: -20px;
+  left: -20px;
+  width: 100%;
+  height: 100%;
+  border: 1px solid rgba(200, 160, 50, 0.4); /* Dull Gold */
+  z-index: -1;
+}
+
+/* Layer 4: Info Panel (Right, Front) */
+.layer-info-panel {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  background-color: #1B1B3A; /* Iron Navy */
+  color: #fff;
+  padding: 72px 64px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35); /* Deep Shadow */
+  
+  /* Subtle Grid Texture on Panel */
+  background-image: 
+    linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 30px 30px;
+}
+
+.panel-content {
+  display: flex;
+  align-items: flex-start;
+  gap: 40px;
+}
+
+/* Typography & Layout */
+.vertical-text-area {
+  writing-mode: vertical-rl;
+  text-orientation: upright;
+  border-left: 1px solid rgba(255, 255, 255, 0.2);
+  padding-left: 15px;
+  margin-right: 10px;
+}
+
+.vertical-accent {
+  font-family: "Yu Mincho", "Hiragino Mincho ProN", serif;
+  font-size: var(--fs-sm);
+  letter-spacing: 0.3em;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.main-text-area {
+  flex: 1;
+}
+
+.business-heading {
+  margin-bottom: 24px;
+}
+
+.heading-en {
+  display: block;
+  font-size: 80px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  line-height: 1;
+  margin-bottom: 8px;
+  color: #fff;
+}
+
+.heading-ja {
+  display: block;
+  font-size: var(--fs-md);
+  letter-spacing: 0.1em;
+  opacity: 0.8;
+}
+
+.business-divider {
+  width: 60px;
+  height: 2px;
+  background-color: #c8a032; /* Gold Accent */
+  margin-bottom: 32px;
+}
+
+.business-copy {
+  font-size: var(--fs-xs);
+  line-height: 2.2;
+  text-align: justify;
+  margin-bottom: 0;
+  opacity: 0.9;
+}
+
+/* Responsive (SP) */
+@media screen and (max-width: 768px) {
+  .business-section {
+    padding: 60px 0;
+  }
+  
+  .business-layer-container {
+    flex-direction: column;
+    display: block; /* Reset flex for stacking */
+    min-height: auto;
+    padding: 0 5%;
+  }
+
+  /* Layer 3: Visual Image (SP) */
+  .layer-visual-image {
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: -40px; /* Slight overlap */
+    z-index: 1;
+  }
+  
+  .business-img {
+    clip-path: none; /* Simplify shape */
+  }
+  
+  .image-deco-frame {
+    top: 10px;
+    left: 10px;
+  }
+
+  /* Layer 4: Info Panel (SP) */
+  .layer-info-panel {
+    width: 100%; /* Full width minus padding defined in container */
+    max-width: none;
+    position: relative;
+    z-index: 2;
+    padding: 40px 24px;
+    margin-left: auto; /* Align right if width < 100% */
+  }
+
+  .panel-content {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 24px;
+  }
+  
+  .heading-en {
+    font-size: var(--fs-3xl);
+  }
+  
+  .business-copy {
+    font-size: var(--fs-xs);
+    line-height: 1.8;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Compatibility Overrides
+   Ensure redesigned #our-business wins against legacy main.css .t_bs__* rules
+   -------------------------------------------------------------------------- */
+#contentsTop {
+  padding-top: 0 !important;
+  background: #1b1b3a !important;
+}
+
+#contentsTop #contents {
+  padding-top: 0 !important;
+  background: transparent !important;
+}
+
+#contents #our-business.business-section {
+  padding: 0 !important;
+  background-color: #1b1b3a !important;
+}
+
+#contents #our-business .layer-texture-bg {
+  background-color: #1b1b3a;
+  background-image:
+    radial-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+    radial-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+  background-size: 22px 22px;
+  background-position: 0 0, 11px 11px;
+  opacity: 1;
+}
+
+#contents #our-business .layer-geometric-grid {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 72px 72px;
+}
+
+#contents #our-business .business-layer-container {
+  display: flex;
+  flex-direction: row !important;
+  align-items: center;
+  justify-content: center;
+  max-width: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  min-height: 560px;
+}
+
+#contents #our-business .layer-info-panel {
+  width: 100% !important;
+  max-width: none;
+  margin: 0;
+  min-height: 560px;
+  padding: 88px clamp(24px, 8vw, 120px);
+  background-color: transparent;
+  box-shadow: none;
+}
+
+#contents #our-business .panel-content {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+@media screen and (max-width: 768px) {
+  #contents #our-business.business-section {
+    padding: 0 !important;
+  }
+
+  #contents #our-business .business-layer-container {
+    display: block;
+    min-height: auto;
+    padding: 0 !important;
+  }
+
+  #contents #our-business .layer-info-panel {
+    width: 100% !important;
+    max-width: none;
+    min-height: auto;
+    padding: 56px 20px;
+    overflow: visible;
+  }
+
+  #contents #our-business .panel-content {
+    max-width: none;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 24px;
+  }
+
+  #contents #our-business .vertical-text-area {
+    width: 100%;
+    margin-right: 0;
+    border-left: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    padding-left: 0;
+    padding-bottom: 16px;
+  }
+
+  #contents #our-business .main-text-area {
+    width: 100%;
+  }
+}

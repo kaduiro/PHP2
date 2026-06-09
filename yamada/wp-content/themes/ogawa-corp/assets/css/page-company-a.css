@@ -1,0 +1,775 @@
+@charset "UTF-8";
+
+/* ==========================================================================
+   Base Styles
+   ========================================================================== */
+:root {
+    --color-primary: #0A2463;
+    --color-accent: #3E92CC;
+    --color-text: #333333;
+    --color-bg: #FFFFFF;
+    --color-light: #F0F4F8;
+}
+
+body {
+    font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+    color: var(--color-text);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    margin: 0;
+}
+
+main#company-information {
+    background-color: #f9f9f9;
+    /* Account for fixed header removed for hero effect */
+}
+
+/* ==========================================================================
+   Sticky Header (Copied from Home Theme)
+   ========================================================================== */
+.site-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background: linear-gradient(90deg, var(--color-primary) 0%, var(--color-accent) 100%);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.header-inner {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 70px;
+}
+
+.site-logo {
+    color: white;
+    font-size: 24px;
+    font-weight: 600;
+    font-family: "Yu Mincho", "Hiragino Mincho ProN", serif;
+    letter-spacing: 0.1em;
+}
+
+.main-nav {
+    display: flex;
+    gap: 32px;
+}
+
+.main-nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 500;
+    transition: opacity 0.3s ease;
+    position: relative;
+}
+
+.main-nav a:hover {
+    opacity: 0.7;
+}
+
+.main-nav a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: white;
+    transition: width 0.3s ease;
+}
+
+.main-nav a:hover::after {
+    width: 100%;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ==========================================================================
+   Page Header (New Design)
+   ========================================================================== */
+.page-header {
+    text-align: center;
+    padding: 120px 0;
+    color: #fff;
+    margin-bottom: 0;
+    /* Remove gap */
+    position: relative;
+    /* Greyish Architectural Image */
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1486325212027-8081e485255e?q=80&w=2070&auto=format&fit=crop');
+    background-size: cover;
+    background-position: center;
+}
+
+.profile-header-group {
+    display: inline-block;
+    text-align: center;
+}
+
+.profile-label {
+    display: block;
+    font-size: var(--fs-xs);
+    font-weight: 700;
+    margin-bottom: 20px;
+    letter-spacing: 0.1em;
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    text-transform: capitalize;
+}
+
+.profile-label::before {
+    content: '/';
+    color: var(--color-accent);
+    margin-right: 12px;
+    font-weight: 700;
+    font-size: 1.2em;
+}
+
+.profile-main-heading {
+    font-size: var(--fs-3xl);
+    font-weight: 700;
+    line-height: 1;
+    font-family: "Yu Mincho", "Hiragino Mincho ProN", serif;
+    margin: 0;
+    letter-spacing: 0.05em;
+}
+
+@media (max-width: 600px) {
+    .profile-main-heading {
+        font-size: var(--fs-xl);
+    }
+}
+
+/* ==========================================================================
+   Section Headers
+   ========================================================================== */
+section {
+    padding: 80px 0;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.section-title {
+    font-size: var(--fs-xl);
+    margin: 0 0 20px;
+    position: relative;
+    display: inline-block;
+    font-weight: 600;
+    color: var(--color-primary);
+}
+
+.section-title::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background-color: var(--color-accent);
+    margin: 10px auto 0;
+    /* Center the underline */
+}
+
+.section-subtitle {
+    display: block;
+    font-size: var(--fs-xs);
+    color: var(--color-accent);
+    letter-spacing: 0.15em;
+    margin-top: 5px;
+    font-family: "Yu Mincho", "Hiragino Mincho ProN", serif;
+}
+
+/* ==========================================================================
+   Philosophy Section
+   ========================================================================== */
+/* ==========================================================================
+   Philosophy Section
+   ========================================================================== */
+.philosophy-section {
+    position: relative;
+    /* Calm Light Greyish Background */
+    background-color: #F0F4F8;
+    /* Light Blue-Grey */
+    padding: 120px 0;
+    color: var(--color-text);
+    /* Dark text */
+    overflow: hidden;
+}
+
+/* No Dark Overlay */
+.philosophy-section::before {
+    display: none;
+}
+
+.philosophy-section .container {
+    position: relative;
+    z-index: 2;
+    max-width: 1200px;
+}
+
+/* Content Layout */
+/* Obsolete styles removed */
+
+@media (max-width: 900px) {
+    .philosophy-content-wrapper {
+        gap: 40px;
+        /* It's already column flex, so grid-template-columns is irrelevant, but removing it to be safe */
+    }
+
+    .philosophy-section {
+        padding: 80px 0;
+    }
+}
+
+/* ==========================================================================
+   Profile Section
+   ========================================================================== */
+.profile-section {
+    background-color: #f9f9f9;
+}
+
+.profile-table-wrapper {
+    background: #fff;
+    padding: 40px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    border-radius: 4px;
+}
+
+.profile-list {
+    margin: 0;
+}
+
+.profile-row {
+    display: flex;
+    border-bottom: 1px solid #eee;
+    padding: 20px 0;
+}
+
+.profile-row:last-child {
+    border-bottom: none;
+}
+
+.profile-row dt {
+    width: 200px;
+    font-weight: 700;
+    color: var(--color-primary);
+    flex-shrink: 0;
+    padding-right: 20px;
+}
+
+.profile-row dd {
+    flex-grow: 1;
+    margin: 0;
+    color: #666;
+}
+
+@media (max-width: 768px) {
+    .profile-row {
+        flex-direction: column;
+    }
+
+    .profile-row dt {
+        width: 100%;
+        margin-bottom: 5px;
+        color: #222;
+    }
+
+    .profile-table-wrapper {
+        padding: 20px;
+    }
+}
+
+/* ==========================================================================
+   History Section
+   ========================================================================== */
+.history-section {
+    background-color: #f4f7f9;
+    padding-bottom: 120px;
+}
+
+.history-timeline {
+    position: relative;
+    max-width: 600px;
+    margin: 0 auto;
+    padding-left: 30px;
+    border-left: 2px solid #e1e8ed;
+}
+
+.history-item {
+    position: relative;
+    margin-bottom: 50px;
+    padding-left: 40px;
+}
+
+.history-item:last-child {
+    margin-bottom: 0;
+}
+
+.history-item::before {
+    content: '';
+    position: absolute;
+    left: -39px;
+    top: 6px;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: #fff;
+    border: 4px solid var(--color-accent);
+    box-shadow: 0 0 0 2px #fff;
+    z-index: 1;
+}
+
+.history-year {
+    font-size: var(--fs-base);
+    font-weight: 700;
+    color: var(--color-primary);
+    margin-bottom: 8px;
+    font-family: "Yu Mincho", "Hiragino Mincho ProN", serif;
+    display: flex;
+    align-items: center;
+}
+
+.history-content {
+    background: transparent;
+    padding: 0;
+    border-radius: 0;
+    box-shadow: none;
+    font-size: var(--fs-xs);
+    color: #555;
+    line-height: 1.8;
+    position: relative;
+}
+
+.history-content p {
+    margin: 0;
+}
+
+/* ==========================================================================
+   Philosophy Section Styles
+   ========================================================================== */
+.philosophy-section {
+    position: relative;
+    /* Layer 1 & 4 (Base + Vignette): Sophisticated grey-blue base with subtle vignette */
+    background:
+        radial-gradient(circle at 50% 50%, transparent 60%, rgba(10, 36, 99, 0.03) 100%),
+        linear-gradient(135deg, #F8FAFC 0%, #E2E8F0 100%);
+
+    /* Layer 3 (Grid/Line Pattern): Very subtle architectural horizontal lines */
+    background-image:
+        repeating-linear-gradient(0deg, transparent, transparent 39px, rgba(160, 174, 192, 0.15) 40px),
+        radial-gradient(circle at 50% 50%, transparent 60%, rgba(10, 36, 99, 0.03) 100%),
+        linear-gradient(135deg, #F8FAFC 0%, #E2E8F0 100%);
+
+    /* Ensure sizing matches layers */
+    background-size: 100% 40px, 100% 100%, 100% 100%;
+
+    padding: 120px 0;
+    color: var(--color-text);
+    overflow: hidden;
+    z-index: 1;
+
+    /* Section Divider: Ultra-subtle border */
+    border-top: 1px solid rgba(0, 0, 0, 0.03);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.03);
+}
+
+/* Layer 2 (Ambient Light): Blurred Accents */
+.philosophy-section::before {
+    content: '';
+    position: absolute;
+    /* Top Left Light Source (Cool Blue) */
+    top: -25%;
+    left: -15%;
+    width: 80vw;
+    height: 80vw;
+    background: radial-gradient(circle, rgba(66, 153, 225, 0.08) 0%, transparent 65%);
+    filter: blur(80px);
+    /* Deep blur */
+    z-index: -1;
+    pointer-events: none;
+    opacity: 1;
+}
+
+.philosophy-section::after {
+    content: '';
+    position: absolute;
+    /* Bottom Right Light Source (Warm/Neutral) */
+    bottom: -25%;
+    right: -15%;
+    width: 70vw;
+    height: 70vw;
+    background: radial-gradient(circle, rgba(160, 174, 192, 0.1) 0%, transparent 65%);
+    filter: blur(80px);
+    z-index: -1;
+    pointer-events: none;
+    opacity: 1;
+}
+
+.philosophy-content-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 60px;
+    width: 100%;
+    padding: 0 24px;
+    max-width: 1280px;
+    /* Increased from 900px */
+    margin: 0 auto;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+/* Premium Card Style (White Box) */
+.philosophy-block {
+    position: relative;
+
+    /* Horizontal Long Logic */
+    width: min(100% - 48px, 1200px);
+    /* Smart responsive width */
+    margin: 0 auto;
+
+    /* Card Background: Very subtle gradient for 'lift' */
+    background: linear-gradient(0deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.7) 100%);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+
+    /* Responsive Padding: 30px mobile -> 80px PC */
+    padding: 60px clamp(24px, 8vw, 80px);
+    /* Panoramic Padding */
+
+    /* Premium Radius */
+    border-radius: 24px;
+
+    /* Deep, layered shadow for 'floating object' feel */
+    box-shadow:
+        0 2px 4px rgba(0, 0, 0, 0.02),
+        /* Tight */
+        0 8px 16px rgba(0, 0, 0, 0.03),
+        /* Medium */
+        0 24px 48px rgba(0, 0, 0, 0.04);
+    /* Ambient */
+
+    /* Ultra-thin border */
+    border: 1px solid rgba(255, 255, 255, 0.6);
+
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Gradient Brackets Removed */
+.philosophy-block::before,
+.philosophy-block::after {
+    display: none;
+}
+
+.philosophy-title {
+    font-size: var(--fs-xl);
+    /* Decreased size */
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: var(--color-primary);
+    font-family: "Yu Mincho", "Hiragino Mincho ProN", serif;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 8px;
+    display: inline-block;
+    padding-left: 0;
+}
+
+/* Remove old dot decoration */
+.philosophy-title::before {
+    display: none;
+}
+
+.philosophy-lead {
+    font-size: var(--fs-4xl);
+    /* Large Prominent Slogan */
+    font-weight: 800;
+    margin-bottom: 40px;
+    color: var(--color-primary);
+    line-height: 1.4;
+    font-family: "Yu Mincho", "Hiragino Mincho ProN", serif;
+    letter-spacing: 0.05em;
+    /* No balance, use explicit spans */
+}
+
+/* Explicit Line Blocks for Slogan */
+.line-d-block {
+    display: block;
+    white-space: nowrap;
+    /* Force no wrapping on PC */
+}
+
+/* Highlight for 'Yokatta' */
+.highlight-text {
+    position: relative;
+    display: inline-block;
+    z-index: 1;
+}
+
+.highlight-text::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 5px;
+    /* Adjust height position */
+    width: 100%;
+    height: 12px;
+    background-color: rgba(66, 153, 225, 0.2);
+    /* Light Blue Highlight */
+    z-index: -1;
+    transform: skewX(-10deg);
+}
+
+.philosophy-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: inline-block;
+    /* Center the list block */
+    text-align: left;
+    /* Keep list items left-aligned */
+}
+
+.philosophy-list li {
+    font-size: var(--fs-xs);
+    margin-bottom: 16px;
+    line-height: 1.8;
+    color: #444;
+    padding-left: 1.5em;
+    position: relative;
+}
+
+/* Custom Bullet: Small Diamond */
+.philosophy-list li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.65em;
+    width: 6px;
+    height: 6px;
+    background-color: var(--color-accent);
+    transform: rotate(45deg);
+    border-radius: 1px;
+}
+
+@media (max-width: 500px) {
+    .philosophy-lead {
+        font-size: var(--fs-xl);
+        /* Smaller on mobile */
+    }
+
+    .line-d-block {
+        white-space: normal;
+        /* Allow wrap on very small screens */
+    }
+
+    /* Keep highlight text chunk together if possible */
+    .highlight-text {
+        white-space: nowrap;
+    }
+
+    .philosophy-block {
+        padding: 30px;
+        /* Reduce padding on mobile */
+    }
+}
+
+.history-item {
+    position: relative;
+    margin-bottom: 50px;
+    padding-left: 40px;
+}
+
+.history-item:last-child {
+    margin-bottom: 0;
+}
+
+.history-item::before {
+    content: '';
+    position: absolute;
+    left: -39px;
+    /* Timeline padding (30) + Item margin/padding adjustment. */
+    top: 6px;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: #fff;
+    border: 4px solid var(--color-accent);
+    box-shadow: 0 0 0 2px #fff;
+    /* Double ring effect */
+    z-index: 1;
+}
+
+.history-year {
+    font-size: var(--fs-base);
+    /* Increased size (was 1.1rem) */
+    font-weight: 700;
+    color: var(--color-primary);
+    margin-bottom: 8px;
+    font-family: "Yu Mincho", "Hiragino Mincho ProN", serif;
+    display: flex;
+    /* Kept for alignment if needed, but simple block is fine too. */
+    align-items: center;
+}
+
+.history-content {
+    background: transparent;
+    /* Remove white bg */
+    padding: 0;
+    /* Remove padding */
+    border-radius: 0;
+    box-shadow: none;
+    /* Remove shadow */
+    font-size: var(--fs-xs);
+    color: #555;
+    line-height: 1.8;
+    position: relative;
+    transition: none;
+    /* Remove animation */
+}
+
+/* Hover effect for interaction - REMOVED */
+.history-item:hover .history-content {
+    transform: none;
+    box-shadow: none;
+}
+
+/* Triangle pointer */
+.history-content::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    display: none;
+}
+
+.history-content p {
+    margin: 0;
+}
+
+/* ==========================================================================
+   Responsive
+   ========================================================================== */
+@media (max-width: 768px) {
+    .page-title {
+        font-size: var(--fs-xl);
+    }
+
+    .philosophy-main-text {
+        font-size: var(--fs-base);
+    }
+
+    .history-timeline {
+        padding-left: 15px;
+    }
+
+    .history-item::before {
+        left: -22px;
+        width: 10px;
+        height: 10px;
+        border-width: 3px;
+    }
+}
+
+/* ==========================================================================
+   Animations
+   ========================================================================== */
+.fade-up {
+    /* Animation handled by GSAP, but keep opacity 0 initially to prevent FOUC */
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+.delay-1 {
+    animation-delay: 0.2s;
+}
+
+.delay-2 {
+    animation-delay: 0.4s;
+}
+
+.delay-3 {
+    animation-delay: 0.6s;
+}
+
+@keyframes fadeUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ==========================================================================
+   Footer
+   ========================================================================== */
+.site-footer {
+    background-color: var(--color-primary);
+    color: white;
+    padding: 60px 0 20px;
+    margin-top: auto;
+}
+
+.footer-inner {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+    padding-bottom: 40px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-logo {
+    font-size: 24px;
+    font-weight: 700;
+    font-family: "Yu Mincho", "YuMincho", serif;
+}
+
+.footer-nav {
+    display: flex;
+    gap: 24px;
+}
+
+.footer-nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    opacity: 0.8;
+    transition: opacity 0.3s;
+}
+
+.footer-nav a:hover {
+    opacity: 1;
+}
+
+.footer-copyright {
+    text-align: center;
+    font-size: 12px;
+    opacity: 0.6;
+}
+
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+    }
+
+    .footer-nav {
+        flex-direction: column;
+        gap: 12px;
+    }
+}

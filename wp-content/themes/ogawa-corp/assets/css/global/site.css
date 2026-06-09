@@ -1,0 +1,185 @@
+:root {
+  --okg-bg: #f6f8fb;
+  --okg-ink: #10243b;
+  --okg-blue: #1f4b7a;
+  --okg-border: #d8e2ee;
+}
+
+body {
+  margin: 0;
+  font-size: var(--fs-base);
+  line-height: var(--lh-normal);
+  color: var(--okg-ink);
+  background: var(--okg-bg);
+}
+
+.okg-site-header {
+  position: sticky;
+  top: 0;
+  z-index: 2000;
+  background: rgba(255, 255, 255, 0.95);
+  border-bottom: 1px solid var(--okg-border);
+  backdrop-filter: blur(8px);
+}
+
+.okg-site-header__inner {
+  display: grid;
+  grid-template-columns: auto 1fr auto auto;
+  align-items: center;
+  gap: 20px;
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 12px 20px;
+}
+
+.okg-site-header__logo {
+  width: 72px;
+  height: auto;
+  display: block;
+}
+
+.okg-site-header__menu-button {
+  display: none;
+}
+
+.okg-nav__list,
+.okg-mobile-nav__list,
+.okg-footer-nav__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.okg-nav__list {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.okg-nav__list a,
+.okg-mobile-nav__list a,
+.okg-footer-nav__list a,
+.okg-site-header__cta {
+  text-decoration: none;
+  color: var(--okg-ink);
+}
+
+.okg-site-header__cta {
+  background: var(--okg-blue);
+  color: #fff;
+  padding: 10px 14px;
+  border-radius: 999px;
+}
+
+.okg-mobile-nav {
+  display: none;
+}
+
+.okg-site-footer {
+  margin-top: 80px;
+  padding: 40px 20px 20px;
+  background: #0f2238;
+  color: #e8eef6;
+}
+
+.okg-site-footer a {
+  color: #e8eef6;
+}
+
+.okg-site-footer__inner {
+  max-width: 1320px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.okg-footer-nav__list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.okg-site-footer__bottom {
+  max-width: 1320px;
+  margin: 24px auto 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  padding-top: 14px;
+}
+
+@media (max-width: 960px) {
+  .okg-site-header__inner {
+    grid-template-columns: auto auto auto;
+  }
+
+  .okg-site-header__nav,
+  .okg-site-header__cta {
+    display: none;
+  }
+
+  .okg-site-header__menu-button {
+    display: inline-flex;
+    flex-direction: column;
+    gap: 4px;
+    background: transparent;
+    border: 0;
+    padding: 6px;
+    margin-left: auto;
+    cursor: pointer;
+  }
+
+  .okg-site-header__menu-button span {
+    width: 22px;
+    height: 2px;
+    background: var(--okg-ink);
+    display: block;
+  }
+
+  .okg-mobile-nav {
+    display: block;
+    padding: 0 20px 16px;
+    background: #fff;
+    border-bottom: 1px solid var(--okg-border);
+  }
+
+  .okg-mobile-nav__list {
+    display: grid;
+    gap: 10px;
+  }
+
+  .okg-site-footer__inner {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ============================================================
+   Global Typography Enforcement
+   typography.css の変数を全ページで確実に適用するベースルール
+   ============================================================ */
+
+/* html font-size を固定（62.5%ハック無効化） */
+html {
+  font-size: 16px;
+}
+
+/* ── ベースフォント（main.css 等の上書きを防ぐ） ── */
+body {
+  font-family: var(--font-ja, "Noto Sans JP", "Hiragino Kaku Gothic ProN", sans-serif);
+  font-size: var(--fs-base, 16px);
+  line-height: var(--lh-normal, 1.7);
+}
+
+/* ── フォントユーティリティクラス ── */
+.f_en,
+.f_oswald {
+  font-family: var(--font-en, "Oswald", sans-serif);
+}
+
+.f_serif {
+  font-family: var(--font-ja-serif, "Noto Serif JP", "Yu Mincho", serif);
+}
+
+.f_mono {
+  font-family: var(--font-mono, "Courier New", monospace);
+}

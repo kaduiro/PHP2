@@ -1,0 +1,174 @@
+/**
+ * WebGL Image Effects Styles
+ * レイアウト調整とパフォーマンス最適化
+ */
+
+/* 画像エリアの設定 */
+.t_biz__image-area {
+  position: relative;
+  overflow: hidden;
+  /* GPU加速を有効化 */
+  transform: translateZ(0);
+  will-change: transform;
+}
+
+/* 元画像は通常表示。WebGL有効時のみ対象画像を非表示化 */
+.t_biz__img {
+  opacity: 1;
+  visibility: visible;
+}
+
+body.is-webgl-blueprint-active .js-blueprint-target.is-blueprint-rendered {
+  opacity: 0;
+  pointer-events: none;
+  visibility: hidden;
+}
+
+/* WebGLキャンバス */
+.webgl-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  /* スムーズなレンダリング */
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+}
+
+/* パフォーマンス最適化 */
+.t_biz__image-area * {
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-perspective: 1000px;
+  perspective: 1000px;
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 768px) {
+  .t_biz__image-area {
+    /* モバイルではGPU負荷を軽減 */
+    transform: none;
+  }
+}
+
+/* ローディング中のプレースホルダー（オプション） */
+.t_biz__image-area::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #0a1929 0%, #1a2f42 100%);
+  z-index: 0;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.t_biz__image-area.loading::before {
+  opacity: 1;
+}
+
+/* ===== Architectural Lens Cursor ===== */
+body.is-webgl-blueprint-active {
+  cursor: none; /* デフォルトカーソルを隠す */
+}
+
+/* リンクやボタン上ではカーソルを表示させる場合（ユーザビリティ考慮） */
+body.is-webgl-blueprint-active a,
+body.is-webgl-blueprint-active button,
+body.is-webgl-blueprint-active input,
+body.is-webgl-blueprint-active textarea,
+body.is-webgl-blueprint-active select {
+  cursor: auto;
+}
+
+.al-cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  pointer-events: none;
+  mix-blend-mode: difference; /* 背景と反転して視認性を確保 */
+  opacity: 0; /* 初期状態は非表示 */
+  transition: opacity 0.3s ease;
+}
+
+/* 十字線（Crosshair） */
+.al-cursor__crosshair {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 40px;
+  height: 40px;
+  transform: translate(-50%, -50%);
+}
+
+.al-cursor__crosshair::before,
+.al-cursor__crosshair::after {
+  content: '';
+  position: absolute;
+  background-color: #fff;
+}
+
+/* 横線 */
+.al-cursor__crosshair::before {
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  transform: translateY(-50%);
+}
+
+/* 縦線 */
+.al-cursor__crosshair::after {
+  top: 0;
+  left: 50%;
+  width: 1px;
+  height: 100%;
+  transform: translateX(-50%);
+}
+
+/* 座標テキスト */
+.al-cursor__coords {
+  position: absolute;
+  top: 10px;
+  left: 25px;
+  font-family: 'Courier New', monospace; /* Monospaceフォント */
+  font-size: 10px;
+  color: #fff;
+  white-space: nowrap;
+  letter-spacing: 0.1em;
+  opacity: 0.7;
+}
+
+/* ホバー時のアクティブ状態（ターゲット捕捉） */
+.al-cursor.is-active .al-cursor__crosshair {
+  width: 60px;
+  height: 60px;
+  transition: width 0.3s ease, height 0.3s ease;
+}
+
+.al-cursor.is-active .al-cursor__crosshair::before,
+.al-cursor.is-active .al-cursor__crosshair::after {
+  background-color: #00d9ff; /* Cyan accent */
+  box-shadow: 0 0 8px rgba(0, 217, 255, 0.5);
+}
+
+.al-cursor.is-active .al-cursor__coords {
+  color: #00d9ff;
+  opacity: 1;
+}
+
+/* レスポンシブ対応: タッチデバイスではカスタムカーソル無効 */
+@media (hover: none) and (pointer: coarse) {
+  body.is-webgl-blueprint-active {
+    cursor: auto;
+  }
+  .al-cursor {
+    display: none;
+  }
+}
+

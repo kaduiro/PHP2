@@ -1,0 +1,188 @@
+/* ============================================================
+   Core Value - image calligraphy
+   ============================================================ */
+
+body.home .core-value-section.okg-cv,
+body.front-page .core-value-section.okg-cv {
+  position: relative;
+  min-height: 100dvh;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  color: #000;
+  padding: 0;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+body.home .core-value-section.okg-cv::before,
+body.front-page .core-value-section.okg-cv::before {
+  content: none;
+}
+
+.okg-cv__sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.okg-cv__pulse {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 40vmax;
+  height: 40vmax;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(0, 0, 0, 0.08) 0%, rgba(0, 0, 0, 0.025) 42%, transparent 70%);
+  opacity: 0;
+  pointer-events: none;
+  z-index: 2;
+  will-change: transform, opacity;
+}
+
+.okg-cv__inner {
+  position: relative;
+  z-index: 3;
+  width: 100%;
+  padding: clamp(9rem, 14vw, 16rem) 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: clamp(2rem, 3.6vw, 3.5rem);
+}
+
+.okg-cv__eyebrow {
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  font-size: clamp(var(--fs-xs), 0.8vw, var(--fs-sm));
+  font-weight: 400;
+  letter-spacing: 0.38em;
+  color: rgba(0, 0, 0, 0.52);
+  text-transform: uppercase;
+  align-self: flex-start;
+  margin: 0;
+  display: block;
+  padding-inline-start: clamp(1rem, 2.5vw, 2.5rem);
+}
+
+.okg-cv__stage {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: clamp(1rem, 2vw, 2rem) 0;
+}
+
+/* 「愛を持とう」5文字・画面幅いっぱいの書道画像ライン */
+.okg-cv__calli-art {
+  --okg-cv-kanji-h: clamp(11rem, 36vw, 40rem);
+  --okg-cv-kana-h: calc(var(--okg-cv-kanji-h) * 0.62);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(0.04rem, 0.74vw, 0.95rem);
+  width: 100%;
+  min-width: 0;
+  opacity: 1;
+  transform: translateY(0);
+  will-change: opacity, transform;
+}
+
+.okg-cv__glyph {
+  display: block;
+  width: auto;
+  height: var(--okg-cv-kana-h);
+  flex: 0 0 auto;
+  object-fit: contain;
+  user-select: none;
+}
+
+.okg-cv__glyph--ai {
+  height: calc(var(--okg-cv-kanji-h) * 1.12);
+  transform: translateY(0.03em);
+}
+
+.okg-cv__glyph--wo {
+  height: calc(var(--okg-cv-kana-h) * 0.9);
+  margin-left: clamp(-0.35rem, -0.4vw, -0.08rem);
+  transform: translateY(-0.08em) rotate(-1.5deg);
+}
+
+.okg-cv__glyph--mochi {
+  height: var(--okg-cv-kanji-h);
+  margin-left: clamp(-0.25rem, -0.35vw, -0.05rem);
+  transform: translateY(0.04em);
+}
+
+.okg-cv__glyph--to {
+  height: calc(var(--okg-cv-kana-h) * 0.94);
+  margin-left: clamp(-0.18rem, -0.25vw, 0rem);
+  transform: translateY(-0.1em) rotate(1deg);
+}
+
+.okg-cv__glyph--u {
+  height: calc(var(--okg-cv-kana-h) * 0.98);
+  margin-left: clamp(-0.3rem, -0.35vw, -0.04rem);
+  transform: translateY(0.02em) rotate(-0.8deg);
+}
+
+@media (max-width: 768px) {
+  .okg-cv__inner {
+    gap: clamp(1.5rem, 5vw, 2.5rem);
+    padding-top: clamp(4rem, 12vw, 6rem);
+    padding-bottom: clamp(4rem, 12vw, 6rem);
+    padding-inline: clamp(0.25rem, 0.5vw, 0.75rem);
+  }
+
+  .okg-cv__calli-art {
+    --okg-cv-kanji-h: clamp(6rem, 28vw, 12rem);
+    gap: clamp(0rem, 0.28vw, 0.16rem);
+  }
+}
+
+@media (max-width: 480px) {
+  .okg-cv__calli-art {
+    --okg-cv-kanji-h: clamp(3.5rem, 18vw, 5rem);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .okg-cv__calli-art {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  body.home .core-value-section.okg-cv,
+  body.front-page .core-value-section.okg-cv {
+    min-height: auto;
+  }
+
+  .okg-cv__pulse {
+    display: none;
+  }
+}
+
+.okg-cv-dark-overlay {
+  display: none !important;
+}
+
+/* ── ドラッグ・コピー防止 ── */
+.okg-cv {
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.okg-cv__glyph {
+  -webkit-user-drag: none;
+  user-drag: none;
+  pointer-events: none;
+}

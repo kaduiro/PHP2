@@ -1,0 +1,85 @@
+#pagetop.pagetop {
+  position: fixed;
+  right: clamp(16px, 2vw, 28px);
+  bottom: clamp(16px, 8vh, 72px);
+  z-index: 1200;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateY(8px);
+  transition: opacity 0.28s ease, transform 0.28s ease, visibility 0.28s linear;
+}
+
+#pagetop.pagetop.is-visible,
+body.is_active #pagetop.pagetop {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+#pagetop.pagetop a {
+  display: block;
+  position: relative;
+  color: #ffc72f;
+  font-family: "Roboto", "Noto Sans JP", sans-serif;
+  font-size: var(--fs-xs);
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-decoration: none;
+  transform: rotate(90deg);
+  -webkit-tap-highlight-color: transparent;
+}
+
+#pagetop.pagetop a::before {
+  content: "";
+  width: 65px;
+  height: 1px;
+  background-color: #ffc72f;
+  position: absolute;
+  left: -10px;
+  top: 50%;
+  transform: translate(-100%, -50%);
+}
+
+#pagetop.pagetop a::after {
+  content: "";
+  width: 6px;
+  height: 1px;
+  background-color: #ffc72f;
+  position: absolute;
+  left: -75px;
+  top: 4px;
+  transform: rotate(-45deg) translateY(1px);
+}
+
+#pagetop.pagetop a:focus-visible {
+  outline: 2px solid #ffc72f;
+  outline-offset: 6px;
+}
+
+@media (max-width: 768px) {
+  #pagetop.pagetop {
+    right: 12px;
+    bottom: 20px;
+  }
+
+  #pagetop.pagetop a {
+    font-size: 11px;
+  }
+
+  #pagetop.pagetop a::before {
+    width: 54px;
+  }
+
+  #pagetop.pagetop a::after {
+    left: -64px;
+    top: 3px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #pagetop.pagetop {
+    transition: none;
+  }
+}

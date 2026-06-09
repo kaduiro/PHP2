@@ -1,0 +1,34 @@
+/* Grid Trail Styles */
+#js-grid-trail-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: -1;
+    /* Behind content */
+    pointer-events: none;
+    /* Do not block clicks */
+    display: flex;
+    flex-wrap: wrap;
+    overflow: hidden;
+}
+
+.grid-trail-cell {
+    /* Base style */
+    background-color: transparent;
+    /* Transition for fading out: 1.5s to 2.0s as requested */
+    transition: background-color 1.5s ease-out;
+
+    /* Grid Lines */
+    border-right: 1px solid rgba(224, 224, 224, 0.5);
+    /* #e0e0e0 with opacity */
+    border-bottom: 1px solid rgba(224, 224, 224, 0.5);
+    box-sizing: border-box;
+}
+
+/* Add top/left borders to container or handle via pseudo elements if needed for perfect closure, 
+   but for a background effect, open edges are usually fine or handled by negative margin. */
+
+
+/* Optional: if we want to ensure the grid aligns perfectly */

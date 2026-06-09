@@ -1,0 +1,1174 @@
+@charset "UTF-8";
+
+/* ==========================================================================
+   Base Styles
+   ========================================================================== */
+:root {
+    --color-primary: #0A2463;
+    --color-accent: #3E92CC;
+    --color-text: #333333;
+    --color-bg: #FFFFFF;
+    --color-light: #F0F4F8;
+}
+
+body {
+    font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+    color: var(--color-text);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    margin: 0;
+}
+
+main#company-information {
+    background-color: #f9f9f9;
+}
+
+/* ==========================================================================
+   Sticky Header (Copied from Home Theme)
+   ========================================================================== */
+.site-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background: linear-gradient(90deg, var(--color-primary) 0%, var(--color-accent) 100%);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.header-inner {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 70px;
+}
+
+.site-logo {
+    color: white;
+    font-size: 24px;
+    font-weight: 600;
+    font-family: "Yu Mincho", "Hiragino Mincho ProN", serif;
+    letter-spacing: 0.1em;
+}
+
+.main-nav {
+    display: flex;
+    gap: 32px;
+}
+
+.main-nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 500;
+    transition: opacity 0.3s ease;
+    position: relative;
+}
+
+.main-nav a:hover {
+    opacity: 0.7;
+}
+
+.main-nav a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: white;
+    transition: width 0.3s ease;
+}
+
+.main-nav a:hover::after {
+    width: 100%;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ==========================================================================
+   Page Header (New Design)
+   ========================================================================== */
+.page-header {
+    text-align: center;
+    padding: 120px 0;
+    color: #fff;
+    margin-bottom: 0;
+    position: relative;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1486325212027-8081e485255e?q=80&w=2070&auto=format&fit=crop');
+    background-size: cover;
+    background-position: center;
+}
+
+.profile-header-group {
+    display: inline-block;
+    text-align: center;
+}
+
+.profile-label {
+    display: block;
+    font-size: var(--fs-xs);
+    font-weight: 700;
+    margin-bottom: 20px;
+    letter-spacing: 0.1em;
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    text-transform: capitalize;
+}
+
+.profile-label::before {
+    content: '/';
+    color: var(--color-accent);
+    margin-right: 12px;
+    font-weight: 700;
+    font-size: 1.2em;
+}
+
+.profile-main-heading {
+    font-size: var(--fs-3xl);
+    font-weight: 700;
+    line-height: 1;
+    font-family: "Yu Mincho", "Hiragino Mincho ProN", serif;
+    margin: 0;
+    letter-spacing: 0.05em;
+}
+
+@media (max-width: 600px) {
+    .profile-main-heading {
+        font-size: var(--fs-xl);
+    }
+}
+
+/* ==========================================================================
+   Section Headers
+   ========================================================================== */
+section {
+    padding: 80px 0;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.section-title {
+    font-size: var(--fs-xl);
+    margin: 0 0 20px;
+    position: relative;
+    display: inline-block;
+    font-weight: 600;
+    color: var(--color-primary);
+}
+
+.section-title::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background-color: var(--color-accent);
+    margin: 10px auto 0;
+}
+
+.section-subtitle {
+    display: block;
+    font-size: var(--fs-xs);
+    color: var(--color-accent);
+    letter-spacing: 0.15em;
+    margin-top: 5px;
+    font-family: "Yu Mincho", "Hiragino Mincho ProN", serif;
+}
+
+
+/* ==========================================================================
+   Philosophy Section — Editorial Redesign
+   ========================================================================== */
+.philosophy-section {
+    position: relative;
+    background-color: #fdfdfd;
+    background-image:
+        repeating-linear-gradient(0deg,
+            transparent, transparent 39px,
+            rgba(160, 174, 192, 0.08) 40px);
+    background-size: 100% 40px;
+    padding: 0;
+    overflow: hidden;
+    z-index: 1;
+}
+
+/* Thin top border — echoes History section */
+.philosophy-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 10%;
+    right: 10%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #d0d8e0 30%, #d0d8e0 70%, transparent);
+}
+
+/* Ambient glow (subtle) */
+.philosophy-section::after {
+    content: '';
+    position: absolute;
+    top: -20%;
+    right: -10%;
+    width: 50vw;
+    height: 50vw;
+    background: radial-gradient(circle, rgba(62, 146, 204, 0.04) 0%, transparent 70%);
+    filter: blur(60px);
+    pointer-events: none;
+    z-index: -1;
+}
+
+/* ---- Rinen Block (each split section) ---- */
+.rinen-block {
+    position: relative;
+    padding: 100px 0 60px;
+}
+
+.rinen-block--action {
+    padding-top: 0;
+    padding-bottom: 80px;
+}
+
+/* Separator between blocks */
+.rinen-block--action::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: min(80%, 600px);
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #d0d8e0 30%, #d0d8e0 70%, transparent);
+}
+
+/* ---- Watermark ---- */
+.rinen-watermark {
+    display: none;
+}
+
+/* Container */
+.philosophy-container {
+    position: relative;
+    z-index: 2;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+/* ---- English label + line ---- */
+.philosophy-label-group {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 12px;
+}
+
+.philosophy-en-label {
+    font-size: var(--fs-xs);
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    color: #aaa;
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    text-transform: uppercase;
+    flex-shrink: 0;
+}
+
+.philosophy-label-line {
+    display: block;
+    flex: 1;
+    max-width: 80px;
+    height: 1px;
+    background-color: #d0d8e0;
+}
+
+/* ---- Heading ---- */
+.philosophy-heading {
+    font-size: var(--fs-xl);
+    font-weight: 600;
+    color: var(--color-primary);
+    font-family: "Yu Mincho", "Hiragino Mincho ProN", serif;
+    margin: 0 0 24px;
+    letter-spacing: 0.05em;
+    line-height: 1.3;
+}
+
+/* ---- Lead Copy ---- */
+.philosophy-lead {
+    font-size: var(--fs-2xl);
+    font-weight: 700;
+    color: var(--color-primary);
+    font-family: "Yu Mincho", "Hiragino Mincho ProN", serif;
+    line-height: 1.5;
+    letter-spacing: 0.04em;
+    margin: 0;
+}
+
+.line-d-block {
+    display: block;
+    white-space: nowrap;
+}
+
+/* ---- Keyword highlight (blue underline sweep) ---- */
+.kw {
+    display: inline-block;
+    opacity: 0;
+    transform: translateY(10px) scale(0.95);
+    transition: opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1),
+        transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+    transition-delay: 0.3s;
+    position: relative;
+    overflow: visible;
+    z-index: 0;
+    white-space: nowrap;
+}
+
+.kw.is-visible {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+
+.kw::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    width: 100%;
+    bottom: 5px;
+    height: 12px;
+    z-index: -2;
+    background-color: rgba(66, 153, 225, 0.2);
+    transform: skewX(-10deg) scaleX(0);
+    opacity: 0;
+    transform-origin: left center;
+    transition: opacity 0.3s ease;
+}
+
+.kw.is-visible::after {
+    opacity: 1;
+    animation: kw-underline-reveal 1.6s ease forwards;
+}
+
+@keyframes kw-underline-reveal {
+    from {
+        transform: skewX(-10deg) scaleX(0);
+    }
+
+    to {
+        transform: skewX(-10deg) scaleX(1);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .kw {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+
+    .kw::after {
+        transform: skewX(-10deg) scaleX(1);
+        opacity: 1;
+        animation: none;
+    }
+}
+
+/* ===== Rinen Split: Shared 2-Column Component ===== */
+.rinen-split {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+    margin-bottom: 60px;
+}
+
+/* Text column */
+.rinen-text {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Visual column */
+.rinen-visual {
+    position: relative;
+}
+
+.collage-main {
+    position: relative;
+    margin: 0;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+    z-index: 1;
+}
+
+.collage-main img {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+}
+
+
+
+/* ===== 3 Pillar Cards ===== */
+.philosophy-pillars {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-bottom: 0;
+}
+
+.pillar-card {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(0, 0, 0, 0.04);
+    padding: 32px 24px 28px;
+    text-align: center;
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.pillar-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Pillar icon — CSS diamond dot */
+.pillar-icon {
+    display: block;
+    width: 10px;
+    height: 10px;
+    background-color: var(--color-accent);
+    transform: rotate(45deg);
+    border-radius: 2px;
+    margin: 0 auto 16px;
+}
+
+.pillar-label {
+    font-size: var(--fs-sm);
+    font-weight: 700;
+    color: var(--color-primary);
+    margin: 0 0 12px;
+    font-family: "Yu Mincho", "Hiragino Mincho ProN", serif;
+}
+
+.pillar-text {
+    font-size: var(--fs-xs);
+    line-height: 1.9;
+    color: #555;
+    margin: 0;
+}
+
+/* ===== Philosophy Responsive ===== */
+@media (max-width: 900px) {
+    .rinen-split {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .rinen-visual {
+        order: -1;
+        max-width: 500px;
+        margin: 0 auto;
+    }
+
+    .rinen-block {
+        padding: 80px 0 40px;
+    }
+
+    .rinen-block--action {
+        padding-top: 40px;
+        padding-bottom: 60px;
+    }
+
+    .rinen-watermark {
+        font-size: var(--fs-5xl);
+    }
+}
+
+@media (max-width: 768px) {
+    .philosophy-pillars {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .philosophy-heading {
+        font-size: var(--fs-3xl);
+    }
+
+    .philosophy-lead {
+        font-size: var(--fs-lg);
+    }
+
+    .rinen-watermark {
+        font-size: var(--fs-4xl);
+        top: 30px;
+    }
+}
+
+@media (max-width: 500px) {
+    .line-d-block {
+        white-space: normal;
+    }
+
+    .philosophy-lead {
+        font-size: var(--fs-base);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .pillar-card {
+        transition: none;
+    }
+
+    .pillar-card:hover {
+        transform: none;
+    }
+}
+
+
+/* ==========================================================================
+   Profile Section
+   ========================================================================== */
+.profile-section {
+    background-color: #f9f9f9;
+}
+
+.profile-table-wrapper {
+    background: #fff;
+    padding: 40px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    border-radius: 4px;
+}
+
+.profile-list {
+    margin: 0;
+}
+
+.profile-row {
+    display: flex;
+    border-bottom: 1px solid #eee;
+    padding: 20px 0;
+}
+
+.profile-row:last-child {
+    border-bottom: none;
+}
+
+.profile-row dt {
+    width: 200px;
+    font-weight: 700;
+    color: var(--color-primary);
+    flex-shrink: 0;
+    padding-right: 20px;
+}
+
+.profile-row dd {
+    flex-grow: 1;
+    margin: 0;
+    color: #666;
+}
+
+@media (max-width: 768px) {
+    .profile-row {
+        flex-direction: column;
+    }
+
+    .profile-row dt {
+        width: 100%;
+        margin-bottom: 5px;
+        color: #222;
+    }
+
+    .profile-table-wrapper {
+        padding: 20px;
+    }
+}
+
+/* ==========================================================================
+   History Section — Horizontal Scroll Timeline
+   ========================================================================== */
+.history-section {
+    background-color: #fdfdfd;
+    padding: 80px 0 100px;
+    overflow: visible;
+}
+
+.history-timeline {
+    position: relative;
+    max-width: none;
+    margin: 0;
+    padding: 0;
+    border-left: none;
+}
+
+/* ---- Era (Chapter wrapper) ---- */
+.history-era {
+    margin-bottom: 60px;
+}
+
+.history-era:last-child {
+    margin-bottom: 0;
+}
+
+/* Chapter heading */
+.history-chapter {
+    padding: 0 0 20px 0;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 0;
+    z-index: 2;
+}
+
+.history-chapter::before {
+    display: none;
+}
+
+.chapter-label {
+    font-size: var(--fs-xs);
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    color: #aaa;
+    margin-bottom: 4px;
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    text-transform: uppercase;
+}
+
+.chapter-period {
+    font-size: var(--fs-base);
+    font-weight: 500;
+    color: #333;
+    font-family: "Yu Mincho", "Hiragino Mincho ProN", serif;
+}
+
+/* ---- Era Inner ---- */
+.history-era-inner {
+    position: relative;
+}
+
+/* Watermark */
+.chapter-watermark {
+    position: absolute;
+    top: -10px;
+    left: 20px;
+    font-size: var(--fs-5xl);
+    font-weight: 800;
+    color: rgba(0, 0, 0, 0.035);
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    white-space: nowrap;
+    pointer-events: none;
+    z-index: 0;
+    line-height: 1;
+    user-select: none;
+}
+
+/* ---- Horizontal Scroll Container ---- */
+.history-scroll {
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scroll-behavior: smooth;
+    position: relative;
+    z-index: 1;
+    outline: none;
+    cursor: grab;
+    padding: 50px 0 24px;
+}
+
+.history-scroll:active {
+    cursor: grabbing;
+}
+
+.history-scroll:focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 4px;
+    border-radius: 8px;
+}
+
+/* Custom Scrollbar */
+.history-scroll::-webkit-scrollbar {
+    height: 6px;
+}
+
+.history-scroll::-webkit-scrollbar-track {
+    background: #eee;
+    border-radius: 3px;
+}
+
+.history-scroll::-webkit-scrollbar-thumb {
+    background: #c0c0c0;
+    border-radius: 3px;
+}
+
+.history-scroll::-webkit-scrollbar-thumb:hover {
+    background: #999;
+}
+
+/* Horizontal line */
+.history-scroll::before {
+    content: '';
+    position: absolute;
+    top: 54px;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent 0%, #d0d8e0 5%, #d0d8e0 95%, transparent 100%);
+    z-index: 0;
+    pointer-events: none;
+}
+
+/* ---- Track (flex row) ---- */
+.history-track {
+    display: flex;
+    gap: 24px;
+    padding: 0 max(24px, calc((100vw - 1000px) / 2));
+    width: max-content;
+    position: relative;
+}
+
+/* ---- History Card ---- */
+.history-card {
+    flex: 0 0 auto;
+    width: min(85vw, 480px);
+    scroll-snap-align: start;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+    border: 1px solid rgba(0, 0, 0, 0.04);
+    padding: 32px 28px 28px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+
+    /* Fade-in animation init */
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.history-card.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.7s ease, transform 0.7s ease, box-shadow 0.3s ease;
+}
+
+.history-card:hover {
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Dot above the card on the horizontal line */
+.card-dot {
+    position: absolute;
+    top: -22px;
+    left: 36px;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #fff;
+    border: 3px solid var(--color-accent);
+    box-shadow: 0 0 0 3px #fff;
+    z-index: 2;
+}
+
+/* Year label inside card */
+.card-year {
+    font-size: var(--fs-xl);
+    font-weight: 700;
+    color: var(--color-primary);
+    font-family: "Yu Mincho", "Hiragino Mincho ProN", serif;
+    line-height: 1;
+    display: block;
+}
+
+/* Card body */
+.card-body {
+    flex: 1;
+}
+
+/* Title & Text */
+.history-title {
+    font-size: var(--fs-sm);
+    font-weight: 700;
+    color: #333;
+    margin: 0 0 10px 0;
+    line-height: 1.4;
+    display: block;
+}
+
+.history-text {
+    font-size: var(--fs-xs);
+    line-height: 1.8;
+    color: #666;
+    margin: 0;
+}
+
+/* More Button */
+.history-more-btn {
+    appearance: none;
+    background: transparent;
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    padding: 6px 20px;
+    margin-top: 12px;
+    cursor: pointer;
+    font-size: var(--fs-xs);
+    color: #888;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    transition: all 0.3s ease;
+}
+
+.history-more-btn:hover,
+.history-more-btn:focus-visible {
+    border-color: var(--color-accent);
+    color: var(--color-accent);
+    background: rgba(62, 146, 204, 0.05);
+    outline: none;
+}
+
+.history-more-btn[aria-expanded="true"] .more-icon {
+    transform: rotate(45deg);
+}
+
+.more-icon {
+    font-size: var(--fs-sm);
+    line-height: 1;
+    font-weight: 300;
+    transition: transform 0.3s ease;
+}
+
+.history-more-content {
+    margin-top: 12px;
+    padding: 12px;
+    background: #f5f7fa;
+    border-radius: 6px;
+    font-size: var(--fs-xs);
+    color: #555;
+    display: none;
+}
+
+.history-more-content[style*="display: block"] {
+    animation: historyFadeIn 0.5s ease;
+}
+
+@keyframes historyFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-5px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Card Media / Image */
+.card-media {
+    margin: 0;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+}
+
+.card-media img {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 3 / 2;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+.card-media:hover img {
+    transform: scale(1.03);
+}
+
+/* ---- Navigation Buttons ---- */
+.history-nav-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.95);
+    border: 1px solid #ddd;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #555;
+    transition: all 0.25s ease;
+}
+
+.history-nav-btn:hover {
+    background: #fff;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+    color: var(--color-primary);
+}
+
+.history-nav-btn:disabled {
+    opacity: 0.3;
+    cursor: default;
+    pointer-events: none;
+}
+
+.history-nav-prev {
+    left: max(8px, calc((100vw - 1060px) / 2));
+}
+
+.history-nav-next {
+    right: max(8px, calc((100vw - 1060px) / 2));
+}
+
+/* ---- History Responsive ---- */
+@media (max-width: 1100px) {
+    .history-nav-prev {
+        left: 8px;
+    }
+
+    .history-nav-next {
+        right: 8px;
+    }
+}
+
+@media (max-width: 768px) {
+    .history-section {
+        padding: 60px 0 60px;
+    }
+
+    .chapter-watermark {
+        font-size: var(--fs-5xl);
+        top: -5px;
+    }
+
+    .history-card {
+        width: min(85vw, 360px);
+        padding: 24px 20px 20px;
+    }
+
+    .card-year {
+        font-size: var(--fs-lg);
+    }
+
+    .history-track {
+        padding: 0 20px;
+        gap: 16px;
+    }
+
+    .history-nav-btn {
+        width: 36px;
+        height: 36px;
+    }
+
+    .history-nav-btn svg {
+        width: 18px;
+        height: 18px;
+    }
+
+    .history-nav-prev {
+        left: 4px;
+    }
+
+    .history-nav-next {
+        right: 4px;
+    }
+}
+
+@media (max-width: 576px) {
+    .history-scroll {
+        overflow-x: visible;
+        overflow-y: visible;
+        scroll-snap-type: none;
+        cursor: default;
+        padding: 36px 0 12px;
+    }
+
+    .history-scroll:active {
+        cursor: default;
+    }
+
+    .history-scroll::before {
+        display: none;
+    }
+
+    .history-track {
+        flex-direction: column;
+        width: 100%;
+        max-width: 100%;
+        padding: 0 8px;
+        gap: 14px;
+    }
+
+    .history-card {
+        width: 100%;
+        max-width: none;
+        padding: 20px 16px 16px;
+        gap: 12px;
+    }
+
+    .history-nav-btn {
+        display: none;
+    }
+
+    .card-body {
+        flex: initial;
+    }
+
+    .history-title {
+        margin-bottom: 8px;
+        line-height: 1.45;
+    }
+
+    .history-text {
+        line-height: 1.7;
+    }
+
+    .card-media {
+        width: 100%;
+    }
+
+    .card-media img {
+        aspect-ratio: auto;
+        object-fit: contain;
+        height: auto;
+    }
+}
+
+/* Reduced Motion for History */
+@media (prefers-reduced-motion: reduce) {
+    .history-card {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+
+    .history-scroll {
+        scroll-behavior: auto;
+    }
+
+    .card-media img {
+        transition: none;
+    }
+}
+
+/* ==========================================================================
+   Responsive
+   ========================================================================== */
+@media (max-width: 768px) {
+    .page-title {
+        font-size: var(--fs-xl);
+    }
+}
+
+/* ==========================================================================
+   Animations
+   ========================================================================== */
+.fade-up {
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+.delay-1 {
+    animation-delay: 0.2s;
+}
+
+.delay-2 {
+    animation-delay: 0.4s;
+}
+
+.delay-3 {
+    animation-delay: 0.6s;
+}
+
+@keyframes fadeUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ==========================================================================
+   Footer
+   ========================================================================== */
+.site-footer {
+    background-color: var(--color-primary);
+    color: white;
+    padding: 60px 0 20px;
+    margin-top: auto;
+}
+
+.footer-inner {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+    padding-bottom: 40px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-logo {
+    font-size: 24px;
+    font-weight: 700;
+    font-family: "Yu Mincho", "YuMincho", serif;
+}
+
+.footer-nav {
+    display: flex;
+    gap: 24px;
+}
+
+.footer-nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    opacity: 0.8;
+    transition: opacity 0.3s;
+}
+
+.footer-nav a:hover {
+    opacity: 1;
+}
+
+.footer-copyright {
+    text-align: center;
+    font-size: 12px;
+    opacity: 0.6;
+}
+
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+    }
+
+    .footer-nav {
+        flex-direction: column;
+        gap: 12px;
+    }
+}

@@ -1,0 +1,298 @@
+/* Structural Depth Business Section Styles */
+
+:root {
+    --business-bg-color: #0b101a;
+    --business-structure-color: #1e293b;
+    --business-accent-color: rgba(255, 255, 255, 0.1);
+    --business-text-color: #f1f5f9;
+    --business-highlight-color: rgba(255, 255, 255, 0.8);
+    --business-font-ja: "Shippori Mincho", "Noto Serif JP", serif;
+    --business-font-en: "Oswald", sans-serif;
+}
+
+.t_bs {
+    position: relative;
+    width: 100%;
+    min-height: 80vh; /* Occupy significant screen height */
+    background-color: var(--business-bg-color);
+    overflow: hidden;
+    color: var(--business-text-color);
+    font-family: var(--business-font-ja);
+    padding: 120px 0;
+    display: flex;
+    align-items: center;
+}
+
+/* Layer A: Background Blueprint (Grid) */
+.t_bs__bg-grid {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    background-image: 
+        linear-gradient(var(--business-accent-color) 1px, transparent 1px),
+        linear-gradient(90deg, var(--business-accent-color) 1px, transparent 1px);
+    background-size: 60px 60px; /* Slightly larger grid than Recruit */
+    opacity: 0.3;
+}
+
+.t_bs__bg-light {
+    position: absolute;
+    top: 30%;
+    left: 20%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    background: radial-gradient(circle at center, rgba(30, 41, 59, 0.5) 0%, transparent 60%);
+    pointer-events: none;
+}
+
+/* Layer B: Structural Elements */
+.t_bs__structure {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    pointer-events: none;
+}
+
+/* Pillar on the right for Business section (variation from Recruit) */
+.t_bs__pillar {
+    position: absolute;
+    bottom: -20%;
+    right: 5%;
+    width: 180px;
+    height: 140%;
+    background: linear-gradient(-90deg, #161e2e 0%, var(--business-structure-color) 50%, #2a3850 100%);
+    transform: rotate(-8deg) skewX(5deg);
+    box-shadow: -15px 0 40px rgba(0, 0, 0, 0.6);
+    z-index: 1;
+}
+
+/* Horizontal beam */
+.t_bs__beam {
+    position: absolute;
+    top: 20%;
+    left: -10%;
+    width: 120%;
+    height: 60px;
+    background: linear-gradient(180deg, #2a3850 0%, var(--business-structure-color) 100%);
+    transform: rotate(5deg);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+    z-index: 0;
+    opacity: 0.9;
+}
+
+/* Floating Geometric Blocks */
+.t_bs__geometry-1 {
+    position: absolute;
+    bottom: 15%;
+    left: 10%;
+    width: 100px;
+    height: 100px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.03);
+    transform: rotate(15deg);
+    z-index: 0;
+}
+
+.t_bs__geometry-2 {
+    position: absolute;
+    top: 10%;
+    right: 25%;
+    width: 80px;
+    height: 80px;
+    background: rgba(30, 41, 59, 0.8);
+    transform: rotate(45deg);
+    z-index: 0;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+
+/* Layer C: Content Layer */
+.t_bs__inner {
+    position: relative;
+    z-index: 2;
+    max-width: 1280px;
+    margin: 0 auto;
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Glass Panel Wrapper */
+.layer-info-panel {
+    width: 100%;
+    background: rgba(30, 41, 59, 0.5); /* Slightly darker glass */
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
+    border-radius: 2px;
+    padding: 80px 60px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Inner Layout: Split */
+.panel-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    gap: 60px;
+}
+
+/* Left: Vertical Text Area */
+.vertical-text-area {
+    width: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-right: 1px solid rgba(255, 255, 255, 0.2);
+    padding-right: 40px;
+}
+
+.vertical-accent {
+    writing-mode: vertical-rl;
+    font-size: 28px;
+    font-weight: 500;
+    letter-spacing: 0.25em;
+    line-height: 1.8;
+    color: var(--business-highlight-color);
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Right: Main Text Area */
+.main-text-area {
+    width: 75%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.business-heading {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 40px;
+}
+
+.heading-en {
+    font-family: var(--business-font-en);
+    font-size: 50px;
+    font-weight: 700;
+    color: #fff;
+    line-height: 0.9;
+    letter-spacing: 0.02em;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+}
+
+/* Override utility if needed */
+.f_oswald {
+    font-family: var(--business-font-en) !important;
+}
+
+.f_serif {
+    font-family: var(--business-font-ja) !important;
+}
+
+.heading-ja {
+    font-size: var(--fs-xs);
+    letter-spacing: 0.4em;
+    color: rgba(255, 255, 255, 0.6);
+    margin-left: 5px;
+}
+
+.business-divider {
+    width: 80px;
+    height: 4px;
+    background: #fff;
+    margin-bottom: 40px;
+    opacity: 0.8;
+}
+
+.business-copy {
+    font-size: var(--fs-base);
+    line-height: 2.2;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Animations */
+.is-move .vertical-accent,
+.is-move .heading-en,
+.is-move .heading-ja,
+.is-move .business-copy,
+.is-move .business-divider {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.is-move.on .vertical-accent { transition-delay: 0.2s; opacity: 1; transform: translateY(0); }
+.is-move.on .heading-en { transition-delay: 0.4s; opacity: 1; transform: translateY(0); }
+.is-move.on .heading-ja { transition-delay: 0.5s; opacity: 1; transform: translateY(0); }
+.is-move.on .business-divider { transition-delay: 0.6s; opacity: 1; transform: translateY(0); }
+.is-move.on .business-copy { transition-delay: 0.7s; opacity: 1; transform: translateY(0); }
+
+
+/* Responsive */
+@media screen and (max-width: 900px) {
+    .t_bs {
+        padding: 80px 0;
+        min-height: auto;
+    }
+    
+    .layer-info-panel {
+        padding: 40px 30px;
+    }
+
+    .panel-content {
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    .vertical-text-area {
+        width: 100%;
+        border-right: none;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        padding-right: 0;
+        padding-bottom: 30px;
+        justify-content: center;
+    }
+
+    .vertical-accent {
+        writing-mode: horizontal-tb;
+        font-size: var(--fs-lg);
+        letter-spacing: 0.2em;
+    }
+
+    .main-text-area {
+        width: 100%;
+        text-align: center;
+        align-items: center;
+    }
+    
+    .heading-en {
+        font-size: 35px;
+    }
+    
+    .business-copy {
+        font-size: var(--fs-xs);
+        line-height: 2;
+        text-align: left; /* Keep copy aligned left for readability, or center if preferred */
+    }
+
+    .t_bs__pillar {
+        width: 80px;
+        right: -10%;
+        opacity: 0.6;
+    }
+}

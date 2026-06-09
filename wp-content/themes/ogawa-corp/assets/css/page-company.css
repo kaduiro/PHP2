@@ -1,0 +1,1817 @@
+@charset "UTF-8";
+
+
+/* ==========================================================================
+   Base Styles
+   ========================================================================== */
+#company-information {
+    --color-primary: #0A2463;
+    --color-accent: #3E92CC;
+    --color-text: #333333;
+    --color-bg: #FFFFFF;
+    --color-light: #F0F4F8;
+}
+
+#company-information {
+    font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+    color: var(--color-text);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    margin: 0;
+    overflow-x: hidden;
+}
+
+main#company-information {
+    background-color: #ffffff;
+}
+
+/* ==========================================================================
+   Sticky Header (Copied from Home Theme)
+   ========================================================================== */
+.site-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background: linear-gradient(90deg, var(--color-primary) 0%, var(--color-accent) 100%);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.header-inner {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 70px;
+}
+
+.site-logo {
+    color: white;
+    font-size: 24px;
+    font-weight: 600;
+    font-family: "Yu Mincho", "Hiragino Mincho ProN", serif;
+    letter-spacing: 0.1em;
+}
+
+.main-nav {
+    display: flex;
+    gap: 32px;
+}
+
+.main-nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 500;
+    transition: opacity 0.3s ease;
+    position: relative;
+}
+
+.main-nav a:hover {
+    opacity: 0.7;
+}
+
+.main-nav a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: white;
+    transition: width 0.3s ease;
+}
+
+.main-nav a:hover::after {
+    width: 100%;
+}
+
+#company-information .container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ==========================================================================
+   Page Header (New Design)
+   ========================================================================== */
+.page-header {
+    text-align: center;
+    padding: 120px 0;
+    color: #fff;
+    margin-bottom: 0;
+    position: relative;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1486325212027-8081e485255e?q=80&w=2070&auto=format&fit=crop');
+    background-size: cover;
+    background-position: center;
+}
+
+.profile-header-group {
+    display: inline-block;
+    text-align: center;
+}
+
+.profile-label {
+    display: block;
+    font-size: var(--fs-xs);
+    font-weight: 700;
+    margin-bottom: 20px;
+    letter-spacing: 0.1em;
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    text-transform: capitalize;
+}
+
+.profile-label::before {
+    content: '/';
+    color: var(--color-accent);
+    margin-right: 12px;
+    font-weight: 700;
+    font-size: 1.2em;
+}
+
+.profile-main-heading {
+    font-size: clamp(2.2rem, 5vw, 4rem);
+    font-weight: 700;
+    line-height: 1;
+    font-family: "Yu Mincho", "Hiragino Mincho ProN", serif;
+    margin: 0;
+    letter-spacing: 0.05em;
+}
+
+@media (max-width: 600px) {
+    .profile-main-heading {
+        font-size: var(--fs-xl);
+    }
+}
+
+/* ==========================================================================
+   Section Headers
+   ========================================================================== */
+#company-information section {
+    padding: 80px 0;
+}
+
+#company-information .section-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+#company-information .section-title {
+    font-size: clamp(2rem, 4vw, 3rem);
+    margin: 0 0 20px;
+    position: relative;
+    display: inline-block;
+    font-weight: 600;
+    color: var(--color-primary);
+}
+
+#company-information .section-title::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background-color: var(--color-accent);
+    margin: 10px auto 0;
+}
+
+#company-information .section-subtitle {
+    display: block;
+    font-size: var(--fs-xs);
+    color: var(--color-accent);
+    letter-spacing: 0.15em;
+    margin-top: 5px;
+    font-family: "Yu Mincho", "Hiragino Mincho ProN", serif;
+}
+
+
+/* ==========================================================================
+   Philosophy Section — Editorial Redesign
+   ========================================================================== */
+.philosophy-section {
+    position: relative;
+    background-color: #ffffff;
+    background-image:
+        repeating-linear-gradient(0deg,
+            transparent, transparent 39px,
+            rgba(62, 146, 204, 0.03) 40px);
+    background-size: 100% 40px;
+    padding: 0;
+    overflow: hidden;
+    z-index: 1;
+}
+
+/* Thin top border — echoes History section */
+.philosophy-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 10%;
+    right: 10%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(62, 146, 204, 0.2) 30%, rgba(62, 146, 204, 0.2) 70%, transparent);
+}
+
+/* Ambient glow (subtle) */
+.philosophy-section::after {
+    content: '';
+    position: absolute;
+    top: -20%;
+    right: -10%;
+    width: 50%;
+    height: 50vw;
+    background: radial-gradient(circle, rgba(62, 146, 204, 0.04) 0%, transparent 70%);
+    filter: blur(60px);
+    pointer-events: none;
+    z-index: -1;
+}
+
+/* ---- Canvas Background Animation ---- */
+#philosophy-canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0.8; /* adjust overall brightness of effect */
+}
+
+/* ---- Rinen Block (each split section) ---- */
+.rinen-block {
+    position: relative;
+    padding: 100px 0 60px;
+}
+
+.rinen-block--action {
+    padding-top: 0;
+    padding-bottom: 80px;
+}
+
+/* Separator between blocks */
+.rinen-block--action::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: min(80%, 600px);
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(62, 146, 204, 0.2) 30%, rgba(62, 146, 204, 0.2) 70%, transparent);
+}
+
+/* ---- Watermark ---- */
+.rinen-watermark {
+    display: none;
+}
+
+/* Container */
+.philosophy-container {
+    position: relative;
+    z-index: 2;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+/* ---- English label + line ---- */
+.philosophy-label-group {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 12px;
+}
+
+.philosophy-en-label {
+    font-size: var(--fs-xs);
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    color: #aaa;
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    text-transform: uppercase;
+    flex-shrink: 0;
+}
+
+.philosophy-label-line {
+    display: block;
+    flex: 1;
+    max-width: 80px;
+    height: 1px;
+    background-color: rgba(62, 146, 204, 0.3);
+}
+
+/* ---- Heading ---- */
+.philosophy-heading {
+    font-size: clamp(1.8rem, 3.5vw, 2.4rem);
+    font-weight: 600;
+    color: var(--color-primary);
+    font-family: "Yu Mincho", "Hiragino Mincho ProN", serif;
+    margin: 0 0 24px;
+    letter-spacing: 0.05em;
+    line-height: 1.3;
+}
+
+/* ---- Lead Copy ---- */
+.philosophy-lead {
+    font-size: clamp(1.8rem, 4vw, 2.6rem);
+    font-weight: 700;
+    color: var(--color-primary);
+    font-family: "Yu Mincho", "Hiragino Mincho ProN", serif;
+    line-height: 1.5;
+    letter-spacing: 0.04em;
+    margin: 0;
+}
+
+.line-d-block {
+    display: block;
+    white-space: nowrap;
+}
+
+/* ---- Keyword highlight (blue underline sweep) ---- */
+.kw {
+    display: inline-block;
+    opacity: 0;
+    transform: translateY(10px) scale(0.95);
+    transition: opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1),
+        transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+    transition-delay: 0.3s;
+    position: relative;
+    overflow: visible;
+    z-index: 0;
+    white-space: nowrap;
+}
+
+.kw.is-visible {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+
+.kw::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    width: 100%;
+    bottom: 5px;
+    height: 12px;
+    z-index: -2;
+    background-color: rgba(66, 153, 225, 0.2);
+    transform: skewX(-10deg) scaleX(0);
+    opacity: 0;
+    transform-origin: left center;
+    transition: opacity 0.3s ease;
+}
+
+.kw.is-visible::after {
+    opacity: 1;
+    animation: kw-underline-reveal 1.6s ease forwards;
+}
+
+@keyframes kw-underline-reveal {
+    from {
+        transform: skewX(-10deg) scaleX(0);
+    }
+
+    to {
+        transform: skewX(-10deg) scaleX(1);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .kw {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+
+    .kw::after {
+        transform: skewX(-10deg) scaleX(1);
+        opacity: 1;
+        animation: none;
+    }
+}
+
+/* ===== Rinen Split: Shared 2-Column Component ===== */
+.rinen-split {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+    margin-bottom: 60px;
+}
+
+/* Text column */
+.rinen-text {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Visual column */
+.rinen-visual {
+    position: relative;
+}
+
+.collage-main {
+    position: relative;
+    margin: 0;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+    z-index: 1;
+}
+
+.collage-main img {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+}
+
+
+
+/* ===== 3 Pillar Cards ===== */
+.philosophy-pillars {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-bottom: 0;
+}
+
+.pillar-card {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(10, 36, 99, 0.05);
+    border: 1px solid rgba(62, 146, 204, 0.1);
+    padding: 32px 24px 28px;
+    text-align: center;
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.pillar-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Pillar icon — CSS diamond dot */
+.pillar-icon {
+    display: block;
+    width: 10px;
+    height: 10px;
+    background-color: var(--color-accent);
+    transform: rotate(45deg);
+    border-radius: 2px;
+    margin: 0 auto 16px;
+}
+
+.pillar-label {
+    font-size: var(--fs-sm);
+    font-weight: 700;
+    color: var(--color-primary);
+    margin: 0 0 12px;
+    font-family: "Yu Mincho", "Hiragino Mincho ProN", serif;
+}
+
+.pillar-text {
+    font-size: var(--fs-xs);
+    line-height: 1.9;
+    color: #555;
+    margin: 0;
+}
+
+/* ===== Philosophy Responsive ===== */
+@media (max-width: 900px) {
+    .rinen-split {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .rinen-visual {
+        order: -1;
+        max-width: 500px;
+        margin: 0 auto;
+    }
+
+    .rinen-block {
+        padding: 80px 0 40px;
+    }
+
+    .rinen-block--action {
+        padding-top: 40px;
+        padding-bottom: 60px;
+    }
+
+    .rinen-watermark {
+        font-size: var(--fs-5xl);
+    }
+}
+
+@media (max-width: 768px) {
+    .philosophy-pillars {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .philosophy-heading {
+        font-size: var(--fs-lg);
+    }
+
+    .philosophy-lead {
+        font-size: var(--fs-lg);
+    }
+
+    .rinen-watermark {
+        font-size: var(--fs-4xl);
+        top: 30px;
+    }
+}
+
+@media (max-width: 500px) {
+    .line-d-block {
+        white-space: normal;
+    }
+
+    .philosophy-lead {
+        font-size: var(--fs-base);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .pillar-card {
+        transition: none;
+    }
+
+    .pillar-card:hover {
+        transform: none;
+    }
+}
+
+
+/* ==========================================================================
+   Profile Section
+   ========================================================================== */
+.profile-section {
+    background-color: #ffffff;
+}
+
+.profile-table-wrapper {
+    background: #fff;
+    padding: 40px;
+    box-shadow: 0 10px 30px rgba(10, 36, 99, 0.05);
+    border: 1px solid rgba(62, 146, 204, 0.1);
+    border-radius: 4px;
+}
+
+.profile-list {
+    margin: 0;
+}
+
+.profile-row {
+    display: flex;
+    border-bottom: 1px solid rgba(62, 146, 204, 0.15);
+    padding: 20px 0;
+}
+
+.profile-row:last-child {
+    border-bottom: none;
+}
+
+.profile-row dt {
+    width: 200px;
+    font-weight: 700;
+    color: var(--color-primary);
+    flex-shrink: 0;
+    padding-right: 20px;
+}
+
+.profile-row dd {
+    flex-grow: 1;
+    margin: 0;
+    color: #666;
+}
+
+@media (max-width: 768px) {
+    .profile-row {
+        flex-direction: column;
+    }
+
+    .profile-row dt {
+        width: 100%;
+        margin-bottom: 5px;
+        color: #222;
+    }
+
+    .profile-table-wrapper {
+        padding: 20px;
+    }
+}
+
+/* ==========================================================================
+   History Section — Z-Dive 3D Experience v3 (No Pin + Sticky + Progress Bar)
+   ========================================================================== */
+
+/* =======================================================
+   Z-Dive セクション — NO PIN: 高さはJSで設定 (N*120vh)
+   Canvas/パネル層は sticky で画面に張り付く
+======================================================= */
+#mk-history-zdive {
+    position: relative;
+    width: 100%;
+    /* height is set dynamically by JS: N * 120vh */
+    background: #ffffff;
+    overflow: visible;
+    /* sticky子要素のために visible */
+}
+
+#zdive-canvas {
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 1;
+    display: block;
+}
+
+/* パネルDOM層 — stickyでビューポートに張り付く */
+#zdive-panels-layer {
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    margin-top: -100vh;
+    /* canvasと重ねる */
+    perspective: 1200px;
+    z-index: 2;
+    pointer-events: none;
+}
+
+/* --- 各パネル --- */
+.zdive-panel {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 520px;
+    max-width: 88vw;
+    transform: translate(-50%, -50%) translateZ(0) scale(0.92) rotateY(10deg);
+    opacity: 0;
+    background: rgba(255, 255, 255, 0.75);
+    border: 1px solid rgba(10, 36, 99, 0.15);
+    border-radius: 16px;
+    padding: 34px 40px;
+    box-sizing: border-box;
+    color: #334455;
+    box-shadow: 0 8px 40px rgba(0, 0, 0, 0.08);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    pointer-events: auto;
+    will-change: transform, opacity;
+    transition: background 0.4s, border-color 0.4s, box-shadow 0.4s;
+}
+
+/* Read Zone でコントラストを上げる */
+.zdive-panel.read-active {
+    background: rgba(255, 255, 255, 0.95);
+    border-color: rgba(10, 36, 99, 0.25);
+    box-shadow: 0 10px 50px rgba(0, 0, 0, 0.12), 0 0 30px rgba(10, 36, 99, 0.05);
+}
+
+.zdive-panel .era {
+    font-size: var(--fs-3xl);
+    font-weight: 800;
+    line-height: 1;
+    letter-spacing: 0.05em;
+    margin-bottom: 4px;
+    color: #0A2463;
+}
+
+.zdive-panel h3 {
+    color: #0A2463;
+    margin: 4px 0 14px;
+    font-size: var(--fs-md);
+    font-weight: 600;
+    border-bottom: 1px solid rgba(10, 36, 99, 0.15);
+    padding-bottom: 10px;
+}
+
+.zdive-panel .body {
+    line-height: 1.8;
+    font-size: var(--fs-xs);
+    margin-bottom: 22px;
+}
+
+.zdive-panel img {
+    width: 100%;
+    height: 240px;
+    object-fit: cover;
+    border-radius: 8px;
+    display: block;
+    background: #f0f4f8;
+}
+
+/* =======================================================
+   Viewport-Fixed Progress Bar (案1: スリム進捗バー + カウンター)
+======================================================= */
+#zdive-progress {
+    position: fixed;
+    bottom: calc(28px + env(safe-area-inset-bottom, 0px));
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.45s ease;
+}
+
+/* トラック（背景バー） */
+#zdive-progress-track {
+    width: 140px;
+    height: 3px;
+    background: rgba(10, 36, 99, 0.15);
+    border-radius: 2px;
+    overflow: hidden;
+    position: relative;
+}
+
+/* フィル（ブルーの進捗バー） */
+#zdive-progress-fill {
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(90deg, #3E92CC, #0A2463);
+    border-radius: 2px;
+    box-shadow: 0 0 6px rgba(10, 36, 99, 0.20);
+    transition: width 0.15s ease-out;
+}
+
+/* カウンター "03 / 08" */
+#zdive-progress-counter {
+    font-family: "Helvetica Neue", Arial, monospace;
+    font-size: var(--fs-xs);
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    color: rgba(10, 36, 99, 0.85);
+    white-space: nowrap;
+    user-select: none;
+}
+
+/* エラー表示用 */
+#zdive-error {
+    position: sticky;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 100;
+    background: red;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-weight: bold;
+    display: none;
+    width: fit-content;
+    margin: 0 auto;
+}
+
+/* =======================================================
+   prefers-reduced-motion フォールバック
+======================================================= */
+#fallback-timeline-container {
+    display: none;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 80px 20px;
+    background: #ffffff;
+    color: #333333;
+}
+
+.fallback-panel {
+    background: rgba(255, 255, 255, 0.95);
+    border: 1px solid rgba(10, 36, 99, 0.15);
+    border-radius: 12px;
+    padding: 30px;
+    margin-bottom: 40px;
+}
+
+.fallback-panel .era {
+    font-size: var(--fs-lg);
+    font-weight: bold;
+    color: #0A2463;
+}
+
+.fallback-panel h3 {
+    margin: 5px 0 15px;
+    border-bottom: 1px solid rgba(10, 36, 99, 0.15);
+    padding-bottom: 10px;
+    color: #0A2463;
+}
+
+.fallback-panel img {
+    width: 100%;
+    max-height: 300px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-top: 15px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    #mk-history-zdive {
+        display: none !important;
+    }
+
+    #zdive-progress {
+        display: none !important;
+    }
+
+    #fallback-timeline-container {
+        display: block;
+    }
+}
+
+/* ==========================================================================
+   History Overview (Minimalist Timeline)
+   ========================================================================== */
+#company-information #history-overview.history-overview-section {
+    --ov-active: #0A2463;
+    --ov-year-idle: #A2AFBE;
+    --ov-title-idle: #334455;
+    --ov-text: #788A9C;
+    --ov-axis: #A8B8CA;
+    --ov-row-gap: 0px;
+    --ov-section-pad-top: 100px;
+    --ov-section-pad-bottom: 140px;
+    --ov-year-col: 180px;
+
+    position: relative !important;
+    top: auto !important;
+    margin-top: -100vh !important;
+    min-height: 100vh !important;
+    padding: var(--ov-section-pad-top) 0 var(--ov-section-pad-bottom) !important;
+    background: #ffffff !important;
+}
+
+body.skip-zdive #mk-history-zdive,
+body.skip-zdive #zdive-progress {
+    display: none !important;
+}
+
+body.skip-zdive #company-information #history-overview.history-overview-section {
+    margin-top: 0 !important;
+    opacity: 1 !important;
+    transform: none !important;
+    filter: none !important;
+    padding-top: 160px !important;
+    transition: none !important;
+}
+
+#company-information #history-overview .history-overview-timeline {
+    position: relative !important;
+    max-width: 900px !important;
+    margin: 0 auto !important;
+    padding-left: 0 !important;
+}
+
+#company-information #history-overview .history-overview-timeline::before {
+    content: '';
+    position: absolute;
+    top: 40px;
+    bottom: 0;
+    left: var(--ov-year-col) !important;
+    width: 1px !important;
+    background: var(--ov-axis) !important;
+    z-index: 0;
+}
+
+#company-information #history-overview .timeline-header-block {
+    position: relative;
+    padding-left: calc(var(--ov-year-col) + 48px);
+    margin-bottom: 50px;
+    padding-top: 24px;
+}
+
+#company-information #history-overview .timeline-header-block::before {
+    content: '';
+    position: absolute;
+    left: var(--ov-year-col) !important;
+    top: 36px !important;
+    width: 10px !important;
+    height: 10px !important;
+    border: 1px solid var(--ov-axis) !important;
+    background: #ffffff !important;
+    border-radius: 50% !important;
+    transform: translate(-50%, -50%) !important;
+    box-shadow: 0 0 0 6px #ffffff !important;
+    z-index: 1;
+}
+
+#company-information #history-overview .timeline-watermark {
+    position: absolute;
+    left: -20px;
+    top: -20px;
+    font-size: clamp(5rem, 12vw, 8rem);
+    font-weight: 800;
+    color: #f3f6f9;
+    letter-spacing: 0.02em;
+    z-index: 0;
+    line-height: 1;
+    pointer-events: none;
+    font-family: "Helvetica Neue", Arial, sans-serif;
+}
+
+#company-information #history-overview .timeline-today-label {
+    position: relative;
+    z-index: 1;
+    font-size: var(--fs-xs);
+    font-weight: 700;
+    color: #152C5B;
+    letter-spacing: 0.1em;
+    margin-bottom: 6px;
+    font-family: "Helvetica Neue", Arial, sans-serif;
+}
+
+#company-information #history-overview .timeline-present-label {
+    position: relative;
+    z-index: 1;
+    font-size: var(--fs-sm);
+    font-weight: 600;
+    color: #152C5B;
+    letter-spacing: 0.04em;
+    font-family: "Yu Mincho", "Hiragino Mincho ProN", serif;
+}
+
+#company-information #history-overview .history-item {
+    position: relative !important;
+    display: grid !important;
+    grid-template-columns: var(--ov-year-col) minmax(0, 1fr) !important;
+    gap: 48px !important;
+    align-items: start !important;
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    border-radius: 0 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.8s ease !important;
+}
+
+#company-information #history-overview .history-item:not(:last-child) {
+    margin-bottom: 0 !important;
+}
+
+#company-information #history-overview .history-item::before {
+    content: '';
+    position: absolute;
+    left: var(--ov-year-col) !important;
+    top: 36px !important;
+    width: 10px !important;
+    height: 10px !important;
+    border: 2px solid var(--ov-axis) !important;
+    background: #ffffff !important;
+    border-radius: 50% !important;
+    transform: translate(-50%, -50%) !important;
+    transition: all 0.4s ease !important;
+    box-shadow: 0 0 0 6px #ffffff !important;
+    z-index: 2;
+}
+
+#company-information #history-overview .history-item.active::before,
+#company-information #history-overview .history-item:hover::before {
+    border-color: var(--ov-active) !important;
+    border-width: 2px !important;
+    background: #ffffff !important;
+    transform: translate(-50%, -50%) !important;
+    box-shadow: 0 0 0 6px #ffffff !important;
+}
+
+#company-information #history-overview .history-left {
+    text-align: right !important;
+    padding-right: 0 !important;
+    padding-top: 14px !important;
+    display: flex !important;
+    justify-content: flex-end !important;
+}
+
+#company-information #history-overview .history-center {
+    position: relative !important;
+    padding: 24px 0 32px 0 !important;
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    border-bottom: 1px solid #E8EEF5 !important;
+}
+
+#company-information #history-overview .history-item:last-child .history-center {
+    border-bottom: none !important;
+}
+
+/* ---- Photo layout inside history-center ---- */
+#company-information #history-overview .history-center.overview-center {
+    display: flex !important;
+    gap: 28px !important;
+    align-items: flex-start !important;
+}
+
+#company-information #history-overview .history-content.overview-content {
+    flex: 1 !important;
+    min-width: 0 !important;
+}
+
+#company-information #history-overview .overview-photo {
+    flex-shrink: 0 !important;
+    width: 200px !important;
+    border-radius: 8px !important;
+    overflow: hidden !important;
+    margin-top: 24px !important;
+    margin-bottom: 32px !important;
+    box-shadow: 0 4px 16px rgba(10, 36, 99, 0.08) !important;
+}
+
+#company-information #history-overview .overview-photo img {
+    display: block !important;
+    width: 100% !important;
+    height: 130px !important;
+    object-fit: cover !important;
+    transition: transform 0.5s ease !important;
+}
+
+#company-information #history-overview .history-item:hover .overview-photo img,
+#company-information #history-overview .history-item.active .overview-photo img {
+    transform: scale(1.05) !important;
+}
+
+#company-information #history-overview .history-item.active .overview-photo {
+    box-shadow: 0 6px 24px rgba(10, 36, 99, 0.15) !important;
+}
+
+#company-information #history-overview .history-year {
+    font-size: clamp(2.4rem, 4vw, 3.2rem) !important;
+    line-height: 1 !important;
+    font-weight: 300 !important;
+    color: var(--ov-year-idle) !important;
+    transition: color 0.4s ease !important;
+    letter-spacing: -0.01em !important;
+    margin: 0 !important;
+    font-style: italic !important;
+    font-family: "Georgia", "Times New Roman", serif !important;
+}
+
+#company-information #history-overview .history-item.active .history-year,
+#company-information #history-overview .history-item:hover .history-year {
+    color: var(--ov-active) !important;
+}
+
+#company-information #history-overview .history-title {
+    margin: 0 0 12px !important;
+    font-size: clamp(1.1rem, 1.8vw, 1.25rem) !important;
+    line-height: 1.4 !important;
+    font-weight: 700 !important;
+    color: var(--ov-title-idle) !important;
+    transition: color 0.4s ease !important;
+    letter-spacing: 0.04em !important;
+}
+
+#company-information #history-overview .history-text {
+    font-size: var(--fs-xs) !important;
+    line-height: 1.8 !important;
+    color: var(--ov-text) !important;
+    margin: 0 !important;
+}
+
+@media (max-width: 900px) {
+    #company-information #history-overview.history-overview-section {
+        --ov-row-gap: 30px;
+        --ov-year-col: 90px;
+        padding-top: 60px !important;
+    }
+
+    body.skip-zdive #company-information #history-overview.history-overview-section {
+        padding-top: 100px !important;
+    }
+
+    #company-information #history-overview .history-overview-timeline::before {
+        left: var(--ov-year-col) !important;
+    }
+
+    #company-information #history-overview .timeline-header-block {
+        padding-left: calc(var(--ov-year-col) + 24px);
+    }
+
+    #company-information #history-overview .timeline-header-block::before {
+        left: var(--ov-year-col) !important;
+    }
+
+    #company-information #history-overview .history-item {
+        grid-template-columns: var(--ov-year-col) minmax(0, 1fr) !important;
+        gap: 20px !important;
+    }
+
+    #company-information #history-overview .history-item::before {
+        left: var(--ov-year-col) !important;
+        top: 26px !important;
+        width: 8px !important;
+        height: 8px !important;
+    }
+
+    #company-information #history-overview .history-item:not(:last-child) {
+        margin-bottom: 0 !important;
+    }
+
+    #company-information #history-overview .history-left {
+        padding-right: 0 !important;
+        padding-top: 8px !important;
+    }
+
+    #company-information #history-overview .history-center {
+        padding: 16px 0 24px 0 !important;
+    }
+
+    #company-information #history-overview .history-year {
+        font-size: clamp(1.6rem, 5vw, 2.2rem) !important;
+    }
+
+    #company-information #history-overview .history-title {
+        margin-bottom: 8px !important;
+        font-size: clamp(1.1rem, 4.5vw, 1.25rem) !important;
+    }
+
+    #company-information #history-overview .history-text {
+        font-size: var(--fs-xs) !important;
+        line-height: 1.7 !important;
+    }
+
+    #company-information #history-overview .history-center.overview-center {
+        flex-direction: column !important;
+        gap: 12px !important;
+    }
+
+    #company-information #history-overview .overview-photo {
+        width: 100% !important;
+        margin-top: 0 !important;
+        margin-bottom: 16px !important;
+    }
+
+    #company-information #history-overview .overview-photo img {
+        height: 160px !important;
+    }
+}
+
+/* ==========================================================================
+   Responsive
+   ========================================================================== */
+@media (max-width: 768px) {
+    .page-title {
+        font-size: var(--fs-xl);
+    }
+}
+
+/* ==========================================================================
+   Animations
+   ========================================================================== */
+.fade-up {
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+.delay-1 {
+    animation-delay: 0.2s;
+}
+
+.delay-2 {
+    animation-delay: 0.4s;
+}
+
+.delay-3 {
+    animation-delay: 0.6s;
+}
+
+@keyframes fadeUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ==========================================================================
+   Footer
+   ========================================================================== */
+.site-footer {
+    background-color: var(--color-primary);
+    color: white;
+    padding: 60px 0 20px;
+    margin-top: auto;
+}
+
+.footer-inner {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+    padding-bottom: 40px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-logo {
+    font-size: 24px;
+    font-weight: 700;
+    font-family: "Yu Mincho", "YuMincho", serif;
+}
+
+.footer-nav {
+    display: flex;
+    gap: 24px;
+}
+
+.footer-nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    opacity: 0.8;
+    transition: opacity 0.3s;
+}
+
+.footer-nav a:hover {
+    opacity: 1;
+}
+
+.footer-copyright {
+    text-align: center;
+    font-size: 12px;
+    opacity: 0.6;
+}
+
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+    }
+
+    .footer-nav {
+        flex-direction: column;
+        gap: 12px;
+    }
+}
+
+/* ==========================================================================
+   Company Philosophy: typography composition
+   ========================================================================== */
+
+#company-information #company-philosophy.okg-company-typo-philosophy {
+    --okg-cp-red: #005bac;
+    --okg-cp-ink: #111827;
+    --okg-cp-soft-ink: #3d4654;
+    --okg-cp-muted: #788190;
+    --okg-cp-line: #dfe4ea;
+    --okg-cp-paper: #ffffff;
+    --okg-cp-paper-soft: #f6f7f9;
+    --okg-cp-paper-tint: #f1f3f6;
+    --okg-cp-serif: var(--font-ja-serif, "Yu Mincho", "Hiragino Mincho ProN", serif);
+    --okg-cp-sans: var(--font-ja, "Noto Sans JP", "Hiragino Kaku Gothic ProN", sans-serif);
+    --okg-cp-en: var(--font-en, "Montserrat", Arial, sans-serif);
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    padding: 7rem 0 6.5rem;
+    background:
+        linear-gradient(90deg, rgba(0, 91, 172, 0.04) 0 1px, transparent 1px 100%),
+        linear-gradient(180deg, #ffffff 0%, #f8f9fb 54%, #ffffff 100%);
+    background-size: 76px 100%, auto;
+    color: var(--okg-cp-ink);
+}
+
+#company-information #company-philosophy.okg-company-typo-philosophy,
+#company-information #company-philosophy.okg-company-typo-philosophy * {
+    box-sizing: border-box;
+}
+
+#company-information #company-philosophy.okg-company-typo-philosophy::before {
+    content: "PHILOSOPHY";
+    position: absolute;
+    top: 1.8rem;
+    right: -1.6rem;
+    z-index: 0;
+    color: rgba(17, 24, 39, 0.045);
+    font-family: var(--okg-cp-en);
+    font-size: 8.5rem;
+    font-weight: 800;
+    line-height: 1;
+    letter-spacing: 0;
+    pointer-events: none;
+    white-space: nowrap;
+}
+
+#company-information .okg-company-typo-philosophy__ornaments {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+}
+
+#company-information .okg-company-typo-philosophy__line,
+#company-information .okg-company-typo-philosophy__ring,
+#company-information .okg-company-typo-philosophy__stripe {
+    position: absolute;
+    display: block;
+}
+
+#company-information .okg-company-typo-philosophy__line--top {
+    top: 12.5rem;
+    left: -6rem;
+    width: 24rem;
+    height: 1px;
+    background: rgba(0, 91, 172, 0.26);
+    transform: rotate(-16deg);
+}
+
+#company-information .okg-company-typo-philosophy__line--middle {
+    right: -4rem;
+    bottom: 16rem;
+    width: 31rem;
+    height: 1px;
+    background: rgba(17, 24, 39, 0.12);
+    transform: rotate(18deg);
+}
+
+#company-information .okg-company-typo-philosophy__ring {
+    top: 18rem;
+    right: 7rem;
+    width: 11rem;
+    height: 11rem;
+    border: 1px solid rgba(0, 91, 172, 0.2);
+    border-radius: 50%;
+}
+
+#company-information .okg-company-typo-philosophy__stripe {
+    left: 8%;
+    bottom: 9rem;
+    width: 10rem;
+    height: 4.6rem;
+    background:
+        repeating-linear-gradient(
+            135deg,
+            rgba(0, 91, 172, 0.13) 0,
+            rgba(0, 91, 172, 0.13) 1px,
+            transparent 1px,
+            transparent 11px
+        );
+}
+
+#company-information .okg-company-typo-philosophy__inner {
+    position: relative;
+    z-index: 1;
+    width: min(1180px, calc(100% - 5rem));
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: minmax(18rem, 0.88fr) minmax(0, 1.12fr);
+    gap: 4.5rem;
+    align-items: start;
+}
+
+#company-information .okg-company-typo-philosophy__intro {
+    position: sticky;
+    top: 7.5rem;
+    min-width: 0;
+    padding-top: 0.8rem;
+}
+
+#company-information .okg-company-typo-philosophy__eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.85rem;
+    margin: 0 0 1.3rem;
+    color: var(--okg-cp-red);
+    font-family: var(--okg-cp-en);
+    font-size: 0.82rem;
+    font-weight: 800;
+    line-height: 1;
+    letter-spacing: 0;
+    text-transform: uppercase;
+}
+
+#company-information .okg-company-typo-philosophy__eyebrow::before {
+    content: "";
+    width: 2.8rem;
+    height: 2px;
+    background: currentColor;
+}
+
+#company-information .okg-company-typo-philosophy__title {
+    margin: 0;
+    color: var(--okg-cp-ink);
+    font-family: var(--okg-cp-serif);
+    font-size: 3.9rem;
+    font-weight: 800;
+    line-height: 1.12;
+    letter-spacing: 0;
+    word-break: keep-all;
+}
+
+#company-information .okg-company-typo-philosophy__statement,
+#company-information .okg-company-typo-philosophy__values-statement {
+    margin: 2rem 0 0;
+    color: var(--okg-cp-ink);
+    font-family: var(--okg-cp-serif);
+    font-size: 2.35rem;
+    font-weight: 800;
+    line-height: 1.55;
+    letter-spacing: 0;
+}
+
+#company-information .okg-company-typo-philosophy__statement span,
+#company-information .okg-company-typo-philosophy__values-statement span {
+    color: var(--okg-cp-red);
+}
+
+#company-information .okg-company-typo-philosophy__mission {
+    position: relative;
+    min-width: 0;
+    display: grid;
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    gap: 1.15rem;
+}
+
+#company-information .okg-company-typo-philosophy__mission::before {
+    content: "";
+    position: absolute;
+    top: -2.2rem;
+    right: 1rem;
+    width: 15rem;
+    height: 6rem;
+    border-top: 1px solid rgba(0, 91, 172, 0.22);
+    border-bottom: 1px solid rgba(0, 91, 172, 0.16);
+    transform: rotate(-8deg);
+    pointer-events: none;
+}
+
+#company-information .okg-company-typo-philosophy__mission-card,
+#company-information .okg-company-typo-philosophy__value-card {
+    position: relative;
+    min-width: 0;
+    overflow: hidden;
+    border: 1px solid var(--okg-cp-line);
+    border-radius: 0;
+    background: rgba(255, 255, 255, 0.92);
+}
+
+#company-information .okg-company-typo-philosophy__mission-card {
+    min-height: 13rem;
+    padding: 1.7rem;
+}
+
+#company-information .okg-company-typo-philosophy__mission-card--employee {
+    grid-column: 1 / span 3;
+    transform: translateY(1.4rem);
+}
+
+#company-information .okg-company-typo-philosophy__mission-card--customer {
+    grid-column: 4 / span 3;
+}
+
+#company-information .okg-company-typo-philosophy__mission-card--partner {
+    grid-column: 2 / span 5;
+    min-height: 11.5rem;
+    background: var(--okg-cp-paper-soft);
+}
+
+#company-information .okg-company-typo-philosophy__mission-card::before,
+#company-information .okg-company-typo-philosophy__value-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0.34rem;
+    height: 100%;
+    background: var(--okg-cp-red);
+}
+
+#company-information .okg-company-typo-philosophy__mission-card::after {
+    content: "";
+    position: absolute;
+    right: 1rem;
+    bottom: 1rem;
+    width: 5rem;
+    height: 5rem;
+    border: 1px solid rgba(0, 91, 172, 0.16);
+    transform: rotate(45deg);
+}
+
+#company-information .okg-company-typo-philosophy__number,
+#company-information .okg-company-typo-philosophy__value-number {
+    margin: 0 0 1.1rem;
+    color: var(--okg-cp-red);
+    font-family: var(--okg-cp-en);
+    font-size: 0.95rem;
+    font-weight: 800;
+    line-height: 1;
+    letter-spacing: 0;
+}
+
+#company-information .okg-company-typo-philosophy__card-title,
+#company-information .okg-company-typo-philosophy__value-title {
+    margin: 0;
+    color: var(--okg-cp-ink);
+    font-family: var(--okg-cp-serif);
+    font-size: 1.55rem;
+    font-weight: 800;
+    line-height: 1.35;
+    letter-spacing: 0;
+}
+
+#company-information .okg-company-typo-philosophy__card-text,
+#company-information .okg-company-typo-philosophy__value-text {
+    position: relative;
+    z-index: 1;
+    margin: 1rem 0 0;
+    color: var(--okg-cp-soft-ink);
+    font-family: var(--okg-cp-sans);
+    font-size: 1rem;
+    line-height: 1.9;
+    letter-spacing: 0;
+    overflow-wrap: anywhere;
+    word-break: normal;
+}
+
+#company-information .okg-company-typo-philosophy__values {
+    grid-column: 1 / -1;
+    position: relative;
+    min-width: 0;
+    margin-top: 4.8rem;
+    padding: 3.6rem;
+    border-top: 1px solid var(--okg-cp-line);
+    border-bottom: 1px solid var(--okg-cp-line);
+    background:
+        linear-gradient(90deg, var(--okg-cp-paper-tint) 0 22%, transparent 22% 100%),
+        var(--okg-cp-paper);
+}
+
+#company-information .okg-company-typo-philosophy__values::before {
+    content: "VALUES";
+    position: absolute;
+    top: -2.8rem;
+    left: 2.6rem;
+    color: rgba(0, 91, 172, 0.08);
+    font-family: var(--okg-cp-en);
+    font-size: 6rem;
+    font-weight: 900;
+    line-height: 1;
+    letter-spacing: 0;
+    pointer-events: none;
+}
+
+#company-information .okg-company-typo-philosophy__values::after {
+    content: "";
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    width: 9rem;
+    height: 9rem;
+    border: 1px solid rgba(17, 24, 39, 0.12);
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+#company-information .okg-company-typo-philosophy__values-head {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: minmax(15rem, 0.68fr) minmax(0, 1fr);
+    gap: 2.5rem;
+    align-items: start;
+}
+
+#company-information .okg-company-typo-philosophy__values-title {
+    margin: 0;
+    color: var(--okg-cp-red);
+    font-family: var(--okg-cp-serif);
+    font-size: 3rem;
+    font-weight: 800;
+    line-height: 1.18;
+    letter-spacing: 0;
+    word-break: keep-all;
+}
+
+#company-information .okg-company-typo-philosophy__values-statement {
+    margin: 0;
+}
+
+#company-information .okg-company-typo-philosophy__values-grid {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1rem;
+    margin-top: 2.8rem;
+}
+
+#company-information .okg-company-typo-philosophy__value-card {
+    padding: 1.55rem 1.4rem 1.45rem;
+    background: rgba(255, 255, 255, 0.9);
+}
+
+#company-information .okg-company-typo-philosophy__value-card:nth-child(2) {
+    background: var(--okg-cp-paper-soft);
+}
+
+#company-information .okg-company-typo-philosophy__value-card:nth-child(3) {
+    background: #ffffff;
+}
+
+#company-information .okg-company-typo-philosophy__note {
+    position: relative;
+    z-index: 1;
+    margin: 2rem 0 0;
+    padding: 1.45rem 0 0;
+    border-top: 1px solid rgba(17, 24, 39, 0.12);
+    color: var(--okg-cp-soft-ink);
+    font-size: 1rem;
+    line-height: 1.95;
+    letter-spacing: 0;
+    overflow-wrap: anywhere;
+}
+
+@media (max-width: 980px) {
+    #company-information #company-philosophy.okg-company-typo-philosophy {
+        padding: 5.5rem 0;
+    }
+
+    #company-information #company-philosophy.okg-company-typo-philosophy::before {
+        top: 1.5rem;
+        right: -1rem;
+        font-size: 5.7rem;
+    }
+
+    #company-information .okg-company-typo-philosophy__inner {
+        width: min(100%, calc(100% - 2.5rem));
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+
+    #company-information .okg-company-typo-philosophy__intro {
+        position: relative;
+        top: auto;
+    }
+
+    #company-information .okg-company-typo-philosophy__title {
+        font-size: 3.25rem;
+    }
+
+    #company-information .okg-company-typo-philosophy__statement,
+    #company-information .okg-company-typo-philosophy__values-statement {
+        font-size: 2rem;
+    }
+
+    #company-information .okg-company-typo-philosophy__mission-card--employee,
+    #company-information .okg-company-typo-philosophy__mission-card--customer,
+    #company-information .okg-company-typo-philosophy__mission-card--partner {
+        grid-column: auto;
+        transform: none;
+    }
+
+    #company-information .okg-company-typo-philosophy__mission {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    #company-information .okg-company-typo-philosophy__values {
+        margin-top: 1.5rem;
+        padding: 3rem 2rem;
+    }
+
+    #company-information .okg-company-typo-philosophy__values-head {
+        grid-template-columns: 1fr;
+        gap: 1.6rem;
+    }
+}
+
+@media (max-width: 760px) {
+    #company-information #company-philosophy.okg-company-typo-philosophy {
+        padding: 4.5rem 0;
+        background-size: 42px 100%, auto;
+    }
+
+    #company-information #company-philosophy.okg-company-typo-philosophy::before {
+        top: 1.6rem;
+        right: -0.6rem;
+        font-size: 3.8rem;
+    }
+
+    #company-information .okg-company-typo-philosophy__line--top,
+    #company-information .okg-company-typo-philosophy__line--middle,
+    #company-information .okg-company-typo-philosophy__ring {
+        display: none;
+    }
+
+    #company-information .okg-company-typo-philosophy__stripe {
+        right: 1rem;
+        bottom: 4rem;
+        left: auto;
+        width: 7rem;
+        height: 3.2rem;
+    }
+
+    #company-information .okg-company-typo-philosophy__inner {
+        width: min(100%, calc(100% - 1.5rem));
+        gap: 2.4rem;
+    }
+
+    #company-information .okg-company-typo-philosophy__title {
+        font-size: 2.55rem;
+    }
+
+    #company-information .okg-company-typo-philosophy__statement,
+    #company-information .okg-company-typo-philosophy__values-statement {
+        margin-top: 1.4rem;
+        font-size: 1.58rem;
+        line-height: 1.6;
+    }
+
+    #company-information .okg-company-typo-philosophy__mission {
+        grid-template-columns: 1fr;
+        gap: 0.9rem;
+    }
+
+    #company-information .okg-company-typo-philosophy__mission::before {
+        display: none;
+    }
+
+    #company-information .okg-company-typo-philosophy__mission-card {
+        min-height: 0;
+        padding: 1.35rem 1.25rem;
+    }
+
+    #company-information .okg-company-typo-philosophy__mission-card::after {
+        width: 3.6rem;
+        height: 3.6rem;
+    }
+
+    #company-information .okg-company-typo-philosophy__values {
+        padding: 2.4rem 1.2rem;
+    }
+
+    #company-information .okg-company-typo-philosophy__values::before {
+        top: -1.6rem;
+        left: 1rem;
+        font-size: 3.6rem;
+    }
+
+    #company-information .okg-company-typo-philosophy__values::after {
+        display: none;
+    }
+
+    #company-information .okg-company-typo-philosophy__values-title {
+        font-size: 2.2rem;
+    }
+
+    #company-information .okg-company-typo-philosophy__values-grid {
+        grid-template-columns: 1fr;
+        gap: 0.8rem;
+        margin-top: 2rem;
+    }
+
+    #company-information .okg-company-typo-philosophy__card-title,
+    #company-information .okg-company-typo-philosophy__value-title {
+        font-size: 1.32rem;
+    }
+}
+
+@media (max-width: 430px) {
+    #company-information #company-philosophy.okg-company-typo-philosophy::before {
+        font-size: 3rem;
+    }
+
+    #company-information .okg-company-typo-philosophy__inner {
+        width: min(100%, calc(100% - 1rem));
+    }
+
+    #company-information .okg-company-typo-philosophy__title {
+        font-size: 2.15rem;
+    }
+
+    #company-information .okg-company-typo-philosophy__statement,
+    #company-information .okg-company-typo-philosophy__values-statement {
+        font-size: 1.38rem;
+    }
+
+    #company-information .okg-company-typo-philosophy__mission-card,
+    #company-information .okg-company-typo-philosophy__value-card {
+        padding: 1.15rem 1rem;
+    }
+
+    #company-information .okg-company-typo-philosophy__card-text,
+    #company-information .okg-company-typo-philosophy__value-text,
+    #company-information .okg-company-typo-philosophy__note {
+        font-size: 0.95rem;
+        line-height: 1.85;
+    }
+}

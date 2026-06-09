@@ -1,0 +1,279 @@
+/**
+ * theme/home2 - ヘッダー・フッター・共通レイアウト
+ * main.css に .h, .h_logo 等が無いため、ここで定義して表示を確保する
+ */
+
+/* ===== 共通幅 .w_set ===== */
+.w_set {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+.w_inset { padding-left: 20px; padding-right: 20px; }
+.w_max-main { max-width: 1200px; margin-left: auto; margin-right: auto; }
+
+/* ===== ヒーロー（選択肢A: 全画面動画＋スクロールでフェードアウト） ===== */
+.t_main {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.t_main_video_wrap {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 0;
+  transition: opacity 0.2s ease-out;
+}
+.t_main_video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  transform: translate(-50%, -50%);
+  object-fit: cover;
+}
+.t_main_btn {
+  position: relative;
+  z-index: 1;
+  margin-top: 24px;
+  text-align: center;
+}
+.t_main_btn .img_res {
+  max-width: 80px;
+  height: auto;
+  width: auto;
+}
+/* 次のセクションが動画の上に重なるように背景を確保 */
+.t_nw {
+  position: relative;
+  z-index: 1;
+  background: #fff;
+}
+
+/* ===== ヘッダー .h ===== */
+.h {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: rgba(0, 0, 0, 0.85);
+  color: #fff;
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+.h_in {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 70px;
+}
+.h_logo { margin: 0; font-size: 1rem; line-height: 1; }
+.h_logo a {
+  display: inline-flex;
+  align-items: center;
+  color: inherit;
+  text-decoration: none;
+}
+.h_logo_img01,
+.h_logo_img02 {
+  display: block;
+  height: 40px;
+  width: auto;
+  max-width: 180px;
+  object-fit: contain;
+}
+.h_logo_img02 { display: none; }
+.h.is-scrolled .h_logo_img01 { display: none; }
+.h.is-scrolled .h_logo_img02 { display: block; }
+.h_logo_txt {
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+}
+.h_nav ul {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0 24px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.h_nav a {
+  color: inherit;
+  text-decoration: none;
+  font-size: 14px;
+}
+.h_nav > ul > li {
+  position: relative;
+}
+.h_nav_sub {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 160px;
+  padding: 8px 0;
+  background: rgba(0, 0, 0, 0.95);
+  list-style: none;
+  margin: 0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+.h_nav > ul > li:hover .h_nav_sub {
+  display: block;
+}
+.h_nav_sub li { margin: 0; }
+.h_nav_sub a {
+  display: block;
+  padding: 8px 16px;
+  font-size: 13px;
+}
+.h_nav_sub a:hover { background: rgba(255, 255, 255, 0.1); }
+
+/* 7項目（お知らせ含む）が1行に収まるよう余白を調整（main.css の 4.6rem を上書き） */
+@media (min-width: 769px) {
+  .h_nav > ul > li {
+    margin-left: 1.25rem;
+  }
+  .h_nav > ul > li:first-child {
+    margin-left: 0;
+  }
+}
+
+/* SP: ハンバーガーボタン */
+.h_navbtn {
+  display: none;
+  position: fixed;
+  top: 16px;
+  right: 16px;
+  z-index: 1001;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border: none;
+  background: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  cursor: pointer;
+  border-radius: 4px;
+}
+.h_navbtn i {
+  display: block;
+  width: 22px;
+  height: 2px;
+  margin: 0 auto;
+  background: currentColor;
+  box-shadow: 0 6px 0 currentColor, 0 -6px 0 currentColor;
+}
+@media (max-width: 767px) {
+  .h_nav { display: none; }
+  .h_navbtn { display: block; }
+}
+
+/* ===== メイン（ヘッダー高さ分の余白） ===== */
+body { padding-top: 70px; }
+
+/* ===== フッター .f ===== */
+.f {
+  background: #2c2c2c;
+  color: #fff;
+  padding: 48px 0 32px;
+  margin-top: 0;
+}
+.f_in { padding-left: 20px; padding-right: 20px; }
+.f_nav {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  margin-bottom: 32px;
+}
+@media (max-width: 767px) {
+  .f_nav { grid-template-columns: 1fr; gap: 24px; }
+}
+.f_nav_lst { margin: 0; }
+.f_nav_ttl {
+  display: block;
+  font-weight: 700;
+  margin-bottom: 12px;
+  color: #fff;
+  text-decoration: none;
+}
+.f_nav_ttl:hover { text-decoration: underline; }
+.f_nav_lst ul { list-style: none; margin: 0; padding: 0; }
+.f_nav_lst li { margin: 0 0 8px 0; }
+.f_nav_lst a {
+  color: rgba(255, 255, 255, 0.85);
+  text-decoration: none;
+  font-size: 14px;
+}
+.f_nav_lst a:hover { color: #fff; }
+.copyright {
+  display: block;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.6);
+  text-align: center;
+}
+
+/* ===== PAGE TOP .pagetop ===== */
+.pagetop {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 999;
+}
+.pagetop a {
+  display: block;
+  padding: 10px 16px;
+  background: rgba(0, 0, 0, 0.7);
+  color: #fff;
+  font-size: 12px;
+  text-decoration: none;
+  border-radius: 4px;
+}
+.pagetop a:hover { background: rgba(0, 0, 0, 0.9); }
+
+/* ===== SP ナビ .spnav（base.js が body.is_open で制御） ===== */
+.spnav {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1002;
+  padding: 80px 24px 24px;
+  overflow: auto;
+  background: rgba(0, 0, 0, 0.98);
+  color: #fff;
+}
+body.is_open .spnav { display: block; }
+body.is_open { overflow: hidden; }
+.spnav_lst ul { list-style: none; margin: 0; padding: 0; }
+.spnav_lst li { margin: 0; border-bottom: 1px solid rgba(255, 255, 255, 0.1); }
+.spnav_lst a {
+  display: block;
+  padding: 16px 0;
+  color: #fff;
+  text-decoration: none;
+  font-size: 16px;
+}
+.spnav_bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  cursor: pointer;
+}

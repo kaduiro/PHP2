@@ -1,0 +1,285 @@
+@charset "UTF-8";
+
+/* ==========================================================================
+   Contact Page Styles (Match Company Profile Design)
+   ========================================================================== */
+
+/* Variables */
+:root {
+    --c-contact-primary: #004098;
+    --c-contact-secondary: #95b7db;
+    --c-contact-bg-gray: #eeeeee;
+    --c-contact-text: #333333;
+    --c-contact-required: #ff0000;
+    --font-serif: "Yu Mincho", "Hiragino Mincho ProN", serif;
+    --font-en: "Oswald", sans-serif;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    color: var(--c-contact-text);
+}
+
+.l-contact-main {
+    padding-bottom: 100px;
+}
+
+.l-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* 1. Hero Section (Updated) */
+.p-contact-hero {
+    /* Fallback color */
+    background-color: var(--c-contact-primary);
+
+    /* Explicit Background Properties for Compatibility */
+    background-image: linear-gradient(135deg, rgba(10, 36, 99, 0.7), rgba(62, 146, 204, 0.5)),
+        url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1920');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    color: #fff;
+    padding: 140px 0 100px;
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+}
+
+.p-contact-hero__inner {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.p-contact-hero__title {
+    display: flex;
+    flex-direction: column;
+    /* English Top, JP Bottom */
+    gap: 15px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.p-contact-hero__en {
+    font-family: var(--font-en);
+    font-size: 1.2rem;
+    letter-spacing: 0.2em;
+    opacity: 0.9;
+    text-transform: uppercase;
+    position: relative;
+    display: flex;
+    align-items: center;
+    font-weight: normal;
+}
+
+/* Decorative vertical line matching the image style */
+.p-contact-hero__en::before {
+    content: '';
+    display: inline-block;
+    width: 2px;
+    height: 14px;
+    background-color: #3E92CC;
+    /* Accent color */
+    margin-right: 12px;
+}
+
+.p-contact-hero__jp {
+    font-family: var(--font-serif);
+    font-size: 3.5rem;
+    /* Large Japanese text */
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    line-height: 1.2;
+}
+
+/* 2. Breadcrumbs */
+.p-contact-breadcrumbs {
+    font-size: 0.9rem;
+    color: #666;
+    padding: 15px 20px;
+    background: #fff;
+    margin-bottom: 40px;
+    border-bottom: 1px solid #eee;
+}
+
+/* 3. Steps Indicator */
+.p-contact-steps {
+    margin-bottom: 60px;
+}
+
+.p-contact-steps__list {
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    padding: 0;
+    gap: 5px;
+    margin: 0;
+}
+
+.p-contact-step {
+    flex: 1;
+    background-color: var(--c-contact-secondary);
+    color: #fff;
+    text-align: center;
+    padding: 15px 0;
+    position: relative;
+    clip-path: polygon(0 0, 95% 0, 100% 50%, 95% 100%, 0 100%, 5% 50%);
+}
+
+.p-contact-step:first-child {
+    clip-path: polygon(0 0, 95% 0, 100% 50%, 95% 100%, 0 100%);
+}
+
+.p-contact-step:last-child {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%, 5% 50%);
+}
+
+.p-contact-step.is-active {
+    background-color: var(--c-contact-primary);
+    font-weight: bold;
+}
+
+.p-contact-step__num {
+    font-family: var(--font-en);
+    font-size: 1.2rem;
+    margin-right: 5px;
+}
+
+/* 4. Form Layout */
+.p-contact-intro {
+    text-align: center;
+    margin-bottom: 40px;
+    line-height: 1.8;
+}
+
+.u-text-red {
+    color: var(--c-contact-required);
+}
+
+.p-contact-dl {
+    display: flex;
+    flex-wrap: wrap;
+    border-bottom: 1px solid var(--c-contact-primary);
+    border-left: 1px solid var(--c-contact-primary);
+    border-right: 1px solid var(--c-contact-primary);
+    margin: 0;
+}
+
+.p-contact-dl:first-child {
+    border-top: 1px solid var(--c-contact-primary);
+}
+
+.p-contact-dt {
+    width: 30%;
+    background-color: var(--c-contact-bg-gray);
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    border-right: 1px solid #fff;
+}
+
+.p-contact-dd {
+    width: 70%;
+    padding: 20px;
+    background-color: #fff;
+    margin: 0;
+}
+
+.u-required {
+    background: var(--c-contact-required);
+    color: #fff;
+    font-size: 0.7rem;
+    padding: 2px 5px;
+    border-radius: 2px;
+    margin-left: 10px;
+    vertical-align: middle;
+}
+
+.p-contact-input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+    box-sizing: border-box;
+}
+
+.p-contact-input:focus {
+    border-color: var(--c-contact-primary);
+    outline: none;
+}
+
+.p-contact-input--zip {
+    width: 120px;
+    display: inline-block;
+    margin-left: 5px;
+}
+
+.p-contact-input--pref {
+    width: 150px;
+    display: inline-block;
+    margin-left: 5px;
+}
+
+.p-contact-address-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.p-contact-address-item--full {
+    width: 100%;
+    margin-top: 10px;
+}
+
+.p-contact-privacy {
+    text-align: center;
+    margin: 40px 0;
+}
+
+.p-contact-submit {
+    text-align: center;
+}
+
+.p-contact-btn {
+    background-color: var(--c-contact-primary);
+    color: #fff;
+    border: none;
+    padding: 20px 80px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: opacity 0.3s;
+}
+
+.p-contact-btn:hover {
+    opacity: 0.8;
+}
+
+@media (max-width: 768px) {
+    .p-contact-dt {
+        width: 100%;
+        border-right: none;
+        border-bottom: 1px solid #ddd;
+    }
+
+    .p-contact-dd {
+        width: 100%;
+        padding: 15px;
+    }
+
+    .p-contact-hero__jp {
+        font-size: 2.2rem;
+    }
+}

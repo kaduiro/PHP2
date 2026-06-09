@@ -1,0 +1,273 @@
+/* ==========================================================================
+   Person Single Page Styles
+   ========================================================================== */
+
+/* 1. Hero Section */
+.p-person-hero {
+    position: relative;
+    width: 100%;
+    height: 70vh;
+    min-height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    overflow: hidden;
+}
+
+.p-person-hero__bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center 20%;
+    z-index: 1;
+}
+
+.p-person-hero__overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, rgba(11, 52, 134, 0.8) 0%, rgba(0, 0, 0, 0.3) 100%);
+    z-index: 2;
+    display: flex;
+    align-items: center;
+}
+
+.p-person-hero__inner {
+    position: relative;
+    z-index: 3;
+    padding: 0 5%;
+}
+
+.p-person-hero__role {
+    font-size: 1.125rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    margin-bottom: 10px;
+    border-left: 4px solid #fff;
+    padding-left: 15px;
+}
+
+.p-person-hero__name {
+    font-size: 3rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    margin-bottom: 30px;
+}
+
+.p-person-hero__quote {
+    font-size: 1.8rem;
+    font-weight: 700;
+    line-height: 1.6;
+    letter-spacing: 0.05em;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+@media screen and (max-width: 768px) {
+    .p-person-hero__name {
+        font-size: 2.2rem;
+    }
+
+    .p-person-hero__quote {
+        font-size: 1.4rem;
+    }
+
+    .p-person-hero__role {
+        font-size: 1rem;
+    }
+}
+
+/* 2. Q&A Section */
+.p-person-qa {
+    padding: 80px 0;
+    background-color: #f9f9f9;
+}
+
+.p-person-qa__list {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.p-person-qa__item {
+    background-color: #fff;
+    padding: 40px;
+    margin-bottom: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.p-person-qa__q {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #0b3486;
+    /* Theme Blue */
+    margin-bottom: 20px;
+    display: flex;
+    align-items: flex-start;
+    line-height: 1.5;
+}
+
+.p-person-qa__icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    margin-right: 15px;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+
+.p-person-qa__q .p-person-qa__icon {
+    background-color: #0b3486;
+    color: #fff;
+}
+
+.p-person-qa__a {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: #333;
+    display: flex;
+    align-items: flex-start;
+}
+
+.p-person-qa__a .p-person-qa__icon {
+    background-color: #e0e6f2;
+    color: #0b3486;
+}
+
+@media screen and (max-width: 768px) {
+    .p-person-qa__item {
+        padding: 25px 20px;
+    }
+
+    .p-person-qa__q {
+        font-size: 1.1rem;
+    }
+}
+
+/* 3. Schedule Section */
+.p-person-schedule {
+    padding: 100px 0;
+    background-color: #0b3486;
+    /* Theme Dark Blue */
+    color: #fff;
+}
+
+.p-person-schedule__timeline {
+    max-width: 700px;
+    margin: 0 auto;
+    position: relative;
+    padding-left: 30px;
+}
+
+.p-person-schedule__timeline::before {
+    content: '';
+    position: absolute;
+    top: 5px;
+    bottom: 5px;
+    left: 8px;
+    width: 2px;
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.p-person-schedule__item {
+    position: relative;
+    margin-bottom: 50px;
+    display: flex;
+    flex-direction: column;
+}
+
+.p-person-schedule__item:last-child {
+    margin-bottom: 0;
+}
+
+.p-person-schedule__item::before {
+    content: '';
+    position: absolute;
+    top: 5px;
+    left: -28px;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background-color: #fff;
+    border: 3px solid #0b3486;
+    box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.5);
+    z-index: 2;
+}
+
+.p-person-schedule__time {
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.8rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    color: #fff;
+    margin-bottom: 10px;
+    line-height: 1;
+}
+
+.p-person-schedule__content {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 25px 30px;
+    border-radius: 4px;
+    backdrop-filter: blur(5px);
+}
+
+.p-person-schedule__title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    padding-bottom: 15px;
+}
+
+.p-person-schedule__desc {
+    font-size: 0.95rem;
+    line-height: 1.8;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+@media screen and (min-width: 769px) {
+    .p-person-schedule__timeline {
+        padding-left: 150px;
+    }
+
+    .p-person-schedule__timeline::before {
+        left: 100px;
+    }
+
+    .p-person-schedule__item {
+        flex-direction: row;
+    }
+
+    .p-person-schedule__item::before {
+        left: -56px;
+    }
+
+    .p-person-schedule__time {
+        width: 120px;
+        position: absolute;
+        left: -150px;
+        top: 0;
+        text-align: right;
+        margin-bottom: 0;
+    }
+
+    .p-person-schedule__content {
+        flex: 1;
+    }
+}
+
+/* 4. Back Button Area */
+.p-person-back {
+    padding: 80px 0;
+    text-align: center;
+}

@@ -1,0 +1,204 @@
+.okg-fv-overlap {
+  --okg-fv-overlap-target: 80svh;
+  --okg-fv-overlap-offset: 20svh;
+  position: relative;
+  z-index: 0;
+  isolation: isolate;
+}
+
+.okg-fv-overlap #ogawa-webgl-canvas {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  height: calc(var(--okg-fv-overlap-target) + var(--okg-fv-overlap-offset));
+  min-height: 100svh;
+  overflow: hidden;
+  background: linear-gradient(180deg, #001a33 0%, #004080 100%);
+  z-index: 1;
+}
+
+.okg-fv-overlap #ogawa-webgl-canvas canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+#stage01.okg-concept-section {
+  --okg-stage01-ink-main: #ffffff;
+  --okg-stage01-ink-accent: #6e6969;
+  --okg-stage01-ink-body: #d8caca;
+  --okg-stage01-bg-alpha-desktop: 0.85;
+  --okg-stage01-bg-alpha-mobile: 0.85;
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  margin-top: 0;
+  padding: calc(clamp(120px, 50vw, 300px) + min(var(--okg-fv-overlap-offset), 120px)) 0 clamp(120px, 50vw, 300px);
+  box-sizing: border-box;
+  overflow: hidden;
+  background: linear-gradient(
+    180deg,
+    rgba(5, 5, 5, var(--okg-stage01-bg-alpha-desktop)) 0%,
+    rgba(21, 68, 168, var(--okg-stage01-bg-alpha-desktop)) 100%
+  );
+}
+
+#stage01 .okg-stage01-inner {
+  width: min(1600px, calc(100% - 64px));
+  margin: 0 auto;
+  text-align: left;
+}
+
+#stage01 .okg-stage01-card {
+  display: flex;
+  justify-content: left;
+}
+
+#stage01 .okg-stage01-content {
+  width: 100%;
+  text-align: left;
+}
+
+#stage01 .okg-stage01-heading-main {
+  margin: 0;
+  text-align: left;
+  font-family: "Yu Mincho", "YuMincho", "Hiragino Mincho ProN", "HGS Mincho E", serif;
+  font-size: clamp(2.05rem, 5.0vw, 50rem);
+  font-weight: bold;
+  letter-spacing: 0.12em;
+  line-height: 1.45;
+  color: var(--okg-stage01-ink-main);
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.32);
+}
+
+#stage01 .okg-stage01-accent {
+  margin: 0.9rem 0 3rem;
+  font-family: "Garamond", "Times New Roman", serif;
+  font-size: clamp(1.05rem, 5.0vw, 50rem);
+  font-style: italic;
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  line-height: 1.4;
+  color: var(--okg-stage01-ink-accent);
+}
+
+#stage01 .okg-stage01-text {
+  margin: 0;
+  font-family: "Yu Gothic", "YuGothic", "Hiragino Kaku Gothic ProN", "Meiryo", sans-serif;
+  font-size: clamp(1rem, 1.12vw, 1.1rem);
+  font-weight: 400;
+  line-height: 2.1;
+  letter-spacing: 0.05em;
+  color: var(--okg-stage01-ink-body);
+}
+
+@media (max-width: 768px) {
+  .okg-fv-overlap #ogawa-webgl-canvas {
+    position: sticky;
+    top: 0;
+    height: 100svh;
+    min-height: 100svh;
+  }
+
+  #stage01.okg-concept-section {
+    margin-top: 0;
+    padding: 74px 0;
+    background: linear-gradient(
+      180deg,
+      rgba(5, 5, 5, var(--okg-stage01-bg-alpha-mobile)) 0%,
+      rgba(21, 68, 168, var(--okg-stage01-bg-alpha-mobile)) 100%
+    );
+  }
+
+  #stage01 .okg-stage01-inner {
+    width: calc(100% - 40px);
+  }
+
+  #stage01 .okg-stage01-heading-main {
+    font-size: clamp(1.68rem, 8vw, 2.45rem);
+    letter-spacing: 0.1em;
+  }
+
+  #stage01 .okg-stage01-accent {
+    margin: 0.75rem 0 2.35rem;
+    font-size: clamp(0.94rem, 4.6vw, 1.1rem);
+  }
+
+  #stage01 .okg-stage01-text {
+    font-size: 0.94rem;
+    line-height: 2.1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .okg-fv-overlap #ogawa-webgl-canvas {
+    position: relative;
+    top: auto;
+  }
+
+  #stage01.okg-concept-section {
+    margin-top: 0;
+    padding-top: clamp(120px, 50vw, 300px);
+  }
+}
+
+/* Text Staggering Indentation */
+.indent-level-0 { display: inline-block; margin-left: 0; }
+.indent-level-1 { display: inline-block; margin-left: 1.5em; }
+.indent-level-2 { display: inline-block; margin-left: 3em; }
+.indent-level-3 { display: inline-block; margin-left: 5em; }
+.indent-level-4 { display: inline-block; margin-left: 7em; }
+
+@media (max-width: 768px) {
+  .indent-level-1 { margin-left: 0.5em; }
+  .indent-level-2 { margin-left: 1em; }
+  .indent-level-3 { margin-left: 1.5em; }
+  .indent-level-4 { margin-left: 2em; }
+}
+
+/* Stage01 heading: keep global indent utility intact, but force full left alignment here only. */
+#stage01 .okg-stage01-heading-main .indent-level-0,
+#stage01 .okg-stage01-heading-main .indent-level-1,
+#stage01 .okg-stage01-heading-main .indent-level-2,
+#stage01 .okg-stage01-heading-main .indent-level-3,
+#stage01 .okg-stage01-heading-main .indent-level-4 {
+  margin-left: 0;
+}
+.okg-team-banner {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  max-height: 600px;
+  border-top: 10px solid #002b4d;
+  border-bottom: 20px solid #002b4d;
+  overflow: hidden;
+  background-color: #001a2f;
+}
+
+.okg-team-banner__media {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.okg-team-banner__image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.okg-team-banner::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 43, 77, 0.15);
+  pointer-events: none;
+}
+
+@media (max-width: 768px) {
+  .okg-team-banner {
+    min-height: 220px;
+  }
+}

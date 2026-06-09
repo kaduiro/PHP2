@@ -1,0 +1,778 @@
+/* ===== Blue Theme Design（実装計画書に基づく全面採用） ===== */
+
+body {
+  background-color: var(--color-bg-light);
+}
+
+:root {
+  /* メイン */
+  --color-primary: #0066CC;
+  --color-primary-dark: #004C99;
+  --color-primary-light: #3399FF;
+  --color-accent: #00A0E9;
+  /* 背景（セクション切り替え用） */
+  --color-bg-white: #FFFFFF;
+  --color-bg-light: #F0F8FF;
+  --color-bg-section: #E8F4FC;
+  --color-bg-muted: #eef2f6;
+  /* テキスト */
+  --color-text-primary: #1a1a1a;
+  --color-text-secondary: #555;
+  --color-text-muted: #666;
+  /* 線・デコ */
+  --color-line: rgba(0, 102, 204, 0.2);
+  --color-line-strong: #0066CC;
+  /* スペーシング */
+  --section-padding-y: clamp(4rem, 10vw, 8rem);
+  --container-max: 1200px;
+  --container-padding: 4%;
+}
+
+/* ===== ローディング（loading.mp4 → フェードアウト → 本編） ===== */
+#loading.loading {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1000;
+  background: #0d2137;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition-property: opacity, visibility;
+  transition-duration: 0.5s;
+}
+
+#loading.loading .load_wrap {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition-property: opacity, transform, filter;
+  transition-duration: 0.5s;
+  transition-timing-function: ease-out;
+}
+
+#loading.loading .loading_video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+#loading.loading::before {
+  display: none;
+}
+
+/* ローディング完了後: body.is-loaded で #loading をフェードアウト（JS で付与） */
+@keyframes loader_fadeOut {
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+body.is-loaded #loading.loading {
+  pointer-events: none;
+  animation: loader_fadeOut 0.5s ease-out forwards;
+}
+
+.Taikisha-Story {
+  background: linear-gradient(180deg, #FFFFFF 0%, #F0F8FF 100%);
+  position: relative;
+}
+
+.Taikisha-Story::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #0066CC 0%, #00A0E9 100%);
+}
+
+.Taikisha-Story__icon {
+  color: #0066CC;
+}
+
+.Taikisha-Story__icon svg {
+  stroke: #0066CC;
+}
+
+.Taikisha-Story__title .number {
+  color: #0066CC;
+  font-weight: 600;
+}
+
+.Taikisha-Story__button {
+  border-color: #0066CC;
+  color: #0066CC;
+}
+
+.Taikisha-Story__button:hover {
+  background: #0066CC;
+  color: #FFFFFF;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(0, 102, 204, 0.3);
+}
+
+.Taikisha-Story__button .icon {
+  border-color: #0066CC;
+}
+
+.Taikisha-Story__button:hover .icon {
+  border-color: #FFFFFF;
+}
+
+.Taikisha-Story__image-circle {
+  box-shadow: 0 20px 60px rgba(0, 102, 204, 0.15);
+}
+
+/* Phase 3: t_rc 採用 - 青グラデ＋光デコ・角丸カード風 */
+.t_rc {
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%) !important;
+  position: relative;
+  overflow: hidden;
+  padding: var(--section-padding-y) 0 !important;
+}
+
+.t_rc::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -20%;
+  width: 100%;
+  height: 200%;
+  background: radial-gradient(ellipse, rgba(255,255,255,0.12) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.t_rc .t_rc_cont_in {
+  position: relative;
+  z-index: 1;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+}
+
+.t_rc_ttl {
+  color: #FFFFFF !important;
+}
+
+.t_rc_ttl .en {
+  color: rgba(255, 255, 255, 0.9) !important;
+}
+
+.t_rc_ttl .ja {
+  color: #FFFFFF !important;
+}
+
+.t_rc p {
+  color: rgba(255, 255, 255, 0.9) !important;
+}
+
+.t_rc .btn_gray {
+  background: #FFFFFF !important;
+  color: #0066CC !important;
+  border: none !important;
+  font-weight: 600;
+  transition: all 0.4s ease;
+}
+
+.t_rc .btn_gray:hover {
+  background: #00A0E9 !important;
+  color: #FFFFFF !important;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.t_rc .t_b_btn.t_b__cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+.t_rc .t_b__cta-arrow {
+  transition: transform 0.3s ease;
+}
+.t_rc .t_b_btn.t_b__cta:hover .t_b__cta-arrow {
+  transform: translateX(4px);
+}
+
+.news-section {
+  position: relative;
+  background: var(--color-bg-white);
+  padding: var(--section-padding-y) 0;
+}
+
+.news-section h2 {
+  color: #0066CC;
+  position: relative;
+  display: inline-block;
+}
+
+.news-section h2::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 60px;
+  height: 3px;
+  background: #0066CC;
+}
+
+.news-list li {
+  border-left: 3px solid #0066CC;
+  padding-left: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.news-list li:hover {
+  background: #F0F8FF;
+  border-left-color: #00A0E9;
+}
+
+.news-category {
+  background: #0066CC;
+  color: #FFFFFF;
+  padding: 0.3rem 0.8rem;
+  border-radius: 3px;
+  font-size: var(--fs-sm);
+}
+
+.news-more a {
+  color: #0066CC;
+  border-bottom: 2px solid #0066CC;
+  transition: all 0.3s ease;
+}
+
+.news-more a:hover {
+  color: #00A0E9;
+  border-bottom-color: #00A0E9;
+}
+
+/* View More 系リンク: 矢印統一（マルコ風） */
+.news-more a::after {
+  content: ' →';
+  font-weight: 600;
+  transition: transform 0.2s ease;
+  display: inline-block;
+}
+.news-more a:hover::after {
+  transform: translateX(4px);
+}
+
+/* Phase 3: t_b03 代表挨拶 - 03バッジ・薄い青→白・2カラム */
+.t_b03.t_b--blue {
+  background: linear-gradient(180deg, var(--color-bg-section) 0%, var(--color-bg-light) 50%, var(--color-bg-white) 100%);
+}
+
+.t_b03.t_b--blue .t_b_img.t_b__figure {
+  display: block !important;
+}
+
+.t_b03_ttl .en {
+  color: var(--color-primary);
+}
+
+.t_b03 .btn_gray {
+  background: transparent;
+  border: 2px solid var(--color-primary);
+  color: var(--color-primary);
+}
+
+.t_b03 .btn_gray:hover {
+  background: var(--color-primary);
+  color: #FFFFFF;
+}
+
+/* Phase 2: t_bs 青基調・デコライン（.section-line-top は Phase 1 で定義） */
+.t_bs {
+  position: relative;
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%) !important;
+  padding: var(--section-padding-y) 0 !important;
+}
+
+.t_bs_ttl .en {
+  color: #FFFFFF !important;
+  letter-spacing: 0.1em;
+}
+
+.t_bs_ttl .ja {
+  color: rgba(255, 255, 255, 0.95) !important;
+}
+
+.t_bs_subttl {
+  color: rgba(255, 255, 255, 0.95) !important;
+}
+
+.h_nav a:hover {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.h_nav_sub {
+  border-top: 3px solid var(--color-primary);
+}
+
+/* 二枚目対応: ヘッダーを青色にして見やすく（layout.css の .h 背景を確実に上書き） */
+header.h,
+.h {
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%) !important;
+  color: #fff !important;
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.12);
+}
+
+header.h .h_nav a,
+.h .h_nav a {
+  color: #fff !important;
+  font-weight: 500;
+}
+
+header.h .h_nav a:hover,
+.h .h_nav a:hover {
+  color: rgba(255, 255, 255, 0.95) !important;
+}
+
+header.h .h_logo_txt,
+.h .h_logo_txt {
+  color: #fff !important;
+}
+
+/* スクロール後も青系を維持 */
+header.h.is-scrolled,
+header.h.is_active,
+.h.is-scrolled,
+.h.is_active {
+  background: linear-gradient(135deg, var(--color-primary-dark) 0%, #003d7a 100%) !important;
+}
+
+/* ハンバーガーボタン（SP）も白で見やすく */
+.h_navbtn i,
+.h_navbtn i::before,
+.h_navbtn i::after {
+  background-color: #fff !important;
+  box-shadow: none;
+}
+
+/* Phase 3: btm_grp お問い合わせ - 青帯・CTA強調 */
+.btm_grp {
+  background: linear-gradient(180deg, var(--color-bg-white) 0%, var(--color-bg-section) 100%);
+  padding: var(--section-padding-y) 0;
+  position: relative;
+}
+
+.btm_grp .btn_ct.highlight {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem 2rem;
+  background: var(--color-primary);
+  color: #fff !important;
+  border: 2px solid var(--color-primary);
+  border-radius: 50px;
+  font-weight: 600;
+  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btm_grp .btn_ct.highlight:hover {
+  background: var(--color-primary-dark);
+  border-color: var(--color-primary-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 102, 204, 0.35);
+}
+
+.btm_grp .btn_ct.highlight::after {
+  content: ' →';
+  font-weight: 600;
+  transition: transform 0.2s ease;
+}
+
+.btm_grp .btn_ct.highlight:hover::after {
+  transform: translateX(4px);
+}
+
+/* 一枚目対応: 下部エリアのロゴを小さくし、住所・TELと重ならないように */
+.btm_grp .btm_detail dl {
+  align-items: flex-start;
+}
+
+.btm_grp .btm_detail dt {
+  align-self: flex-start;
+  margin-bottom: 1rem;
+  width: 100px;
+  max-width: 100px;
+  flex-shrink: 0;
+}
+
+.btm_grp .btm_detail dt img {
+  max-width: 100px;
+  max-height: 40px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  display: block;
+  vertical-align: top;
+}
+
+@media (min-width: 769px) {
+  .btm_grp .btm_detail dt {
+    width: 120px;
+    max-width: 120px;
+    margin-right: 2rem;
+    margin-bottom: 0;
+  }
+  .btm_grp .btm_detail dt img {
+    max-width: 120px;
+    max-height: 48px;
+  }
+}
+
+/* ===== ガレージ（LP）・木造アパート新築工事 抜本改善（青基調・uniways風） ===== */
+
+/* t_b01: 白→薄い青 / t_b02: 薄い青→白 で交互 */
+.t_b--blue {
+  padding: var(--section-padding-y) 0;
+  overflow: hidden;
+  position: relative;
+}
+
+.t_b01.t_b--blue {
+  background: linear-gradient(180deg, var(--color-bg-white) 0%, var(--color-bg-light) 50%, var(--color-bg-section) 100%);
+}
+
+.t_b02.t_b--blue {
+  background: linear-gradient(180deg, var(--color-bg-section) 0%, var(--color-bg-light) 50%, var(--color-bg-white) 100%);
+}
+
+.t_b--blue .t_b_in::before {
+  display: none;
+}
+
+.t_b--blue .t_b__inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(2rem, 5vw, 4rem);
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 4%;
+}
+
+@media (max-width: 768px) {
+  .t_b--blue .t_b__inner {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    padding: 0 5%;
+  }
+}
+
+/* t_b02: 画像左・テキスト右（orderで入れ替え） */
+.t_b02.t_b--blue .t_b_cont {
+  order: 2;
+}
+
+.t_b02.t_b--blue .t_b_img {
+  order: 1;
+}
+
+@media (max-width: 768px) {
+  .t_b02.t_b--blue .t_b_cont,
+  .t_b02.t_b--blue .t_b_img {
+    order: unset;
+  }
+}
+
+/* コンテンツブロック */
+.t_b--blue .t_b__content {
+  position: relative;
+  margin-top: 0 !important;
+  padding: 0 !important;
+  width: 100% !important;
+}
+
+.t_b--blue .t_b__number {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  background: var(--color-primary);
+  color: #fff;
+  font-family: "Outfit", "Roboto", sans-serif;
+  font-size: var(--fs-base);
+  font-weight: 700;
+  border-radius: 50%;
+  margin-bottom: 1.5rem;
+  flex-shrink: 0;
+}
+
+.t_b--blue .t_b__title {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.35rem;
+  margin-bottom: 1.25rem !important;
+  padding: 0 !important;
+  color: #1a1a1a !important;
+  font-size: clamp(1.5rem, 2.5vw, 2rem) !important;
+}
+
+.t_b--blue .t_b__title::before,
+.t_b--blue .t_b__title::after {
+  display: none !important;
+}
+
+.t_b--blue .t_b__title .en {
+  font-size: clamp(0.9rem, 1.4vw, 1.1rem) !important;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--color-primary) !important;
+  opacity: 1;
+  margin-top: 0;
+  position: relative;
+  padding-bottom: 6px;
+}
+
+.t_b--blue .t_b__title .en::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 40px;
+  height: 2px;
+  background: var(--color-primary);
+  border-radius: 2px;
+}
+
+.t_b--blue .t_b__title .ja {
+  font-size: clamp(1.5rem, 2.5vw, 2rem) !important;
+  font-weight: 700;
+  color: #1a1a1a !important;
+  background: none !important;
+  margin-left: 0 !important;
+  padding: 0 !important;
+  width: auto !important;
+}
+
+.t_b--blue .t_b_spimg {
+  display: none;
+}
+
+.t_b--blue .t_b__lead {
+  font-size: clamp(1.1rem, 1.8vw, 1.35rem) !important;
+  font-weight: 600;
+  line-height: 1.65;
+  color: #333 !important;
+  margin-bottom: 1rem !important;
+}
+
+.t_b--blue .t_b__lead::after {
+  display: none;
+}
+
+.t_b--blue .t_b__desc {
+  font-size: var(--fs-sm);
+  line-height: 1.85;
+  color: #555;
+  margin-bottom: 1.5rem;
+  display: block !important;
+}
+
+@media (max-width: 768px) {
+  .t_b--blue .t_b__desc {
+    display: block !important;
+  }
+}
+
+.t_b--blue .t_b__cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem 2rem !important;
+  font-size: var(--fs-sm) !important;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  border-radius: 50px !important;
+  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  margin-top: 0 !important;
+}
+
+.t_b--blue .t_b__cta-arrow {
+  transition: transform 0.3s ease;
+}
+
+.t_b--blue .t_b__cta:hover .t_b__cta-arrow {
+  transform: translateX(4px);
+}
+
+/* 画像エリア（PC/SPとも表示） */
+.t_b--blue .t_b_img.t_b__figure {
+  display: block !important;
+  position: relative;
+  z-index: 0;
+}
+
+.t_b--blue .t_b__figure::before {
+  content: none !important;
+}
+
+.t_b--blue .t_b__img-wrap {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 20px 50px rgba(0, 102, 204, 0.12), 0 4px 16px rgba(0, 0, 0, 0.08);
+  aspect-ratio: 4 / 3;
+}
+
+.t_b--blue .t_b__img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.t_b--blue .t_b__figure:hover .t_b__img-wrap img {
+  transform: scale(1.06);
+}
+
+/* デコ（背景バー）は控えめに */
+.t_b--blue .t_b__deco {
+  display: none;
+}
+
+.t_b--blue .t_b_mark {
+  display: none;
+}
+
+/* ボタン青テーマ（t_b--blue内） */
+.t_b--blue .btn_gray {
+  background: transparent !important;
+  color: var(--color-primary) !important;
+  border: 2px solid var(--color-primary) !important;
+}
+
+.t_b--blue .btn_gray:hover {
+  background: var(--color-primary) !important;
+  color: #fff !important;
+  border-color: var(--color-primary) !important;
+  box-shadow: 0 8px 24px rgba(0, 102, 204, 0.35);
+}
+
+/* ===== Phase 1: ヒーロー青オーバーレイ・Scrollインジケーター・セクション上部ライン ===== */
+
+.t_main {
+  position: relative;
+}
+
+.t_main_overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 76, 153, 0.4);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.t_main_btn {
+  position: relative;
+  z-index: 2;
+}
+
+.t_main_scroll {
+  position: absolute;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  color: rgba(255, 255, 255, 0.95);
+  font-size: var(--fs-xs);
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-decoration: none;
+  transition: opacity 0.3s ease;
+}
+
+.t_main_scroll:hover {
+  color: #fff;
+  opacity: 0.9;
+}
+
+.t_main_scroll_arrow {
+  width: 20px;
+  height: 20px;
+  border-right: 2px solid currentColor;
+  border-bottom: 2px solid currentColor;
+  transform: rotate(45deg) translateY(2px);
+  animation: t_main_scroll_bounce 2s ease-in-out infinite;
+}
+
+@keyframes t_main_scroll_bounce {
+  0%, 100% { transform: rotate(45deg) translateY(2px); }
+  50% { transform: rotate(45deg) translateY(8px); }
+}
+
+@media (max-width: 768px) {
+  .t_main_scroll {
+    bottom: 16px;
+    font-size: var(--fs-xs);
+  }
+}
+
+/* ===== Phase 4: SP タップ・余白・フォントサイズ ===== */
+@media (max-width: 768px) {
+  .t_bs,
+  .t_rc,
+  .t_b--blue,
+  .news-section,
+  .btm_grp {
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+
+  .t_b__cta,
+  .btm_grp .btn_ct.highlight {
+    min-height: 48px;
+    padding: 0.875rem 1.5rem;
+    font-size: var(--fs-sm);
+    justify-content: center;
+  }
+
+  .t_rc .t_rc_cont_in {
+    padding: 1.5rem 1rem;
+    border-radius: 12px;
+  }
+
+  .news-list li {
+    padding: 1rem 0 1rem 1rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .t_main_scroll_arrow {
+    animation: none !important;
+  }
+}
+
+/* セクション上部デコライン（オプションクラス） */
+.section-line-top::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--color-primary) 0%, var(--color-accent) 100%);
+  z-index: 0;
+}

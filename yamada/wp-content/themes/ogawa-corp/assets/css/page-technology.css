@@ -1,0 +1,177 @@
+/* ==========================================================================
+   Technology Page Styles (Blueprint / Sci-Fi UI)
+   ========================================================================== */
+
+:root {
+    --c-tech-bg: #001122;
+    /* Blueprint Dark Navy */
+    --c-tech-line: rgba(255, 255, 255, 0.8);
+    --c-tech-grid: rgba(255, 255, 255, 0.1);
+    --c-tech-accent: #00ffff;
+    /* Cyan accent for sci-fi feel */
+    --f-tech-mono: 'Courier New', Courier, monospace;
+    /* Monospaced for coordinates */
+}
+
+.l-tech-main {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    overflow: hidden;
+    background-color: var(--c-tech-bg);
+    color: #fff;
+}
+
+/* Background Grid & UI */
+.p-tech-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.p-tech-bg__grid {
+    width: 100%;
+    height: 100%;
+    background-image:
+        linear-gradient(var(--c-tech-grid) 1px, transparent 1px),
+        linear-gradient(90deg, var(--c-tech-grid) 1px, transparent 1px);
+    background-size: 50px 50px;
+    opacity: 0.5;
+}
+
+.p-tech-bg__coords {
+    position: absolute;
+    font-family: var(--f-tech-mono);
+    font-size: 0.8rem;
+    color: var(--c-tech-line);
+    padding: 10px;
+}
+
+.p-tech-bg__coords--tl {
+    top: 20px;
+    left: 20px;
+}
+
+.p-tech-bg__coords--tr {
+    top: 20px;
+    right: 20px;
+}
+
+.p-tech-bg__coords--bl {
+    bottom: 20px;
+    left: 20px;
+}
+
+.p-tech-bg__coords--br {
+    bottom: 20px;
+    right: 20px;
+}
+
+
+/* Hero Section */
+.p-tech-hero {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+}
+
+.p-tech-hero__content {
+    text-align: center;
+    position: relative;
+    z-index: 2;
+}
+
+.p-tech-hero__title {
+    margin-bottom: 2rem;
+}
+
+.p-tech-hero__title-en {
+    display: block;
+    font-size: 4rem;
+    font-family: var(--f-recruit-title);
+    /* Keep consistent font or change to tech */
+    letter-spacing: 0.2em;
+    color: #fff;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+.p-tech-hero__title-jp {
+    display: block;
+    font-size: 3.5rem;
+    margin-top: 0;
+    letter-spacing: 0.5em;
+    color: var(--c-tech-accent);
+    text-shadow: 0 0 15px rgba(0, 255, 255, 0.4);
+}
+
+.p-tech-hero__text {
+    font-size: 1.2rem;
+    line-height: 2;
+}
+
+/* Wireframe SVG */
+.p-tech-wireframe {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    height: 80%;
+    z-index: 1;
+    opacity: 0.6;
+}
+
+.p-tech-wireframe__svg {
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+}
+
+/* Content Section */
+.p-tech-content {
+    position: relative;
+    z-index: 10;
+    padding: 100px 0;
+    margin-top: -100px;
+    /* Overlap the hero section slightly */
+    /* Ensure scroll space */
+}
+
+.p-tech-message-block {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 60px 40px;
+    max-width: 800px;
+    margin: 0 auto;
+    color: #333;
+    /* Dark text for white bg */
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    /* Initial state for animation */
+    opacity: 0;
+    transform: translateY(50px);
+}
+
+/* Heading inside white block */
+.p-tech-heading {
+    font-size: 2.5rem;
+    color: var(--c-tech-bg);
+    /* Dark Navy */
+    margin-bottom: 30px;
+    border-bottom: 2px solid var(--c-tech-accent);
+    padding-bottom: 10px;
+    display: inline-block;
+    font-weight: 700;
+}
+
+.p-tech-text {
+    line-height: 2.2;
+    font-size: 1.1rem;
+    color: #333;
+}

@@ -1,0 +1,445 @@
+/* ==========================================================================
+   OUR BUSINESS
+   Left sticky summary + right editorial stack
+   ========================================================================== */
+
+.okg-business {
+  position: relative;
+  padding: clamp(6rem, 9vw, 8.75rem) 0;
+  color: #223047;
+  background:
+    linear-gradient(180deg, #ffffff 0%, #f7f3ec 100%);
+  font-family: "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Yu Gothic", "Noto Sans JP", sans-serif;
+}
+
+.okg-business__shell {
+  width: min(1440px, calc(100% - clamp(2rem, 6vw, 6rem)));
+  margin: 0 auto;
+  padding: clamp(2rem, 4vw, 3rem);
+  border: 1px solid rgba(34, 48, 71, 0.08);
+  border-radius: 36px;
+  background:
+    radial-gradient(circle at top left, rgba(201, 177, 140, 0.1), transparent 34%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.92), rgba(248, 243, 236, 0.96));
+  box-shadow: 0 32px 80px rgba(34, 48, 71, 0.08);
+}
+
+.okg-business__container {
+  display: grid;
+  grid-template-columns: minmax(320px, 0.35fr) minmax(0, 0.65fr);
+  gap: clamp(2.5rem, 5vw, 5rem);
+  align-items: start;
+}
+
+.okg-business__sidebar {
+  position: sticky;
+  top: clamp(6rem, 9vw, 7.5rem);
+  align-self: start;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: clamp(0.5rem, 1vw, 1rem) 0;
+}
+
+.okg-business__heading {
+  order: 1;
+  margin: 0;
+  font-family: "Yu Mincho", "Hiragino Mincho ProN", "Noto Serif JP", serif;
+  font-size: clamp(3.5rem, 5vw, 4.5rem);
+  font-weight: 600;
+  line-height: 1.22;
+  letter-spacing: 0.04em;
+  color: #223047;
+}
+
+.okg-business__lead {
+  order: 2;
+  margin: 0;
+  max-width: 28rem;
+  font-size: clamp(1rem, 1.3vw, 1.125rem);
+  line-height: 2;
+  letter-spacing: 0.02em;
+  color: rgba(34, 48, 71, 0.82);
+}
+
+.okg-business__strength-tags {
+  order: 3;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.okg-business__strength-tag,
+.okg-business__card-tag {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.25rem;
+  padding: 0.45rem 0.95rem;
+  border: 1px solid rgba(93, 114, 145, 0.16);
+  border-radius: 999px;
+  background: rgba(239, 243, 248, 0.9);
+  font-size: var(--fs-sm);
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: 0.04em;
+  color: #334766;
+}
+
+.okg-business__eyebrow {
+  order: 4;
+  margin: 0;
+  font-size: var(--fs-xs);
+  font-weight: 600;
+  letter-spacing: 0.34em;
+  text-transform: uppercase;
+  color: rgba(90, 106, 128, 0.72);
+}
+
+.okg-business__cards {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding-top: 0.5rem;
+}
+
+.okg-business__card {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(280px, 0.95fr);
+  gap: clamp(1.4rem, 3vw, 2.4rem);
+  align-items: stretch;
+  padding: clamp(1.6rem, 3vw, 2.35rem);
+  border: 1px solid rgba(34, 48, 71, 0.08);
+  border-radius: 28px;
+  background: linear-gradient(180deg, #fffdfa 0%, #f5f0e8 100%);
+  box-shadow: 0 18px 40px rgba(34, 48, 71, 0.08);
+  opacity: 0.7;
+  transform: translate3d(0, 0, 0) scale(0.985);
+  transition:
+    opacity 0.35s ease,
+    transform 0.35s ease,
+    box-shadow 0.35s ease,
+    border-color 0.35s ease;
+}
+
+.okg-business__card + .okg-business__card {
+  margin-top: -1.25rem;
+}
+
+.okg-business__card.is-active {
+  opacity: 1;
+  transform: translate3d(0, -0.3rem, 0) scale(1);
+  border-color: rgba(34, 48, 71, 0.14);
+  box-shadow: 0 28px 64px rgba(34, 48, 71, 0.12);
+  z-index: 2;
+}
+
+.okg-business__card-copy {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1.35rem;
+  min-width: 0;
+}
+
+.okg-business__card-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  flex-wrap: wrap;
+}
+
+.okg-business__card-number {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2rem;
+  padding-right: 0.85rem;
+  border-right: 1px solid rgba(34, 48, 71, 0.14);
+  font-size: var(--fs-sm);
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  color: rgba(34, 48, 71, 0.58);
+}
+
+.okg-business__card-badge {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2rem;
+  padding: 0.35rem 0.8rem;
+  border-radius: 999px;
+  background: rgba(234, 226, 214, 0.92);
+  font-size: var(--fs-xs);
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(92, 88, 80, 0.86);
+}
+
+.okg-business__card-title {
+  margin: 0;
+  font-family: "Yu Mincho", "Hiragino Mincho ProN", "Noto Serif JP", serif;
+  font-size: clamp(2rem, 3.25vw, 3rem);
+  font-weight: 600;
+  line-height: 1.3;
+  letter-spacing: 0.04em;
+  color: #223047;
+}
+
+.okg-business__card-desc {
+  margin: 0;
+  max-width: 30rem;
+  font-size: clamp(1rem, 1.15vw, 1.1rem);
+  line-height: 1.95;
+  letter-spacing: 0.02em;
+  color: rgba(34, 48, 71, 0.8);
+}
+
+.okg-business__card-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.okg-business__card-footer {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.okg-business__card-cta,
+.okg-business__card-status {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2.75rem;
+  padding: 0.7rem 1rem;
+  border-radius: 999px;
+  font-size: var(--fs-2xs);
+  font-weight: 700;
+  letter-spacing: 0.06em;
+}
+
+.okg-business__card-cta {
+  color: #223047;
+  text-decoration: none;
+  background: rgba(255, 255, 255, 0.82);
+  border: 1px solid rgba(34, 48, 71, 0.12);
+  transition: background-color 0.25s ease, border-color 0.25s ease, transform 0.25s ease;
+}
+
+.okg-business__card-cta:hover,
+.okg-business__card-cta:focus-visible {
+  background: #ffffff;
+  border-color: rgba(34, 48, 71, 0.22);
+  transform: translateX(0.2rem);
+}
+
+.okg-business__card-status {
+  color: rgba(70, 86, 110, 0.84);
+  background: rgba(234, 238, 243, 0.92);
+  border: 1px solid rgba(93, 114, 145, 0.14);
+}
+
+.okg-business__card-visual {
+  position: relative;
+  display: flex;
+  align-items: stretch;
+  min-height: 100%;
+}
+
+.okg-business__card-image,
+.okg-business__card-placeholder {
+  width: 100%;
+  min-height: 100%;
+  border-radius: 22px;
+}
+
+.okg-business__card-image {
+  display: block;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  box-shadow: 0 18px 32px rgba(34, 48, 71, 0.08);
+}
+
+.okg-business__card-placeholder {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 0.5rem;
+  padding: clamp(1.5rem, 3vw, 2rem);
+  overflow: hidden;
+  background:
+    radial-gradient(circle at top right, rgba(214, 197, 172, 0.32), transparent 38%),
+    linear-gradient(180deg, #f6f1ea 0%, #eae3d9 100%);
+  box-shadow: inset 0 0 0 1px rgba(34, 48, 71, 0.06);
+}
+
+.okg-business__card-placeholder::before,
+.okg-business__card-placeholder::after {
+  content: "";
+  position: absolute;
+  border-radius: 999px;
+  pointer-events: none;
+}
+
+.okg-business__card-placeholder::before {
+  inset: auto -10% 12% 28%;
+  height: 1px;
+  background: rgba(34, 48, 71, 0.1);
+}
+
+.okg-business__card-placeholder::after {
+  top: 12%;
+  right: 12%;
+  width: 6rem;
+  height: 6rem;
+  border: 1px solid rgba(34, 48, 71, 0.08);
+}
+
+.okg-business__card-placeholder-label {
+  position: relative;
+  z-index: 1;
+  font-size: var(--fs-xs);
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(92, 88, 80, 0.76);
+}
+
+.okg-business__card-placeholder-title {
+  position: relative;
+  z-index: 1;
+  font-family: "Yu Mincho", "Hiragino Mincho ProN", "Noto Serif JP", serif;
+  font-size: clamp(var(--fs-base), 2.2vw, var(--fs-lg));
+  line-height: 1.35;
+  color: #223047;
+}
+
+.okg-business__card-placeholder-copy {
+  position: relative;
+  z-index: 1;
+  max-width: 15rem;
+  font-size: var(--fs-2xs);
+  line-height: 1.85;
+  color: rgba(34, 48, 71, 0.68);
+}
+
+.okg-business__card--coming-soon {
+  background: linear-gradient(180deg, #fcfaf6 0%, #f1eadf 100%);
+}
+
+@media (max-width: 1200px) {
+  .okg-business__container {
+    grid-template-columns: minmax(280px, 0.95fr) minmax(0, 1.3fr);
+    gap: 2.25rem;
+  }
+
+  .okg-business__card {
+    grid-template-columns: minmax(0, 1.12fr) minmax(240px, 0.88fr);
+  }
+}
+
+@media (max-width: 960px) {
+  .okg-business__shell {
+    width: min(100%, calc(100% - 1.5rem));
+    padding: 1.5rem;
+    border-radius: 28px;
+  }
+
+  .okg-business__container {
+    grid-template-columns: 1fr;
+  }
+
+  .okg-business__sidebar {
+    position: static;
+    gap: 1.25rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .okg-business {
+    padding: 4rem 0;
+  }
+
+  .okg-business__shell {
+    padding: 1rem;
+    border-radius: 24px;
+  }
+
+  .okg-business__heading {
+    font-size: clamp(2.5rem, 10vw, 3.5rem);
+  }
+
+  .okg-business__lead {
+    max-width: none;
+    font-size: 1rem;
+    line-height: 1.9;
+  }
+
+  .okg-business__cards {
+    gap: 1rem;
+    padding-top: 0;
+  }
+
+  .okg-business__card,
+  .okg-business__card + .okg-business__card {
+    grid-template-columns: 1fr;
+    margin-top: 0;
+  }
+
+  .okg-business__card {
+    gap: 1.2rem;
+    padding: 1.25rem;
+    border-radius: 24px;
+    opacity: 1;
+    transform: none;
+  }
+
+  .okg-business__card-copy {
+    gap: 1rem;
+  }
+
+  .okg-business__card-meta {
+    gap: 0.7rem;
+  }
+
+  .okg-business__card-title {
+    font-size: clamp(1.8rem, 7.8vw, 2.4rem);
+  }
+
+  .okg-business__card-desc {
+    max-width: none;
+    font-size: 1rem;
+    line-height: 1.9;
+  }
+
+  .okg-business__card-tags {
+    gap: 0.55rem;
+  }
+
+  .okg-business__card-image,
+  .okg-business__card-placeholder {
+    aspect-ratio: 16 / 10;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .okg-business__card,
+  .okg-business__card.is-active,
+  .okg-business__card-cta {
+    transition: none;
+    transform: none;
+  }
+
+  .okg-business__card {
+    opacity: 1;
+  }
+}
