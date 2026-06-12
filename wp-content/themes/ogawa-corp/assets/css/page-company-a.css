@@ -105,7 +105,7 @@ main#company-information {
     /* Remove gap */
     position: relative;
     /* Greyish Architectural Image */
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1486325212027-8081e485255e?q=80&w=2070&auto=format&fit=crop');
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/wp-content/themes/ogawa-corp/assets/images/company/ogawagenba.jpg');
     background-size: cover;
     background-position: center;
 }

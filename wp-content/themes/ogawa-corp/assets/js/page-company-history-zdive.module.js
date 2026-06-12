@@ -15,19 +15,19 @@ const timelineItems = [
     era: "1967",
     title: "株式会社へ組織変更",
     body: "事業基盤の拡大に合わせて組織体制を強化。",
-    image: "https://picsum.photos/id/60/600/400"
+    image: themeBaseUrl + '/assets/images/company/ogawarinenA.jpg'
   },
   {
     era: "1983",
     title: "設備投資を拡充",
     body: "現場品質と生産性向上のため設備を更新。",
-    image: "https://picsum.photos/id/122/600/400"
+    image: themeBaseUrl + '/assets/images/company/ogawarinenB.jpg'
   },
   {
     era: "1989",
     title: "本社機能を拡張",
     body: "受注増加に合わせ、管理・設計機能を強化。",
-    image: "https://picsum.photos/id/164/600/400"
+    image: themeBaseUrl + '/assets/images/company/ogawarinenC.jpg'
   },
   {
     era: "2012",
@@ -39,13 +39,13 @@ const timelineItems = [
     era: "2015",
     title: "事業エリア拡大",
     body: "新規案件の増加に対応し、体制を再編。",
-    image: "https://picsum.photos/id/200/600/400"
+    image: themeBaseUrl + '/assets/images/company/ogawa-genba.jpg'
   },
   {
     era: "2017",
     title: "次世代体制へ移行",
     body: "若手育成と技術継承の取り組みを本格化。",
-    image: "https://picsum.photos/id/225/600/400"
+    image: themeBaseUrl + '/assets/images/company/ogawa-closet.jpg'
   },
   {
     era: "2018",

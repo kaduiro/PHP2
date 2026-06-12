@@ -28,7 +28,7 @@
     --ease: .3s ease;
 
     /* FEATURES background image + overlay (easy swap for WP operation) */
-    --features-bg-image: url('/wp-content/uploads/xxx.jpg');
+    --features-bg-image: url('/wp-content/themes/ogawa-corp/assets/images/apt-wood/performance/performance-insulation.jpg');
     --features-overlay-start: rgba(8, 31, 68, .86);
     --features-overlay-end: rgba(13, 57, 112, .64);
 }
@@ -431,7 +431,7 @@ header.site-header + .lp-toc,
     align-items: center;
     justify-content: center;
     /* 差し替え: 背景画像を変更する場合は下記URLを変更 */
-    background: url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1800&auto=format&fit=crop&q=80') center / cover no-repeat;
+    background: url('/wp-content/themes/ogawa-corp/assets/images/apt-wood/performance/performance-fire.jpg') center / cover no-repeat;
     color: #fff;
     text-align: center;
     margin-top: -1px;
@@ -748,7 +748,7 @@ header.site-header + .lp-toc,
 
 /* Optional class-based switch for alternate photo */
 .lp-section--features-photo.is-features-bg-alt {
-    --features-bg-image: url('/wp-content/uploads/xxx-alt.jpg');
+    --features-bg-image: url('/wp-content/themes/ogawa-corp/assets/images/apt-wood/performance/performance-fire.jpg');
 }
 
 .lp-features {

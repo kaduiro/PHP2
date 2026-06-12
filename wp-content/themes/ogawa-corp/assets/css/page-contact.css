@@ -41,7 +41,7 @@ body {
 
     /* Explicit Background Properties for Compatibility */
     background-image: linear-gradient(135deg, rgba(10, 36, 99, 0.7), rgba(62, 146, 204, 0.5)),
-        url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1920');
+        url('/wp-content/themes/ogawa-corp/assets/images/common/team-photo-banner.webp');
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;

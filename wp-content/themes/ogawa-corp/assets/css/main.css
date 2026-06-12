@@ -874,7 +874,7 @@ a {
   height: 320px;
   height: 100%;
   overflow: hidden;
-  background: url(//www.touki-co.jp/wp-content/themes/touki-kensetsu_theme/css/../img/video/poster2.jpg) no-repeat;
+  background: url(/wp-content/themes/ogawa-corp/assets/images/common/team-photo-banner.webp) no-repeat;
   background-size: cover;
   background-attachment: fixed;
   background-position: center center;
@@ -1188,7 +1188,7 @@ a {
     position: absolute;
     top: 0;
     left: 0;
-    background: url(//www.touki-co.jp/wp-content/themes/touki-kensetsu_theme/css/../img/msg.png?1);
+    background: url(/wp-content/themes/ogawa-corp/assets/images/common/44b5255f55c641821dc18717305a6a90.jpg);
     background-size: 100% 100%;
     width: 100%;
     height: 100%;
@@ -1726,7 +1726,7 @@ a {
 @media (max-width:769px) {
   .t_bs_in:before {
     content: "";
-    background: url(//www.touki-co.jp/wp-content/themes/touki-kensetsu_theme/css/../img/t_bs_main.jpg);
+    background: url(/wp-content/themes/ogawa-corp/assets/images/common/Gemini_Generated_Image_t7kgv9t7kgv9t7kg.png);
     background-size: 100% 100%;
     display: block;
     width: 100%;
@@ -1738,7 +1738,7 @@ a {
   .t_bs_bg {
     width: 86%;
     max-width: 1606px;
-    background: url(//www.touki-co.jp/wp-content/themes/touki-kensetsu_theme/css/../img/t_bs_bg03.jpg);
+    background: url(/wp-content/themes/ogawa-corp/assets/images/common/team-photo-banner.webp);
     background-size: cover;
     background-position: left top;
     background-repeat: no-repeat;
@@ -1789,7 +1789,7 @@ a {
     content: "";
     width: 948px;
     height: 79px;
-    background: url(//www.touki-co.jp/wp-content/themes/touki-kensetsu_theme/css/../img/t_bs_txt.png);
+    background: none;
     background-size: 100% 100%;
     position: absolute;
     bottom: -3px;
@@ -2288,7 +2288,7 @@ a {
 .t_b01_bg:after {
   max-width: 592px;
   height: 59px;
-  background-image: url(//www.touki-co.jp/wp-content/themes/touki-kensetsu_theme/css/../img/b_txt_01.png)
+  background-image: none
 }
 
 .t_b01.is-move .t_b_bg:before {
@@ -2484,7 +2484,7 @@ a {
   left: 5%;
   max-width: 592px;
   height: 60px;
-  background-image: url(//www.touki-co.jp/wp-content/themes/touki-kensetsu_theme/css/../img/b_txt_02.png?1)
+  background-image: none
 }
 
 .t_b02.is-move .t_b_bg:before {
@@ -2646,7 +2646,7 @@ a {
 .t_b03_bg:after {
   max-width: 592px;
   height: 59px;
-  background-image: url(//www.touki-co.jp/wp-content/themes/touki-kensetsu_theme/css/../img/b_txt_03.png?1)
+  background-image: none
 }
 
 .t_b03.is-move .t_b_bg:before {
@@ -3282,7 +3282,7 @@ a {
   .t_rc_in:before {
     /* Hide the mobile image to keep the clean navy look or replace with solid color/texture */
     content: none;
-    background: url(//www.touki-co.jp/wp-content/themes/touki-kensetsu_theme/css/../img/t_rc_main.jpg);
+    background: url(/wp-content/themes/ogawa-corp/assets/images/company/ogawagenba.jpg);
     background-size: 100% 100%;
     display: none;
     /* Hiding image */
@@ -3352,7 +3352,7 @@ a {
     min-width: 800px;
     width: 56%;
     height: 100%;
-    background-image: url(//www.touki-co.jp/wp-content/themes/touki-kensetsu_theme/css/../img/t_rc_txt.png);
+    background-image: none;
     background-size: 100% auto;
     background-repeat: no-repeat;
     background-position: right bottom;
@@ -4471,7 +4471,7 @@ a {
 
 .p_main {
   height: 200px;
-  background-image: url(//www.touki-co.jp/wp-content/themes/touki-kensetsu_theme/css/../img/ab_bg.jpg);
+  background-image: url(/wp-content/themes/ogawa-corp/assets/images/company/ogawacloset.jpg);
   background-size: cover;
   position: relative;
   z-index: 20;
@@ -4554,20 +4554,20 @@ a {
 }
 
 .p-company .p_main {
-  background-image: url(//www.touki-co.jp/wp-content/themes/touki-kensetsu_theme/css/../img/cp_bg.jpg)
+  background-image: url(/wp-content/themes/ogawa-corp/assets/images/company/ogawagenba.jpg)
 }
 
 .p-works .p_main,
 .p-wk02 .p_main,
 .p-wk03 .p_main {
   background-position: center;
-  background-image: url(//www.touki-co.jp/wp-content/themes/touki-kensetsu_theme/css/../img/wk_bg.jpg)
+  background-image: url(/wp-content/themes/ogawa-corp/assets/images/company/ogawavietnam.jpg)
 }
 
 .p-contact .p_main,
 .p-blog .p_main {
   background-position: 40% center;
-  background-image: url(//www.touki-co.jp/wp-content/themes/touki-kensetsu_theme/css/../img/ct_bg.jpg)
+  background-image: url(/wp-content/themes/ogawa-corp/assets/images/common/team-photo-banner.webp)
 }
 
 @media (min-width:769px) {
@@ -4584,7 +4584,7 @@ a {
 }
 
 .p-anzen_blog .p_main {
-  background-image: url(//www.touki-co.jp/wp-content/themes/touki-kensetsu_theme/css/../img/anzen_bl_bg.jpg)
+  background-image: url(/wp-content/themes/ogawa-corp/assets/images/company/ogawagenba.jpg)
 }
 
 .p_div {
@@ -4602,7 +4602,7 @@ a {
 }
 
 .p_div.p_div01:before {
-  background-image: url(//www.touki-co.jp/wp-content/themes/touki-kensetsu_theme/css/../img/scaffolding/bg.jpg)
+  background-image: url(/wp-content/themes/ogawa-corp/assets/images/company/ogawagenba.jpg)
 }
 
 .p_div.p_div01 .p_div_ttl {
@@ -4610,7 +4610,7 @@ a {
 }
 
 .p_div.p_div02:before {
-  background-image: url(//www.touki-co.jp/wp-content/themes/touki-kensetsu_theme/css/../img/demolition/bg.jpg)
+  background-image: url(/wp-content/themes/ogawa-corp/assets/images/company/ogawacloset.jpg)
 }
 
 .p_div.p_div02 .p_div_ttl {
@@ -4618,7 +4618,7 @@ a {
 }
 
 .p_div.p_div03:before {
-  background-image: url(//www.touki-co.jp/wp-content/themes/touki-kensetsu_theme/css/../img/renewal/bg.jpg)
+  background-image: url(/wp-content/themes/ogawa-corp/assets/images/company/ogawa-closet.jpg)
 }
 
 .p_div.p_div03 .p_div_ttl {
@@ -4735,7 +4735,7 @@ a {
     position: absolute;
     top: 260px;
     right: -140px;
-    background-image: url(//www.touki-co.jp/wp-content/themes/touki-kensetsu_theme/css/../img/scaffolding/div_txt.png);
+    background-image: none;
     background-repeat: no-repeat;
     background-size: 100% 100%;
     width: 71px;
@@ -4744,13 +4744,13 @@ a {
 }
 
 .p-demolition .div_msg i {
-  background-image: url(//www.touki-co.jp/wp-content/themes/touki-kensetsu_theme/css/../img/demolition/div_txt.png?1);
+  background-image: none;
   width: 71px;
   height: 638px
 }
 
 .p-renewal .div_msg i {
-  background-image: url(//www.touki-co.jp/wp-content/themes/touki-kensetsu_theme/css/../img/renewal/div_txt.png?1);
+  background-image: none;
   width: 71px;
   height: 475px
 }
@@ -4836,7 +4836,7 @@ a {
 
 .ceo_msg_movie .movie a:before{content:" ";background:#000;opacity:.2;width:100%;height:100%;position:absolute;top:0;left:0}
 
-.ceo_msg_movie .movie .play:before{content:" ";width:60px;height:60px;background:url(//www.touki-co.jp/wp-content/themes/touki-kensetsu_theme/css/../img/play.png);background-size:100% 100%;margin-bottom:1rem}
+.ceo_msg_movie .movie .play:before{content:" ";width:60px;height:60px;background:url("data:image/svg+xml,%3Csvg viewBox='0 0 64 64' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='32' cy='32' r='31' fill='none' stroke='white' stroke-width='2'/%3E%3Cpath d='M26 20v24l20-12z' fill='white'/%3E%3C/svg%3E") center/100% 100% no-repeat;margin-bottom:1rem}
 
 @media (min-width:769px){.ceo_msg_movie .movie .play:before{width:170px;height:170px;margin-bottom:4rem}}
 
@@ -5340,7 +5340,7 @@ a {
 
 .div_movie_in{position:relative;width:100%;box-shadow:0 3px 12px rgba(0,0,0,.3);padding-top:56.25%}
 
-.div_movie .play:before{content:" ";width:60px;height:60px;background:url(//www.touki-co.jp/wp-content/themes/touki-kensetsu_theme/css/../img/play.png);background-size:100% 100%;margin-bottom:1rem}
+.div_movie .play:before{content:" ";width:60px;height:60px;background:url("data:image/svg+xml,%3Csvg viewBox='0 0 64 64' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='32' cy='32' r='31' fill='none' stroke='white' stroke-width='2'/%3E%3Cpath d='M26 20v24l20-12z' fill='white'/%3E%3C/svg%3E") center/100% 100% no-repeat;margin-bottom:1rem}
 
 @media (min-width:769px){.div_movie .play:before{width:170px;height:170px;margin-bottom:4rem}}
 
@@ -6776,7 +6776,7 @@ a {
 
 .loader{opacity:0;filter:blur(10px);transition-property:transform,opacity,filter;transition-timing-function:ease-in-out;transition:opacity .3s ease-in-out,filter .6s ease-in-out;transition-delay:.5s}
 
-.loader:before{content:" ";position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);background:url(//www.touki-co.jp/wp-content/themes/touki-kensetsu_theme/css/../img/loading.png) no-repeat;background-size:100% 100%;width:100px;height:83px}
+.loader:before{content:" ";position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);background:url(/wp-content/themes/ogawa-corp/assets/images/common/Ogawa_web_logo.png) center/contain no-repeat;width:100px;height:83px}
 
 @media (min-width:769px){.loader:before{width:180px;height:150px}}
 
