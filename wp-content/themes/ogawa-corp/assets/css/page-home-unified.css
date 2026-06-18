@@ -8974,17 +8974,6 @@ body.front-page #contents #message-section.okg-home-typo-section--message .t_biz
   border-bottom: 1px solid rgba(16, 24, 39, 0.1) !important;
 }
 
-body.home #contents #message-section.okg-home-typo-section--message .t_biz__inner::before,
-body.front-page #contents #message-section.okg-home-typo-section--message .t_biz__inner::before {
-  content: "" !important;
-  position: absolute !important;
-  top: 1.7rem !important;
-  bottom: 1.7rem !important;
-  left: 0 !important;
-  width: 0.28rem !important;
-  background: var(--okg-home-typo-red) !important;
-}
-
 body.home #contents #message-section.okg-home-typo-section--message .t_biz__inner::after,
 body.front-page #contents #message-section.okg-home-typo-section--message .t_biz__inner::after {
   content: "" !important;
@@ -9326,13 +9315,6 @@ body.front-page #contents #message-section.okg-home-typo-section--message .okg-h
     width: min(100%, calc(100% - 1.25rem)) !important;
     padding: 1.6rem 1.35rem 1.8rem !important;
     gap: 1.65rem !important;
-  }
-
-  body.home #contents #message-section.okg-home-typo-section--message .t_biz__inner::before,
-  body.front-page #contents #message-section.okg-home-typo-section--message .t_biz__inner::before {
-    top: 1rem !important;
-    bottom: 1rem !important;
-    width: 0.18rem !important;
   }
 
   body.home #contents #message-section.okg-home-typo-section--message .t_biz__inner::after,

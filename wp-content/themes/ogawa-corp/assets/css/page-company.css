@@ -1641,8 +1641,8 @@ body.skip-zdive #company-information #history-overview.history-overview-section 
     z-index: 1;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    text-align: center;
+    align-items: flex-start;
+    text-align: left;
     gap: 0;
 }
 
@@ -1659,7 +1659,7 @@ body.skip-zdive #company-information #history-overview.history-overview-section 
 
 #company-information .okg-company-typo-philosophy__values-statement {
     margin: 1rem 0 0;
-    text-align: center;
+    text-align: left;
     white-space: nowrap;
 }
 

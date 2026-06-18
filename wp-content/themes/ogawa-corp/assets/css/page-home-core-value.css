@@ -140,18 +140,45 @@ body.front-page .core-value-section.okg-cv::before {
     gap: clamp(1.5rem, 5vw, 2.5rem);
     padding-top: clamp(4rem, 12vw, 6rem);
     padding-bottom: clamp(4rem, 12vw, 6rem);
-    padding-inline: clamp(0.25rem, 0.5vw, 0.75rem);
+    padding-inline: 0;
+  }
+
+  .okg-cv__stage {
+    width: 100vw;
+    max-width: 100vw;
+    margin-inline: calc(50% - 50vw);
+    padding-inline: 0;
+    overflow: visible;
   }
 
   .okg-cv__calli-art {
-    --okg-cv-kanji-h: clamp(6rem, 28vw, 12rem);
-    gap: clamp(0rem, 0.28vw, 0.16rem);
+    --okg-cv-kanji-h: 38vw;
+    --okg-cv-kana-h: calc(var(--okg-cv-kanji-h) * 0.56);
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: center;
+    gap: 0;
+    width: 100vw;
+    min-width: 100vw;
+    max-width: 100vw;
+    overflow: visible;
+  }
+
+  .okg-cv__glyph {
+    flex: 0 0 auto;
+    max-width: none;
+  }
+
+  .okg-cv__glyph:not(.okg-cv__glyph--ai) {
+    margin-left: -4.4vw;
   }
 }
 
 @media (max-width: 480px) {
   .okg-cv__calli-art {
-    --okg-cv-kanji-h: clamp(3.5rem, 18vw, 5rem);
+    --okg-cv-kanji-h: 38vw;
   }
 }
 
