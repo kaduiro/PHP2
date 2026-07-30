@@ -175,3 +175,33 @@
     font-size: 1.1rem;
     color: #333;
 }
+
+@media (max-width: 600px) {
+    .p-tech-hero__title-en {
+        font-size: 2.4rem;
+        letter-spacing: 0.1em;
+    }
+
+    .p-tech-hero__title-jp {
+        font-size: 2.2rem;
+        letter-spacing: 0.3em;
+    }
+
+    .p-tech-hero__text {
+        font-size: 1rem;
+        line-height: 1.8;
+    }
+
+    .p-tech-message-block {
+        padding: 40px 20px;
+    }
+
+    .p-tech-heading {
+        font-size: 1.8rem;
+    }
+
+    .p-tech-text {
+        font-size: 1rem;
+        line-height: 1.9;
+    }
+}

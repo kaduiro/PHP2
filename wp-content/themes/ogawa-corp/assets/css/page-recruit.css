@@ -1085,6 +1085,7 @@ body.is-recruit-modal-open {
 
     .p-recruit-essence__title {
         font-size: 2.2rem;
+        white-space: normal;
     }
 
     .p-recruit-essence__zigzag {

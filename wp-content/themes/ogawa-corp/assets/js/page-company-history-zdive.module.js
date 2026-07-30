@@ -7,51 +7,57 @@ const themeBaseUrl = (window.ogawaCorpTheme && window.ogawaCorpTheme.themeUrl) ?
 const timelineItems = [
   {
     era: "1958",
-    title: "創業",
-    body: "地域に根ざした建設会社として創業。",
+    title: "小川左官店創業",
+    body: "代表　小川　勇",
     image: themeBaseUrl + '/assets/images/company/ogawacloset.jpg'
   },
   {
     era: "1967",
-    title: "株式会社へ組織変更",
-    body: "事業基盤の拡大に合わせて組織体制を強化。",
+    title: "株式会社小川左官店に組織変更",
+    body: "",
     image: themeBaseUrl + '/assets/images/company/ogawarinenA.jpg'
   },
   {
     era: "1983",
-    title: "設備投資を拡充",
-    body: "現場品質と生産性向上のため設備を更新。",
+    title: "小川工業株式会社に社名変更",
+    body: "",
     image: themeBaseUrl + '/assets/images/company/ogawarinenB.jpg'
   },
   {
     era: "1989",
-    title: "本社機能を拡張",
-    body: "受注増加に合わせ、管理・設計機能を強化。",
+    title: "小川勇治が代表取締役に就任",
+    body: "",
     image: themeBaseUrl + '/assets/images/company/ogawarinenC.jpg'
   },
   {
     era: "2012",
-    title: "安全品質の再定義",
-    body: "現場運用を見直し、品質基準と教育を再構築。",
+    title: "仙台エリアにて建築請負事業拡大",
+    body: "",
     image: themeBaseUrl + '/assets/images/company/ogawagenba.jpg'
   },
   {
     era: "2015",
-    title: "事業エリア拡大",
-    body: "新規案件の増加に対応し、体制を再編。",
+    title: "ベトナム人技能実習生第一期生受け入れ",
+    body: "",
+    image: themeBaseUrl + '/assets/images/company/ogawavietnam.jpg'
+  },
+  {
+    era: "2016",
+    title: "関東エリアにて建築請負事業拡大",
+    body: "",
     image: themeBaseUrl + '/assets/images/company/ogawa-genba.jpg'
   },
   {
     era: "2017",
-    title: "次世代体制へ移行",
-    body: "若手育成と技術継承の取り組みを本格化。",
+    title: "設立50周年",
+    body: "帝国ホテルにて50周年パーティ開催",
     image: themeBaseUrl + '/assets/images/company/ogawa-closet.jpg'
   },
   {
-    era: "2018",
-    title: "海外拠点の強化",
-    body: "グローバル展開に向けて拠点運用を最適化。",
-    image: themeBaseUrl + '/assets/images/company/ogawavietnam.jpg'
+    era: "2023",
+    title: "現代表　小川匡哉が代表取締役に就任",
+    body: "",
+    image: themeBaseUrl + '/assets/images/company/ogawarinen-a.jpg'
   }
 ];
 
