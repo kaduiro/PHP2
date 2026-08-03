@@ -1,6 +1,13 @@
 /* ==========================================================================
-   Person Single Page Styles
+   Person Single Page Styles — editorial magazine-style layout
    ========================================================================== */
+
+:root {
+    --person-accent: #0b3486;
+    --person-ink: #1a1a1a;
+    --person-body: #333;
+    --person-line: 2;
+}
 
 /* 1. Hero Section */
 .p-person-hero {
@@ -32,10 +39,11 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(to right, rgba(11, 52, 134, 0.8) 0%, rgba(0, 0, 0, 0.3) 100%);
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.65) 0%, rgba(0, 0, 0, 0.1) 55%, rgba(0, 0, 0, 0.35) 100%);
     z-index: 2;
     display: flex;
-    align-items: center;
+    align-items: flex-end;
+    padding-bottom: 60px;
 }
 
 .p-person-hero__inner {
@@ -45,228 +53,386 @@
 }
 
 .p-person-hero__role {
-    font-size: 1.125rem;
-    font-weight: 500;
+    font-size: 1rem;
+    font-weight: 600;
     letter-spacing: 0.1em;
-    margin-bottom: 10px;
-    border-left: 4px solid #fff;
-    padding-left: 15px;
+    margin-bottom: 14px;
+    border-left: 3px solid #fff;
+    padding-left: 14px;
 }
 
 .p-person-hero__name {
-    font-size: 3rem;
-    font-weight: 700;
-    letter-spacing: 0.1em;
-    margin-bottom: 30px;
+    font-size: 2.6rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    margin-bottom: 22px;
 }
 
 .p-person-hero__quote {
-    font-size: 1.8rem;
+    font-size: 1.5rem;
     font-weight: 700;
     line-height: 1.6;
-    letter-spacing: 0.05em;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    letter-spacing: 0.02em;
 }
 
 @media screen and (max-width: 768px) {
     .p-person-hero__name {
-        font-size: 2.2rem;
+        font-size: 2rem;
     }
 
     .p-person-hero__quote {
-        font-size: 1.4rem;
+        font-size: 1.2rem;
     }
 
     .p-person-hero__role {
-        font-size: 1rem;
+        font-size: 0.9rem;
     }
 }
 
-/* 2. Q&A Section */
-.p-person-qa {
-    padding: 80px 0;
-    background-color: #f9f9f9;
-}
-
-.p-person-qa__list {
-    max-width: 800px;
-    margin: 0 auto;
-}
-
-.p-person-qa__item {
-    background-color: #fff;
-    padding: 40px;
-    margin-bottom: 30px;
-    border-radius: 8px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-}
-
-.p-person-qa__q {
-    font-size: 1.25rem;
+/* Shared heading / eyebrow / body typography */
+.p-person-eyebrow {
+    display: inline-block;
+    font-size: 0.95rem;
     font-weight: 700;
-    color: #0b3486;
-    /* Theme Blue */
-    margin-bottom: 20px;
-    display: flex;
-    align-items: flex-start;
+    color: var(--person-accent);
+    letter-spacing: 0.08em;
+    margin-bottom: 14px;
+}
+
+.p-person-heading {
+    font-size: 1.7rem;
+    font-weight: 800;
+    color: var(--person-ink);
     line-height: 1.5;
+    margin-bottom: 26px;
+    position: relative;
+    padding-left: 22px;
 }
 
-.p-person-qa__icon {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-    width: 32px;
-    height: 32px;
-    border-radius: 50%;
-    margin-right: 15px;
-    font-family: 'Oswald', sans-serif;
-    font-weight: 700;
-    font-size: 1.1rem;
+.p-person-heading::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.65em;
+    width: 14px;
+    height: 3px;
+    background-color: var(--person-accent);
 }
 
-.p-person-qa__q .p-person-qa__icon {
-    background-color: #0b3486;
+.p-person-heading--quote {
+    font-size: 1.9rem;
+    line-height: 1.6;
+}
+
+.p-person-heading--on-dark {
     color: #fff;
 }
 
-.p-person-qa__a {
-    font-size: 1rem;
-    line-height: 1.8;
-    color: #333;
-    display: flex;
-    align-items: flex-start;
+.p-person-heading--on-dark::before {
+    background-color: #fff;
 }
 
-.p-person-qa__a .p-person-qa__icon {
-    background-color: #e0e6f2;
-    color: #0b3486;
+.p-person-body {
+    font-size: 1rem;
+    line-height: 2;
+    color: var(--person-body);
+}
+
+.p-person-body--on-dark {
+    color: rgba(255, 255, 255, 0.85);
 }
 
 @media screen and (max-width: 768px) {
-    .p-person-qa__item {
-        padding: 25px 20px;
+    .p-person-heading {
+        font-size: 1.35rem;
     }
 
-    .p-person-qa__q {
-        font-size: 1.1rem;
+    .p-person-heading--quote {
+        font-size: 1.5rem;
     }
 }
 
-/* 3. Schedule Section */
-.p-person-schedule {
-    padding: 100px 0;
-    background-color: #0b3486;
-    /* Theme Dark Blue */
-    color: #fff;
-}
-
-.p-person-schedule__timeline {
-    max-width: 700px;
+/* 2. Feature Section (asymmetric photo + text) */
+.p-person-feature {
+    display: grid;
+    grid-template-columns: 42% 58%;
+    align-items: center;
+    gap: 60px;
+    max-width: 1240px;
     margin: 0 auto;
-    position: relative;
-    padding-left: 30px;
+    padding: 90px 40px;
 }
 
-.p-person-schedule__timeline::before {
-    content: '';
-    position: absolute;
-    top: 5px;
-    bottom: 5px;
-    left: 8px;
-    width: 2px;
-    background-color: rgba(255, 255, 255, 0.2);
+.p-person-feature--reverse {
+    grid-template-columns: 58% 42%;
 }
 
-.p-person-schedule__item {
-    position: relative;
-    margin-bottom: 50px;
+.p-person-feature--reverse .p-person-feature__media {
+    order: 2;
+}
+
+.p-person-feature--reverse .p-person-feature__text {
+    order: 1;
+}
+
+.p-person-feature__media {
+    clip-path: polygon(0 3%, 100% 0, 100% 97%, 0 100%);
+}
+
+.p-person-feature__media img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+}
+
+.p-person-feature__text {
+    max-width: 600px;
+}
+
+@media screen and (max-width: 900px) {
+    .p-person-feature,
+    .p-person-feature--reverse {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        padding: 60px 24px;
+    }
+
+    .p-person-feature--reverse .p-person-feature__media,
+    .p-person-feature--reverse .p-person-feature__text {
+        order: initial;
+    }
+
+    .p-person-feature__media {
+        clip-path: none;
+    }
+}
+
+/* 3. Plain text section (no photo) */
+.p-person-plain {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 70px 24px;
+}
+
+.p-person-plain--alt {
+    background-color: #f7f7f7;
+    max-width: 100%;
+}
+
+.p-person-plain--alt > * {
+    max-width: 720px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media screen and (max-width: 768px) {
+    .p-person-plain {
+        padding: 50px 24px;
+    }
+}
+
+/* 4. Career Step */
+.p-person-career__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.p-person-career__item {
     display: flex;
-    flex-direction: column;
+    align-items: baseline;
+    gap: 24px;
+    padding: 16px 0;
 }
 
-.p-person-schedule__item:last-child {
-    margin-bottom: 0;
+.p-person-career__label {
+    flex-shrink: 0;
+    width: 90px;
+    font-weight: 700;
+    font-size: 1rem;
+    color: var(--person-accent);
+    letter-spacing: 0.03em;
 }
 
-.p-person-schedule__item::before {
-    content: '';
-    position: absolute;
-    top: 5px;
-    left: -28px;
-    width: 14px;
-    height: 14px;
+.p-person-career__desc {
+    font-size: 0.98rem;
+    line-height: 1.8;
+    color: var(--person-body);
+}
+
+@media screen and (max-width: 768px) {
+    .p-person-career__item {
+        flex-direction: column;
+        gap: 4px;
+        padding: 14px 0;
+    }
+
+    .p-person-career__label {
+        width: auto;
+    }
+}
+
+/* 5. Dark full-bleed section: Timetable + Work content */
+.p-person-dark {
+    background-color: #17181c;
+    padding: 90px 0;
+}
+
+.p-person-dark__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 70px;
+}
+
+.p-person-dark__col .p-person-heading {
+    margin-bottom: 40px;
+}
+
+.p-person-timetable {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.p-person-timetable__item {
+    display: flex;
+    align-items: baseline;
+    gap: 16px;
+    padding: 14px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.p-person-timetable__item:first-child {
+    padding-top: 0;
+}
+
+.p-person-timetable__dot {
+    width: 6px;
+    height: 6px;
     border-radius: 50%;
     background-color: #fff;
-    border: 3px solid #0b3486;
-    box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.5);
-    z-index: 2;
+    flex-shrink: 0;
 }
 
-.p-person-schedule__time {
-    font-family: 'Oswald', sans-serif;
-    font-size: 1.8rem;
+.p-person-timetable__time {
+    flex-shrink: 0;
+    width: 110px;
     font-weight: 700;
-    letter-spacing: 0.05em;
     color: #fff;
-    margin-bottom: 10px;
-    line-height: 1;
+    font-size: 0.98rem;
+    letter-spacing: 0.03em;
 }
 
-.p-person-schedule__content {
-    background-color: rgba(255, 255, 255, 0.1);
-    padding: 25px 30px;
-    border-radius: 4px;
-    backdrop-filter: blur(5px);
+.p-person-timetable__desc {
+    font-size: 0.92rem;
+    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.75);
 }
 
-.p-person-schedule__title {
-    font-size: 1.25rem;
+@media screen and (max-width: 900px) {
+    .p-person-dark__grid {
+        grid-template-columns: 1fr;
+        gap: 50px;
+        padding: 0 24px;
+    }
+
+    .p-person-dark {
+        padding: 60px 0;
+    }
+}
+
+@media screen and (min-width: 901px) {
+    .p-person-dark__grid {
+        padding: 0 40px;
+        max-width: 1240px;
+        margin: 0 auto;
+    }
+}
+
+/* 6. Other Voices */
+.p-person-others {
+    padding: 90px 0 110px;
+    background-color: #f7f7f7;
+}
+
+.p-person-others .l-container {
+    max-width: 1100px;
+}
+
+.p-person-others__list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+.p-person-others__item {
+    display: block;
+    text-decoration: none;
+    position: relative;
+}
+
+.p-person-others__tag {
+    position: absolute;
+    top: 14px;
+    left: 14px;
+    z-index: 2;
+    background-color: #000;
+    color: #fff;
+    font-size: 0.75rem;
     font-weight: 700;
-    margin-bottom: 15px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-    padding-bottom: 15px;
+    letter-spacing: 0.03em;
+    padding: 6px 12px;
 }
 
-.p-person-schedule__desc {
-    font-size: 0.95rem;
-    line-height: 1.8;
-    color: rgba(255, 255, 255, 0.9);
+.p-person-others__thumb {
+    position: relative;
+    display: block;
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    background-size: cover;
+    background-position: center 30%;
+    background-color: #333;
+    overflow: hidden;
 }
 
-@media screen and (min-width: 769px) {
-    .p-person-schedule__timeline {
-        padding-left: 150px;
+.p-person-others__gradient {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0) 55%);
+}
+
+.p-person-others__quote {
+    position: absolute;
+    left: 18px;
+    right: 18px;
+    bottom: 18px;
+    color: #fff;
+    font-weight: 700;
+    font-size: 1.05rem;
+    line-height: 1.5;
+}
+
+.p-person-others__name {
+    display: block;
+    font-weight: 700;
+    color: var(--person-ink);
+    padding-top: 14px;
+    font-size: 1rem;
+}
+
+@media screen and (max-width: 768px) {
+    .p-person-others__list {
+        grid-template-columns: 1fr;
     }
 
-    .p-person-schedule__timeline::before {
-        left: 100px;
-    }
-
-    .p-person-schedule__item {
-        flex-direction: row;
-    }
-
-    .p-person-schedule__item::before {
-        left: -56px;
-    }
-
-    .p-person-schedule__time {
-        width: 120px;
-        position: absolute;
-        left: -150px;
-        top: 0;
-        text-align: right;
-        margin-bottom: 0;
-    }
-
-    .p-person-schedule__content {
-        flex: 1;
+    .p-person-others {
+        padding: 60px 0 80px;
     }
 }
 
-/* 4. Back Button Area */
+/* 7. Back Button Area */
 .p-person-back {
     padding: 80px 0;
     text-align: center;
