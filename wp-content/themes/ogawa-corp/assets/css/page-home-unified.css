@@ -420,6 +420,7 @@ body.front-page .okg-team-banner__image {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center 12%;
   transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -2300,6 +2301,7 @@ body.front-page .okg-team-banner__image {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center 12%;
 }
 
 
@@ -5556,6 +5558,7 @@ body.front-page .okg-biz__entry-fig img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center 12%;
 }
 
 body.home .okg-biz__intro-copy,
@@ -6602,60 +6605,6 @@ body.front-page #contents #message-section.okg-home-message-split .okg-home-mess
   margin-bottom: 0;
 }
 
-body.home #contents #message-section.okg-home-message-split .okg-home-message-split__btn,
-body.front-page #contents #message-section.okg-home-message-split .okg-home-message-split__btn {
-  display: inline-flex !important;
-  align-items: center;
-  justify-content: center;
-  width: min(960px, 100%) !important;
-  min-height: 0 !important;
-  margin: 0 !important;
-  padding: 2.4rem 4.2rem !important;
-  border: 1px solid rgba(23, 34, 58, 0.34) !important;
-  border-radius: 999px !important;
-  background: transparent !important;
-  box-shadow: none !important;
-  color: #17223a !important;
-  font-family: "Noto Sans JP", sans-serif !important;
-  font-size: clamp(2.9rem, 2.6vw, 3.2rem) !important;
-  font-weight: 500 !important;
-  letter-spacing: 0.08em !important;
-  line-height: 1.4 !important;
-  text-decoration: none !important;
-  text-transform: none !important;
-}
-
-body.home #contents #message-section.okg-home-message-split .okg-home-message-split__btn:hover,
-body.home #contents #message-section.okg-home-message-split .okg-home-message-split__btn:focus-visible,
-body.front-page #contents #message-section.okg-home-message-split .okg-home-message-split__btn:hover,
-body.front-page #contents #message-section.okg-home-message-split .okg-home-message-split__btn:focus-visible {
-  background: #17223a !important;
-  border-color: #17223a !important;
-  color: #ffffff !important;
-  opacity: 1;
-  transform: none !important;
-}
-
-body.home #contents #message-section.okg-home-message-split .okg-home-message-split__btn .arrow,
-body.front-page #contents #message-section.okg-home-message-split .okg-home-message-split__btn .arrow {
-  display: inline-block;
-  width: auto !important;
-  height: auto !important;
-  margin-left: 0.65rem !important;
-  border: 0 !important;
-  background: transparent !important;
-  color: currentColor !important;
-  font-size: 1em !important;
-  transition: transform 0.2s ease;
-}
-
-body.home #contents #message-section.okg-home-message-split .okg-home-message-split__btn:hover .arrow,
-body.home #contents #message-section.okg-home-message-split .okg-home-message-split__btn:focus-visible .arrow,
-body.front-page #contents #message-section.okg-home-message-split .okg-home-message-split__btn:hover .arrow,
-body.front-page #contents #message-section.okg-home-message-split .okg-home-message-split__btn:focus-visible .arrow {
-  transform: translateX(4px);
-}
-
 @media (max-width: 900px) {
   body.home #contents #message-section.okg-home-message-split,
   body.front-page #contents #message-section.okg-home-message-split {
@@ -6710,11 +6659,6 @@ body.front-page #contents #message-section.okg-home-message-split .okg-home-mess
     margin: 0 0 1.45rem !important;
   }
 
-  body.home #contents #message-section.okg-home-message-split .okg-home-message-split__btn,
-  body.front-page #contents #message-section.okg-home-message-split .okg-home-message-split__btn {
-    width: auto !important;
-    max-width: 100% !important;
-  }
 }
 
 @media (max-width: 560px) {
@@ -6739,14 +6683,6 @@ body.front-page #contents #message-section.okg-home-message-split .okg-home-mess
     line-height: 1.85 !important;
   }
 
-  body.home #contents #message-section.okg-home-message-split .okg-home-message-split__btn,
-  body.front-page #contents #message-section.okg-home-message-split .okg-home-message-split__btn {
-    width: auto !important;
-    max-width: 100% !important;
-    padding-right: 1.1rem !important;
-    padding-left: 1.1rem !important;
-    white-space: nowrap !important;
-  }
 }
 
 /* ============================================================
@@ -7579,40 +7515,6 @@ body.front-page #contents #message-section.okg-home-typo-section--message .okg-h
 body.home #contents #message-section.okg-home-typo-section--message .okg-home-message-split__copy p,
 body.front-page #contents #message-section.okg-home-typo-section--message .okg-home-message-split__copy p {
   margin: 0 0 0.85rem !important;
-}
-
-body.home #contents #message-section.okg-home-typo-section--message .okg-home-message-split__btn,
-body.front-page #contents #message-section.okg-home-typo-section--message .okg-home-message-split__btn {
-  display: inline-flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  width: min(24rem, 100%) !important;
-  min-height: 3.4rem !important;
-  margin: 0 !important;
-  padding: 0.9rem 1.3rem !important;
-  border: 1px solid var(--okg-home-typo-navy) !important;
-  border-radius: 0 !important;
-  background: transparent !important;
-  box-shadow: none !important;
-  color: var(--okg-home-typo-navy) !important;
-  font-family: var(--okg-home-typo-sans) !important;
-  font-size: 1rem !important;
-  font-weight: 700 !important;
-  line-height: 1.45 !important;
-  letter-spacing: 0 !important;
-  text-decoration: none !important;
-  text-transform: none !important;
-  white-space: normal !important;
-}
-
-body.home #contents #message-section.okg-home-typo-section--message .okg-home-message-split__btn:hover,
-body.home #contents #message-section.okg-home-typo-section--message .okg-home-message-split__btn:focus-visible,
-body.front-page #contents #message-section.okg-home-typo-section--message .okg-home-message-split__btn:hover,
-body.front-page #contents #message-section.okg-home-typo-section--message .okg-home-message-split__btn:focus-visible {
-  background: var(--okg-home-typo-navy) !important;
-  border-color: var(--okg-home-typo-navy) !important;
-  color: #ffffff !important;
-  transform: none !important;
 }
 
 /* News */
@@ -8965,7 +8867,7 @@ body.home #contents #message-section.okg-home-typo-section--message .t_biz__inne
 body.front-page #contents #message-section.okg-home-typo-section--message .t_biz__inner {
   width: min(1550px, calc(100% - 3rem)) !important;
   padding: 3.3rem 3.4rem 3.55rem !important;
-  grid-template-columns: minmax(38rem, 0.4fr) minmax(0, 0.6fr) !important;
+  grid-template-columns: minmax(46rem, 0.44fr) minmax(0, 0.56fr) !important;
   gap: 2.4rem !important;
   align-items: center !important;
   background:
@@ -9145,7 +9047,7 @@ body.front-page #contents #message-section.okg-home-typo-section--message .okg-h
 body.home #contents #message-section.okg-home-typo-section--message .okg-home-message-split__portrait,
 body.front-page #contents #message-section.okg-home-typo-section--message .okg-home-message-split__portrait {
   justify-self: start !important;
-  width: min(38rem, 100%) !important;
+  width: min(46rem, 100%) !important;
   padding: 1rem 0 0 !important;
   border: 0 !important;
   border-top: 1px solid rgba(0, 91, 172, 0.22) !important;
@@ -9162,7 +9064,8 @@ body.home #contents #message-section.okg-home-typo-section--message .okg-home-me
 body.front-page #contents #message-section.okg-home-typo-section--message .okg-home-message-split__portrait figcaption {
   margin-top: 0.85rem !important;
   padding-bottom: 0.9rem !important;
-  font-size: 0.95rem !important;
+  font-size: 1.55rem !important;
+  font-weight: 700 !important;
   border-bottom: 1px solid rgba(16, 24, 39, 0.12) !important;
 }
 
@@ -9215,13 +9118,6 @@ body.front-page #contents #message-section.okg-home-typo-section--message .okg-h
   margin-bottom: 2.4rem !important;
   font-size: 1.42rem !important;
   line-height: 2.05 !important;
-}
-
-body.home #contents #message-section.okg-home-typo-section--message .okg-home-message-split__btn,
-body.front-page #contents #message-section.okg-home-typo-section--message .okg-home-message-split__btn {
-  width: min(32rem, 100%) !important;
-  min-height: 4.2rem !important;
-  font-size: 1.22rem !important;
 }
 
 @media (max-width: 980px) {
@@ -9372,10 +9268,6 @@ body.front-page #contents #message-section.okg-home-typo-section--message .okg-h
     font-size: 1.3rem !important;
   }
 
-  body.home #contents #message-section.okg-home-typo-section--message .okg-home-message-split__btn,
-  body.front-page #contents #message-section.okg-home-typo-section--message .okg-home-message-split__btn {
-    font-size: 1.12rem !important;
-  }
 }
 
 @media (max-width: 430px) {
@@ -9411,9 +9303,4 @@ body.front-page #contents #message-section.okg-home-typo-section--message .okg-h
     line-height: 1.9 !important;
   }
 
-  body.home #contents #message-section.okg-home-typo-section--message .okg-home-message-split__btn,
-  body.front-page #contents #message-section.okg-home-typo-section--message .okg-home-message-split__btn {
-    width: min(28rem, 100%) !important;
-    font-size: 1.08rem !important;
-  }
 }

@@ -154,39 +154,6 @@ main#company-information {
     padding: 80px 0;
 }
 
-#company-information .section-header {
-    text-align: center;
-    margin-bottom: 60px;
-}
-
-#company-information .section-title {
-    font-size: clamp(2rem, 4vw, 3rem);
-    margin: 0 0 20px;
-    position: relative;
-    display: inline-block;
-    font-weight: 600;
-    color: var(--color-primary);
-}
-
-#company-information .section-title::after {
-    content: '';
-    display: block;
-    width: 60px;
-    height: 3px;
-    background-color: var(--color-accent);
-    margin: 10px auto 0;
-}
-
-#company-information .section-subtitle {
-    display: block;
-    font-size: var(--fs-xs);
-    color: var(--color-accent);
-    letter-spacing: 0.15em;
-    margin-top: 5px;
-    font-family: "Yu Mincho", "Hiragino Mincho ProN", serif;
-}
-
-
 /* ==========================================================================
    Philosophy Section — Editorial Redesign
    ========================================================================== */
@@ -552,18 +519,129 @@ main#company-information {
 
 
 /* ==========================================================================
-   Profile Section
+   Profile Section — matches 経営理念 (okg-company-typo-philosophy) visual language
    ========================================================================== */
-.profile-section {
-    background-color: #ffffff;
+#company-information .okg-company-typo-profile {
+    --okg-cp-red: #005bac;
+    --okg-cp-ink: #111827;
+    --okg-cp-soft-ink: #3d4654;
+    --okg-cp-muted: #788190;
+    --okg-cp-line: #dfe4ea;
+    --okg-cp-paper: #ffffff;
+    --okg-cp-paper-soft: #f6f7f9;
+    --okg-cp-serif: var(--font-ja-serif, "Yu Mincho", "Hiragino Mincho ProN", serif);
+    --okg-cp-sans: var(--font-ja, "Noto Sans JP", "Hiragino Kaku Gothic ProN", sans-serif);
+    --okg-cp-en: var(--font-en, "Montserrat", Arial, sans-serif);
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    padding: 7rem 0 7.5rem;
+    background:
+        linear-gradient(90deg, rgba(0, 91, 172, 0.04) 0 1px, transparent 1px 100%),
+        linear-gradient(180deg, #ffffff 0%, #f8f9fb 54%, #ffffff 100%);
+    background-size: 76px 100%, auto;
+    color: var(--okg-cp-ink);
 }
 
-.profile-table-wrapper {
-    background: #fff;
-    padding: 40px;
-    box-shadow: 0 10px 30px rgba(10, 36, 99, 0.05);
-    border: 1px solid rgba(62, 146, 204, 0.1);
-    border-radius: 4px;
+#company-information .okg-company-typo-profile,
+#company-information .okg-company-typo-profile * {
+    box-sizing: border-box;
+}
+
+#company-information .okg-company-typo-profile__ornaments {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+}
+
+#company-information .okg-company-typo-profile__line,
+#company-information .okg-company-typo-profile__ring,
+#company-information .okg-company-typo-profile__stripe {
+    position: absolute;
+    display: block;
+}
+
+#company-information .okg-company-typo-profile__line--top {
+    top: 6rem;
+    right: -6rem;
+    width: 24rem;
+    height: 1px;
+    background: rgba(0, 91, 172, 0.24);
+    transform: rotate(14deg);
+}
+
+#company-information .okg-company-typo-profile__ring {
+    bottom: 5rem;
+    left: 6%;
+    width: 9rem;
+    height: 9rem;
+    border: 1px solid rgba(0, 91, 172, 0.18);
+    border-radius: 50%;
+}
+
+#company-information .okg-company-typo-profile__stripe {
+    right: 9%;
+    top: 10rem;
+    width: 9rem;
+    height: 4.2rem;
+    background:
+        repeating-linear-gradient(
+            135deg,
+            rgba(0, 91, 172, 0.12) 0,
+            rgba(0, 91, 172, 0.12) 1px,
+            transparent 1px,
+            transparent 11px
+        );
+}
+
+#company-information .okg-company-typo-profile__inner {
+    position: relative;
+    z-index: 1;
+    width: min(1180px, calc(100% - 5rem));
+    margin: 0 auto;
+}
+
+#company-information .okg-company-typo-profile__intro {
+    max-width: 640px;
+    margin: 0 0 3rem;
+}
+
+#company-information .okg-company-typo-profile__eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.85rem;
+    margin: 0 0 1.3rem;
+    color: var(--okg-cp-red);
+    font-family: var(--okg-cp-en);
+    font-size: 0.82rem;
+    font-weight: 800;
+    line-height: 1;
+    letter-spacing: 0;
+    text-transform: uppercase;
+}
+
+#company-information .okg-company-typo-profile__eyebrow::before {
+    content: "";
+    width: 2.8rem;
+    height: 2px;
+    background: currentColor;
+}
+
+#company-information .okg-company-typo-profile__title {
+    margin: 0;
+    color: var(--okg-cp-ink);
+    font-family: var(--okg-cp-serif);
+    font-size: 2.6rem;
+    font-weight: 800;
+    line-height: 1.2;
+    letter-spacing: 0;
+}
+
+#company-information .okg-company-typo-profile__table {
+    position: relative;
+    border-top: 1px solid var(--okg-cp-line);
+    background: rgba(255, 255, 255, 0.7);
 }
 
 .profile-list {
@@ -572,41 +650,55 @@ main#company-information {
 
 .profile-row {
     display: flex;
-    border-bottom: 1px solid rgba(62, 146, 204, 0.15);
-    padding: 20px 0;
-}
-
-.profile-row:last-child {
-    border-bottom: none;
+    border-bottom: 1px solid var(--okg-cp-line, rgba(62, 146, 204, 0.15));
+    padding: 1.6rem 0;
 }
 
 .profile-row dt {
-    width: 200px;
-    font-weight: 700;
-    color: var(--color-primary);
+    display: flex;
+    align-items: baseline;
+    gap: 0.9rem;
+    width: 13rem;
     flex-shrink: 0;
     padding-right: 20px;
+    color: var(--okg-cp-ink, #222);
+    font-family: var(--okg-cp-sans, inherit);
+    font-weight: 700;
+}
+
+.profile-row__num {
+    color: var(--okg-cp-red, #005bac);
+    font-family: var(--okg-cp-en, inherit);
+    font-size: 0.78rem;
+    font-weight: 800;
+    letter-spacing: 0.02em;
 }
 
 .profile-row dd {
     flex-grow: 1;
     margin: 0;
-    color: #666;
+    color: var(--okg-cp-soft-ink, #666);
+    font-family: var(--okg-cp-sans, inherit);
+    line-height: 1.9;
 }
 
 @media (max-width: 768px) {
+    #company-information .okg-company-typo-profile {
+        padding: 4.5rem 0 5rem;
+    }
+
+    #company-information .okg-company-typo-profile__title {
+        font-size: 2rem;
+    }
+
     .profile-row {
         flex-direction: column;
+        padding: 1.2rem 0;
     }
 
     .profile-row dt {
         width: 100%;
         margin-bottom: 5px;
-        color: #222;
-    }
-
-    .profile-table-wrapper {
-        padding: 20px;
     }
 }
 

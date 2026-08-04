@@ -1726,7 +1726,7 @@ a {
 @media (max-width:769px) {
   .t_bs_in:before {
     content: "";
-    background: url(/wp-content/themes/ogawa-corp/assets/images/common/Gemini_Generated_Image_t7kgv9t7kgv9t7kg.png);
+    background: url(/wp-content/themes/ogawa-corp/assets/images/common/Gemini_Generated_Image_t7kgv9t7kgv9t7kg.webp);
     background-size: 100% 100%;
     display: block;
     width: 100%;
