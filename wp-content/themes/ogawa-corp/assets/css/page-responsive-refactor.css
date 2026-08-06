@@ -1158,3 +1158,939 @@ body.front-page #message-section .t_biz__image-area {
     padding: 1.3rem 1.8rem;
   }
 }
+
+/* Screenshot feedback: company page SP polish. */
+@media (max-width: 760px) {
+  #company-information .okg-company-typo-philosophy__mission {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.35rem 0.25rem;
+    justify-items: center;
+    align-items: center;
+    max-width: 22rem;
+    margin-inline: auto;
+    padding-top: 0.4rem;
+  }
+
+  #company-information .okg-company-typo-philosophy__mission-card,
+  #company-information .okg-company-typo-philosophy__mission-card + .okg-company-typo-philosophy__mission-card {
+    width: min(42vw, 9.9rem);
+    margin: 0;
+    padding: 1rem 0.85rem;
+    transform: none;
+  }
+
+  #company-information .okg-company-typo-philosophy__mission-card--employee {
+    justify-self: end;
+    transform: translate(0.35rem, 0.35rem);
+  }
+
+  #company-information .okg-company-typo-philosophy__mission-card--customer {
+    justify-self: start;
+    transform: translate(-0.35rem, 0.35rem);
+  }
+
+  #company-information .okg-company-typo-philosophy__mission-card--partner {
+    grid-column: 1 / -1;
+    width: min(46vw, 10.4rem);
+    transform: translateY(-0.35rem);
+  }
+
+  #company-information .okg-company-typo-philosophy__mission-card::after {
+    right: 0.8rem;
+    bottom: 0.8rem;
+    width: 2.45rem;
+    height: 2.45rem;
+  }
+
+  #company-information .okg-company-typo-philosophy__mission-card .okg-company-typo-philosophy__card-title {
+    font-size: clamp(1rem, 4.6vw, 1.18rem);
+    line-height: 1.28;
+  }
+
+  #company-information .okg-company-typo-philosophy__mission-card .okg-company-typo-philosophy__card-text {
+    max-width: 86%;
+    font-size: 0.74rem;
+    line-height: 1.55;
+    word-break: keep-all;
+    overflow-wrap: anywhere;
+  }
+
+  #company-information .okg-company-typo-philosophy__number {
+    margin-bottom: 0.48rem;
+    font-size: 0.72rem;
+  }
+
+  #company-information #history-overview.history-overview-section {
+    overflow: visible !important;
+  }
+
+  #company-information #history-overview .history-item {
+    padding-left: 34px !important;
+  }
+
+  #company-information #history-overview .history-left {
+    max-width: 100%;
+    overflow: visible !important;
+  }
+
+  #company-information #history-overview .history-year {
+    max-width: 100%;
+    overflow: visible !important;
+    white-space: nowrap;
+    font-size: clamp(1.95rem, 11.8vw, 2.25rem) !important;
+    letter-spacing: 0 !important;
+    transform: none !important;
+  }
+
+  #company-information .profile-row {
+    gap: 0.32rem;
+    padding: 1rem 0;
+  }
+
+  #company-information .profile-list dt,
+  #company-information .profile-list dd {
+    font-size: 0.92rem;
+    line-height: 1.75;
+  }
+
+  #company-information .profile-row dt {
+    gap: 0.55rem;
+    margin-bottom: 0.18rem;
+  }
+
+  #company-information .profile-row__num {
+    font-size: 0.68rem;
+  }
+
+  #company-information .profile-row strong {
+    font-size: 0.92rem;
+    line-height: 1.7;
+  }
+}
+
+@media (max-width: 430px) {
+  #company-information .okg-company-typo-philosophy__mission {
+    max-width: 20.5rem;
+  }
+
+  #company-information .okg-company-typo-philosophy__mission-card,
+  #company-information .okg-company-typo-philosophy__mission-card + .okg-company-typo-philosophy__mission-card {
+    width: min(43vw, 9.1rem);
+    padding: 0.9rem 0.72rem;
+  }
+
+  #company-information .okg-company-typo-philosophy__mission-card--partner {
+    width: min(47vw, 9.6rem);
+  }
+
+  #company-information .okg-company-typo-philosophy__mission-card .okg-company-typo-philosophy__card-text {
+    font-size: 0.7rem;
+    line-height: 1.5;
+  }
+
+  #company-information #history-overview .history-item {
+    padding-left: 32px !important;
+  }
+
+  #company-information #history-overview .history-year {
+    font-size: clamp(1.85rem, 11.2vw, 2.12rem) !important;
+  }
+
+  #company-information .profile-list dt,
+  #company-information .profile-list dd,
+  #company-information .profile-row strong {
+    font-size: 0.88rem;
+  }
+
+  #company-information .profile-row dd {
+    line-height: 1.72;
+  }
+}
+
+/* Screenshot feedback: final cascade guard for business page SP cards and contract diagram. */
+@media (max-width: 640px) {
+  .okg-bizhub.okg-bizhub .okg-bizhub__summary-body {
+    min-height: 132px;
+    padding: 22px 68px 24px 20px;
+  }
+
+  .okg-bizhub.okg-bizhub .okg-bizhub__summary-title {
+    gap: 8px;
+    font-size: 21px;
+    line-height: 1.32;
+  }
+
+  .okg-bizhub.okg-bizhub .okg-bizhub__summary-copy {
+    max-width: 25em;
+    font-size: 13px;
+    line-height: 1.65;
+  }
+
+  .okg-bizhub.okg-bizhub .okg-bizhub__summary-arrow {
+    right: 18px;
+    bottom: 18px;
+    width: 34px;
+    height: 34px;
+    font-size: 14px;
+  }
+
+  .okg-bizhub.okg-bizhub .okg-bizhub__summary-card .okg-bizhub__badge-coming-soon {
+    display: inline-flex;
+    align-items: center;
+    min-height: 22px;
+    padding: 3px 8px;
+    font-size: 11px;
+    line-height: 1;
+  }
+
+  .okg-bizhub.okg-bizhub .okg-bizhub__overview-figure {
+    width: min(100%, 360px);
+    min-height: 466px;
+    margin: 0 auto;
+  }
+
+  .okg-bizhub.okg-bizhub .okg-bizhub__overview-orbit-ring {
+    display: block;
+  }
+
+  .okg-bizhub.okg-bizhub .okg-bizhub__overview-orbit-ring--outer {
+    top: 210px;
+    width: min(86vw, 326px);
+    height: min(86vw, 326px);
+  }
+
+  .okg-bizhub.okg-bizhub .okg-bizhub__overview-orbit-ring--middle {
+    top: 210px;
+    width: min(64vw, 242px);
+    height: min(64vw, 242px);
+  }
+
+  .okg-bizhub.okg-bizhub .okg-bizhub__overview-orbit-ring--inner {
+    display: none;
+  }
+
+  .okg-bizhub.okg-bizhub .okg-bizhub__overview-core {
+    position: absolute;
+    top: 28px;
+    left: 50%;
+    width: min(45vw, 172px);
+    height: min(45vw, 172px);
+    min-height: 0;
+    margin: 0;
+    padding: 20px;
+    transform: translateX(-50%);
+  }
+
+  .okg-bizhub.okg-bizhub .okg-bizhub__overview-core-kicker {
+    font-size: 9px;
+  }
+
+  .okg-bizhub.okg-bizhub .okg-bizhub__overview-core-title {
+    margin-top: 10px;
+    font-size: 24px;
+  }
+
+  .okg-bizhub.okg-bizhub .okg-bizhub__overview-core-area {
+    margin-top: 8px;
+    font-size: 12px;
+  }
+
+  .okg-bizhub.okg-bizhub .okg-bizhub__overview-client-orbit {
+    display: block;
+  }
+
+  .okg-bizhub.okg-bizhub .okg-bizhub__overview-client-node {
+    position: absolute;
+    width: min(34vw, 126px);
+    height: min(34vw, 126px);
+    min-height: 0;
+    padding: 15px;
+  }
+
+  .okg-bizhub.okg-bizhub .okg-bizhub__overview-client-node--01 {
+    top: 236px;
+    left: 6px;
+  }
+
+  .okg-bizhub.okg-bizhub .okg-bizhub__overview-client-node--02 {
+    top: 236px;
+    right: 6px;
+  }
+
+  .okg-bizhub.okg-bizhub .okg-bizhub__overview-client-node--03 {
+    top: 340px;
+    left: 50%;
+    width: min(35vw, 132px);
+    transform: translateX(-50%);
+  }
+
+  .okg-bizhub.okg-bizhub .okg-bizhub__overview-client-num {
+    font-size: 11px;
+  }
+
+  .okg-bizhub.okg-bizhub .okg-bizhub__overview-client-name {
+    margin-top: 8px;
+    font-size: 14px;
+    line-height: 1.35;
+  }
+}
+
+@media (max-width: 420px) {
+  .okg-bizhub.okg-bizhub .okg-bizhub__summary-body {
+    padding-right: 62px;
+  }
+
+  .okg-bizhub.okg-bizhub .okg-bizhub__overview-figure {
+    min-height: 448px;
+  }
+
+  .okg-bizhub.okg-bizhub .okg-bizhub__overview-client-node--01,
+  .okg-bizhub.okg-bizhub .okg-bizhub__overview-client-node--02 {
+    top: 228px;
+  }
+
+  .okg-bizhub.okg-bizhub .okg-bizhub__overview-client-node--03 {
+    top: 324px;
+  }
+}
+
+/* Cross-page SP stabilization after the responsive review. */
+@media (max-width: 900px) {
+  #company-information .philosophy-pillars .pillar-label,
+  #company-information .philosophy-pillars .pillar-text,
+  #company-information .philosophy-list li,
+  #company-information .philosophy-list li span,
+  #company-information .profile-list dt,
+  #company-information .profile-list dd {
+    font-size: revert;
+  }
+
+  #company-information .profile-list dt,
+  #company-information .profile-list dd {
+    font-size: clamp(0.9rem, 3.6vw, 1rem);
+    line-height: 1.72;
+  }
+}
+
+@media (max-width: 768px) {
+  .l-recruit-main,
+  .l-teamwork-main,
+  .l-tech-main,
+  .okg-renewal,
+  .p-person-hero,
+  .p-person-dark,
+  .p-person-quote,
+  .p-person-others {
+    overflow-x: clip;
+  }
+
+  .is-recruit-animations-ready .l-recruit-main .js-interview-pop {
+    --interview-start-x: -22px;
+    --interview-overshoot-x: 8px;
+    transform: translate3d(-22px, 0, 0) scale(0.98);
+  }
+
+  .is-recruit-animations-ready .l-recruit-main .js-benefit-pop {
+    --benefit-start-x: -22px;
+    --benefit-overshoot-x: 8px;
+    transform: translate3d(-22px, 0, 0) scale(0.98);
+  }
+
+  .l-recruit-main .p-recruit-interview::before,
+  .l-recruit-main .p-recruit-interview::after,
+  .l-recruit-main .p-recruit-benefit::before,
+  .l-recruit-main .p-recruit-benefit::after {
+    width: calc(100% + 32px);
+  }
+
+  /* Keep interview cards centered on narrow screens. */
+  .l-recruit-main .p-recruit-interview {
+    overflow-x: clip;
+  }
+
+  .l-recruit-main .p-recruit-interview > .l-container {
+    box-sizing: border-box;
+    width: 100%;
+    max-width: none;
+    padding-inline: 14px;
+  }
+
+  .l-recruit-main .p-recruit-interview::before,
+  .l-recruit-main .p-recruit-interview::after {
+    left: 0;
+    width: 100%;
+    transform: none;
+  }
+
+  .l-recruit-main .p-recruit-interview::after {
+    opacity: 0.28;
+    background:
+      linear-gradient(135deg,
+        transparent 0 9%,
+        rgba(255, 255, 255, 0.55) 9% 13%,
+        transparent 13% 100%);
+  }
+
+  .l-recruit-main .p-recruit-interview__list {
+    gap: 22px;
+  }
+
+  .l-recruit-main .p-recruit-feature-trigger,
+  .l-recruit-main .p-recruit-feature {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .l-recruit-main .p-recruit-feature__panel--words {
+    padding: 30px 22px 28px;
+  }
+
+  .l-recruit-main .p-recruit-feature__body {
+    padding: 22px 22px 26px;
+  }
+
+  /* Inline desktop start positions must not move the card outside the viewport on SP. */
+  .is-recruit-animations-ready .l-recruit-main .js-interview-pop {
+    --interview-start-x: 0 !important;
+    --interview-overshoot-x: 0 !important;
+    transform: translate3d(0, 20px, 0) scale(0.98);
+  }
+
+  .is-recruit-animations-ready .l-recruit-main .js-interview-pop.is-visible {
+    animation: recruitInterviewSpRise 0.8s var(--interview-delay, 0ms) cubic-bezier(0.16, 1, 0.3, 1) both;
+  }
+
+  .l-tech-main {
+    min-height: 0;
+    overflow-y: visible;
+  }
+
+  .l-tech-main .p-tech-hero {
+    height: auto;
+    min-height: min(680px, 100svh);
+    padding: 108px 16px 84px;
+  }
+
+  .l-tech-main .p-tech-hero__content {
+    width: min(100%, 22rem);
+  }
+
+  .l-tech-main .p-tech-hero__title-en {
+    font-size: clamp(2rem, 11vw, 2.8rem);
+    letter-spacing: 0.1em;
+  }
+
+  .l-tech-main .p-tech-hero__title-jp {
+    font-size: clamp(1.9rem, 9vw, 2.45rem);
+    letter-spacing: 0.2em;
+  }
+
+  .l-tech-main .p-tech-wireframe {
+    width: min(112vw, 520px);
+    height: min(68vh, 430px);
+    opacity: 0.38;
+  }
+
+  .l-tech-main .p-tech-bg__coords--tr,
+  .l-tech-main .p-tech-bg__coords--br {
+    display: none;
+  }
+
+  .l-tech-main .p-tech-content {
+    margin-top: 0;
+    padding: 52px 16px 72px;
+  }
+
+  .l-tech-main .p-tech-message-block {
+    max-width: 100%;
+    padding: 32px 20px;
+  }
+
+  .l-teamwork-main .p-teamwork-hero {
+    height: auto;
+    min-height: min(620px, 100svh);
+    padding: 112px 0 82px;
+  }
+
+  .l-teamwork-main .p-teamwork-hero__content {
+    width: min(100%, 23rem);
+    padding-inline: 18px;
+  }
+
+  .l-teamwork-main .p-teamwork-hero__title {
+    font-size: clamp(1.9rem, 8.6vw, 2.35rem);
+    line-height: 1.52;
+    letter-spacing: 0.06em;
+  }
+
+  .l-teamwork-main .p-teamwork-hero__subtitle {
+    font-size: 0.92rem;
+    line-height: 1.85;
+  }
+
+  .l-teamwork-main .p-teamwork-section-header__en {
+    font-size: clamp(2rem, 10vw, 2.6rem);
+  }
+
+  .l-teamwork-main .p-teamwork-macro,
+  .l-teamwork-main .p-teamwork-support,
+  .l-teamwork-main .p-teamwork-gallery,
+  .l-teamwork-main .p-teamwork-back {
+    padding-block: 56px;
+  }
+
+  .l-teamwork-main .p-teamwork-chat__row {
+    gap: 10px;
+  }
+
+  .l-teamwork-main .p-teamwork-chat__bubble {
+    max-width: min(100%, calc(100vw - 112px));
+    line-height: 1.72;
+  }
+
+  .okg-renewal {
+    padding: 3rem 1rem 4.5rem;
+  }
+
+  .okg-renewal__hero {
+    gap: 1.55rem;
+    margin-bottom: 2.4rem;
+  }
+
+  .okg-renewal__hero-media,
+  .okg-renewal__hero-image {
+    min-height: clamp(220px, 62vw, 300px);
+    border-radius: 18px;
+  }
+
+  .okg-renewal__title {
+    font-size: clamp(2.15rem, 8.3vw, 3.1rem);
+    line-height: 1.45;
+  }
+
+  .okg-renewal__body {
+    padding: 1.8rem 1.2rem;
+    border-radius: 18px;
+  }
+
+  .okg-renewal__body p {
+    font-size: clamp(1rem, 4.2vw, 1.12rem);
+    line-height: 1.95;
+  }
+
+  .p-person-hero {
+    padding: 92px 0 58px;
+  }
+
+  .p-person-hero::before {
+    width: 210px;
+    height: 210px;
+    top: -86px;
+    right: -82px;
+  }
+
+  .p-person-hero::after {
+    display: none;
+  }
+
+  .p-person-plain__inner,
+  .p-person-quote__inner {
+    padding-inline: 18px;
+  }
+
+  .p-person-timetable__item {
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .p-person-timetable__time {
+    width: 5.6rem;
+  }
+}
+
+@keyframes recruitInterviewSpRise {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, 20px, 0) scale(0.98);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+}
+
+@media (max-width: 430px) {
+  .l-recruit-main .p-recruit-interview > .l-container {
+    padding-inline: 12px;
+  }
+
+  .l-recruit-main .p-recruit-feature__panel--words,
+  .l-recruit-main .p-recruit-feature__body {
+    padding-inline: 20px;
+  }
+}
+
+@media (max-width: 430px) {
+  .okg-bizhub.okg-bizhub .okg-bizhub__overview-core {
+    width: min(43vw, 158px);
+    height: min(43vw, 158px);
+  }
+
+  .okg-bizhub.okg-bizhub .okg-bizhub__overview-client-node {
+    width: min(33vw, 118px);
+    height: min(33vw, 118px);
+    padding: 12px;
+  }
+
+  .okg-bizhub.okg-bizhub .okg-bizhub__overview-client-name {
+    font-size: 13px;
+  }
+
+  .l-teamwork-main .p-teamwork-chat__avatar {
+    width: 48px;
+  }
+
+  .l-teamwork-main .p-teamwork-chat__bubble {
+    max-width: calc(100vw - 88px);
+    padding: 16px 15px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .is-recruit-animations-ready .l-recruit-main .js-interview-pop,
+  .is-recruit-animations-ready .l-recruit-main .js-benefit-pop,
+  .l-tech-main .p-tech-message-block {
+    opacity: 1 !important;
+    transform: none !important;
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+/* Recruit benefits readability pass. */
+.l-recruit-main .p-recruit-benefits {
+  padding-block: 116px;
+}
+
+.l-recruit-main .p-recruit-benefits__intro {
+  gap: 28px;
+  margin-bottom: 42px;
+}
+
+.l-recruit-main .p-recruit-benefits__intro-main {
+  padding: 46px 48px;
+}
+
+.l-recruit-main .p-recruit-benefits__eyebrow {
+  font-size: 0.94rem;
+}
+
+.l-recruit-main .p-recruit-benefits__title {
+  font-size: clamp(2.9rem, 4.4vw, 4.5rem);
+}
+
+.l-recruit-main .p-recruit-benefits__headline {
+  font-size: clamp(1.2rem, 1.5vw, 1.35rem);
+}
+
+.l-recruit-main .p-recruit-benefits__lead {
+  padding: 42px 44px;
+  font-size: clamp(1.02rem, 1.15vw, 1.1rem);
+}
+
+.l-recruit-main .p-recruit-benefits__groups {
+  gap: 38px;
+}
+
+.l-recruit-main .p-recruit-benefit-group {
+  padding: 42px 42px 44px;
+}
+
+.l-recruit-main .p-recruit-benefit-group__head {
+  grid-template-columns: 110px minmax(0, 1fr);
+  gap: 30px;
+  margin-bottom: 34px;
+}
+
+.l-recruit-main .p-recruit-benefit-group__index {
+  font-size: clamp(3.5rem, 5.2vw, 5.2rem);
+}
+
+.l-recruit-main .p-recruit-benefit-group__eyebrow {
+  font-size: 0.9rem;
+}
+
+.l-recruit-main .p-recruit-benefit-group__title {
+  font-size: clamp(1.75rem, 3vw, 2.2rem);
+}
+
+.l-recruit-main .p-recruit-benefit-group__lead {
+  font-size: clamp(1.04rem, 1.2vw, 1.1rem);
+}
+
+.l-recruit-main .p-recruit-benefit-group__items {
+  gap: 24px;
+}
+
+.l-recruit-main .p-recruit-benefit__title-bar {
+  padding: 24px 30px;
+}
+
+.l-recruit-main .p-recruit-benefit__title-text {
+  font-size: clamp(1.18rem, 1.4vw, 1.3rem);
+}
+
+.l-recruit-main .p-recruit-benefit__panel {
+  padding: 32px 32px 34px;
+}
+
+.l-recruit-main .p-recruit-benefit__description {
+  font-size: clamp(1.04rem, 1.15vw, 1.1rem);
+}
+
+@media (max-width: 768px) {
+  .l-recruit-main .p-recruit-benefits {
+    padding: 96px 0 104px;
+  }
+
+  .l-recruit-main .p-recruit-benefits__intro {
+    gap: 20px;
+    margin-bottom: 34px;
+  }
+
+  .l-recruit-main .p-recruit-benefits__intro-main,
+  .l-recruit-main .p-recruit-benefits__lead {
+    padding: 34px 24px;
+  }
+
+  .l-recruit-main .p-recruit-benefits__headline {
+    font-size: 1.16rem;
+  }
+
+  .l-recruit-main .p-recruit-benefit-group {
+    padding: 32px 22px 30px;
+  }
+
+  .l-recruit-main .p-recruit-benefit-group__head {
+    grid-template-columns: 1fr;
+    gap: 10px;
+    margin-bottom: 22px;
+  }
+
+  .l-recruit-main .p-recruit-benefit-group__index {
+    font-size: 3rem;
+  }
+
+  .l-recruit-main .p-recruit-benefit-group__eyebrow {
+    font-size: 0.82rem;
+  }
+
+  .l-recruit-main .p-recruit-benefit-group__title {
+    font-size: 1.52rem;
+  }
+
+  .l-recruit-main .p-recruit-benefit-group__lead {
+    font-size: 1.02rem;
+  }
+
+  .l-recruit-main .p-recruit-benefit__title-bar {
+    padding: 22px;
+  }
+
+  .l-recruit-main .p-recruit-benefit__title-text {
+    font-size: 1.14rem;
+  }
+
+  .l-recruit-main .p-recruit-benefit__panel {
+    padding: 28px 22px 30px;
+  }
+
+  .l-recruit-main .p-recruit-benefit__description {
+    font-size: 1.02rem;
+  }
+}
+
+/* Carry the craft background into the preceding essence section and widen the craft sheet. */
+.l-recruit-main .p-recruit-essence {
+  isolation: isolate;
+  background:
+    linear-gradient(90deg, rgba(9, 41, 94, 0.055) 1px, transparent 1px),
+    linear-gradient(180deg, rgba(9, 41, 94, 0.045) 1px, transparent 1px),
+    #f8f9f6;
+  background-size: 44px 44px;
+}
+
+.l-recruit-main .p-recruit-essence::before {
+  z-index: 0;
+}
+
+.l-recruit-main .p-recruit-essence::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(120deg,
+      transparent 0 48%,
+      rgba(215, 153, 52, 0.16) 48% 49%,
+      transparent 49% 100%),
+    radial-gradient(circle at 84% 18%, rgba(11, 52, 134, 0.08), transparent 28%);
+}
+
+.l-recruit-main .p-recruit-essence > .l-container {
+  position: relative;
+  z-index: 1;
+}
+
+.l-recruit-main .p-recruit-craft__sheet {
+  width: min(1280px, 100%);
+  grid-template-columns: minmax(0, 1.08fr) minmax(440px, 0.92fr);
+  gap: clamp(40px, 4vw, 64px);
+}
+
+.l-recruit-main .p-recruit-craft__title {
+  max-width: 14em;
+  text-wrap: balance;
+}
+
+@media (max-width: 1024px) {
+  .l-recruit-main .p-recruit-craft__sheet {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+}
+
+/* Carry the craft background into CULTURE and normalize its SP geometry. */
+.l-recruit-main .p-recruit-concept {
+  isolation: isolate;
+  background:
+    linear-gradient(90deg, rgba(9, 41, 94, 0.055) 1px, transparent 1px),
+    linear-gradient(180deg, rgba(9, 41, 94, 0.045) 1px, transparent 1px),
+    #f8f9f6;
+  background-size: 44px 44px;
+}
+
+.l-recruit-main .p-recruit-concept::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(120deg,
+      transparent 0 48%,
+      rgba(215, 153, 52, 0.16) 48% 49%,
+      transparent 49% 100%),
+    radial-gradient(circle at 84% 18%, rgba(11, 52, 134, 0.08), transparent 28%);
+}
+
+.l-recruit-main .p-recruit-concept > .l-container {
+  position: relative;
+  z-index: 1;
+}
+
+@media (max-width: 768px) {
+  .l-recruit-main .p-recruit-concept {
+    overflow-x: clip;
+  }
+
+  .l-recruit-main .p-recruit-concept > .l-container {
+    box-sizing: border-box;
+    width: 100%;
+    max-width: none;
+    padding-inline: 14px;
+  }
+
+  .l-recruit-main .p-recruit-concept__grid,
+  .l-recruit-main .p-recruit-culture-card {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+  }
+
+  /* Inline desktop positions are intentionally disabled on SP. */
+  .is-recruit-animations-ready .l-recruit-main .js-culture-pop {
+    --culture-start-x: 0 !important;
+    --culture-overshoot-x: 0 !important;
+    transform: translate3d(0, 20px, 0) scale(0.98);
+  }
+
+  .is-recruit-animations-ready .l-recruit-main .js-culture-pop.is-visible {
+    animation: recruitCultureSpRise 0.8s var(--culture-delay, 0ms) cubic-bezier(0.16, 1, 0.3, 1) both;
+  }
+}
+
+@media (max-width: 430px) {
+  .l-recruit-main .p-recruit-concept > .l-container {
+    padding-inline: 12px;
+  }
+}
+
+@media (max-width: 640px) {
+  .l-recruit-main .p-recruit-concept {
+    background-size: 28px 28px;
+  }
+}
+
+@keyframes recruitCultureSpRise {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, 20px, 0) scale(0.98);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .is-recruit-animations-ready .l-recruit-main .js-culture-pop {
+    opacity: 1 !important;
+    transform: none !important;
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+/* Give the craft closing statement a heading-scale, three-line rhythm. */
+.l-recruit-main .p-recruit-craft__closing {
+  max-width: none;
+  margin: 34px 0 0;
+  font-size: clamp(2rem, 3.2vw, 3rem);
+  line-height: 1.55;
+  letter-spacing: 0.02em;
+  text-align: left;
+  text-wrap: balance;
+}
+
+.l-recruit-main .p-recruit-craft__closing-line {
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .l-recruit-main .p-recruit-craft__closing {
+    margin-top: 28px;
+    font-size: clamp(1.1rem, 5.2vw, 2rem);
+    line-height: 1.65;
+    letter-spacing: 0.02em;
+  }
+}
+
+/* Keep the craft title to four intentional lines at every viewport. */
+.l-recruit-main .p-recruit-craft__title-line {
+  display: block;
+  white-space: nowrap;
+}
+
+@media (max-width: 768px) {
+  .l-recruit-main .p-recruit-craft__title {
+    max-width: none;
+    font-size: clamp(1.65rem, 8.6vw, 2.45rem);
+    line-height: 1.5;
+    letter-spacing: 0.02em;
+  }
+}

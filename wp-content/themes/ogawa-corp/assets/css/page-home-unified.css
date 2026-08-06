@@ -420,7 +420,7 @@ body.front-page .okg-team-banner__image {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center 12%;
+  object-position: center 24%;
   transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -2301,7 +2301,7 @@ body.front-page .okg-team-banner__image {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center 12%;
+  object-position: center 24%;
 }
 
 
@@ -9303,4 +9303,68 @@ body.front-page #contents #message-section.okg-home-typo-section--message .okg-h
     line-height: 1.9 !important;
   }
 
+}
+
+/* Screenshot feedback: keep decorative geometry behind readable copy on SP. */
+@media (max-width: 760px) {
+  body.home #contents #message-section .okg-home-message-split__deco,
+  body.front-page #contents #message-section .okg-home-message-split__deco {
+    z-index: 0 !important;
+  }
+
+  body.home #contents #message-section .okg-home-message-split__deco-line--v,
+  body.front-page #contents #message-section .okg-home-message-split__deco-line--v,
+  body.home #contents #message-section .okg-home-message-split__deco-c--sm,
+  body.front-page #contents #message-section .okg-home-message-split__deco-c--sm {
+    display: none !important;
+  }
+
+  body.home #contents #message-section.okg-home-typo-section--message .t_biz__inner,
+  body.front-page #contents #message-section.okg-home-typo-section--message .t_biz__inner,
+  body.home #contents #message-section.okg-home-typo-section--message .okg-home-message-split__visual,
+  body.front-page #contents #message-section.okg-home-typo-section--message .okg-home-message-split__visual,
+  body.home #contents #message-section.okg-home-typo-section--message .okg-home-message-split__content,
+  body.front-page #contents #message-section.okg-home-typo-section--message .okg-home-message-split__content,
+  body.home #contents #message-section.okg-home-typo-section--message .okg-home-message-split__content-inner,
+  body.front-page #contents #message-section.okg-home-typo-section--message .okg-home-message-split__content-inner {
+    position: relative !important;
+    z-index: 1 !important;
+  }
+}
+
+@media (max-width: 430px) {
+  body.home #contents #message-section.okg-home-typo-section--message .okg-home-message-split__content-inner,
+  body.front-page #contents #message-section.okg-home-typo-section--message .okg-home-message-split__content-inner {
+    padding-left: 0 !important;
+    padding-right: 0.35rem !important;
+  }
+}
+
+/* SP overflow guard for full-bleed home sections. */
+@media (max-width: 760px) {
+  body.home #contents,
+  body.front-page #contents {
+    overflow-x: clip !important;
+  }
+
+  body.home #contents .okg-cv__stage,
+  body.front-page #contents .okg-cv__stage {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-inline: 0 !important;
+    overflow: clip !important;
+  }
+
+  body.home #contents .okg-cv__calli-art,
+  body.front-page #contents .okg-cv__calli-art {
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+    overflow: visible !important;
+  }
+
+  body.home #contents #message-section.okg-home-typo-section--message .okg-home-message-split__copy,
+  body.front-page #contents #message-section.okg-home-typo-section--message .okg-home-message-split__copy {
+    overflow-wrap: anywhere !important;
+  }
 }

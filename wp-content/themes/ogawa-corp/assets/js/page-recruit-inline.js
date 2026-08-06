@@ -4,7 +4,7 @@
 
         const centerTriggerOptions = {
             threshold: 0.01,
-            rootMargin: '-45% 0px -45% 0px'
+            rootMargin: '-10% 0px -10% 0px'
         };
 
         const fadeTargets = document.querySelectorAll('.l-recruit-main .js-fade-in, .l-recruit-main .js-fade-in-up');

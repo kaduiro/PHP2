@@ -62,7 +62,7 @@
 .l-teamwork-main .js-fade-in,
 .l-person-main .js-fade-in {
     opacity: 0;
-    transition: opacity 2.5s cubic-bezier(0.16, 1, 0.3, 1);
+    transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .l-recruit-main .js-fade-in.is-visible,
@@ -75,8 +75,8 @@
 .l-teamwork-main .js-fade-in-up,
 .l-person-main .js-fade-in-up {
     opacity: 0;
-    transform: translateY(40px);
-    transition: opacity 2.5s cubic-bezier(0.16, 1, 0.3, 1), transform 2.5s cubic-bezier(0.16, 1, 0.3, 1);
+    transform: translateY(24px);
+    transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .l-recruit-main .js-fade-in-up.is-visible,
@@ -1134,6 +1134,377 @@ body.is-recruit-modal-open {
 }
 
 
+/* Section 4.5: Human Craft (AI時代の現場価値訴求) */
+.p-recruit-craft {
+    position: relative;
+    padding: clamp(84px, 9vw, 132px) 20px;
+    overflow: hidden;
+    background:
+        linear-gradient(90deg, rgba(9, 41, 94, 0.055) 1px, transparent 1px),
+        linear-gradient(180deg, rgba(9, 41, 94, 0.045) 1px, transparent 1px),
+        #f8f9f6;
+    background-size: 44px 44px;
+}
+
+.p-recruit-craft::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background:
+        linear-gradient(120deg, transparent 0 48%, rgba(215, 153, 52, 0.16) 48% 49%, transparent 49% 100%),
+        radial-gradient(circle at 84% 18%, rgba(11, 52, 134, 0.08), transparent 28%);
+}
+
+.p-recruit-craft__sheet {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: minmax(0, 0.92fr) minmax(340px, 1.08fr);
+    gap: clamp(36px, 5vw, 72px);
+    width: min(1120px, 100%);
+    margin: 0 auto;
+}
+
+.p-recruit-craft__lead {
+    align-self: end;
+    padding-top: 18px;
+}
+
+.p-recruit-craft__kicker,
+.p-recruit-craft__path-label {
+    margin: 0 0 18px;
+    color: #0b3486;
+    font-family: var(--f-recruit-title);
+    font-size: 0.76rem;
+    font-weight: 800;
+    letter-spacing: 0.18em;
+}
+
+.p-recruit-craft__title {
+    margin: 0;
+    color: #182033;
+    font-family: var(--font-ja-serif);
+    font-size: clamp(2.15rem, 3.6vw, 4.2rem);
+    font-weight: 700;
+    line-height: 1.42;
+    letter-spacing: 0.03em;
+}
+
+.p-recruit-craft__text {
+    max-width: 36em;
+    margin: 28px 0 0;
+    color: #313946;
+    font-size: clamp(1rem, 1.18vw, 1.12rem);
+    font-weight: 500;
+    line-height: 2.02;
+    letter-spacing: 0.035em;
+}
+
+.p-recruit-craft__photo {
+    position: relative;
+    min-height: 360px;
+    overflow: hidden;
+    border: 1px solid rgba(11, 52, 134, 0.2);
+    background: #0b224a;
+}
+
+.p-recruit-craft__photo::before,
+.p-recruit-craft__photo::after {
+    content: "";
+    position: absolute;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.p-recruit-craft__photo::before {
+    inset: 14px;
+    border: 1px solid rgba(255, 255, 255, 0.54);
+}
+
+.p-recruit-craft__photo::after {
+    right: 22px;
+    bottom: 22px;
+    width: 88px;
+    height: 8px;
+    background: #d89a32;
+}
+
+.p-recruit-craft__photo img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    min-height: 360px;
+    object-fit: cover;
+    object-position: center;
+    filter: saturate(0.92) contrast(1.04);
+}
+
+.p-recruit-craft__photo-caption {
+    position: absolute;
+    left: 24px;
+    right: 24px;
+    bottom: 28px;
+    z-index: 3;
+    margin: 0;
+    padding: 13px 16px 12px;
+    color: #fff;
+    background: rgba(9, 30, 68, 0.82);
+    font-size: clamp(1rem, 1.4vw, 1.22rem);
+    font-weight: 700;
+    line-height: 1.5;
+    letter-spacing: 0.04em;
+}
+
+.p-recruit-craft__principles {
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0;
+    margin-top: 8px;
+    border-top: 1px solid rgba(11, 52, 134, 0.28);
+    border-bottom: 1px solid rgba(11, 52, 134, 0.28);
+}
+
+.p-recruit-craft__principle {
+    position: relative;
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr);
+    gap: 14px 18px;
+    padding: 28px 28px 30px;
+}
+
+.p-recruit-craft__principle + .p-recruit-craft__principle {
+    border-left: 1px solid rgba(11, 52, 134, 0.18);
+}
+
+.p-recruit-craft__principle-mark {
+    display: grid;
+    place-items: center;
+    width: 44px;
+    height: 44px;
+    color: #0b3486;
+    border: 1px solid rgba(11, 52, 134, 0.32);
+    background: rgba(255, 255, 255, 0.62);
+    font-family: var(--font-ja-serif);
+    font-size: 1.35rem;
+    font-weight: 700;
+}
+
+.p-recruit-craft__principle-title {
+    align-self: center;
+    margin: 0;
+    color: #111927;
+    font-size: 1.18rem;
+    font-weight: 800;
+    line-height: 1.45;
+    letter-spacing: 0.04em;
+}
+
+.p-recruit-craft__principle-text {
+    grid-column: 2;
+    margin: 0;
+    color: #435060;
+    font-size: 0.94rem;
+    font-weight: 500;
+    line-height: 1.82;
+}
+
+.p-recruit-craft__path {
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: minmax(190px, 0.3fr) minmax(0, 1fr);
+    gap: 28px;
+    align-items: center;
+    margin-top: 18px;
+    padding: 28px;
+    border: 1px solid rgba(11, 52, 134, 0.22);
+    background: rgba(255, 255, 255, 0.58);
+}
+
+.p-recruit-craft__path-label {
+    margin: 0;
+}
+
+.p-recruit-craft__path-map {
+    display: grid;
+    grid-template-columns: minmax(190px, 0.36fr) minmax(0, 1fr);
+    gap: 28px;
+    align-items: center;
+}
+
+.p-recruit-craft__path-base {
+    position: relative;
+    margin: 0;
+    padding: 15px 18px;
+    color: #fff;
+    background: #0b3486;
+    font-size: 0.98rem;
+    font-weight: 800;
+    line-height: 1.45;
+    letter-spacing: 0.04em;
+}
+
+.p-recruit-craft__path-base::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: -28px;
+    width: 28px;
+    height: 1px;
+    background: #d89a32;
+}
+
+.p-recruit-craft__path-list {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 10px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.p-recruit-craft__path-list li {
+    min-height: 68px;
+    padding: 15px 14px;
+    color: #172033;
+    border: 1px solid rgba(216, 154, 50, 0.72);
+    background: rgba(255, 255, 255, 0.7);
+    font-size: 0.95rem;
+    font-weight: 800;
+    line-height: 1.45;
+}
+
+.p-recruit-craft__closing {
+    grid-column: 1 / -1;
+    max-width: 760px;
+    margin: 6px 0 0 auto;
+    color: #182033;
+    font-family: var(--font-ja-serif);
+    font-size: clamp(1.28rem, 2.1vw, 1.85rem);
+    font-weight: 700;
+    line-height: 1.78;
+    letter-spacing: 0.035em;
+    text-align: right;
+}
+
+@media (max-width: 900px) {
+    .p-recruit-craft__sheet {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .p-recruit-craft__lead {
+        padding-top: 0;
+    }
+
+    .p-recruit-craft__photo {
+        min-height: 300px;
+    }
+
+    .p-recruit-craft__photo img {
+        min-height: 300px;
+    }
+
+    .p-recruit-craft__principles {
+        grid-template-columns: 1fr;
+    }
+
+    .p-recruit-craft__principle + .p-recruit-craft__principle {
+        border-top: 1px solid rgba(11, 52, 134, 0.18);
+        border-left: 0;
+    }
+
+    .p-recruit-craft__path,
+    .p-recruit-craft__path-map {
+        grid-template-columns: 1fr;
+    }
+
+    .p-recruit-craft__path-base::after {
+        top: auto;
+        right: auto;
+        left: 22px;
+        bottom: -28px;
+        width: 1px;
+        height: 28px;
+    }
+
+    .p-recruit-craft__closing {
+        margin-left: 0;
+        text-align: left;
+    }
+}
+
+@media (max-width: 640px) {
+    .p-recruit-craft {
+        padding: 64px 14px;
+        background-size: 28px 28px;
+    }
+
+    .p-recruit-craft__title {
+        font-size: clamp(1.85rem, 8.6vw, 2.45rem);
+        line-height: 1.5;
+    }
+
+    .p-recruit-craft__text {
+        margin-top: 22px;
+        font-size: 0.96rem;
+        line-height: 1.9;
+    }
+
+    .p-recruit-craft__photo {
+        min-height: 232px;
+    }
+
+    .p-recruit-craft__photo img {
+        min-height: 232px;
+    }
+
+    .p-recruit-craft__photo-caption {
+        left: 14px;
+        right: 14px;
+        bottom: 16px;
+        padding: 11px 12px;
+        font-size: 0.96rem;
+    }
+
+    .p-recruit-craft__principle {
+        grid-template-columns: 38px minmax(0, 1fr);
+        gap: 10px 14px;
+        padding: 22px 0;
+    }
+
+    .p-recruit-craft__principle-mark {
+        width: 38px;
+        height: 38px;
+        font-size: 1.1rem;
+    }
+
+    .p-recruit-craft__principle-title {
+        font-size: 1.05rem;
+    }
+
+    .p-recruit-craft__principle-text {
+        font-size: 0.9rem;
+        line-height: 1.75;
+    }
+
+    .p-recruit-craft__path {
+        padding: 20px 0;
+        border-right: 0;
+        border-left: 0;
+    }
+
+    .p-recruit-craft__path-list {
+        grid-template-columns: 1fr;
+    }
+
+    .p-recruit-craft__path-list li {
+        min-height: 0;
+    }
+}
+
+
 /* Section 5: Interviews */
 .p-recruit-interview {
     position: relative;
@@ -1646,7 +2017,7 @@ body.is-recruit-modal-open {
 .p-recruit-benefits {
     position: relative;
     isolation: isolate;
-    padding: 100px 0;
+    padding: 116px 0;
     background: transparent;
     overflow: hidden;
 }
@@ -1697,14 +2068,14 @@ body.is-recruit-modal-open {
 .p-recruit-benefits__intro {
     display: grid;
     grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.08fr);
-    gap: 24px;
+    gap: 28px;
     align-items: stretch;
-    margin-bottom: 36px;
+    margin-bottom: 42px;
 }
 
 .p-recruit-benefits__intro-main {
     position: relative;
-    padding: 38px 40px;
+    padding: 46px 48px;
     background: linear-gradient(135deg, #0b3486 0%, #1748b3 100%);
     color: #fff;
     overflow: hidden;
@@ -1730,7 +2101,7 @@ body.is-recruit-modal-open {
     z-index: 1;
     margin: 0 0 16px;
     font-family: var(--f-recruit-title);
-    font-size: 0.9rem;
+    font-size: 0.94rem;
     letter-spacing: 0.24em;
     color: rgba(255, 255, 255, 0.72);
 }
@@ -1740,7 +2111,7 @@ body.is-recruit-modal-open {
     z-index: 1;
     margin: 0;
     font-family: var(--f-recruit-title);
-    font-size: clamp(2.6rem, 4vw, 4.2rem);
+    font-size: clamp(2.9rem, 4.4vw, 4.5rem);
     font-weight: 500;
     letter-spacing: 0.18em;
     line-height: 1;
@@ -1750,7 +2121,7 @@ body.is-recruit-modal-open {
     position: relative;
     z-index: 1;
     margin: 20px 0 0;
-    font-size: 1.2rem;
+    font-size: clamp(1.2rem, 1.5vw, 1.35rem);
     font-weight: 700;
     line-height: 1.8;
     letter-spacing: 0.05em;
@@ -1758,25 +2129,25 @@ body.is-recruit-modal-open {
 
 .p-recruit-benefits__lead {
     margin: 0;
-    padding: 36px 38px;
+    padding: 42px 44px;
     display: flex;
     align-items: center;
     background: rgba(255, 255, 255, 0.88);
     border: 1px solid rgba(11, 52, 134, 0.1);
     box-shadow: 0 18px 40px rgba(15, 23, 42, 0.06);
-    font-size: 1rem;
+    font-size: clamp(1.02rem, 1.15vw, 1.1rem);
     line-height: 2;
     color: #4b5563;
 }
 
 .p-recruit-benefits__groups {
     display: grid;
-    gap: 32px;
+    gap: 38px;
 }
 
 .p-recruit-benefit-group {
     position: relative;
-    padding: 34px 34px 36px;
+    padding: 42px 42px 44px;
     background: #fff;
     border: 1px solid rgba(11, 52, 134, 0.08);
     box-shadow: 0 18px 40px rgba(15, 23, 42, 0.06);
@@ -1791,16 +2162,16 @@ body.is-recruit-modal-open {
     position: relative;
     z-index: 1;
     display: grid;
-    grid-template-columns: 96px minmax(0, 1fr);
-    gap: 26px;
+    grid-template-columns: 110px minmax(0, 1fr);
+    gap: 30px;
     align-items: start;
-    margin-bottom: 28px;
+    margin-bottom: 34px;
 }
 
 .p-recruit-benefit-group__index {
     margin: 0;
     font-family: var(--f-recruit-title);
-    font-size: clamp(3.2rem, 5vw, 4.8rem);
+    font-size: clamp(3.5rem, 5.2vw, 5.2rem);
     line-height: 0.86;
     color: rgba(11, 52, 134, 0.13);
 }
@@ -1812,14 +2183,14 @@ body.is-recruit-modal-open {
 .p-recruit-benefit-group__eyebrow {
     margin: 0 0 10px;
     font-family: var(--f-recruit-title);
-    font-size: 0.82rem;
+    font-size: 0.9rem;
     letter-spacing: 0.22em;
     color: var(--c-recruit-primary);
 }
 
 .p-recruit-benefit-group__title {
     margin: 0;
-    font-size: clamp(1.6rem, 2.8vw, 2rem);
+    font-size: clamp(1.75rem, 3vw, 2.2rem);
     line-height: 1.35;
     letter-spacing: 0.04em;
     color: #0f172a;
@@ -1827,7 +2198,7 @@ body.is-recruit-modal-open {
 
 .p-recruit-benefit-group__lead {
     margin: 12px 0 0;
-    font-size: 1rem;
+    font-size: clamp(1.04rem, 1.2vw, 1.1rem);
     line-height: 1.95;
     color: #475569;
 }
@@ -1837,7 +2208,7 @@ body.is-recruit-modal-open {
     z-index: 1;
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 20px;
+    gap: 24px;
 }
 
 .p-recruit-benefit-group__items--single {
@@ -1889,21 +2260,21 @@ body.is-recruit-modal-open {
 
 .p-recruit-benefit__title-bar {
     margin: 0;
-    padding: 22px 28px;
+    padding: 24px 30px;
     display: block;
     background: linear-gradient(135deg, #0b3486 0%, #1748b3 100%);
     color: #fff;
 }
 
 .p-recruit-benefit__title-text {
-    font-size: 1.14rem;
+    font-size: clamp(1.18rem, 1.4vw, 1.3rem);
     font-weight: 700;
     line-height: 1.7;
     letter-spacing: 0.04em;
 }
 
 .p-recruit-benefit__panel {
-    padding: 28px 28px 30px;
+    padding: 32px 32px 34px;
     background: rgba(255, 255, 255, 0.98);
     border: 1px solid rgba(17, 24, 39, 0.08);
     border-top: none;
@@ -1916,7 +2287,7 @@ body.is-recruit-modal-open {
 
 .p-recruit-benefit__description {
     margin: 0;
-    font-size: 1rem;
+    font-size: clamp(1.04rem, 1.15vw, 1.1rem);
     line-height: 2;
     color: #4b5563;
 }
@@ -2296,6 +2667,10 @@ body.is-recruit-modal-open {
 }
 
 @media (max-width: 768px) {
+    .p-recruit-benefits {
+        padding: 96px 0 104px;
+    }
+
     .p-recruit-hero {
         height: 70vh;
     }
@@ -2414,11 +2789,11 @@ body.is-recruit-modal-open {
 
     .p-recruit-benefits__intro-main,
     .p-recruit-benefits__lead {
-        padding: 28px 24px;
+        padding: 34px 24px;
     }
 
     .p-recruit-benefits__headline {
-        font-size: 1.05rem;
+        font-size: 1.16rem;
         letter-spacing: 0.03em;
     }
 
@@ -2476,7 +2851,7 @@ body.is-recruit-modal-open {
     }
 
     .p-recruit-benefit-group {
-        padding: 26px 20px 24px;
+        padding: 32px 22px 30px;
     }
 
     .p-recruit-benefit-group__head {
@@ -2486,39 +2861,39 @@ body.is-recruit-modal-open {
     }
 
     .p-recruit-benefit-group__index {
-        font-size: 2.8rem;
+        font-size: 3rem;
     }
 
     .p-recruit-benefit-group__eyebrow {
-        font-size: 0.75rem;
+        font-size: 0.82rem;
     }
 
     .p-recruit-benefit-group__title {
-        font-size: 1.35rem;
+        font-size: 1.52rem;
     }
 
     .p-recruit-benefit-group__lead {
         margin-top: 10px;
-        font-size: 0.95rem;
+        font-size: 1.02rem;
     }
 
     .p-recruit-benefit__title-bar {
         grid-template-columns: 56px minmax(0, 1fr);
         gap: 14px;
-        padding: 18px 20px;
+        padding: 22px 22px;
     }
 
     .p-recruit-benefit__title-text {
-        font-size: 1.02rem;
+        font-size: 1.14rem;
         line-height: 1.7;
     }
 
     .p-recruit-benefit__panel {
-        padding: 22px 20px 24px;
+        padding: 28px 22px 30px;
     }
 
     .p-recruit-benefit__description {
-        font-size: 0.95rem;
+        font-size: 1.02rem;
     }
 
     .p-recruit-list__row {
