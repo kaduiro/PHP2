@@ -47,6 +47,7 @@ body.okg-mobile-open {
 }
 
 .okg-smart-header__inner {
+  box-sizing: border-box;
   position: relative;
   z-index: 2;
   width: min(1400px, 100%);
@@ -563,7 +564,8 @@ body.admin-bar .okg-smart-header {
 
 @media (max-width: 1100px) {
   .okg-smart-header__inner {
-    grid-template-columns: auto 1fr auto;
+    display: flex;
+    justify-content: space-between;
   }
 
   .okg-smart-header__nav,
@@ -573,7 +575,7 @@ body.admin-bar .okg-smart-header {
 
   .okg-smart-header__menu-toggle {
     display: inline-flex;
-    justify-self: end;
+    margin-left: auto;
   }
 }
 

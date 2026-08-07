@@ -163,7 +163,7 @@ html {
   font-size: 16px;
 }
 
-/* ── ベースフォント（main.css 等の上書きを防ぐ） ── */
+/* ── ベースフォントを全ページで統一 ── */
 body {
   font-family: var(--font-ja, "Noto Sans JP", "Hiragino Kaku Gothic ProN", sans-serif);
   font-size: var(--fs-base, 16px);
