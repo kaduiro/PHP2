@@ -11,6 +11,7 @@
   --okg-footer-col-company: minmax(240px, 320px);
   --okg-footer-col-nav: minmax(210px, 280px);
   --okg-footer-col-map: minmax(340px, 520px);
+  --okg-footer-side-padding: clamp(20px, 3vw, 48px);
   margin: 0;
   padding: 0;
   color: var(--okg-footer-text);
@@ -47,11 +48,11 @@
   width: 100%;
   max-width: none;
   margin-inline: 0;
-  padding-inline: clamp(20px, 3vw, 48px);
+  padding-inline: var(--okg-footer-side-padding);
 }
 
 #okg-global-footer .okg-footer__inner {
-  padding: 44px 0 0;
+  padding-block: 44px 0;
 }
 
 #okg-global-footer .okg-footer__top-nav-list {
@@ -302,7 +303,7 @@
 }
 
 #okg-global-footer .okg-footer__bottom {
-  padding: 18px 0 24px;
+  padding-block: 18px 24px;
   border-top: 1px solid var(--okg-footer-line-soft);
   display: flex;
   align-items: center;
@@ -381,7 +382,7 @@
 
 @media (max-width: 768px) {
   #okg-global-footer .okg-footer__inner {
-    padding: 38px 0 0;
+    padding-block: 38px 0;
   }
 
   #okg-global-footer .okg-footer__content {
@@ -429,7 +430,7 @@
   }
 
   #okg-global-footer .okg-footer__bottom {
-    padding: 16px 0 22px;
+    padding-block: 16px 22px;
     flex-direction: column;
     align-items: flex-start;
   }

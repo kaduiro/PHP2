@@ -221,13 +221,15 @@ body {
 }
 
 .p-contact-input--zip {
-    width: 120px;
+    width: min(120px, 100%);
+    max-width: 100%;
     display: inline-block;
     margin-left: 5px;
 }
 
 .p-contact-input--pref {
-    width: 150px;
+    width: min(150px, 100%);
+    max-width: 100%;
     display: inline-block;
     margin-left: 5px;
 }
@@ -256,7 +258,8 @@ body {
     background-color: var(--c-contact-primary);
     color: #fff;
     border: none;
-    padding: 20px 80px;
+    padding: 18px 48px;
+    max-width: 100%;
     font-size: 1.2rem;
     cursor: pointer;
     transition: opacity 0.3s;
@@ -280,5 +283,22 @@ body {
 
     .p-contact-hero__jp {
         font-size: 2.2rem;
+    }
+
+    .p-contact-address-group {
+        align-items: stretch;
+    }
+
+    .p-contact-input--zip,
+    .p-contact-input--pref {
+        flex: 1 1 140px;
+        width: auto;
+        margin-left: 0;
+    }
+
+    .p-contact-btn {
+        width: min(100%, 320px);
+        padding: 16px 28px;
+        font-size: 1.05rem;
     }
 }

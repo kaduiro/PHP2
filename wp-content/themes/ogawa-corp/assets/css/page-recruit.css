@@ -1329,7 +1329,7 @@ body.is-recruit-modal-open {
 .p-recruit-craft__path-map {
     display: grid;
     grid-template-columns: minmax(190px, 0.36fr) minmax(0, 1fr);
-    gap: 28px;
+    gap: 48px;
     align-items: center;
 }
 
@@ -1349,30 +1349,70 @@ body.is-recruit-modal-open {
     content: "";
     position: absolute;
     top: 50%;
-    right: -28px;
-    width: 28px;
+    right: -24px;
+    width: 24px;
     height: 1px;
     background: #d89a32;
 }
 
 .p-recruit-craft__path-list {
+    position: relative;
     display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns: minmax(0, 1fr);
     gap: 10px;
     margin: 0;
     padding: 0;
     list-style: none;
 }
 
+.p-recruit-craft__path-list::before {
+    content: "";
+    position: absolute;
+    top: 34px;
+    bottom: 34px;
+    left: -24px;
+    width: 1px;
+    background: #d89a32;
+}
+
 .p-recruit-craft__path-list li {
+    position: relative;
+    display: grid;
+    place-items: center;
     min-height: 68px;
     padding: 15px 14px;
+    box-sizing: border-box;
     color: #172033;
     border: 1px solid rgba(216, 154, 50, 0.72);
     background: rgba(255, 255, 255, 0.7);
     font-size: 0.95rem;
     font-weight: 800;
     line-height: 1.45;
+    text-align: center;
+}
+
+.p-recruit-craft__path-list li::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: -24px;
+    width: 24px;
+    height: 1px;
+    background: #d89a32;
+    transform: translateY(-50%);
+}
+
+.p-recruit-craft__path-list li::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: -7px;
+    width: 0;
+    height: 0;
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+    border-left: 7px solid #d89a32;
+    transform: translateY(-50%);
 }
 
 .p-recruit-craft__closing {
@@ -1420,13 +1460,27 @@ body.is-recruit-modal-open {
         grid-template-columns: 1fr;
     }
 
+    .p-recruit-craft__path-map {
+        gap: 28px;
+    }
+
     .p-recruit-craft__path-base::after {
-        top: auto;
-        right: auto;
-        left: 22px;
-        bottom: -28px;
-        width: 1px;
-        height: 28px;
+        display: none;
+    }
+
+    .p-recruit-craft__path-list {
+        padding-left: 36px;
+    }
+
+    .p-recruit-craft__path-list::before {
+        top: -28px;
+        bottom: 34px;
+        left: 18px;
+    }
+
+    .p-recruit-craft__path-list li::before {
+        left: -18px;
+        width: 18px;
     }
 
     .p-recruit-craft__closing {

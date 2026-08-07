@@ -183,8 +183,11 @@
     }
 
     .p-tech-hero__title-jp {
-        font-size: 2.2rem;
-        letter-spacing: 0.3em;
+        width: min(100%, 18rem);
+        margin-inline: auto;
+        font-size: clamp(1.9rem, 9vw, 2.2rem);
+        letter-spacing: 0.08em;
+        line-height: 1.35;
     }
 
     .p-tech-hero__text {

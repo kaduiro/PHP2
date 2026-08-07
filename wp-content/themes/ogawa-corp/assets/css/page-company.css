@@ -104,9 +104,9 @@ main#company-information {
     color: #fff;
     margin-bottom: 0;
     position: relative;
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/wp-content/themes/ogawa-corp/assets/images/company/ogawagenba.jpg');
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/wp-content/themes/ogawa-corp/assets/images/company/ceo-portrait-smile-2026.webp');
     background-size: cover;
-    background-position: center;
+    background-position: center 22%;
 }
 
 .profile-header-group {
@@ -116,12 +116,13 @@ main#company-information {
 
 .profile-label {
     display: block;
-    font-size: var(--fs-xs);
+    font-size: var(--fs-sm, 1rem);
     font-weight: 700;
-    margin-bottom: 20px;
-    letter-spacing: 0.1em;
+    margin-bottom: 22px;
+    letter-spacing: 0.15em;
     font-family: "Helvetica Neue", Arial, sans-serif;
     text-transform: capitalize;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.45);
 }
 
 .profile-label::before {
@@ -133,17 +134,18 @@ main#company-information {
 }
 
 .profile-main-heading {
-    font-size: clamp(2.2rem, 5vw, 4rem);
-    font-weight: 700;
-    line-height: 1;
+    font-size: clamp(3rem, 7vw, 5.6rem);
+    font-weight: 900;
+    line-height: 1.05;
     font-family: "Yu Mincho", "Hiragino Mincho ProN", serif;
     margin: 0;
-    letter-spacing: 0.05em;
+    letter-spacing: 0.08em;
+    text-shadow: 0 4px 24px rgba(0, 0, 0, 0.5);
 }
 
 @media (max-width: 600px) {
     .profile-main-heading {
-        font-size: var(--fs-xl);
+        font-size: clamp(2.4rem, 11vw, 3.4rem);
     }
 }
 

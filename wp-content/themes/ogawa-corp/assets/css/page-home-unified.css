@@ -114,159 +114,48 @@ body.front-page .t_biz__btn .arrow {
 
 
 
-body.home .okg-smart-header,
-body.front-page .okg-smart-header {
-  background: rgba(255, 255, 255, 0.96);
-  border-bottom: 1px solid var(--home-line);
-  backdrop-filter: blur(14px) saturate(116%);
-  -webkit-backdrop-filter: blur(14px) saturate(116%);
-  color: var(--home-ink);
-}
+/* Header colors are defined by component-global-header.css. */
 
 /* ヒーロー動画の暗背景が透けないよう ::before の暗グラデーションを除去 */
-body.home .okg-smart-header::before,
-body.front-page .okg-smart-header::before {
-  content: none;
-}
 
 
 
-body.home .okg-smart-header.is-scrolled,
-body.home .okg-smart-header.is-dropdown-open,
-body.home .okg-smart-header.is-mobile-open,
-body.front-page .okg-smart-header.is-scrolled,
-body.front-page .okg-smart-header.is-dropdown-open,
-body.front-page .okg-smart-header.is-mobile-open {
-  background: rgba(255, 255, 255, 0.98);
-  border-color: rgba(27, 39, 68, 0.12);
-}
 
 
 
-body.home .okg-smart-header__brand-mark,
-body.front-page .okg-smart-header__brand-mark {
-  filter: drop-shadow(0 2px 8px rgba(27, 39, 68, 0.08));
-}
 
 
 
-body.home .okg-smart-header__brand-jp,
-body.home .okg-smart-header__link,
-body.home .okg-smart-header__company-trigger,
-body.home .okg-smart-header__cta,
-body.home .okg-smart-header__menu-toggle,
-body.home .okg-smart-header__drawer-list > li > a,
-body.home .okg-smart-header__drawer-link-main,
-body.home .okg-smart-header__accordion-toggle,
-body.home .okg-smart-header__drawer-back,
-body.front-page .okg-smart-header__brand-jp,
-body.front-page .okg-smart-header__link,
-body.front-page .okg-smart-header__company-trigger,
-body.front-page .okg-smart-header__cta,
-body.front-page .okg-smart-header__menu-toggle,
-body.front-page .okg-smart-header__drawer-list > li > a,
-body.front-page .okg-smart-header__drawer-link-main,
-body.front-page .okg-smart-header__accordion-toggle,
-body.front-page .okg-smart-header__drawer-back {
-  color: var(--home-ink);
-  text-shadow: none;
-}
 
 
 
-body.home .okg-smart-header__link:hover,
-body.home .okg-smart-header__link:focus-visible,
-body.home .okg-smart-header__company-trigger:hover,
-body.home .okg-smart-header__company-trigger:focus-visible,
-body.home .okg-smart-header__cta:hover,
-body.home .okg-smart-header__cta:focus-visible,
-body.front-page .okg-smart-header__link:hover,
-body.front-page .okg-smart-header__link:focus-visible,
-body.front-page .okg-smart-header__company-trigger:hover,
-body.front-page .okg-smart-header__company-trigger:focus-visible,
-body.front-page .okg-smart-header__cta:hover,
-body.front-page .okg-smart-header__cta:focus-visible {
-  color: var(--home-ink);
-}
 
 
 
-body.home .okg-smart-header__link::after,
-body.home .okg-smart-header__company-trigger::after,
-body.home .okg-smart-header__cta::after,
-body.front-page .okg-smart-header__link::after,
-body.front-page .okg-smart-header__company-trigger::after,
-body.front-page .okg-smart-header__cta::after {
-  height: 1px;
-  background: rgba(27, 39, 68, 0.3);
-}
 
 
 
-body.home .okg-smart-header__cta,
-body.front-page .okg-smart-header__cta {
-  padding-inline: 1rem;
-  border: 1px solid rgba(27, 39, 68, 0.14);
-  border-radius: 999px;
-  background: rgba(255, 255, 255, 0.72);
-}
 
 
 
-body.home .okg-smart-header__dropdown,
-body.front-page .okg-smart-header__dropdown {
-  border-color: rgba(27, 39, 68, 0.12);
-  border-radius: 18px;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(244, 246, 250, 0.98));
-  box-shadow: var(--home-shadow-soft);
-}
 
 
 
-body.home .okg-smart-header__dropdown::before,
-body.front-page .okg-smart-header__dropdown::before {
-  background: linear-gradient(90deg, rgba(27, 39, 68, 0), rgba(27, 39, 68, 0.22) 35%, rgba(27, 39, 68, 0));
-}
 
 
 
-body.home .okg-smart-header__dropdown-links a,
-body.front-page .okg-smart-header__dropdown-links a {
-  border-color: rgba(27, 39, 68, 0.12);
-  background: rgba(255, 255, 255, 0.84);
-  color: var(--home-ink);
-}
 
 
 
-body.home .okg-smart-header__menu-toggle,
-body.front-page .okg-smart-header__menu-toggle {
-  border-color: rgba(27, 39, 68, 0.12);
-  background: rgba(255, 255, 255, 0.86);
-}
 
 
 
-body.home .okg-smart-header__drawer-backdrop,
-body.front-page .okg-smart-header__drawer-backdrop {
-  background: rgba(27, 39, 68, 0.16);
-}
 
 
 
-body.home .okg-smart-header__drawer,
-body.front-page .okg-smart-header__drawer {
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.99), rgba(244, 246, 250, 0.99));
-  border-left-color: rgba(27, 39, 68, 0.12);
-}
 
 
 
-body.home .okg-smart-header__drawer-cta,
-body.front-page .okg-smart-header__drawer-cta {
-  background: var(--home-ink);
-  color: #ffffff;
-}
 
 
 
@@ -6474,7 +6363,7 @@ body.front-page #contents #message-section.okg-home-message-split .okg-home-mess
   width: 100%;
   aspect-ratio: 4 / 5;
   object-fit: cover;
-  object-position: center top;
+  object-position: 78% top;
   border-radius: 0;
   box-shadow: 0 24px 48px rgba(23, 34, 58, 0.13);
 }
@@ -7388,7 +7277,7 @@ body.front-page #contents #message-section.okg-home-typo-section--message .okg-h
   width: 100% !important;
   aspect-ratio: 4 / 5 !important;
   object-fit: cover !important;
-  object-position: center top !important;
+  object-position: 78% top !important;
   border-radius: 0 !important;
   box-shadow: none !important;
 }

@@ -273,3 +273,30 @@ body.front-page .ogawa-parallax-hero__link:focus-visible {
         font-size: clamp(4rem, 14vw, 6.5rem);
     }
 }
+
+/* Keep the people centered within each side of the recruit split image. */
+body.home .ogawa-parallax-front img,
+body.front-page .ogawa-parallax-front img {
+    object-position: center 58%;
+    transform: scale(1.020) translateX(-20%);
+    transform-origin: center;
+}
+
+body.home .ogawa-parallax-back img,
+body.front-page .ogawa-parallax-back img {
+    object-position: center 28%;
+    transform: scale(1.00) translateX(25%);
+    transform-origin: center;
+}
+
+@media (max-width: 768px) {
+    body.home .ogawa-parallax-front img,
+    body.front-page .ogawa-parallax-front img {
+        transform: scale(1.15) translate(-20%, -8%);
+    }
+
+    body.home .ogawa-parallax-back img,
+    body.front-page .ogawa-parallax-back img {
+        transform: scale(1.08) translate(15%, 5%);
+    }
+}

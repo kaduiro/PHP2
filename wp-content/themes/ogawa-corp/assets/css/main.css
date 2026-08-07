@@ -552,11 +552,11 @@ img {
 }
 
 body {
-  min-width: 320px;
+  min-width: 0;
   font-size: var(--fs-sm);
   font-family: "Noto Sans JP", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "segoe ui", "貂ｸ繧ｴ繧ｷ繝・け  Medium", "繝｡繧､繝ｪ繧ｪ", Meiryo, "・ｭ・ｳ ・ｰ繧ｴ繧ｷ繝・け", "MS PGothic", sans-serif;
   font-weight: 400;
-  overflow-x: hidden;
+  overflow-x: clip;
   color: #37414f
 }
 

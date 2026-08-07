@@ -208,20 +208,22 @@
     }
 
     var fadeUpElements = gsap.utils.toArray('.fade-up');
-    gsap.set(fadeUpElements, { opacity: 0, y: 40 });
-    fadeUpElements.forEach(function(el) {
-      gsap.to(el, {
-        opacity: 1,
-        y: 0,
-        duration: 1,
-        ease: 'power3.out',
-        scrollTrigger: {
-          trigger: el,
-          start: 'top 85%',
-          toggleActions: 'play none none reverse'
-        }
+    if (fadeUpElements.length > 0) {
+      gsap.set(fadeUpElements, { opacity: 0, y: 40 });
+      fadeUpElements.forEach(function(el) {
+        gsap.to(el, {
+          opacity: 1,
+          y: 0,
+          duration: 1,
+          ease: 'power3.out',
+          scrollTrigger: {
+            trigger: el,
+            start: 'top 85%',
+            toggleActions: 'play none none reverse'
+          }
+        });
       });
-    });
+    }
 
     // ===== NEWS 繧ｻ繧ｯ繧ｷ繝ｧ繝ｳ - 繝ｪ繧ｹ繝医い繧､繝・Β繧ｹ繧ｿ繧ｬ繝ｼ =====
     var newsItems = document.querySelectorAll('.news-list li');

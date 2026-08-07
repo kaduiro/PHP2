@@ -1,4 +1,13 @@
-/* ========================================================================== 
+/* ==========================================================================
+   History Page Header (overrides shared .page-header background)
+   ========================================================================== */
+#company-information .page-header {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/wp-content/themes/ogawa-corp/assets/images/company/history-assembly-2026.webp') !important;
+    background-size: cover !important;
+    background-position: center 30% !important;
+}
+
+/* ==========================================================================
    Company History Overview (Video Replica)
    ========================================================================== */
 #company-information #mk-history-zdive {
@@ -433,6 +442,11 @@ body.skip-zdive #company-information #history-overview.history-overview-section 
 }
 
 @media (max-width: 620px) {
+    #company-information .profile-main-heading {
+        font-size: clamp(2rem, 8.8vw, 2.35rem);
+        line-height: 1.25;
+    }
+
     #company-information #history-overview.history-overview-section {
         --ov-axis-left: 22px;
         --ov-pad-x: 18px;
@@ -492,7 +506,11 @@ body.skip-zdive #company-information #history-overview.history-overview-section 
     #company-information #history-overview .history-item {
         grid-template-columns: 1fr !important;
         gap: 12px !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 0 !important;
         padding: 22px 0 30px 36px !important;
+        box-sizing: border-box !important;
     }
 
     #company-information #history-overview .history-item::before {
@@ -503,13 +521,31 @@ body.skip-zdive #company-information #history-overview.history-overview-section 
     }
 
     #company-information #history-overview .history-left {
+        display: flex !important;
+        justify-content: flex-start !important;
+        width: 100% !important;
+        min-width: 0 !important;
         text-align: left !important;
         padding-top: 0 !important;
         padding-right: 0 !important;
     }
 
     #company-information #history-overview .history-year {
+        width: auto !important;
+        max-width: 100% !important;
         font-size: 2.35rem !important;
+    }
+
+    #company-information #history-overview .history-center.overview-center,
+    #company-information #history-overview .history-content.overview-content {
+        width: 100% !important;
+        min-width: 0 !important;
+        box-sizing: border-box !important;
+    }
+
+    #company-information #history-overview .history-title,
+    #company-information #history-overview .history-text {
+        overflow-wrap: anywhere;
     }
 
     #company-information #history-overview .history-text {
