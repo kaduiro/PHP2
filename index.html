@@ -46,11 +46,11 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
 <link rel="stylesheet" id="ogawa-corp-style-css" href="/wp-content/themes/ogawa-corp/style.css?ver=1.0.0" media="all">
 <link rel="stylesheet" id="ogawa-corp-typography-css" href="/wp-content/themes/ogawa-corp/assets/css/global/typography.css?ver=1786096312" media="all">
 <link rel="stylesheet" id="ogawa-corp-global-css" href="/wp-content/themes/ogawa-corp/assets/css/global/site.css?ver=1786096312" media="all">
-<link rel="stylesheet" id="ogawa-corp-global-header-style-css" href="/wp-content/themes/ogawa-corp/assets/css/component-global-header.css?ver=1786095205" media="all">
+<link rel="stylesheet" id="ogawa-corp-global-header-style-css" href="/wp-content/themes/ogawa-corp/assets/css/component-global-header.css?ver=1786191213" media="all">
 <link rel="stylesheet" id="ogawa-corp-global-footer-style-css" href="/wp-content/themes/ogawa-corp/assets/css/component-global-footer.css?ver=1786071902" media="all">
 <link rel="stylesheet" id="ogawa-corp-page-top-css" href="/wp-content/themes/ogawa-corp/assets/css/component-page-top.css?ver=1785395617" media="all">
 <link rel="stylesheet" id="dashicons-css" href="/wp-includes/css/dashicons.min.css?ver=7.0.3" media="all">
-<link rel="stylesheet" id="ogawa-home-page-css" href="/wp-content/themes/ogawa-corp/assets/css/page-home.css?ver=1786182815" media="all">
+<link rel="stylesheet" id="ogawa-home-page-css" href="/wp-content/themes/ogawa-corp/assets/css/page-home.css?ver=1786241352" media="all">
 <script id="jquery-core-js" src="/wp-includes/js/jquery/jquery.min.js?ver=3.7.1"></script>
 <script id="jquery-migrate-js" src="/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.4.1"></script>
 <link rel="EditURI" type="application/rsd+xml" title="RSD" href="/xmlrpc.php?rsd">
@@ -78,8 +78,6 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
             </ul>
         </nav>
 
-        <a class="okg-smart-header__cta" href="/contact/">お問い合わせ</a>
-
         <button class="okg-smart-header__menu-toggle" type="button" id="okg-menu-toggle" aria-expanded="false" aria-controls="okg-mobile-drawer" aria-label="メニューを開く" data-okg-menu-toggle>
             <span class="okg-smart-header__menu-toggle-box" aria-hidden="true">
                 <span class="okg-smart-header__menu-toggle-line"></span>
@@ -102,12 +100,21 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
                 <li><a href="/recruit/">採用情報</a></li>
                 <li><a href="/information/">お知らせ</a></li>
             </ul>
-            <a class="okg-smart-header__drawer-cta" href="/contact/">お問い合わせ</a>
         </nav>
     </div>
 </header>
+<div class="okg-nkh-home__loader" data-ogawa-loader role="status" aria-label="ページを読み込んでいます">
+    <video class="okg-nkh-home__loader-video" data-ogawa-loader-video autoplay muted playsinline preload="auto" aria-hidden="true">
+        <source src="/wp-content/themes/ogawa-corp/assets/images/common/video/loadind.mp4" type="video/mp4">
+    </video>
+</div>
 <main id="main-content" class="okg-nkh-home">
     <section class="okg-nkh-home__hero" aria-labelledby="okg-nkh-hero-heading" data-ogawa-hero>
+    <div class="okg-nkh-home__hero-video" aria-hidden="true">
+        <video data-ogawa-hero-video autoplay muted loop playsinline preload="auto" poster="/wp-content/themes/ogawa-corp/assets/images/common/video/hero-bg-poster.webp">
+            <source src="/wp-content/themes/ogawa-corp/assets/images/common/video/hero-bg-optimized.mp4" type="video/mp4">
+        </video>
+    </div>
     <div class="okg-nkh-home__hero-slides" aria-hidden="true">
                     <div class="okg-nkh-home__hero-slide is-active" data-ogawa-hero-slide>
                 <img class="okg-nkh-home__hero-image okg-nkh-home__hero-image--blueprint" src="/wp-content/themes/ogawa-corp/assets/images/recruit/hero-blueprint-review-2026.webp" alt="" width="1280" height="960" loading="eager" fetchpriority="high" decoding="async">
@@ -151,18 +158,7 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
     </a>
 </aside>
 </section>
-
-<nav class="okg-nkh-home__side-actions" aria-label="お問い合わせと採用情報">
-    <a class="okg-nkh-home__side-action okg-nkh-home__side-action--contact" href="/contact/">
-        <span class="dashicons dashicons-email-alt" aria-hidden="true"></span>
-        <span>お問い合わせ</span>
-    </a>
-    <a class="okg-nkh-home__side-action okg-nkh-home__side-action--recruit" href="/recruit/">
-        <span class="dashicons dashicons-edit-page" aria-hidden="true"></span>
-        <span>採用エントリー</span>
-    </a>
-</nav>
-    <section class="okg-nkh-home__team" aria-labelledby="okg-nkh-team-heading">
+    <section class="okg-nkh-home__team okg-nkh-home__feature okg-nkh-home__feature--team" aria-labelledby="okg-nkh-team-heading">
     <div class="okg-nkh-home__team-geometry" aria-hidden="true" data-okg-reveal>
         <span class="okg-nkh-home__team-deco okg-nkh-home__team-deco--circle"></span>
         <span class="okg-nkh-home__team-deco okg-nkh-home__team-deco--square"></span>
@@ -173,24 +169,51 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
     </div>
 
     <div class="okg-nkh-home__team-inner">
-        <header class="okg-nkh-home__team-header" data-okg-reveal>
-            <p class="okg-nkh-home__ghost-word" aria-hidden="true">TEAM</p>
-            <p class="okg-nkh-home__section-label">TEAM</p>
-            <h2 id="okg-nkh-team-heading" class="okg-nkh-home__section-title">
-                <span class="okg-nkh-home__team-title-line">人が、</span>
-                <span class="okg-nkh-home__team-title-line">小川工業をつくる。</span>
-            </h2>
-            <p class="okg-nkh-home__team-copy">一人では完成しない仕事だからこそ、技術を持ち寄り、声を掛け合い、信頼を積み重ねます。</p>
-        </header>
-
-        <div class="okg-nkh-home__team-visual" data-okg-reveal>
-            <p class="okg-nkh-home__team-visual-label" aria-hidden="true">PEOPLE / OGAWA KOGYO</p>
-            <figure class="okg-nkh-home__team-media">
+        <div class="okg-nkh-home__team-stage">
+            <figure class="okg-nkh-home__team-visual-main" data-okg-reveal>
                 <img src="/wp-content/themes/ogawa-corp/assets/images/common/group_photo.webp" alt="小川工業の社員集合写真" width="1478" height="1108" loading="lazy" decoding="async">
             </figure>
-            <p class="okg-nkh-home__team-caption">全ての出会いを、良かったに変える。</p>
+
+            <figure class="okg-nkh-home__team-visual-sub" data-okg-reveal>
+                <img src="/wp-content/themes/ogawa-corp/assets/images/common/recruit-culture-group-2026.webp" alt="小川工業の社員が協力して働く様子" width="1478" height="1108" loading="lazy" decoding="async">
+            </figure>
+
+            <header class="okg-nkh-home__team-copy-panel" data-okg-reveal>
+                <p class="okg-nkh-home__team-word" aria-hidden="true">TEAM</p>
+                <p class="okg-nkh-home__section-label">TEAM</p>
+                <h2 id="okg-nkh-team-heading">人が、小川工業をつくる。</h2>
+                <p class="okg-nkh-home__team-copy">一人では完成しない仕事だからこそ、技術を持ち寄り、声を掛け合い、信頼を積み重ねます。</p>
+                <p class="okg-nkh-home__team-note">全ての出会いを、良かったに変える。</p>
+            </header>
+
+            <p class="okg-nkh-home__team-stage-label" aria-hidden="true">PEOPLE / OGAWA KOGYO</p>
+
+            <a class="okg-nkh-home__team-cta" href="/recruit/teamwork/">
+                <span>チームワークを知る</span>
+                <span aria-hidden="true">→</span>
+            </a>
         </div>
     </div>
+</section>
+    <section class="okg-nkh-home__recruit" aria-labelledby="okg-nkh-recruit-heading">
+    <div class="okg-nkh-home__recruit-copy">
+        <img class="okg-nkh-home__recruit-copy-image" src="/wp-content/themes/ogawa-corp/assets/images/common/home-recruit-left-measurement-2026.webp" alt="" width="1280" height="960" loading="lazy" decoding="async">
+        <div class="okg-nkh-home__recruit-shade" aria-hidden="true"></div>
+        <div class="okg-nkh-home__recruit-copy-inner" data-okg-reveal>
+            <p class="okg-nkh-home__recruit-word" aria-hidden="true">RECRUIT</p>
+            <p class="okg-nkh-home__section-label">RECRUIT</p>
+            <h2 id="okg-nkh-recruit-heading">採用情報</h2>
+            <h3>積み重ねてきた信頼と技術を、<br>次の世代へ、あなたと。</h3>
+            <p>経験者の方はもちろん、新卒の方、建設業が未経験の方も歓迎します。仕事に真剣に向き合い、人も大切にしたい方と、これからの小川工業をつくっていきたいと考えています。</p>
+        </div>
+    </div>
+    <figure class="okg-nkh-home__recruit-media">
+        <img src="/wp-content/themes/ogawa-corp/assets/images/common/home-recruit-right-2026.webp" alt="建築現場で図面を確認する小川工業の社員" width="1280" height="960" loading="lazy" decoding="async">
+    </figure>
+    <a class="okg-nkh-home__recruit-cta" href="/recruit/">
+        <span>採用情報を詳しく見る</span>
+        <span aria-hidden="true">→</span>
+    </a>
 </section>
     <section class="okg-nkh-home__strengths" aria-labelledby="okg-nkh-strengths-heading">
     <header class="okg-nkh-home__strengths-header">
@@ -264,69 +287,101 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
             </article>
             </div>
 </section>
-    <section class="okg-nkh-home__business" aria-labelledby="okg-nkh-business-heading">
+    <section class="okg-nkh-home__business okg-nkh-home__feature okg-nkh-home__feature--business" aria-labelledby="okg-nkh-business-heading">
     <div class="okg-nkh-home__business-inner">
-        <header class="okg-nkh-home__business-header" data-okg-reveal>
-            <p class="okg-nkh-home__ghost-word" aria-hidden="true">BUSINESS</p>
-            <p class="okg-nkh-home__section-label">BUSINESS</p>
-            <h2 id="okg-nkh-business-heading" class="okg-nkh-home__section-title">事業紹介</h2>
-            <p class="okg-nkh-home__business-lead">建築を、計画から完成まで。</p>
-            <p class="okg-nkh-home__business-copy">基礎工事から建て方、木造作、内外装、電気、設備まで。専門工事業者と連携し、用途・予算・工期に合わせて建築を一括管理します。</p>
-        </header>
-
-        <div class="okg-nkh-home__business-stage">
-            <figure class="okg-nkh-home__business-media" data-okg-reveal>
+        <div class="okg-nkh-home__business-visual">
+            <figure class="okg-nkh-home__business-visual-main">
                 <img src="/wp-content/themes/ogawa-corp/assets/images/common/Wooden-building-construction.webp" alt="木造建築の施工現場" width="1478" height="1108" loading="lazy" decoding="async">
             </figure>
 
-            <ul class="okg-nkh-home__business-services" data-okg-reveal>
-                                    <li class="okg-nkh-home__business-service-item">
-                                                    <a class="okg-nkh-home__business-service" href="/business/garage/">
-                                                    <span class="okg-nkh-home__business-service-number" aria-hidden="true">01</span>
-                            <span class="okg-nkh-home__business-service-body">
-                                <span class="okg-nkh-home__business-service-title">ガレージ事業</span>
-                                <span class="okg-nkh-home__business-service-copy">倉庫・車庫・オフィスを一体化し、土地活用と働き方を支える複合ガレージです。</span>
+            <figure class="okg-nkh-home__business-visual-sub">
+                <img src="/wp-content/themes/ogawa-corp/assets/images/garage/home/garage-hero-20260502.jpg" alt="ガレージ事業の施工事例" width="1600" height="1067" loading="lazy" decoding="async">
+            </figure>
+
+            <header class="okg-nkh-home__business-copy-panel" data-okg-reveal>
+                <p class="okg-nkh-home__business-word" aria-hidden="true">BUSINESS</p>
+                <p class="okg-nkh-home__section-label">BUSINESS</p>
+                <h2 id="okg-nkh-business-heading">事業紹介</h2>
+                <p class="okg-nkh-home__business-lead">建築を、計画から完成まで。</p>
+                <p class="okg-nkh-home__business-copy">基礎工事から建て方、木造作、内外装、電気、設備まで。専門工事業者と連携し、用途・予算・工期に合わせて建築を一括管理します。</p>
+            </header>
+
+            <a class="okg-nkh-home__business-cta" href="/business/">
+                <span>事業情報を詳しく見る</span>
+                <span aria-hidden="true">→</span>
+            </a>
+        </div>
+
+        <div class="okg-nkh-home__business-areas" data-okg-reveal>
+            <p class="okg-nkh-home__business-areas-label">BUSINESS AREAS</p>
+            <ul class="okg-nkh-home__business-area-list">
+                                    <li class="okg-nkh-home__business-area">
+                                                    <a class="okg-nkh-home__business-area-link" href="/business/garage/">
+                                                    <span class="okg-nkh-home__business-area-number" aria-hidden="true">01</span>
+                            <span class="okg-nkh-home__business-area-body">
+                                <span class="okg-nkh-home__business-area-title">ガレージ事業</span>
+                                <span class="okg-nkh-home__business-area-copy">倉庫・車庫・オフィスを一体化し、土地活用と働き方を支える複合ガレージです。</span>
                             </span>
-                                                            <span class="okg-nkh-home__business-service-arrow" aria-hidden="true">→</span>
+                                                            <span class="okg-nkh-home__business-area-arrow" aria-hidden="true">→</span>
                                                                                 </a>
                                             </li>
-                                    <li class="okg-nkh-home__business-service-item">
-                                                    <a class="okg-nkh-home__business-service" href="/business/wood/">
-                                                    <span class="okg-nkh-home__business-service-number" aria-hidden="true">02</span>
-                            <span class="okg-nkh-home__business-service-body">
-                                <span class="okg-nkh-home__business-service-title">木造建築工事</span>
-                                <span class="okg-nkh-home__business-service-copy">伝統構法の知見と現代の品質管理を組み合わせ、用途に合った木造建築を形にします。</span>
+                                    <li class="okg-nkh-home__business-area">
+                                                    <a class="okg-nkh-home__business-area-link" href="/business/wood/">
+                                                    <span class="okg-nkh-home__business-area-number" aria-hidden="true">02</span>
+                            <span class="okg-nkh-home__business-area-body">
+                                <span class="okg-nkh-home__business-area-title">木造建築工事</span>
+                                <span class="okg-nkh-home__business-area-copy">伝統構法の知見と現代の品質管理を組み合わせ、用途に合った木造建築を形にします。</span>
                             </span>
-                                                            <span class="okg-nkh-home__business-service-arrow" aria-hidden="true">→</span>
+                                                            <span class="okg-nkh-home__business-area-arrow" aria-hidden="true">→</span>
                                                                                 </a>
                                             </li>
-                                    <li class="okg-nkh-home__business-service-item">
-                                                    <div class="okg-nkh-home__business-service okg-nkh-home__business-service--pending">
-                                                    <span class="okg-nkh-home__business-service-number" aria-hidden="true">03</span>
-                            <span class="okg-nkh-home__business-service-body">
-                                <span class="okg-nkh-home__business-service-title">不動産事業</span>
-                                <span class="okg-nkh-home__business-service-copy">土地活用や住まいの相談を、建築会社ならではの視点で整理します。</span>
+                                    <li class="okg-nkh-home__business-area">
+                                                    <div class="okg-nkh-home__business-area-link okg-nkh-home__business-area-link--pending">
+                                                    <span class="okg-nkh-home__business-area-number" aria-hidden="true">03</span>
+                            <span class="okg-nkh-home__business-area-body">
+                                <span class="okg-nkh-home__business-area-title">不動産事業</span>
+                                <span class="okg-nkh-home__business-area-copy">土地活用や住まいの相談を、建築会社ならではの視点で整理します。</span>
                             </span>
-                                                            <span class="okg-nkh-home__business-service-status">準備中</span>
+                                                            <span class="okg-nkh-home__business-area-status">準備中</span>
                                                                                 </div>
                                             </li>
-                                    <li class="okg-nkh-home__business-service-item">
-                                                    <div class="okg-nkh-home__business-service okg-nkh-home__business-service--pending">
-                                                    <span class="okg-nkh-home__business-service-number" aria-hidden="true">04</span>
-                            <span class="okg-nkh-home__business-service-body">
-                                <span class="okg-nkh-home__business-service-title">外壁修復工事</span>
-                                <span class="okg-nkh-home__business-service-copy">経年劣化やひび割れに向き合い、建物を長く安心して使える状態へ整えます。</span>
+                                    <li class="okg-nkh-home__business-area">
+                                                    <div class="okg-nkh-home__business-area-link okg-nkh-home__business-area-link--pending">
+                                                    <span class="okg-nkh-home__business-area-number" aria-hidden="true">04</span>
+                            <span class="okg-nkh-home__business-area-body">
+                                <span class="okg-nkh-home__business-area-title">外壁修復工事</span>
+                                <span class="okg-nkh-home__business-area-copy">経年劣化やひび割れに向き合い、建物を長く安心して使える状態へ整えます。</span>
                             </span>
-                                                            <span class="okg-nkh-home__business-service-status">準備中</span>
+                                                            <span class="okg-nkh-home__business-area-status">準備中</span>
                                                                                 </div>
                                             </li>
                             </ul>
         </div>
+    </div>
+</section>
+    <section class="okg-nkh-home__message okg-nkh-home__feature okg-nkh-home__feature--message" aria-labelledby="okg-nkh-message-heading">
+    <div class="okg-nkh-home__message-inner">
+        <div class="okg-nkh-home__message-copy okg-nkh-home__feature-copy" data-okg-reveal>
+            <p class="okg-nkh-home__ghost-word" aria-hidden="true">MESSAGE</p>
+            <p class="okg-nkh-home__section-label">MESSAGE FROM CEO</p>
+            <h2 id="okg-nkh-message-heading" class="okg-nkh-home__section-title">代表挨拶</h2>
+            <p class="okg-nkh-home__message-lead">継ぐだけでは終わらせない。現場を知る三代目として、会社の文化を変える。</p>
+            <div class="okg-nkh-home__message-text">
+                <p>私は三代目として、小川工業を受け継ぎました。けれど、ただ「継いだ人」で終わるつもりはありません。</p>
+                <p>現場に立ち、技術と誠実さの積み重ね、働く人の苦労や責任を知る中で、会社は建物だけでなく、人と現場、仲間同士の信頼で成り立つと実感しました。</p>
+                <p>だからこそ、今の文化を守るだけでなく、真面目に頑張る人が報われ、安心して働ける環境をつくります。ベテランの技術を尊重しながら、若手や新しい視点も前向きに受け入れていきます。</p>
+                <p>年齢や立場を越えて同じ方向を向き、互いに学び、信頼を積み重ねられる会社へ。小川工業のこれからを、みなさんと一緒につくっていきます。</p>
+            </div>
+            <a class="okg-nkh-home__text-link" href="/company/">
+                <span>会社情報を見る</span>
+                <span aria-hidden="true">→</span>
+            </a>
+        </div>
 
-        <a class="okg-nkh-home__text-link okg-nkh-home__business-link" href="/business/" data-okg-reveal>
-            <span>事業情報を詳しく見る</span>
-            <span aria-hidden="true">→</span>
-        </a>
+        <figure class="okg-nkh-home__message-media okg-nkh-home__feature-media" data-okg-reveal>
+            <img src="/wp-content/themes/ogawa-corp/assets/images/common/home-ceo-message-2026.webp" alt="代表取締役 小川 匡哉" width="1280" height="853" loading="lazy" decoding="async">
+            <figcaption>代表取締役　小川 匡哉</figcaption>
+        </figure>
     </div>
 </section>
     <section class="okg-nkh-home__links" aria-label="主要ページ">
@@ -355,78 +410,6 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
             </article>
             </div>
 </section>
-    <section class="okg-nkh-home__recruit" aria-labelledby="okg-nkh-recruit-heading">
-    <div class="okg-nkh-home__recruit-copy">
-        <img class="okg-nkh-home__recruit-copy-image" src="/wp-content/themes/ogawa-corp/assets/images/common/home-recruit-left-measurement-2026.webp" alt="" width="1280" height="960" loading="lazy" decoding="async">
-        <div class="okg-nkh-home__recruit-shade" aria-hidden="true"></div>
-        <div class="okg-nkh-home__recruit-copy-inner" data-okg-reveal>
-            <p class="okg-nkh-home__recruit-word" aria-hidden="true">RECRUIT</p>
-            <p class="okg-nkh-home__section-label">RECRUIT</p>
-            <h2 id="okg-nkh-recruit-heading">採用情報</h2>
-            <h3>積み重ねてきた信頼と技術を、<br>次の世代へ、あなたと。</h3>
-            <p>経験者の方はもちろん、新卒の方、建設業が未経験の方も歓迎します。仕事に真剣に向き合い、人も大切にしたい方と、これからの小川工業をつくっていきたいと考えています。</p>
-        </div>
-    </div>
-    <figure class="okg-nkh-home__recruit-media">
-        <img src="/wp-content/themes/ogawa-corp/assets/images/common/home-recruit-right-2026.webp" alt="建築現場で図面を確認する小川工業の社員" width="1280" height="960" loading="lazy" decoding="async">
-    </figure>
-    <a class="okg-nkh-home__recruit-cta" href="/recruit/">
-        <span>採用情報を詳しく見る</span>
-        <span aria-hidden="true">→</span>
-    </a>
-</section>
-    <section class="okg-nkh-home__message" aria-labelledby="okg-nkh-message-heading">
-    <div class="okg-nkh-home__message-inner">
-        <div class="okg-nkh-home__message-copy" data-okg-reveal>
-            <p class="okg-nkh-home__ghost-word" aria-hidden="true">MESSAGE</p>
-            <p class="okg-nkh-home__section-label">MESSAGE</p>
-            <h2 id="okg-nkh-message-heading" class="okg-nkh-home__section-title">小川工業の想い</h2>
-            <div class="okg-nkh-home__message-text">
-                <p>小川工業は、昭和42年の創業以来、建築を通じて地域の暮らしと仕事を支えてきました。</p>
-                <p>一つの建物は、社員、お客様、協力業者様など、多くの人の想いと技術が重なって生まれます。</p>
-                <p>だからこそ私たちは、すべての行動に愛を持ち、関わるすべての人に「よかった」と思っていただける仕事を積み重ねていきます。</p>
-            </div>
-            <a class="okg-nkh-home__text-link" href="/company/">
-                <span>会社情報を見る</span>
-                <span aria-hidden="true">→</span>
-            </a>
-        </div>
-
-        <figure class="okg-nkh-home__message-media" data-okg-reveal>
-            <img src="/wp-content/themes/ogawa-corp/assets/images/common/home-ceo-message-2026.webp" alt="代表取締役 小川 匡哉" width="1280" height="853" loading="lazy" decoding="async">
-            <figcaption>代表取締役　小川 匡哉</figcaption>
-        </figure>
-    </div>
-</section>
-
-<div class="okg-nkh-home__film" aria-label="小川工業の仕事と人">
-    <div class="okg-nkh-home__film-track">
-                                    <figure class="okg-nkh-home__film-item">
-                    <img src="/wp-content/themes/ogawa-corp/assets/images/company/ogawa-genba.jpg" alt="建築現場で稼働するクレーン" loading="lazy" decoding="async">
-                </figure>
-                            <figure class="okg-nkh-home__film-item">
-                    <img src="/wp-content/themes/ogawa-corp/assets/images/company/history-assembly-2026.webp" alt="小川工業の安全大会" loading="lazy" decoding="async">
-                </figure>
-                            <figure class="okg-nkh-home__film-item">
-                    <img src="/wp-content/themes/ogawa-corp/assets/images/recruit/site-supervision-2.webp" alt="建築現場を確認する社員" loading="lazy" decoding="async">
-                </figure>
-                            <figure class="okg-nkh-home__film-item">
-                    <img src="/wp-content/themes/ogawa-corp/assets/images/common/Wooden_building_construction.webp" alt="小川工業が手がけた建物" loading="lazy" decoding="async">
-                </figure>
-                                                <figure class="okg-nkh-home__film-item" aria-hidden="true">
-                    <img src="/wp-content/themes/ogawa-corp/assets/images/company/ogawa-genba.jpg" alt="" loading="lazy" decoding="async">
-                </figure>
-                            <figure class="okg-nkh-home__film-item" aria-hidden="true">
-                    <img src="/wp-content/themes/ogawa-corp/assets/images/company/history-assembly-2026.webp" alt="" loading="lazy" decoding="async">
-                </figure>
-                            <figure class="okg-nkh-home__film-item" aria-hidden="true">
-                    <img src="/wp-content/themes/ogawa-corp/assets/images/recruit/site-supervision-2.webp" alt="" loading="lazy" decoding="async">
-                </figure>
-                            <figure class="okg-nkh-home__film-item" aria-hidden="true">
-                    <img src="/wp-content/themes/ogawa-corp/assets/images/common/Wooden_building_construction.webp" alt="" loading="lazy" decoding="async">
-                </figure>
-                        </div>
-</div>
 </main>
 
 <footer id="okg-global-footer" class="f okg-global-footer">
@@ -547,7 +530,7 @@ var wpcf7 = {
 <script id="ogawa-corp-global-header-script-js" src="/wp-content/themes/ogawa-corp/assets/js/component-global-header.js?ver=1778132973"></script>
 <script id="ogawa-corp-navigation-js" src="/wp-content/themes/ogawa-corp/assets/js/global/navigation.js?ver=1778132973"></script>
 <script id="ogawa-corp-page-top-js" src="/wp-content/themes/ogawa-corp/assets/js/component-page-top.js?ver=1778132973"></script>
-<script id="ogawa-home-page-js" src="/wp-content/themes/ogawa-corp/assets/js/page-home.js?ver=1786094436"></script>
+<script id="ogawa-home-page-js" src="/wp-content/themes/ogawa-corp/assets/js/page-home.js?ver=1786190294"></script>
 <script id="wp-emoji-settings" type="application/json">
 {"baseUrl":"https://s.w.org/images/core/emoji/17.0.2/72x72/","ext":".png","svgUrl":"https://s.w.org/images/core/emoji/17.0.2/svg/","svgExt":".svg","source":{"concatemoji":"/wp-includes/js/wp-emoji-release.min.js?ver=7.0.3"}}
 </script>

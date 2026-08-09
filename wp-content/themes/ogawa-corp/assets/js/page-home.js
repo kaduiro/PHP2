@@ -3,6 +3,65 @@
 
   document.documentElement.classList.add('has-js');
 
+  function initLoader() {
+    var loader = document.querySelector('[data-ogawa-loader]');
+    var hero = document.querySelector('[data-ogawa-hero]');
+    var heroVideo = document.querySelector('[data-ogawa-hero-video]');
+    var reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var startedAt = Date.now();
+    var loaderDuration = 3000;
+    var completed = false;
+
+    if (!loader) {
+      return;
+    }
+
+    document.documentElement.classList.add('okg-home-is-loading');
+
+    function complete() {
+      if (completed) {
+        return;
+      }
+
+      completed = true;
+      var remaining = Math.max(0, loaderDuration - (Date.now() - startedAt));
+
+      window.setTimeout(function () {
+        loader.classList.add('is-complete');
+        document.documentElement.classList.remove('okg-home-is-loading');
+
+        window.setTimeout(function () {
+          if (loader.parentNode) {
+            loader.parentNode.removeChild(loader);
+          }
+        }, 900);
+      }, remaining);
+    }
+
+    function useHeroFallback() {
+      if (hero) {
+        hero.classList.add(reducedMotion ? 'is-video-reduced' : 'is-video-failed');
+      }
+      complete();
+    }
+
+    if (heroVideo) {
+      if (reducedMotion) {
+        useHeroFallback();
+      } else {
+        heroVideo.addEventListener('canplay', complete, { once: true });
+        heroVideo.addEventListener('error', useHeroFallback, { once: true });
+
+        if (heroVideo.readyState >= 3) {
+          complete();
+        }
+      }
+    }
+
+    window.addEventListener('load', complete, { once: true });
+    window.setTimeout(complete, loaderDuration);
+  }
+
   function initCarousel() {
     var hero = document.querySelector('[data-ogawa-hero]');
     if (!hero) {
@@ -100,6 +159,7 @@
   }
 
   function init() {
+    initLoader();
     initCarousel();
     initReveal();
   }

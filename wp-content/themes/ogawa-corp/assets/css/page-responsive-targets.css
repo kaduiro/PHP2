@@ -25,8 +25,7 @@
 }
 
 .okg-smart-header__link,
-.okg-smart-header__company-trigger,
-.okg-smart-header__cta {
+.okg-smart-header__company-trigger {
   white-space: nowrap;
   min-height: 44px;
   padding-block: 10px;
@@ -51,16 +50,8 @@
 /* <=1200: density tuning and reset old 1100/1024 switches to keep desktop flow */
 @media (max-width: 1200px) {
   .okg-smart-header__inner {
-    grid-template-columns: auto 1fr auto auto;
+    grid-template-columns: auto 1fr auto;
     gap: 12px;
-  }
-
-  .okg-smart-header__nav {
-    display: block;
-  }
-
-  .okg-smart-header__cta {
-    display: inline-flex;
   }
 
   .okg-smart-header__menu-toggle {
@@ -72,8 +63,7 @@
   }
 
   .okg-smart-header__link,
-  .okg-smart-header__company-trigger,
-  .okg-smart-header__cta {
+  .okg-smart-header__company-trigger {
     letter-spacing: 0.04em;
   }
 
@@ -137,8 +127,7 @@
     grid-template-columns: auto 1fr auto;
   }
 
-  .okg-smart-header__nav,
-  .okg-smart-header__cta {
+  .okg-smart-header__nav {
     display: none;
   }
 
@@ -509,8 +498,7 @@ a,
 button,
 .btn,
 .okg-smart-header__link,
-.okg-smart-header__company-trigger,
-.okg-smart-header__cta {
+.okg-smart-header__company-trigger {
   min-height: 44px;
   touch-action: manipulation;
 }

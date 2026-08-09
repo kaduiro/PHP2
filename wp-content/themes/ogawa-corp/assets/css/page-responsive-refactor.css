@@ -36,15 +36,14 @@
   gap: clamp(12px, 1.8vw, 28px);
 }
 
-/* Header/CTA touch target and line-wrap prevention on desktop-mid widths */
+/* Header touch target and line-wrap prevention on desktop-mid widths */
 .okg-smart-header__nav-list {
   flex-wrap: nowrap;
   gap: clamp(10px, 1.2vw, 24px);
 }
 
 .okg-smart-header__link,
-.okg-smart-header__company-trigger,
-.okg-smart-header__cta {
+.okg-smart-header__company-trigger {
   min-height: 44px;
   padding-block: 10px;
 }
@@ -252,8 +251,7 @@ body.front-page #contents .t_biz--news .news-list {
 /* <= 1100: keep existing drawer threshold, reduce nav text crowding */
 @media (max-width: 1100px) {
   .okg-smart-header__link,
-  .okg-smart-header__company-trigger,
-  .okg-smart-header__cta {
+  .okg-smart-header__company-trigger {
     letter-spacing: 0.04em;
   }
 }
