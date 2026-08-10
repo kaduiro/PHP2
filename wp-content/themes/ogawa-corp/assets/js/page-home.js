@@ -9,7 +9,7 @@
     var heroVideo = document.querySelector('[data-ogawa-hero-video]');
     var reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     var startedAt = Date.now();
-    var loaderDuration = 3000;
+    var loaderDuration = 4000;
     var completed = false;
 
     if (!loader) {

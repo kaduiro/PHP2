@@ -339,6 +339,19 @@
   transform: scale(1.05);
 }
 
+.okg-bizhub.okg-bizhub .okg-bizhub__summary-card--soon {
+  cursor: default;
+}
+
+.okg-bizhub.okg-bizhub .okg-bizhub__summary-card--soon:hover {
+  transform: none;
+  box-shadow: none;
+}
+
+.okg-bizhub.okg-bizhub .okg-bizhub__summary-card--soon:hover .okg-bizhub__summary-media img {
+  transform: none;
+}
+
 .okg-bizhub.okg-bizhub .okg-bizhub__summary-card:hover .okg-bizhub__summary-arrow,
 .okg-bizhub.okg-bizhub .okg-bizhub__summary-card:focus-visible .okg-bizhub__summary-arrow {
   background: rgba(255, 255, 255, 0.16);
