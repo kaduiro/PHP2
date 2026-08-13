@@ -23,11 +23,9 @@
 		"className": false,
 		"html": false,
 		"multiple": false,
-		"visibility": false,
 		"interactivity": {
 			"clientNavigation": true
-		},
-		"customCSS": false
+		}
 	},
 	"editorStyle": "wp-block-more-editor"
 }

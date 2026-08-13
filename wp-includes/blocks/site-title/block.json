@@ -33,7 +33,6 @@
 		"viewportWidth": 500
 	},
 	"supports": {
-		"anchor": true,
 		"align": [ "wide", "full" ],
 		"html": false,
 		"color": {

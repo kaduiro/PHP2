@@ -695,91 +695,6 @@ a.okg-nkh-home__business-service:focus-visible .okg-nkh-home__business-service-c
   margin-left: auto;
 }
 
-.okg-nkh-home__links {
-  padding: 118px 0 136px;
-  background: #f0f1f2;
-}
-
-.okg-nkh-home__links-inner {
-  display: grid;
-  width: min(1120px, calc(100% - 96px));
-  margin-inline: auto;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 60px;
-}
-
-.okg-nkh-home__link-card {
-  display: flex;
-  min-width: 0;
-  flex-direction: column;
-}
-
-.okg-nkh-home__link-card h2 {
-  position: relative;
-  margin-bottom: 28px;
-  padding-left: 30px;
-  color: var(--okg-home-navy);
-  font-family: var(--font-ja-serif);
-  font-size: 30px;
-  line-height: 1.4;
-}
-
-.okg-nkh-home__link-card h2::before {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: 0;
-  width: 20px;
-  height: 1px;
-  background: var(--okg-home-blue);
-}
-
-.okg-nkh-home__link-card figure {
-  aspect-ratio: 4 / 3;
-  overflow: hidden;
-  background: #d9e0e8;
-}
-
-.okg-nkh-home__link-card img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.55s ease;
-}
-
-.okg-nkh-home__link-card:nth-child(1) img {
-  object-position: 50% center;
-}
-
-.okg-nkh-home__link-card:nth-child(2) img {
-  object-position: center;
-}
-
-.okg-nkh-home__link-card p {
-  min-height: 86px;
-  padding-top: 30px;
-  color: #2f3946;
-  font-size: 15px;
-  line-height: 1.9;
-}
-
-.okg-nkh-home__link-card > a {
-  display: flex;
-  min-height: 58px;
-  align-items: center;
-  justify-content: space-between;
-  margin-top: 12px;
-  border-top: 1px solid var(--okg-home-line);
-  border-bottom: 1px solid var(--okg-home-line);
-  color: var(--okg-home-navy);
-  font-size: 14px;
-  text-decoration: none;
-}
-
-.okg-nkh-home__link-card:hover img {
-  transform: scale(1.035);
-}
-
 .okg-nkh-home__core-value {
   position: relative;
   min-height: 660px;
@@ -2343,31 +2258,6 @@ a.okg-nkh-home__business-area-link:focus-visible .okg-nkh-home__business-area-co
     margin: 36px auto 0;
   }
 
-  .okg-nkh-home__links {
-    padding: 76px 0 86px;
-  }
-
-  .okg-nkh-home__links-inner {
-    width: calc(100% - 60px);
-    grid-template-columns: 1fr;
-    gap: 70px;
-  }
-
-  .okg-nkh-home__link-card h2 {
-    margin-bottom: 22px;
-    font-size: 25px;
-  }
-
-  .okg-nkh-home__link-card figure {
-    aspect-ratio: 1.25 / 1;
-  }
-
-  .okg-nkh-home__link-card p {
-    min-height: 0;
-    padding-top: 22px;
-    font-size: 14px;
-  }
-
   .okg-nkh-home__recruit {
     display: flex;
     min-height: 0;
@@ -2846,7 +2736,6 @@ a.okg-nkh-home__business-area-link:focus-visible .okg-nkh-home__business-area-co
   .okg-nkh-home__business-cta,
   .okg-nkh-home__business-area-link,
   .okg-nkh-home__business-service,
-  .okg-nkh-home__link-card img,
   .has-js .okg-nkh-home [data-okg-reveal] {
     transition: none;
   }
