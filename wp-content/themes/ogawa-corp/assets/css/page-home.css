@@ -380,7 +380,7 @@ html.okg-home-is-loading {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: 55% center;
+  object-position: 50% top;
 }
 
 .okg-nkh-home__message-media figcaption {
@@ -1296,74 +1296,6 @@ a.okg-nkh-home__business-service:focus-visible .okg-nkh-home__business-service-c
   border-color: rgba(255, 255, 255, 0.45);
 }
 
-body.home #okg-global-footer.okg-global-footer {
-  color: var(--okg-home-navy);
-  background: #ffffff;
-}
-
-body.home #okg-global-footer.okg-global-footer::before {
-  content: none;
-}
-
-body.home #okg-global-footer .okg-footer__inner {
-  padding-top: 0;
-}
-
-body.home #okg-global-footer .okg-footer__content {
-  width: min(1296px, 100%);
-  grid-template-columns: minmax(280px, 1fr) minmax(500px, 1.8fr);
-  gap: 70px;
-  padding-block: 88px 70px;
-  border-top: 0;
-}
-
-body.home #okg-global-footer .okg-footer__company {
-  justify-self: start;
-  justify-items: start;
-  text-align: left;
-}
-
-body.home #okg-global-footer .okg-footer__logo,
-body.home #okg-global-footer .okg-footer__logo-jp,
-body.home #okg-global-footer .okg-footer__top-nav-list a {
-  color: var(--okg-home-navy);
-  text-shadow: none;
-}
-
-body.home #okg-global-footer .okg-footer__address,
-body.home #okg-global-footer .okg-footer__address a,
-body.home #okg-global-footer .okg-footer__copyright,
-body.home #okg-global-footer .okg-footer__legal a {
-  color: #687587;
-}
-
-body.home #okg-global-footer .okg-footer__top-nav-list {
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 20px 36px;
-}
-
-body.home #okg-global-footer .okg-footer__top-nav-list a::before {
-  color: var(--okg-home-blue);
-}
-
-body.home #okg-global-footer .okg-footer__top-nav-list a::after {
-  background: var(--okg-home-blue);
-}
-
-body.home #okg-global-footer .okg-footer__map-area {
-  display: none;
-}
-
-body.home #okg-global-footer .okg-footer__instagram-link {
-  border-color: var(--okg-home-line);
-  background: var(--okg-home-navy);
-}
-
-body.home #okg-global-footer .okg-footer__bottom {
-  border-top-color: var(--okg-home-line);
-  padding-block: 20px 28px;
-}
-
 /* Reuse the recruit section's visual grammar across the home feature sections. */
 .okg-nkh-home__feature-copy,
 .okg-nkh-home__feature-media,
@@ -2076,7 +2008,7 @@ a.okg-nkh-home__business-area-link:focus-visible .okg-nkh-home__business-area-co
   }
 
   .okg-nkh-home__message-media img {
-    object-position: 56% center;
+    object-position: 50% top;
   }
 
   .okg-nkh-home__strengths {
@@ -2426,21 +2358,6 @@ a.okg-nkh-home__business-area-link:focus-visible .okg-nkh-home__business-area-co
     width: 210px;
   }
 
-  body.home #okg-global-footer .okg-footer__inner,
-  body.home #okg-global-footer .okg-footer__bottom {
-    padding-inline: 30px;
-  }
-
-  body.home #okg-global-footer .okg-footer__content {
-    grid-template-columns: 1fr;
-    gap: 38px;
-    padding-block: 64px 48px;
-  }
-
-  body.home #okg-global-footer .okg-footer__top-nav-list {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 16px 20px;
-  }
 }
 
 @media (max-width: 767px) {

@@ -164,36 +164,64 @@
   margin-inline: auto;
 }
 
-.okg-bizhub.okg-bizhub .okg-bizhub__hero {
+.okg-bizhub.okg-bizhub .okg-bizhub__page-header {
   position: relative;
   z-index: 1;
+  display: grid;
+  place-items: center;
   margin: 0;
-  padding: clamp(100px, 12vw, 172px) 0 clamp(74px, 8vw, 124px);
+  padding: 120px 24px;
+  color: #ffffff;
+  text-align: center;
+  background:
+    linear-gradient(rgba(0, 0, 0, 0.52), rgba(0, 0, 0, 0.52)),
+    url('/wp-content/themes/ogawa-corp/assets/images/business/business-page-header-2026.webp');
+  background-position: center 58%;
+  background-size: cover;
 }
 
-.okg-bizhub.okg-bizhub .okg-bizhub__hero::before {
-  content: "";
-  position: absolute;
-  right: 8%;
-  bottom: 52px;
-  width: 260px;
-  height: 260px;
-  border: 1px solid rgba(11, 52, 134, 0.18);
-  border-radius: 50%;
-  pointer-events: none;
+.okg-bizhub.okg-bizhub .okg-bizhub__page-header-group {
+  display: inline-block;
+  text-align: center;
 }
 
-.okg-bizhub.okg-bizhub .okg-bizhub__hero::after {
-  content: "";
-  position: absolute;
-  right: 4%;
-  bottom: 86px;
-  width: 360px;
-  height: 1px;
-  background: rgba(11, 52, 134, 0.22);
-  transform: rotate(-32deg);
-  transform-origin: right center;
-  pointer-events: none;
+.okg-bizhub.okg-bizhub .okg-bizhub__page-header-label {
+  display: block;
+  margin-bottom: 22px;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  font-size: var(--fs-sm, 1rem);
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.45);
+  text-transform: capitalize;
+}
+
+.okg-bizhub.okg-bizhub .okg-bizhub__page-header-label::before {
+  content: "/";
+  margin-right: 12px;
+  color: var(--okg-blue-3);
+  font-size: 1.2em;
+  font-weight: 700;
+}
+
+.okg-bizhub.okg-bizhub .okg-bizhub__page-header-title {
+  margin: 0;
+  font-family: "Yu Mincho", "Hiragino Mincho ProN", serif;
+  font-size: clamp(3rem, 7vw, 5.6rem);
+  font-weight: 900;
+  line-height: 1.05;
+  letter-spacing: 0.08em;
+  text-shadow: 0 4px 24px rgba(0, 0, 0, 0.5);
+}
+
+@media (max-width: 600px) {
+  .okg-bizhub.okg-bizhub .okg-bizhub__page-header {
+    background-position: center 54%;
+  }
+
+  .okg-bizhub.okg-bizhub .okg-bizhub__page-header-title {
+    font-size: clamp(2.4rem, 11vw, 3.4rem);
+  }
 }
 
 /* ─── Summary Grid (4事業を一目で) ──────────────────────────── */
@@ -1549,15 +1577,6 @@
     width: min(100%, calc(100% - 32px));
   }
 
-  .okg-bizhub.okg-bizhub .okg-bizhub__hero {
-    padding: 96px 0 58px;
-  }
-
-  .okg-bizhub.okg-bizhub .okg-bizhub__hero::before,
-  .okg-bizhub.okg-bizhub .okg-bizhub__hero::after {
-    opacity: 0.42;
-  }
-
   .okg-bizhub.okg-bizhub .okg-bizhub__title {
     max-width: 640px;
     font-size: 46px;
@@ -1657,9 +1676,7 @@
   .okg-bizhub.okg-bizhub .okg-bizhub__bg::before,
   .okg-bizhub.okg-bizhub .okg-bizhub__bg::after,
   .okg-bizhub.okg-bizhub .okg-bizhub__grid::before,
-  .okg-bizhub.okg-bizhub .okg-bizhub__grid::after,
-  .okg-bizhub.okg-bizhub .okg-bizhub__hero::before,
-  .okg-bizhub.okg-bizhub .okg-bizhub__hero::after {
+  .okg-bizhub.okg-bizhub .okg-bizhub__grid::after {
     display: none;
   }
 
@@ -1670,10 +1687,6 @@
 
   .okg-bizhub.okg-bizhub .okg-bizhub__container {
     width: min(100%, calc(100% - 24px));
-  }
-
-  .okg-bizhub.okg-bizhub .okg-bizhub__hero {
-    padding: 84px 0 42px;
   }
 
   .okg-bizhub.okg-bizhub .okg-bizhub__eyebrow {

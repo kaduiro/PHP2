@@ -1,0 +1,219 @@
+@charset "UTF-8";
+
+/* ==========================================================================
+   Shared interior page header
+   ========================================================================== */
+
+.okg-page-header,
+.news-main .okg-page-header,
+#company-information .okg-page-header,
+.okg-bizhub.okg-bizhub .okg-page-header {
+  --okg-page-header-ink: #101a33;
+  --okg-page-header-blue: #104b9b;
+  --okg-page-header-line: rgba(16, 75, 155, 0.2);
+  position: relative;
+  z-index: 1;
+  display: flex !important;
+  align-items: center;
+  min-height: clamp(320px, 26vw, 390px);
+  box-sizing: border-box;
+  margin: 0 !important;
+  padding: clamp(88px, 8vw, 116px) clamp(24px, 3.5vw, 66px) clamp(58px, 5vw, 78px) !important;
+  overflow: hidden;
+  isolation: isolate;
+  color: var(--okg-page-header-ink) !important;
+  text-align: center !important;
+  background-color: #f8fbff !important;
+  background-image:
+    linear-gradient(rgba(16, 75, 155, 0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(16, 75, 155, 0.045) 1px, transparent 1px) !important;
+  background-size: 72px 72px !important;
+  background-position: center center !important;
+}
+
+.okg-page-header::before {
+  content: "";
+  position: absolute;
+  top: -34px;
+  left: -82px;
+  width: 430px;
+  height: 170px;
+  border-top: 1px solid var(--okg-page-header-line);
+  border-bottom: 1px solid var(--okg-page-header-line);
+  transform: rotate(-14deg);
+  pointer-events: none;
+}
+
+.okg-page-header::after {
+  content: attr(data-watermark);
+  position: absolute;
+  top: clamp(-64px, -3vw, -38px);
+  right: clamp(-30px, -1vw, -8px);
+  z-index: -1;
+  color: rgba(16, 75, 155, 0.055);
+  font-family: var(--font-en, "Montserrat", Arial, sans-serif);
+  font-size: clamp(8rem, 16vw, 15rem);
+  font-weight: 800;
+  line-height: 0.9;
+  letter-spacing: -0.05em;
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+.okg-page-header__inner,
+.news-main .okg-page-header__inner,
+#company-information .okg-page-header__inner,
+.okg-bizhub.okg-bizhub .okg-page-header__inner {
+  position: relative;
+  z-index: 1;
+  display: flex !important;
+  flex-direction: column;
+  align-items: center !important;
+  justify-content: center;
+  width: min(1800px, 100%);
+  min-height: 216px;
+  margin: 0 auto;
+  text-align: center !important;
+}
+
+.okg-page-header__inner::before {
+  content: "";
+  position: absolute;
+  top: 2%;
+  right: clamp(-26px, 5vw, 90px);
+  width: clamp(190px, 18vw, 332px);
+  aspect-ratio: 1;
+  border: 1px solid rgba(16, 75, 155, 0.2);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.okg-page-header__inner::after {
+  content: "";
+  position: absolute;
+  left: clamp(34px, 4.5vw, 84px);
+  bottom: 0;
+  width: clamp(180px, 16vw, 300px);
+  height: 58px;
+  background: repeating-linear-gradient(
+    135deg,
+    rgba(16, 75, 155, 0.12) 0,
+    rgba(16, 75, 155, 0.12) 1px,
+    transparent 1px,
+    transparent 11px
+  );
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+.okg-page-header__eyebrow,
+.news-main .okg-page-header__eyebrow,
+#company-information .okg-page-header__eyebrow,
+.okg-bizhub.okg-bizhub .okg-page-header__eyebrow {
+  position: relative;
+  z-index: 1;
+  display: inline-flex !important;
+  align-items: center;
+  gap: 18px;
+  margin: 0 0 clamp(28px, 3vw, 42px) !important;
+  color: var(--okg-page-header-blue) !important;
+  font-family: var(--font-en, "Montserrat", "Helvetica Neue", Arial, sans-serif) !important;
+  font-size: clamp(0.78rem, 1vw, 1rem) !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.08em !important;
+  line-height: 1.2 !important;
+  text-shadow: none !important;
+  text-transform: uppercase !important;
+}
+
+.okg-page-header__eyebrow::before,
+.news-main .okg-page-header__eyebrow::before,
+#company-information .okg-page-header__eyebrow::before,
+.okg-bizhub.okg-bizhub .okg-page-header__eyebrow::before {
+  content: "" !important;
+  display: block;
+  width: clamp(42px, 4vw, 54px);
+  height: 2px;
+  flex: 0 0 auto;
+  margin: 0 !important;
+  background: var(--okg-page-header-blue);
+  font-size: 0 !important;
+}
+
+.okg-page-header__title,
+.news-main .okg-page-header__title,
+#company-information .okg-page-header__title,
+.okg-bizhub.okg-bizhub .okg-page-header__title {
+  position: relative;
+  z-index: 1;
+  max-width: min(720px, 90vw);
+  margin: 0 !important;
+  color: var(--okg-page-header-ink) !important;
+  font-family: var(--font-ja-serif, "Noto Serif JP", "Yu Mincho", "Hiragino Mincho ProN", serif) !important;
+  font-size: clamp(3rem, 5.4vw, 6.5rem) !important;
+  font-weight: 500 !important;
+  line-height: 1.1 !important;
+  letter-spacing: 0.08em !important;
+  text-shadow: none !important;
+}
+
+@media (max-width: 700px) {
+  .okg-page-header,
+  .news-main .okg-page-header,
+  #company-information .okg-page-header,
+  .okg-bizhub.okg-bizhub .okg-page-header {
+    min-height: 320px;
+    padding: 88px 24px 58px !important;
+  }
+
+  .okg-page-header::after {
+    top: -22px;
+    right: -48px;
+    font-size: clamp(6rem, 25vw, 9rem);
+  }
+
+  .okg-page-header__inner,
+  .news-main .okg-page-header__inner,
+  #company-information .okg-page-header__inner,
+  .okg-bizhub.okg-bizhub .okg-page-header__inner {
+    min-height: 150px;
+  }
+
+  .okg-page-header__inner::before {
+    top: 0;
+    right: -48px;
+    width: 190px;
+  }
+
+  .okg-page-header__inner::after {
+    left: 22px;
+    bottom: -2px;
+    width: 180px;
+    height: 46px;
+  }
+
+  .okg-page-header__eyebrow,
+  .news-main .okg-page-header__eyebrow,
+  #company-information .okg-page-header__eyebrow,
+  .okg-bizhub.okg-bizhub .okg-page-header__eyebrow {
+    gap: 12px;
+    margin-bottom: 24px !important;
+    font-size: 0.72rem !important;
+  }
+
+  .okg-page-header__eyebrow::before,
+  .news-main .okg-page-header__eyebrow::before,
+  #company-information .okg-page-header__eyebrow::before,
+  .okg-bizhub.okg-bizhub .okg-page-header__eyebrow::before {
+    width: 34px;
+  }
+
+  .okg-page-header__title,
+  .news-main .okg-page-header__title,
+  #company-information .okg-page-header__title,
+  .okg-bizhub.okg-bizhub .okg-page-header__title {
+    max-width: 92vw;
+    font-size: clamp(2.7rem, 11vw, 4.4rem) !important;
+    letter-spacing: 0.06em;
+  }
+}

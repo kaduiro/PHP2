@@ -104,9 +104,9 @@ main#company-information {
     color: #fff;
     margin-bottom: 0;
     position: relative;
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/wp-content/themes/ogawa-corp/assets/images/company/ceo-portrait-smile-2026.webp');
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/wp-content/themes/ogawa-corp/assets/images/company/company-profile-group-2026.webp');
     background-size: cover;
-    background-position: center 22%;
+    background-position: center 50%;
 }
 
 .profile-header-group {
