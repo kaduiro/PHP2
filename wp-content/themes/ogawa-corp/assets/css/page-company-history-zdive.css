@@ -2,7 +2,7 @@
    History Page Header (overrides shared .page-header background)
    ========================================================================== */
 #company-information .page-header {
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/wp-content/themes/ogawa-corp/assets/images/company/history-assembly-2026.webp') !important;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/wp-content/themes/ogawa-corp/assets/images/company/history-page-hero.webp') !important;
     background-size: cover !important;
     background-position: center 30% !important;
 }

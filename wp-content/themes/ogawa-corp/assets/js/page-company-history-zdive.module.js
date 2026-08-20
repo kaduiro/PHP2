@@ -9,55 +9,55 @@ const timelineItems = [
     era: "1958",
     title: "小川左官店創業",
     body: "代表　小川　勇",
-    image: themeBaseUrl + '/assets/images/company/ogawacloset.jpg'
+    image: themeBaseUrl + '/assets/images/company/history-1958.webp'
   },
   {
     era: "1967",
     title: "株式会社小川左官店に組織変更",
     body: "",
-    image: themeBaseUrl + '/assets/images/company/ogawarinenA.jpg'
+    image: themeBaseUrl + '/assets/images/company/history-1967.webp'
   },
   {
     era: "1983",
     title: "小川工業株式会社に社名変更",
     body: "",
-    image: themeBaseUrl + '/assets/images/company/ogawarinenB.jpg'
+    image: themeBaseUrl + '/assets/images/company/history-1983.webp'
   },
   {
     era: "1989",
     title: "小川勇治が代表取締役に就任",
     body: "",
-    image: themeBaseUrl + '/assets/images/company/ogawarinenC.jpg'
+    image: themeBaseUrl + '/assets/images/company/history-1989.webp'
   },
   {
     era: "2012",
     title: "仙台エリアにて建築請負事業拡大",
     body: "",
-    image: themeBaseUrl + '/assets/images/company/ogawagenba.jpg'
+    image: themeBaseUrl + '/assets/images/company/history-2012.webp'
   },
   {
     era: "2015",
     title: "ベトナム人技能実習生第一期生受け入れ",
     body: "",
-    image: themeBaseUrl + '/assets/images/company/ogawavietnam.jpg'
+    image: themeBaseUrl + '/assets/images/company/history-2015.webp'
   },
   {
     era: "2016",
     title: "関東エリアにて建築請負事業拡大",
     body: "",
-    image: themeBaseUrl + '/assets/images/company/ogawa-genba.jpg'
+    image: themeBaseUrl + '/assets/images/company/history-2016.webp'
   },
   {
     era: "2017",
     title: "設立50周年",
     body: "帝国ホテルにて50周年パーティ開催",
-    image: themeBaseUrl + '/assets/images/company/ogawa-closet.jpg'
+    image: themeBaseUrl + '/assets/images/company/history-2017.webp'
   },
   {
     era: "2023",
     title: "現代表　小川匡哉が代表取締役に就任",
     body: "",
-    image: themeBaseUrl + '/assets/images/company/ogawarinen-a.jpg'
+    image: themeBaseUrl + '/assets/images/company/history-2023.webp'
   }
 ];
 
