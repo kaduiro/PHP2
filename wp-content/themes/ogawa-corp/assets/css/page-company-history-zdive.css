@@ -25,6 +25,20 @@
     text-rendering: geometricPrecision !important;
 }
 
+/* 2023年の現代表写真は人物が画像の左寄りに写っているため、
+   履歴カード内だけ人物の顔が中央に来るように調整する。 */
+#company-information .zdive-panel[data-year="2023"] img,
+#company-information #history-overview .history-item[data-year="2023"] .overview-photo img {
+    transform: translateY(-10px) scale(1.2) !important;
+    transform-origin: left center !important;
+    object-position: 50% 80% !important;
+}
+
+#company-information #history-overview .history-item[data-year="2023"]:hover .overview-photo img,
+#company-information #history-overview .history-item[data-year="2023"].active .overview-photo img {
+    transform: translateY(-12px) scale(1.25) !important;
+}
+
 #company-information #history-overview.history-overview-section {
     --ov-axis-left: 200px;
     --ov-pad-x: 40px;

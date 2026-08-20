@@ -243,6 +243,7 @@ function initZDive() {
   timelineItems.forEach((item, i) => {
     const el = document.createElement('div');
     el.className = 'zdive-panel';
+    el.dataset.year = String(item.era || '');
     el.innerHTML = `
       <div class="era">${item.era}</div>
       <h3>${item.title}</h3>

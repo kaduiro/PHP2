@@ -78,8 +78,7 @@
 		"__experimentalSlashInserter": true,
 		"interactivity": {
 			"clientNavigation": true
-		},
-		"listView": true
+		}
 	},
 	"selectors": {
 		"border": ".wp-block-list:not(.wp-block-list .wp-block-list)"
