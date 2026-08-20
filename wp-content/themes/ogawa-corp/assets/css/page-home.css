@@ -260,6 +260,90 @@ html.okg-home-is-loading {
   text-decoration: none;
 }
 
+/* Hero-to-concept scroll composition, migrated from the main theme's stage01. */
+.okg-nkh-home__hero-stage {
+  position: relative;
+  isolation: isolate;
+  background: var(--okg-home-navy);
+}
+
+.okg-nkh-home__hero-stage > .okg-nkh-home__hero {
+  position: sticky;
+  z-index: 0;
+  top: 0;
+}
+
+body.home .okg-nkh-home #stage01.okg-nkh-home__stage01,
+body.front-page .okg-nkh-home #stage01.okg-nkh-home__stage01 {
+  --okg-stage01-bg-alpha: 0.87;
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  margin: 0;
+  padding: clamp(120px, 50vw, 300px) 0;
+  overflow: hidden;
+  color: var(--okg-home-ink, #10243b);
+  background: rgba(255, 255, 255, var(--okg-stage01-bg-alpha));
+}
+
+.okg-nkh-home #stage01 .okg-nkh-home__stage01-inner {
+  width: calc(100vw - 200px);
+  margin: 0 auto;
+}
+
+body.home .okg-nkh-home #stage01 .okg-nkh-home__stage01-heading,
+body.front-page .okg-nkh-home #stage01 .okg-nkh-home__stage01-heading {
+  margin: 0;
+  color: var(--okg-home-ink, #10243b);
+  font-family: var(--font-ja-serif), "Yu Mincho", "YuMincho", "Hiragino Mincho ProN", serif;
+  font-size: clamp(1.5rem, calc((100vw - 200px) / 26.88), 7rem);
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  line-height: 1.9;
+  text-align: left;
+  white-space: nowrap;
+}
+
+.okg-nkh-home #stage01 .okg-nkh-home__stage01-line {
+  display: inline;
+}
+
+.okg-nkh-home #stage01 .okg-nkh-home__stage01-mobile-break {
+  display: none;
+}
+
+@media (max-width: 900px) {
+  body.home .okg-nkh-home #stage01.okg-nkh-home__stage01,
+  body.front-page .okg-nkh-home #stage01.okg-nkh-home__stage01 {
+    --okg-stage01-bg-alpha: 0.98;
+    padding: 74px 0;
+  }
+
+  .okg-nkh-home #stage01 .okg-nkh-home__stage01-inner {
+    width: calc(100% - 40px);
+  }
+
+  body.home .okg-nkh-home #stage01 .okg-nkh-home__stage01-heading,
+  body.front-page .okg-nkh-home #stage01 .okg-nkh-home__stage01-heading {
+    font-size: clamp(1.4rem, 6.2vw, 2.45rem);
+    letter-spacing: 0.08em;
+    line-height: 1.85;
+    overflow-wrap: anywhere;
+    white-space: normal;
+  }
+
+  .okg-nkh-home #stage01 .okg-nkh-home__stage01-mobile-break {
+    display: inline;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .okg-nkh-home__hero-stage > .okg-nkh-home__hero {
+    position: relative;
+    top: auto;
+  }
+}
+
 .okg-nkh-home__message {
   position: relative;
   padding: 120px 0 132px;

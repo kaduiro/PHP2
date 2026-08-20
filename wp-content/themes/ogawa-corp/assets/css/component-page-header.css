@@ -15,10 +15,10 @@
   z-index: 1;
   display: flex !important;
   align-items: center;
-  min-height: clamp(320px, 26vw, 390px);
+  min-height: clamp(160px, 13vw, 195px);
   box-sizing: border-box;
   margin: 0 !important;
-  padding: clamp(88px, 8vw, 116px) clamp(24px, 3.5vw, 66px) clamp(58px, 5vw, 78px) !important;
+  padding: clamp(88px, 8vw, 116px) clamp(12px, 1.75vw, 33px) clamp(29px, 2.5vw, 39px) !important;
   overflow: hidden;
   isolation: isolate;
   color: var(--okg-page-header-ink) !important;
@@ -34,10 +34,10 @@
 .okg-page-header::before {
   content: "";
   position: absolute;
-  top: -34px;
-  left: -82px;
-  width: 430px;
-  height: 170px;
+  top: -17px;
+  left: -41px;
+  width: 215px;
+  height: 85px;
   border-top: 1px solid var(--okg-page-header-line);
   border-bottom: 1px solid var(--okg-page-header-line);
   transform: rotate(-14deg);
@@ -47,12 +47,12 @@
 .okg-page-header::after {
   content: attr(data-watermark);
   position: absolute;
-  top: clamp(-64px, -3vw, -38px);
-  right: clamp(-30px, -1vw, -8px);
+  top: clamp(-32px, -1.5vw, -19px);
+  right: clamp(-15px, -0.5vw, -4px);
   z-index: -1;
   color: rgba(16, 75, 155, 0.055);
   font-family: var(--font-en, "Montserrat", Arial, sans-serif);
-  font-size: clamp(8rem, 16vw, 15rem);
+  font-size: clamp(4rem, 8vw, 7.5rem);
   font-weight: 800;
   line-height: 0.9;
   letter-spacing: -0.05em;
@@ -71,7 +71,7 @@
   align-items: center !important;
   justify-content: center;
   width: min(1800px, 100%);
-  min-height: 216px;
+  min-height: 108px;
   margin: 0 auto;
   text-align: center !important;
 }
@@ -80,8 +80,8 @@
   content: "";
   position: absolute;
   top: 2%;
-  right: clamp(-26px, 5vw, 90px);
-  width: clamp(190px, 18vw, 332px);
+  right: clamp(-13px, 2.5vw, 45px);
+  width: clamp(95px, 9vw, 166px);
   aspect-ratio: 1;
   border: 1px solid rgba(16, 75, 155, 0.2);
   border-radius: 50%;
@@ -91,10 +91,10 @@
 .okg-page-header__inner::after {
   content: "";
   position: absolute;
-  left: clamp(34px, 4.5vw, 84px);
+  left: clamp(17px, 2.25vw, 42px);
   bottom: 0;
-  width: clamp(180px, 16vw, 300px);
-  height: 58px;
+  width: clamp(90px, 8vw, 150px);
+  height: 29px;
   background: repeating-linear-gradient(
     135deg,
     rgba(16, 75, 155, 0.12) 0,
@@ -115,7 +115,7 @@
   display: inline-flex !important;
   align-items: center;
   gap: 18px;
-  margin: 0 0 clamp(28px, 3vw, 42px) !important;
+  margin: 0 0 clamp(14px, 1.5vw, 21px) !important;
   color: var(--okg-page-header-blue) !important;
   font-family: var(--font-en, "Montserrat", "Helvetica Neue", Arial, sans-serif) !important;
   font-size: clamp(0.78rem, 1vw, 1rem) !important;
@@ -132,7 +132,7 @@
 .okg-bizhub.okg-bizhub .okg-page-header__eyebrow::before {
   content: "" !important;
   display: block;
-  width: clamp(42px, 4vw, 54px);
+  width: clamp(21px, 2vw, 27px);
   height: 2px;
   flex: 0 0 auto;
   margin: 0 !important;
@@ -150,7 +150,7 @@
   margin: 0 !important;
   color: var(--okg-page-header-ink) !important;
   font-family: var(--font-ja-serif, "Noto Serif JP", "Yu Mincho", "Hiragino Mincho ProN", serif) !important;
-  font-size: clamp(3rem, 5.4vw, 6.5rem) !important;
+  font-size: clamp(1.5rem, 2.7vw, 3.25rem) !important;
   font-weight: 500 !important;
   line-height: 1.1 !important;
   letter-spacing: 0.08em !important;
@@ -162,34 +162,34 @@
   .news-main .okg-page-header,
   #company-information .okg-page-header,
   .okg-bizhub.okg-bizhub .okg-page-header {
-    min-height: 320px;
-    padding: 88px 24px 58px !important;
+    min-height: 160px;
+    padding: 88px 12px 29px !important;
   }
 
   .okg-page-header::after {
-    top: -22px;
-    right: -48px;
-    font-size: clamp(6rem, 25vw, 9rem);
+    top: -11px;
+    right: -24px;
+    font-size: clamp(3rem, 12.5vw, 4.5rem);
   }
 
   .okg-page-header__inner,
   .news-main .okg-page-header__inner,
   #company-information .okg-page-header__inner,
   .okg-bizhub.okg-bizhub .okg-page-header__inner {
-    min-height: 150px;
+    min-height: 75px;
   }
 
   .okg-page-header__inner::before {
     top: 0;
-    right: -48px;
-    width: 190px;
+    right: -24px;
+    width: 95px;
   }
 
   .okg-page-header__inner::after {
-    left: 22px;
-    bottom: -2px;
-    width: 180px;
-    height: 46px;
+    left: 11px;
+    bottom: -1px;
+    width: 90px;
+    height: 23px;
   }
 
   .okg-page-header__eyebrow,
@@ -197,7 +197,7 @@
   #company-information .okg-page-header__eyebrow,
   .okg-bizhub.okg-bizhub .okg-page-header__eyebrow {
     gap: 12px;
-    margin-bottom: 24px !important;
+    margin-bottom: 12px !important;
     font-size: 0.72rem !important;
   }
 
@@ -205,7 +205,7 @@
   .news-main .okg-page-header__eyebrow::before,
   #company-information .okg-page-header__eyebrow::before,
   .okg-bizhub.okg-bizhub .okg-page-header__eyebrow::before {
-    width: 34px;
+    width: 17px;
   }
 
   .okg-page-header__title,
@@ -213,7 +213,7 @@
   #company-information .okg-page-header__title,
   .okg-bizhub.okg-bizhub .okg-page-header__title {
     max-width: 92vw;
-    font-size: clamp(2.7rem, 11vw, 4.4rem) !important;
+    font-size: clamp(1.35rem, 5.5vw, 2.2rem) !important;
     letter-spacing: 0.06em;
   }
 }

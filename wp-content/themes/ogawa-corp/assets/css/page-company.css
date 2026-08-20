@@ -634,7 +634,7 @@ main#company-information {
     margin: 0;
     color: var(--okg-cp-ink);
     font-family: var(--okg-cp-serif);
-    font-size: 2.6rem;
+    font-size: 3.9rem;
     font-weight: 800;
     line-height: 1.2;
     letter-spacing: 0;
@@ -690,7 +690,7 @@ main#company-information {
     }
 
     #company-information .okg-company-typo-profile__title {
-        font-size: 2rem;
+        font-size: 2.55rem;
     }
 
     .profile-row {
@@ -1524,13 +1524,8 @@ body.skip-zdive #company-information #history-overview.history-overview-section 
 }
 
 #company-information .okg-company-typo-philosophy__statement {
-    font-size: clamp(1.12rem, 1.75vw, 1.55rem);
     line-height: 1.35;
     white-space: nowrap;
-}
-
-#company-information .okg-company-typo-philosophy__statement br {
-    display: none;
 }
 
 #company-information .okg-company-typo-philosophy__statement span,
@@ -1742,9 +1737,9 @@ body.skip-zdive #company-information #history-overview.history-overview-section 
 
 #company-information .okg-company-typo-philosophy__values-title {
     margin: 0;
-    color: var(--okg-cp-red);
+    color: var(--okg-cp-ink);
     font-family: var(--okg-cp-serif);
-    font-size: 3rem;
+    font-size: 3.9rem;
     font-weight: 800;
     line-height: 1.18;
     letter-spacing: 0;
@@ -1792,17 +1787,15 @@ body.skip-zdive #company-information #history-overview.history-overview-section 
         top: auto;
     }
 
-    #company-information .okg-company-typo-philosophy__title {
+    #company-information .okg-company-typo-philosophy__title,
+    #company-information .okg-company-typo-philosophy__values-title,
+    #company-information .okg-company-typo-profile__title {
         font-size: 3.25rem;
     }
 
     #company-information .okg-company-typo-philosophy__statement,
     #company-information .okg-company-typo-philosophy__values-statement {
         font-size: 2rem;
-    }
-
-    #company-information .okg-company-typo-philosophy__statement {
-        font-size: clamp(1.38rem, 3.4vw, 2rem);
     }
 
     #company-information .okg-company-typo-philosophy__mission-card--employee,
@@ -1862,7 +1855,8 @@ body.skip-zdive #company-information #history-overview.history-overview-section 
         gap: 2.4rem;
     }
 
-    #company-information .okg-company-typo-philosophy__title {
+    #company-information .okg-company-typo-philosophy__title,
+    #company-information .okg-company-typo-profile__title {
         font-size: 2.55rem;
     }
 
@@ -1930,7 +1924,7 @@ body.skip-zdive #company-information #history-overview.history-overview-section 
     }
 
     #company-information .okg-company-typo-philosophy__values-title {
-        font-size: 2.2rem;
+        font-size: 2.55rem;
     }
 
     #company-information .okg-company-typo-philosophy__card-title,
@@ -1948,13 +1942,15 @@ body.skip-zdive #company-information #history-overview.history-overview-section 
         width: min(100%, calc(100% - 1rem));
     }
 
-    #company-information .okg-company-typo-philosophy__title {
+    #company-information .okg-company-typo-philosophy__title,
+    #company-information .okg-company-typo-philosophy__values-title,
+    #company-information .okg-company-typo-profile__title {
         font-size: 2.15rem;
     }
 
     #company-information .okg-company-typo-philosophy__statement,
     #company-information .okg-company-typo-philosophy__values-statement {
-        font-size: 1.38rem;
+        font-size: 1.58rem;
     }
 
     #company-information .okg-company-typo-philosophy__mission-card,
