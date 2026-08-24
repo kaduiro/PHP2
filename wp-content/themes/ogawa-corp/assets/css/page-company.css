@@ -684,6 +684,18 @@ main#company-information {
     line-height: 1.9;
 }
 
+.profile-row__line {
+    display: block;
+}
+
+.profile-row__items {
+    display: grid;
+    gap: 0.15em;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
 @media (max-width: 768px) {
     #company-information .okg-company-typo-profile {
         padding: 4.5rem 0 5rem;
