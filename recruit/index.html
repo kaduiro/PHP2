@@ -49,7 +49,7 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
 <link rel="stylesheet" id="ogawa-corp-global-header-style-css" href="/wp-content/themes/ogawa-corp/assets/css/component-global-header.css?ver=1787191414" media="all">
 <link rel="stylesheet" id="ogawa-corp-global-footer-style-css" href="/wp-content/themes/ogawa-corp/assets/css/component-global-footer.css?ver=1787191414" media="all">
 <link rel="stylesheet" id="ogawa-corp-page-top-css" href="/wp-content/themes/ogawa-corp/assets/css/component-page-top.css?ver=1785395617" media="all">
-<link rel="stylesheet" id="ogawa-recruit-style-css" href="/wp-content/themes/ogawa-corp/assets/css/page-recruit.css?ver=1787535167" media="all">
+<link rel="stylesheet" id="ogawa-recruit-style-css" href="/wp-content/themes/ogawa-corp/assets/css/page-recruit.css?ver=1787633014" media="all">
 <link rel="stylesheet" id="ogawa-responsive-refactor-css" href="/wp-content/themes/ogawa-corp/assets/css/page-responsive-refactor.css?ver=1787191414" media="all">
 <link rel="stylesheet" id="ogawa-page-header-style-css" href="/wp-content/themes/ogawa-corp/assets/css/component-page-header.css?ver=1787191935" media="all">
 <script src="/wp-includes/js/jquery/jquery.min.js?ver=3.7.1" id="jquery-core-js"></script>
@@ -127,7 +127,10 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
                 </h1>
             </div>
             <div class="p-recruit-hero__subtitle-wrapper">
-                <p class="p-recruit-hero__subtitle js-fade-in_delay">見ている人は、ちゃんと見ている。<br>あなたのその実直さを、私たちは求めています。</p>
+                <p class="p-recruit-hero__subtitle js-fade-in_delay">
+                    <span class="p-recruit-hero__subtitle-line"><span class="p-recruit-hero__subtitle-frag">見ている人は、</span><span class="p-recruit-hero__subtitle-frag">ちゃんと見ている。</span></span>
+                    <span class="p-recruit-hero__subtitle-line"><span class="p-recruit-hero__subtitle-frag">あなたのその実直さを、</span><span class="p-recruit-hero__subtitle-frag">私たちは求めています。</span></span>
+                </p>
             </div>
         </div>
         <div class="p-recruit-hero__scroll">SCROLL</div>
@@ -183,8 +186,10 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
             <h2 class="c-recruit-heading">CULTURE</h2>
             <p class="c-recruit-subheading">小川工業の2つの社風</p>
             <p class="p-recruit-concept__intro">
-                小川工業の現場を支えているのは、「技術の継承」と「チームワーク」です。
-                気になるカードをクリックすると、働く空気や考え方が中央に開きます。
+                <span class="p-recruit-concept__intro-line">小川工業の現場を支えているのは</span>
+                <span class="p-recruit-concept__intro-line">「技術の継承」と「チームワーク」です。</span>
+                <span class="p-recruit-concept__intro-line">気になるカードをクリックすると</span>
+                <span class="p-recruit-concept__intro-line">働く空気や考え方がごらんいただけます</span>
             </p>
             <div class="p-recruit-concept__grid">
                                                         <button type="button" class="p-recruit-culture-card js-culture-pop" style="--culture-start-x: calc(-100vw - 180px); --culture-overshoot-x: 22px;" data-concept-open="technology" aria-haspopup="dialog" aria-controls="recruit-concept-modal">
@@ -296,9 +301,11 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
                     <span class="p-recruit-craft__title-line">人の力が残る。</span>
                 </h2>
                 <p class="p-recruit-craft__text">
-                    暑い日も、寒い日も、朝が早い日もある。けれど、建物は画面の中だけでは完成しない。
-                    技術を読み、段取りを組み、人と人をつないでいく。小川工業が大切にしているのは、
-                    そんな現場の仕事を「働いて良かった」と思える経験に変えていくことです。
+                    <span class="p-recruit-craft__text-line">暑い日も、寒い日も、朝が早い日もある。</span>
+                    <span class="p-recruit-craft__text-line">けれど、建物は画面の中だけでは完成しない。</span>
+                    <span class="p-recruit-craft__text-line">技術を読み、段取りを組み、人と人をつないでいく。</span>
+                    <span class="p-recruit-craft__text-line">小川工業が大切にしているのは、</span>
+                    <span class="p-recruit-craft__text-line">そんな現場の仕事を「働いて良かった」と思える経験に変えていくことです。</span>
                 </p>
             </div>
 
@@ -380,7 +387,12 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
                                 </div>
                                 <div class="p-recruit-feature__body">
                                     <p class="p-recruit-feature__body-label">未経験でも活躍できる理由</p>
-                                    <p class="p-recruit-feature__body-text">前職はリフォーム工務店での現場管理。入社してわずか4か月ですが、集合住宅の施工管理を一から学んでいます。慣れない現場でも先輩や職人さんに支えられ、「気が利くね」の一言が次への自信につながっています。未経験からでも、年齢に関わらず挑戦できることを体現する存在です。</p>
+                                    <p class="p-recruit-feature__body-text">
+                                                                                    <span class="p-recruit-feature__body-text-line">前職はリフォーム工務店での現場管理。</span>
+                                                                                    <span class="p-recruit-feature__body-text-line">入社してわずか4か月ですが、集合住宅の施工管理を一から学んでいます。</span>
+                                                                                    <span class="p-recruit-feature__body-text-line">慣れない現場でも先輩や職人さんに支えられ、</span>
+                                                                                    <span class="p-recruit-feature__body-text-line">「気が利くね」の一言が次への自信につながっています。未経験からでも、年齢に関わらず挑戦できることを体現する存在です。</span>
+                                                                            </p>
                                     <a href="/recruit/person/interview1/" class="p-recruit-feature__more">MORE</a>
                                 </div>
                             </div>
@@ -411,7 +423,13 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
                                 </div>
                                 <div class="p-recruit-feature__body">
                                     <p class="p-recruit-feature__body-label">未経験でも活躍できる理由</p>
-                                    <p class="p-recruit-feature__body-text">前職はアパレル販売の接客業。入社10年、メンテナンス工事の事務を3人チームで担い、見積書や発注書の作成から現場写真の確認まで、現場を陰で支えています。「建築は奥が深く、日々学びがある」と話す姿は、事務職としてのやりがいそのものです。</p>
+                                    <p class="p-recruit-feature__body-text">
+                                                                                    <span class="p-recruit-feature__body-text-line">前職はアパレル販売の接客業。</span>
+                                                                                    <span class="p-recruit-feature__body-text-line">入社10年、メンテナンス工事の事務を3人チームで担い、</span>
+                                                                                    <span class="p-recruit-feature__body-text-line">見積書や発注書の作成から現場写真の確認まで行い、</span>
+                                                                                    <span class="p-recruit-feature__body-text-line">現場を陰で支えています。</span>
+                                                                                    <span class="p-recruit-feature__body-text-line">「建築は奥が深く、日々学びがある」と話す姿は、事務職としてのやりがいそのものです。</span>
+                                                                            </p>
                                     <a href="/recruit/person/interview2/" class="p-recruit-feature__more">MORE</a>
                                 </div>
                             </div>
@@ -442,7 +460,11 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
                                 </div>
                                 <div class="p-recruit-feature__body">
                                     <p class="p-recruit-feature__body-label">未経験でも活躍できる理由</p>
-                                    <p class="p-recruit-feature__body-text">前職は製薬会社での営業。社長の考え方に共感して入社し、現在は工事部課長として現場管理から新入社員のフォローまで幅広く担っています。「創業60年を迎える会社として、次の100年へ」という言葉に、会社の将来を担う覚悟がにじみます。</p>
+                                    <p class="p-recruit-feature__body-text">
+                                                                                    <span class="p-recruit-feature__body-text-line">前職は製薬会社での営業。</span>
+                                                                                    <span class="p-recruit-feature__body-text-line">社長の考え方に共感して入社し、現在は工事部課長として現場管理から新入社員のフォローまで幅広く担っています。</span>
+                                                                                    <span class="p-recruit-feature__body-text-line">「創業60年を迎える会社として、次の100年へ」という言葉に、会社の将来を担う覚悟がにじみます。</span>
+                                                                            </p>
                                     <a href="/recruit/person/interview3/" class="p-recruit-feature__more">MORE</a>
                                 </div>
                             </div>
@@ -516,7 +538,7 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
                                 <div class="p-recruit-school-icon-wrapper">
                                     <svg viewbox="0 0 42 42" class="p-recruit-school-ring">
                                         <circle cx="21" cy="21" r="18" fill="transparent" stroke="#f0f5fa" stroke-width="2"></circle>
-                                        <circle cx="21" cy="21" r="18" fill="transparent" stroke="#0b3486" stroke-width="3" stroke-dasharray="75 25" stroke-dashoffset="25" stroke-linecap="round"></circle>
+                                        <circle cx="21" cy="21" r="18" fill="transparent" stroke="#0b3486" stroke-width="3" stroke-dasharray="20 80" stroke-dashoffset="25" stroke-linecap="round"></circle>
                                     </svg>
                                     <div class="p-recruit-school-icon">
                                         <!-- Minimalist graduation/school motif -->
@@ -524,7 +546,7 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
                                     </div>
                                 </div>
                                 <div class="p-recruit-school-value">
-                                    <span class="p-recruit-metric-val js-counter" data-target="75">0</span><span class="p-recruit-metric-unit">%</span>
+                                    <span class="p-recruit-metric-val js-counter" data-target="20">0</span><span class="p-recruit-metric-unit">%</span>
                                 </div>
                             </div>
                                             </div>
@@ -536,13 +558,13 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
                     <div class="p-recruit-number-item__visual">
                                                     <div class="p-recruit-figure p-recruit-figure--nonarch">
                                 <div class="p-recruit-nonarch-value">
-                                    <span class="p-recruit-metric-val js-counter" data-target="20">0</span><span class="p-recruit-metric-unit">%</span>
+                                    <span class="p-recruit-metric-val js-counter" data-target="75">0</span><span class="p-recruit-metric-unit">%</span>
                                 </div>
                                 <div class="p-recruit-nonarch-icons">
                                     <svg viewbox="0 0 24 24" fill="currentColor" class="p-recruit-nonarch-icon p-recruit-nonarch-icon--active"><circle cx="12" cy="6" r="4"></circle><path d="M12 12c-2.7 0-8 1.3-8 4v2h16v-2c0-2.7-5.3-4-8-4z"></path></svg>
-                                    <svg viewbox="0 0 24 24" fill="currentColor" class="p-recruit-nonarch-icon"><circle cx="12" cy="6" r="4"></circle><path d="M12 12c-2.7 0-8 1.3-8 4v2h16v-2c0-2.7-5.3-4-8-4z"></path></svg>
-                                    <svg viewbox="0 0 24 24" fill="currentColor" class="p-recruit-nonarch-icon"><circle cx="12" cy="6" r="4"></circle><path d="M12 12c-2.7 0-8 1.3-8 4v2h16v-2c0-2.7-5.3-4-8-4z"></path></svg>
-                                    <svg viewbox="0 0 24 24" fill="currentColor" class="p-recruit-nonarch-icon"><circle cx="12" cy="6" r="4"></circle><path d="M12 12c-2.7 0-8 1.3-8 4v2h16v-2c0-2.7-5.3-4-8-4z"></path></svg>
+                                    <svg viewbox="0 0 24 24" fill="currentColor" class="p-recruit-nonarch-icon p-recruit-nonarch-icon--active"><circle cx="12" cy="6" r="4"></circle><path d="M12 12c-2.7 0-8 1.3-8 4v2h16v-2c0-2.7-5.3-4-8-4z"></path></svg>
+                                    <svg viewbox="0 0 24 24" fill="currentColor" class="p-recruit-nonarch-icon p-recruit-nonarch-icon--active"><circle cx="12" cy="6" r="4"></circle><path d="M12 12c-2.7 0-8 1.3-8 4v2h16v-2c0-2.7-5.3-4-8-4z"></path></svg>
+                                    <svg viewbox="0 0 24 24" fill="currentColor" class="p-recruit-nonarch-icon p-recruit-nonarch-icon--active"><circle cx="12" cy="6" r="4"></circle><path d="M12 12c-2.7 0-8 1.3-8 4v2h16v-2c0-2.7-5.3-4-8-4z"></path></svg>
                                     <svg viewbox="0 0 24 24" fill="currentColor" class="p-recruit-nonarch-icon"><circle cx="12" cy="6" r="4"></circle><path d="M12 12c-2.7 0-8 1.3-8 4v2h16v-2c0-2.7-5.3-4-8-4z"></path></svg>
                                 </div>
                             </div>
@@ -592,8 +614,10 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
                     <p class="p-recruit-benefits__headline">入社後の働きやすさまで、ちゃんと想像できる環境。</p>
                 </div>
                 <p class="p-recruit-benefits__lead">
-                    小川工業の福利厚生は、見栄えのための制度ではありません。入社したあとに「ここなら長く働けそう」と思えることを大切に、
-                    仕事のしやすさ、日々の息抜き、仲間との距離感まで、働く人の声をもとに少しずつ形にしてきました。
+                    <span class="p-recruit-benefits__lead-line">小川工業の福利厚生は、見栄えのための制度ではありません。</span>
+                    <span class="p-recruit-benefits__lead-line">入社したあとに「ここなら長く働けそう」と思えることを大切に</span>
+                    <span class="p-recruit-benefits__lead-line">仕事のしやすさ、日々の息抜き、仲間との距離感まで</span>
+                    <span class="p-recruit-benefits__lead-line">働く人の声をもとに少しずつ形にしてきました。</span>
                 </p>
             </div>
 
@@ -616,7 +640,12 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
                                         </h4>
                                         <div class="p-recruit-benefit__panel">
                                             <div class="p-recruit-benefit__copy">
-                                                <p class="p-recruit-benefit__description">毎週水曜日は定時退社を徹底。趣味の時間にあてたり、家族と過ごしたり、プライベートの時間をしっかり確保してメリハリのある働き方を推進しています。</p>
+                                                <p class="p-recruit-benefit__description">
+                                                                                                            <span class="p-recruit-benefit__description-line">毎週水曜日は定時退社を徹底。</span>
+                                                                                                            <span class="p-recruit-benefit__description-line">趣味の時間にあてたり、</span>
+                                                                                                            <span class="p-recruit-benefit__description-line">家族と過ごしたり、</span>
+                                                                                                            <span class="p-recruit-benefit__description-line">プライベートの時間をしっかり確保してメリハリのある働き方を推進しています。</span>
+                                                                                                    </p>
                                             </div>
                                         </div>
                                     </article>
@@ -628,7 +657,11 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
                                         </h4>
                                         <div class="p-recruit-benefit__panel">
                                             <div class="p-recruit-benefit__copy">
-                                                <p class="p-recruit-benefit__description">現場やお客様先への直行直帰を推奨しています。無駄な移動時間やオフィスに戻る手間を省き、効率的でストレスフリーな働き方が可能です。</p>
+                                                <p class="p-recruit-benefit__description">
+                                                                                                            <span class="p-recruit-benefit__description-line">現場やお客様先への直行直帰を推奨しています。</span>
+                                                                                                            <span class="p-recruit-benefit__description-line">無駄な移動時間やオフィスに戻る手間を省き、</span>
+                                                                                                            <span class="p-recruit-benefit__description-line">効率的でストレスフリーな働き方が可能です。</span>
+                                                                                                    </p>
                                             </div>
                                         </div>
                                     </article>
@@ -653,7 +686,10 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
                                         </h4>
                                         <div class="p-recruit-benefit__panel">
                                             <div class="p-recruit-benefit__copy">
-                                                <p class="p-recruit-benefit__description">月に1回、大自然の中で釣りを楽しめる制度です。仕事だけでなく、趣味や遊びも全力で楽しんでほしいという想いから生まれた、当社自慢のカルチャーです。</p>
+                                                <p class="p-recruit-benefit__description">
+                                                                                                            <span class="p-recruit-benefit__description-line">月に1回、大自然の中で釣りを楽しめる制度です。</span>
+                                                                                                            <span class="p-recruit-benefit__description-line">仕事だけでなく、趣味や遊びも全力で楽しんでほしいという想いから生まれた、当社自慢のカルチャーです。</span>
+                                                                                                    </p>
                                             </div>
                                         </div>
                                     </article>
@@ -665,7 +701,11 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
                                         </h4>
                                         <div class="p-recruit-benefit__panel">
                                             <div class="p-recruit-benefit__copy">
-                                                <p class="p-recruit-benefit__description">当社は地元・ガンバ大阪を応援しています。社員にはスポンサー枠の観戦チケットを配布。休日は同僚や家族と一緒に、スタジアムで熱い声援を送ってリフレッシュできます。</p>
+                                                <p class="p-recruit-benefit__description">
+                                                                                                            <span class="p-recruit-benefit__description-line">当社は地元・ガンバ大阪を応援しています。</span>
+                                                                                                            <span class="p-recruit-benefit__description-line">社員にはスポンサー枠の観戦チケットを配布。</span>
+                                                                                                            <span class="p-recruit-benefit__description-line">休日は同僚や家族と一緒に、スタジアムで熱い声援を送ってリフレッシュできます。</span>
+                                                                                                    </p>
                                             </div>
                                         </div>
                                     </article>
@@ -690,7 +730,11 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
                                         </h4>
                                         <div class="p-recruit-benefit__panel">
                                             <div class="p-recruit-benefit__copy">
-                                                <p class="p-recruit-benefit__description">オフィスには自由に飲めるドリンクとお菓子を常備。仕事の合間のちょっとした糖分補給や、メンバー同士の雑談が生まれる憩いの場になっています。</p>
+                                                <p class="p-recruit-benefit__description">
+                                                                                                            <span class="p-recruit-benefit__description-line">オフィスには自由に飲めるドリンクとお菓子を常備。</span>
+                                                                                                            <span class="p-recruit-benefit__description-line">仕事の合間のちょっとした糖分補給や、</span>
+                                                                                                            <span class="p-recruit-benefit__description-line">メンバー同士の雑談が生まれる憩いの場になっています。</span>
+                                                                                                    </p>
                                             </div>
                                         </div>
                                     </article>
@@ -702,7 +746,10 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
                                         </h4>
                                         <div class="p-recruit-benefit__panel">
                                             <div class="p-recruit-benefit__copy">
-                                                <p class="p-recruit-benefit__description">定期的に開催される会社のご飯会や懇親会は、費用を全額会社が負担します。部署や年齢の垣根を越えて、美味しいご飯を食べながらワイワイ交流を深めています。</p>
+                                                <p class="p-recruit-benefit__description">
+                                                                                                            <span class="p-recruit-benefit__description-line">定期的に開催される会社のご飯会や懇親会は、費用を全額会社が負担します。</span>
+                                                                                                            <span class="p-recruit-benefit__description-line">部署や年齢の垣根を越えて、美味しいご飯を食べながらワイワイ交流を深めています。</span>
+                                                                                                    </p>
                                             </div>
                                         </div>
                                     </article>
@@ -727,7 +774,10 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
                                         </h4>
                                         <div class="p-recruit-benefit__panel">
                                             <div class="p-recruit-benefit__copy">
-                                                <p class="p-recruit-benefit__description">良い仕事は、良い健康状態から。社員が長く安心して働けるよう、年1回の健康診断を実施し、心身の健康づくりを会社がしっかりサポートしています。</p>
+                                                <p class="p-recruit-benefit__description">
+                                                                                                            <span class="p-recruit-benefit__description-line">良い仕事は、良い健康状態から。</span>
+                                                                                                            <span class="p-recruit-benefit__description-line">社員が長く安心して働けるよう、年1回の健康診断を実施し、心身の健康づくりを会社がしっかりサポートしています。</span>
+                                                                                                    </p>
                                             </div>
                                         </div>
                                     </article>

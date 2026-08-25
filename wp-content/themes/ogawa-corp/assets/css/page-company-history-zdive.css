@@ -34,6 +34,27 @@
     object-position: 50% 80% !important;
 }
 
+/* Keep the SP card media inside its rounded surface. The desktop 2023
+   portrait crop intentionally uses a scale transform; on a narrow viewport
+   that transform must not expand beyond the card edge. */
+@media (max-width: 768px) {
+    #company-information #mk-history-zdive .zdive-panel {
+        overflow: hidden !important;
+    }
+
+    #company-information #mk-history-zdive .zdive-panel:not([data-year="2023"]) img {
+        transform: none !important;
+        transform-origin: center center !important;
+        object-position: 50% 80% !important;
+    }
+
+    #company-information #mk-history-zdive .zdive-panel[data-year="2023"] img {
+        transform: scale(1.08) !important;
+        transform-origin: center 80% !important;
+        object-position: 50% 80% !important;
+    }
+}
+
 #company-information #history-overview .history-item[data-year="2023"]:hover .overview-photo img,
 #company-information #history-overview .history-item[data-year="2023"].active .overview-photo img {
     transform: translateY(-12px) scale(1.25) !important;

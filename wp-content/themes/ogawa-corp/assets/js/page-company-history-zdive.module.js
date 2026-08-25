@@ -238,7 +238,7 @@ function initZDive() {
 
   /* ---- DOM驛｢譏懶ｽｻ・｣郢晢ｽｭ驛｢譎｢・ｽ・ｫ鬨ｾ蠅難ｽｻ阮吶・ ---- */
   const panels = [];
-  const isMob = W <= 768;
+  const isMob = () => W <= 768;
 
   timelineItems.forEach((item, i) => {
     const el = document.createElement('div');
@@ -252,7 +252,9 @@ function initZDive() {
            onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22600%22 height=%22400%22><rect fill=%22%23001A3D%22 width=%22600%22 height=%22400%22/><text x=%2250%25%22 y=%2250%25%22 fill=%22%23D0B090%22 font-size=%2224%22 text-anchor=%22middle%22 dominant-baseline=%22middle%22>No Image</text></svg>'"/>
     `;
     panelLayer.appendChild(el);
-    const xPx = isMob ? (i%2===0?15:-15) : (i%2===0?120:-120);
+    // Keep the card centered on narrow screens. The desktop composition keeps
+    // its alternating lateral movement, while SP uses one stable reading axis.
+    const xPx = isMob() ? 0 : (i%2===0?120:-120);
     panels.push({ el, xPx, index: i });
   });
 
@@ -397,6 +399,9 @@ function initZDive() {
       const p = panels[i];
       const el = p.el;
       if (i === idx) {
+        el.style.zIndex = '2';
+        el.style.visibility = 'visible';
+        el.style.pointerEvents = 'auto';
         el.style.transform = `translate(-50%,-50%) translate(${p.xPx}px,0) scale(${vis.scale.toFixed(4)}) rotateY(${vis.rotY.toFixed(2)}deg)`;
         el.style.opacity = vis.opacity.toFixed(4);
         const exitBlur = vis.zone === 'depart' && localT > 0.94
@@ -405,10 +410,17 @@ function initZDive() {
         el.style.filter = exitBlur > 0 ? `blur(${exitBlur.toFixed(1)}px)` : 'none';
         el.classList.toggle('read-active', vis.zone==='read');
       } else if (i < idx) {
+        el.style.zIndex = '0';
+        el.style.visibility = 'hidden';
+        el.style.pointerEvents = 'none';
         el.style.opacity='0';el.style.transform='translate(-50%,-50%) scale(0.96)';el.style.filter='none';el.classList.remove('read-active');
       } else {
         const dist = i - idx;
-        if (dist===1 && localT>READ_END) {
+        const canPeek = !isMob() && dist===1 && localT>READ_END;
+        el.style.zIndex = canPeek ? '1' : '0';
+        el.style.visibility = canPeek ? 'visible' : 'hidden';
+        el.style.pointerEvents = 'none';
+        if (canPeek) {
           const earlyT=(localT-READ_END)/(1-READ_END);
           el.style.opacity=(earlyT*0.15).toFixed(4);
           el.style.transform=`translate(-50%,-50%) translate(${panels[i].xPx}px,0) scale(0.88) rotateY(${(i%2===0?-12:12)}deg)`;
@@ -458,6 +470,9 @@ function initZDive() {
     W=window.innerWidth;H=window.innerHeight;
     camera.aspect=W/H;camera.updateProjectionMatrix();
     renderer.setSize(W,H);
+    panels.forEach((p, i) => {
+      p.xPx = isMob() ? 0 : (i % 2 === 0 ? 120 : -120);
+    });
     ScrollTriggerRef.refresh();
   });
 }

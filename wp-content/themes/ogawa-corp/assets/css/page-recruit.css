@@ -37,7 +37,7 @@
 /* Typography */
 .c-recruit-heading {
     font-family: var(--f-recruit-title);
-    font-size: 3rem;
+    font-size: clamp(1.6rem, 7vw, 3rem);
     font-weight: 500;
     color: var(--c-recruit-primary);
     text-align: center;
@@ -225,6 +225,10 @@
     text-shadow: 0 2px 4px rgba(0, 0, 0, 1), 0 4px 12px rgba(0, 0, 0, 0.8), 0 0 20px rgba(0, 0, 0, 0.5);
 }
 
+.p-recruit-hero__subtitle-line {
+    display: block;
+}
+
 .p-recruit-hero__scrolldown {
     position: absolute;
     bottom: 30px;
@@ -314,12 +318,23 @@
     max-width: 980px;
     margin: 0 auto 44px;
     font-family: var(--f-recruit-body);
-    font-size: 1rem;
+    font-size: clamp(0.92rem, 3.4vw, 1.05rem);
     font-weight: 500;
     line-height: 1.9;
     text-align: center;
     color: #666;
     text-wrap: pretty;
+}
+
+.p-recruit-concept__intro-line,
+.p-recruit-craft__text-line,
+.p-recruit-feature__body-text-line,
+.p-recruit-benefit__description-line,
+.p-recruit-benefits__lead-line {
+    display: block;
+    text-wrap: pretty;
+    line-break: strict;
+    overflow-wrap: anywhere;
 }
 
 .p-recruit-concept__grid {
@@ -1201,10 +1216,11 @@ body.is-recruit-modal-open {
     max-width: 36em;
     margin: 28px 0 0;
     color: #313946;
-    font-size: clamp(1rem, 1.18vw, 1.12rem);
+    font-size: clamp(0.95rem, 2.6vw, 1.12rem);
     font-weight: 500;
     line-height: 2.02;
     letter-spacing: 0.035em;
+    text-wrap: pretty;
 }
 
 .p-recruit-craft__photo {
@@ -1508,7 +1524,6 @@ body.is-recruit-modal-open {
 
     .p-recruit-craft__text {
         margin-top: 22px;
-        font-size: 0.96rem;
         line-height: 1.9;
     }
 
@@ -1622,7 +1637,7 @@ body.is-recruit-modal-open {
     max-width: 980px;
     margin: 0 auto 56px;
     font-family: var(--f-recruit-body);
-    font-size: 1rem;
+    font-size: clamp(0.92rem, 3.4vw, 1.05rem);
     font-weight: 500;
     line-height: 1.9;
     text-align: center;
@@ -1706,12 +1721,15 @@ body.is-recruit-modal-open {
 
 .p-recruit-feature__message-line {
     display: block;
-    white-space: nowrap;
+    white-space: normal;
+    text-wrap: balance;
+    line-break: strict;
+    overflow-wrap: anywhere;
 }
 
 .p-recruit-feature__name {
     margin: 0 0 6px;
-    font-size: 1.35rem;
+    font-size: clamp(1.1rem, 3.5vw, 1.35rem);
     font-weight: 700;
     letter-spacing: 0.08em;
 }
@@ -1793,6 +1811,7 @@ body.is-recruit-modal-open {
     font-size: 0.95rem;
     line-height: 1.8;
     color: #444;
+    text-wrap: pretty;
 }
 
 .p-recruit-feature__more {
@@ -1861,14 +1880,14 @@ body.is-recruit-modal-open {
 
 .p-recruit-metric-val {
     color: var(--c-recruit-primary);
-    font-size: 3.8rem;
+    font-size: clamp(2.6rem, 9vw, 3.8rem);
     font-weight: 700;
     font-family: var(--f-recruit-title);
     line-height: 1;
 }
 
 .p-recruit-metric-unit {
-    font-size: 1.1rem;
+    font-size: clamp(0.9rem, 3vw, 1.1rem);
     font-weight: 700;
     color: #55698a;
     margin-left: 4px;
@@ -1896,7 +1915,7 @@ body.is-recruit-modal-open {
 
 .p-recruit-gender-val {
     font-family: var(--f-recruit-title);
-    font-size: 2.8rem;
+    font-size: clamp(2rem, 7vw, 2.8rem);
     font-weight: 700;
     color: #0b3486;
     line-height: 1;
@@ -2177,7 +2196,7 @@ body.is-recruit-modal-open {
     z-index: 1;
     margin: 0;
     font-family: var(--f-recruit-title);
-    font-size: clamp(2.9rem, 4.4vw, 4.5rem);
+    font-size: clamp(2rem, 8.2vw, 4.5rem);
     font-weight: 500;
     letter-spacing: 0.18em;
     line-height: 1;
@@ -2197,7 +2216,8 @@ body.is-recruit-modal-open {
     margin: 0;
     padding: 42px 44px;
     display: flex;
-    align-items: center;
+    flex-direction: column;
+    align-items: flex-start;
     background: rgba(255, 255, 255, 0.88);
     border: 1px solid rgba(11, 52, 134, 0.1);
     box-shadow: 0 18px 40px rgba(15, 23, 42, 0.06);
@@ -2356,6 +2376,7 @@ body.is-recruit-modal-open {
     font-size: clamp(1.04rem, 1.15vw, 1.1rem);
     line-height: 2;
     color: #4b5563;
+    text-wrap: pretty;
 }
 
 
@@ -2372,7 +2393,7 @@ body.is-recruit-modal-open {
     z-index: 1;
     margin: 0;
     font-family: var(--f-recruit-title);
-    font-size: clamp(2.6rem, 4vw, 4.2rem);
+    font-size: clamp(2rem, 8.2vw, 4.2rem);
     font-weight: 500;
     letter-spacing: 0.18em;
     line-height: 1;
@@ -2392,7 +2413,8 @@ body.is-recruit-modal-open {
     margin: 0;
     padding: 36px 38px;
     display: flex;
-    align-items: center;
+    flex-direction: column;
+    align-items: flex-start;
     background: rgba(255, 255, 255, 0.88);
     border: 1px solid rgba(11, 52, 134, 0.1);
     box-shadow: 0 18px 40px rgba(15, 23, 42, 0.06);
@@ -2745,12 +2767,24 @@ body.is-recruit-modal-open {
     }
 
     .p-recruit-hero__center-group {
+        box-sizing: border-box;
         gap: 14px;
+        padding-inline: 20px;
         transform: none;
     }
 
     .p-recruit-hero__title-img {
-        width: 92vw;
+        width: 98vw;
+    }
+
+    .p-recruit-hero__subtitle {
+        font-size: clamp(1rem, 5.2vw, 1.5rem);
+        line-height: 1.55;
+    }
+
+    .p-recruit-hero__subtitle-frag {
+        display: block;
+        white-space: nowrap;
     }
 
     .p-recruit-numbers__grid {

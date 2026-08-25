@@ -820,6 +820,69 @@ main#company-information {
     background: #f0f4f8;
 }
 
+/*
+   iPhone-sized viewports need a little more usable text width than the
+   desktop card's 40px side padding provides. Keep the desktop composition
+   unchanged, but make the mobile card a contained, balanced layout.
+*/
+@media (max-width: 768px) {
+    #mk-history-zdive .zdive-panel {
+        width: min(520px, calc(100vw - 32px));
+        max-width: calc(100vw - 32px);
+        padding: 28px 24px;
+        overflow: hidden;
+    }
+
+    #mk-history-zdive .zdive-panel h3 {
+        max-width: min(100%, 16rem);
+        margin: 6px 0 14px;
+        font-size: clamp(16px, 4.6vw, 18px);
+        line-height: 1.45;
+        min-height: 2.9em;
+        text-wrap: balance;
+        line-break: strict;
+    }
+
+    #mk-history-zdive .zdive-panel img {
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+        aspect-ratio: 4 / 3;
+        object-fit: cover;
+    }
+
+    /* Keep the reduced-motion fallback readable on the same narrow screens. */
+    #fallback-timeline-container {
+        width: 100%;
+        max-width: 100%;
+        padding: 48px 16px;
+        box-sizing: border-box;
+    }
+
+    #fallback-timeline-container .fallback-panel {
+        padding: 24px;
+        box-sizing: border-box;
+    }
+
+    #fallback-timeline-container .fallback-panel h3 {
+        max-width: 100%;
+        font-size: clamp(1.05rem, 4.6vw, 1.2rem);
+        line-height: 1.55;
+        text-wrap: balance;
+        line-break: strict;
+        overflow-wrap: normal;
+        word-break: normal;
+    }
+
+    #fallback-timeline-container .fallback-panel img {
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+        aspect-ratio: 4 / 3;
+        object-fit: cover;
+    }
+}
+
 /* =======================================================
    Viewport-Fixed Progress Bar (案1: スリム進捗バー + カウンター)
 ======================================================= */
