@@ -834,13 +834,14 @@ main#company-information {
     }
 
     #mk-history-zdive .zdive-panel h3 {
-        max-width: min(100%, 16rem);
+        max-width: 100%;
         margin: 6px 0 14px;
         font-size: clamp(16px, 4.6vw, 18px);
         line-height: 1.45;
         min-height: 2.9em;
-        text-wrap: balance;
+        text-wrap: pretty;
         line-break: strict;
+        overflow-wrap: break-word;
     }
 
     #mk-history-zdive .zdive-panel img {

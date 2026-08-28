@@ -328,6 +328,7 @@
 
 .p-recruit-concept__intro-line,
 .p-recruit-craft__text-line,
+.p-recruit-interview__lead-line,
 .p-recruit-feature__body-text-line,
 .p-recruit-benefit__description-line,
 .p-recruit-benefits__lead-line {
@@ -1713,7 +1714,8 @@ body.is-recruit-modal-open {
 .p-recruit-feature__message {
     margin: 0 0 22px;
     font-family: "Shippori Mincho", serif;
-    font-size: clamp(1.35rem, 1.7vw, 1.55rem);
+    /* Two authored lines must remain two lines even on tablet widths. */
+    font-size: clamp(1rem, 1.7vw, 1.35rem);
     font-weight: 800;
     line-height: 1.38;
     letter-spacing: -0.02em;
@@ -1721,10 +1723,10 @@ body.is-recruit-modal-open {
 
 .p-recruit-feature__message-line {
     display: block;
-    white-space: normal;
-    text-wrap: balance;
+    white-space: nowrap;
+    text-wrap: nowrap;
     line-break: strict;
-    overflow-wrap: anywhere;
+    overflow-wrap: normal;
 }
 
 .p-recruit-feature__name {
@@ -2873,7 +2875,8 @@ body.is-recruit-modal-open {
     }
 
     .p-recruit-feature__message {
-        font-size: clamp(1rem, 4.9vw, 1.35rem);
+        font-size: clamp(0.8rem, 4.1vw, 1.35rem);
+        letter-spacing: -0.04em;
     }
 
     .p-recruit-feature__panel--image {
@@ -3018,7 +3021,11 @@ body.is-recruit-modal-open {
 }
 
 @media (max-width: 319px) {
+    .p-recruit-feature__message {
+        font-size: 0.72rem;
+    }
+
     .p-recruit-feature__message-line {
-        white-space: normal;
+        white-space: nowrap;
     }
 }

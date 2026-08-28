@@ -777,6 +777,13 @@
   overflow-wrap: anywhere;
 }
 
+.okg-bizhub__text-line {
+  display: block;
+  text-wrap: pretty;
+  line-break: strict;
+  overflow-wrap: anywhere;
+}
+
 @media (max-width: 1200px) {
   .okg-bizhub.okg-bizhub .okg-bizhub__overview {
     padding: 96px 0 92px;

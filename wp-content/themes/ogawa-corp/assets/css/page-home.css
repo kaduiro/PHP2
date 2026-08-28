@@ -626,6 +626,13 @@ body.front-page .okg-nkh-home #stage01 .okg-nkh-home__stage01-heading {
   line-height: 2;
 }
 
+.okg-nkh-home__text-line {
+  display: block;
+  text-wrap: pretty;
+  line-break: strict;
+  overflow-wrap: anywhere;
+}
+
 .okg-nkh-home__business {
   position: relative;
   padding: 128px 0 142px;
@@ -965,8 +972,9 @@ a.okg-nkh-home__business-service:focus-visible .okg-nkh-home__business-service-c
 .okg-nkh-home__recruit-copy-inner > p:last-child {
   margin-top: 32px;
   color: rgba(255, 255, 255, 0.84);
-  font-size: 15px;
+  font-size: clamp(0.875rem, 2.2vw, 0.9375rem);
   line-height: 2;
+  text-wrap: pretty;
 }
 
 .okg-nkh-home__recruit-cta {
@@ -1717,6 +1725,7 @@ a.okg-nkh-home__business-service:focus-visible .okg-nkh-home__business-service-c
 }
 
 .okg-nkh-home__business-area-copy {
+  display: block;
   color: #52606e;
   font-size: 13px;
   line-height: 1.8;
@@ -2310,7 +2319,6 @@ a.okg-nkh-home__business-area-link:focus-visible .okg-nkh-home__business-area-co
 
   .okg-nkh-home__recruit-copy-inner > p:last-child {
     margin-top: 25px;
-    font-size: 14px;
     line-height: 1.9;
   }
 
